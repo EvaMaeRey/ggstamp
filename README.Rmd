@@ -30,7 +30,7 @@ knitr::include_graphics("docs/flipbook.gif")
 <!-- badges: end -->
 
 
-The goal of ggstamp is to provide an alternative, quick API for annotation layers in the ggplot2 and grammar of graphics framework.  It is experimental and maybe is not such a good idea; but let's see where things lead. 
+The goal of ggstamp is to provide convenience functions for creating annotation layers in the ggplot2 and grammar of graphics framework.  It is experimental and maybe is not such a good idea; but let's see where things lead. 
 
 In some ways, Deming's quote parallels the experience of analysts using ggplot2.  Adding geom_* layers feels divine and godly (geom_point() = 'let there be points', geom_boxplot() 'let there be boxplots'!), but *annotation layers* are subject to Deming's burden of *'bringing data'*.  
 
@@ -54,7 +54,7 @@ The geom_* marks of course do rely on data, but that has already been laid out; 
 
 Annotation layers are different.  With annotation layers,  but you've also got to declare the data as you do this.  You also have to declare the geom to be used.
 
-ggstamp thinks about removing some of the thinking and focus that's needed to create annotation layer. First, they use a stamp prefix and then name the geom that's desired, i.e. stamp_point(), stamp_text() - good for auto-complete IDEs.  A goal too, will be to include the arguments and descriptions so adjustments can more easily be made from IDE with function previews.   
+'ggstamp' thinks about removing some of the thinking and focus that's needed to create annotation layer. First, they use a stamp prefix and then name the geom that's desired, i.e. stamp_point(), stamp_text() - good for auto-complete IDEs.  A goal too, will be to include the arguments and descriptions so adjustments can more easily be made from IDE with function previews.   
 
 Also, the functions include default data.  You will be able to check out what stamp_* functions do without any input (then you can adjust away from the defaults later) -- the stamps come 'pre-inked' (they'll automatically bring generic data).  They'll 'just work' -- maybe not as needed in their final form -- but getting something out-of-the box can be a useful starting point for newcomers.  That's my thinking for now at least!
 
@@ -65,15 +65,6 @@ And the development version from [GitHub](https://github.com/) with:
 # install.packages("devtools")
 devtools::install_github("EvaMaeRey/ggstamp")
 ```
-## Example
-
-This is a basic example which shows you how to solve a common problem:
-
-```{r example}
-library(ggstamp)
-## basic example code
-```
-
 
 
 

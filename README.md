@@ -15,7 +15,7 @@
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 
-The goal of ggstamp is to provide an alternative, quick API for
+The goal of ggstamp is to provide convenience functions for creating
 annotation layers in the ggplot2 and grammar of graphics framework. It
 is experimental and maybe is not such a good idea; but let’s see where
 things lead.
@@ -53,7 +53,7 @@ Annotation layers are different. With annotation layers, but you’ve also
 got to declare the data as you do this. You also have to declare the
 geom to be used.
 
-ggstamp thinks about removing some of the thinking and focus that’s
+‘ggstamp’ thinks about removing some of the thinking and focus that’s
 needed to create annotation layer. First, they use a stamp prefix and
 then name the geom that’s desired, i.e. stamp\_point(), stamp\_text() -
 good for auto-complete IDEs. A goal too, will be to include the
@@ -73,13 +73,4 @@ And the development version from [GitHub](https://github.com/) with:
 ``` r
 # install.packages("devtools")
 devtools::install_github("EvaMaeRey/ggstamp")
-```
-
-## Example
-
-This is a basic example which shows you how to solve a common problem:
-
-``` r
-library(ggstamp)
-## basic example code
 ```
