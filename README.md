@@ -46,6 +46,7 @@ library(ggstamp)
 
 There are different approaches to getting this done currently…
 
-``` r
-# knitr::include_url("docs/flipbook.html")
-```
+[See the flipbook](https://evamaerey.github.io/ggstamp/flipbook.html)
+
+<iframe src="https://evamaerey.github.io/ggstamp/flipbook.html" title="ggstamp flipbook">
+</iframe>

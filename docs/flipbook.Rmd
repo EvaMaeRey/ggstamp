@@ -5,6 +5,7 @@ author: "ME"
 output:
   xaringan::moon_reader:
     lib_dir: libs
+    seal: false
     css: [default, hygge, ninjutsu]
     nature:
       ratio: 16:9
@@ -13,6 +14,19 @@ output:
       countIncrementalSlides: false
 ---
 
+name: title
+class: top, inverse
+background-image: url(https://images.unsplash.com/photo-1605250803010-37d03931db8f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80)
+background-size: contain
+
+# {ggstamp}
+### Gina Reynolds
+
+
+#### Photo Credit: Markus Spiske
+
+
+---
 
 ```{r, include = F}
 # This is the recommended set up for flipbooks
@@ -28,15 +42,12 @@ library(tidyverse)
 `r chunk_reveal("my_cars")`
 
 ```{r my_cars, include = FALSE}
-cars %>%
-  filter(speed > 4) %>%
-  ggplot() +
-  aes(x = speed) + #BREAK
-  aes(y = dist) + #BREAK
-  geom_point(
-    alpha = .8, 
-    color = "blue" 
-    ) + 
-  aes(size = speed) #BREAK
+library(ggplot2)
+library(ggstamp)
+ggplot(cars) +
+ aes(speed, dist) +
+ geom_point() +
+ stamp_point(color = "red", 
+             x = 10, y = 100)
 ```
 
