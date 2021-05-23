@@ -14,15 +14,15 @@
 
 
 name: title
-class: top, inverse
-background-image: url(https://images.unsplash.com/photo-1605250803010-37d03931db8f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1534&amp;q=80)
-background-size: contain
+class: top, inverse, right
+background-image: url(https://images.unsplash.com/photo-1593448806592-409752fd816b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1500&amp;q=80)
+background-size: cover
 
 # {ggstamp}
 ### Gina Reynolds
 
 
-#### Photo Credit: Markus Spiske
+#### Photo Credit: Glen Carrie
 
 
 ---
@@ -35,110 +35,302 @@ background-size: contain
 count: false
  
 
-.panel1-my_cars-auto[
+.panel1-my_cars-user[
 
 ```r
 *library(ggplot2)
-```
-]
- 
-.panel2-my_cars-auto[
-
-]
-
----
-count: false
- 
-
-.panel1-my_cars-auto[
-
-```r
-library(ggplot2)
 *library(ggstamp)
+*ggplot(data = cars) +
+* aes(speed, dist) +
+* theme_minimal(base_size = 15)
 ```
 ]
  
-.panel2-my_cars-auto[
-
+.panel2-my_cars-user[
+![](flipbook_files/figure-html/my_cars_user_01_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 
-.panel1-my_cars-auto[
+.panel1-my_cars-user[
 
 ```r
 library(ggplot2)
 library(ggstamp)
-*ggplot(cars)
+ggplot(data = cars) +
+  aes(speed, dist) +
+  theme_minimal(base_size = 15) +
+* geom_point()
 ```
 ]
  
-.panel2-my_cars-auto[
-![](flipbook_files/figure-html/my_cars_auto_03_output-1.png)&lt;!-- --&gt;
+.panel2-my_cars-user[
+![](flipbook_files/figure-html/my_cars_user_02_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 
-.panel1-my_cars-auto[
+.panel1-my_cars-user[
 
 ```r
 library(ggplot2)
 library(ggstamp)
-ggplot(cars) +
-*aes(speed, dist)
+ggplot(data = cars) +
+  aes(speed, dist) +
+  theme_minimal(base_size = 15) +
+  geom_point() +
+* stamp_point(color = "darkolivegreen3")
 ```
 ]
  
-.panel2-my_cars-auto[
-![](flipbook_files/figure-html/my_cars_auto_04_output-1.png)&lt;!-- --&gt;
+.panel2-my_cars-user[
+![](flipbook_files/figure-html/my_cars_user_03_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 
-.panel1-my_cars-auto[
+.panel1-my_cars-user[
 
 ```r
 library(ggplot2)
 library(ggstamp)
-ggplot(cars) +
- aes(speed, dist) +
-*geom_point()
+ggplot(data = cars) +
+  aes(speed, dist) +
+  theme_minimal(base_size = 15) +
+  geom_point() +
+  stamp_point(color = "darkolivegreen3") +
+* stamp_point(color = "slateblue",
+*             x = c(10, 15),
+*             y = c(100, 90))
 ```
 ]
  
-.panel2-my_cars-auto[
-![](flipbook_files/figure-html/my_cars_auto_05_output-1.png)&lt;!-- --&gt;
+.panel2-my_cars-user[
+![](flipbook_files/figure-html/my_cars_user_04_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 
-.panel1-my_cars-auto[
+.panel1-my_cars-user[
 
 ```r
 library(ggplot2)
 library(ggstamp)
-ggplot(cars) +
- aes(speed, dist) +
- geom_point() +
-*stamp_point(color = "red",
-*            x = 10, y = 100)
+ggplot(data = cars) +
+  aes(speed, dist) +
+  theme_minimal(base_size = 15) +
+  geom_point() +
+  stamp_point(color = "darkolivegreen3") +
+  stamp_point(color = "slateblue",
+              x = c(10, 15),
+              y = c(100, 90)) +
+* stamp_curve(x = 6, xend = c(10, 14.75),
+*             y = 9.5, yend = c(95, 85),
+*             curvature = .2)
 ```
 ]
  
-.panel2-my_cars-auto[
-![](flipbook_files/figure-html/my_cars_auto_06_output-1.png)&lt;!-- --&gt;
+.panel2-my_cars-user[
+![](flipbook_files/figure-html/my_cars_user_05_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-my_cars-user[
+
+```r
+library(ggplot2)
+library(ggstamp)
+ggplot(data = cars) +
+  aes(speed, dist) +
+  theme_minimal(base_size = 15) +
+  geom_point() +
+  stamp_point(color = "darkolivegreen3") +
+  stamp_point(color = "slateblue",
+              x = c(10, 15),
+              y = c(100, 90)) +
+  stamp_curve(x = 6, xend = c(10, 14.75),
+              y = 9.5, yend = c(95, 85),
+              curvature = .2) +
+* stamp_bubble(fill = "plum2",
+*              color = "plum4",
+*              size = 15,
+*              x = 5, y = 8)
+```
+]
+ 
+.panel2-my_cars-user[
+![](flipbook_files/figure-html/my_cars_user_06_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-my_cars-user[
+
+```r
+library(ggplot2)
+library(ggstamp)
+ggplot(data = cars) +
+  aes(speed, dist) +
+  theme_minimal(base_size = 15) +
+  geom_point() +
+  stamp_point(color = "darkolivegreen3") +
+  stamp_point(color = "slateblue",
+              x = c(10, 15),
+              y = c(100, 90)) +
+  stamp_curve(x = 6, xend = c(10, 14.75),
+              y = 9.5, yend = c(95, 85),
+              curvature = .2) +
+  stamp_bubble(fill = "plum2",
+               color = "plum4",
+               size = 15,
+               x = 5, y = 8) +
+* stamp_label(label = "This is a stamp",
+*             x = 20,
+*             y = 15)
+```
+]
+ 
+.panel2-my_cars-user[
+![](flipbook_files/figure-html/my_cars_user_07_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-my_cars-user[
+
+```r
+library(ggplot2)
+library(ggstamp)
+ggplot(data = cars) +
+  aes(speed, dist) +
+  theme_minimal(base_size = 15) +
+  geom_point() +
+  stamp_point(color = "darkolivegreen3") +
+  stamp_point(color = "slateblue",
+              x = c(10, 15),
+              y = c(100, 90)) +
+  stamp_curve(x = 6, xend = c(10, 14.75),
+              y = 9.5, yend = c(95, 85),
+              curvature = .2) +
+  stamp_bubble(fill = "plum2",
+               color = "plum4",
+               size = 15,
+               x = 5, y = 8) +
+  stamp_label(label = "This is a stamp",
+              x = 20,
+              y = 15) +
+* stamp_text(label = "This\ntoo",
+*            x = 18,
+*            y = 110,
+*            lineheight = .8)
+```
+]
+ 
+.panel2-my_cars-user[
+![](flipbook_files/figure-html/my_cars_user_08_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-my_cars-user[
+
+```r
+library(ggplot2)
+library(ggstamp)
+ggplot(data = cars) +
+  aes(speed, dist) +
+  theme_minimal(base_size = 15) +
+  geom_point() +
+  stamp_point(color = "darkolivegreen3") +
+  stamp_point(color = "slateblue",
+              x = c(10, 15),
+              y = c(100, 90)) +
+  stamp_curve(x = 6, xend = c(10, 14.75),
+              y = 9.5, yend = c(95, 85),
+              curvature = .2) +
+  stamp_bubble(fill = "plum2",
+               color = "plum4",
+               size = 15,
+               x = 5, y = 8) +
+  stamp_label(label = "This is a stamp",
+              x = 20,
+              y = 15) +
+  stamp_text(label = "This\ntoo",
+             x = 18,
+             y = 110,
+             lineheight = .8) +
+* stamp_segment(x = 20, xend = 18,
+*               y = 23, yend = 100)
+```
+]
+ 
+.panel2-my_cars-user[
+![](flipbook_files/figure-html/my_cars_user_09_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-my_cars-user[
+
+```r
+library(ggplot2)
+library(ggstamp)
+ggplot(data = cars) +
+  aes(speed, dist) +
+  theme_minimal(base_size = 15) +
+  geom_point() +
+  stamp_point(color = "darkolivegreen3") +
+  stamp_point(color = "slateblue",
+              x = c(10, 15),
+              y = c(100, 90)) +
+  stamp_curve(x = 6, xend = c(10, 14.75),
+              y = 9.5, yend = c(95, 85),
+              curvature = .2) +
+  stamp_bubble(fill = "plum2",
+               color = "plum4",
+               size = 15,
+               x = 5, y = 8) +
+  stamp_label(label = "This is a stamp",
+              x = 20,
+              y = 15) +
+  stamp_text(label = "This\ntoo",
+             x = 18,
+             y = 110,
+             lineheight = .8) +
+  stamp_segment(x = 20, xend = 18,
+                y = 23, yend = 100) +
+* ggxmean::stamp_normal_dist(
+*   height = 200,
+*   fill = "magenta",
+*   mean = 14, sd =  2)
+```
+]
+ 
+.panel2-my_cars-user[
+![](flipbook_files/figure-html/my_cars_user_10_output-1.png)&lt;!-- --&gt;
 ]
 
 &lt;style&gt;
-.panel1-my_cars-auto {
+.panel1-my_cars-user {
   color: black;
   width: 38.6060606060606%;
   hight: 32%;
@@ -146,7 +338,7 @@ ggplot(cars) +
   padding-left: 1%;
   font-size: 80%
 }
-.panel2-my_cars-auto {
+.panel2-my_cars-user {
   color: black;
   width: 59.3939393939394%;
   hight: 32%;
@@ -154,7 +346,7 @@ ggplot(cars) +
   padding-left: 1%;
   font-size: 80%
 }
-.panel3-my_cars-auto {
+.panel3-my_cars-user {
   color: black;
   width: NA%;
   hight: 33%;
@@ -168,6 +360,27 @@ ggplot(cars) +
 
 
 
+&lt;style type="text/css"&gt;
+.remark-code{line-height: 1.5; font-size: 80%}
+
+@media print {
+  .has-continuation {
+    display: block;
+  }
+}
+
+code.r.hljs.remark-code{
+  position: relative;
+  overflow-x: hidden;
+}
+
+
+code.r.hljs.remark-code:hover{
+  overflow-x:visible;
+  width: 500px;
+  border-style: solid;
+}
+&lt;/style&gt;
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

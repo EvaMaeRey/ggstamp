@@ -17,6 +17,6 @@
 #' stamp_point(x = 1, y = 1)
 ggcanvas <- function(x = 0, y = 0){
 
-  ggplot2::ggplot(data = data.frame(x = x, y = y))
+  ggplot2::ggplot(data = data.frame(x = x, y = y), aes(x = 0, y = 0))
 
 }

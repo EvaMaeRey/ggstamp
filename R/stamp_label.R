@@ -15,23 +15,23 @@
 #' ggplot(cars) +
 #'  aes(speed, dist) +
 #'  geom_point() +
-#'  stamp_text() +
-#'  stamp_text(label = "hi", x = 15:18, y = 75)
-stamp_text <- function(x = 0,
+#'  stamp_label() +
+#'  stamp_label(label = "hi", y = c(100,75,50), x = 20)
+stamp_label <- function(x = 0,
                        y = 0,
-                       label = "use label\nargument to change\nthis text",
+                       label = "use label\nargument to change\nthis label",
                        size = 8,
                        alpha = 1,
                        angle = 0,
                        color = "black",
-                       lineheight = .8,
+                       fill = "white",
                        family = "",
                        vjust = .5, ...){
 
-annotate(geom = "text",
+annotate(geom = "label",
          x = x,
          y = y,
-         lineheight = lineheight,
+         fill = fill,
          label = label,
          size = size)
 

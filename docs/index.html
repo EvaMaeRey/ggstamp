@@ -80,9 +80,18 @@
 <p>‘In God we trust, all others must bring data.’ - W. Edwards Deming.</p>
 </blockquote>
 <p>The goal of ggstamp is to provide an alternative, quick API for annotation layers in the ggplot2 and grammar of graphics framework. It is experimental and maybe is not such a good idea; but let’s see where things lead.</p>
-<p>In some ways, <em>annotation layers</em> are subject Deming’s burden of <em>‘bringing data’</em>.</p>
-<p>Annotation layers in grammar of graphics frameworks feel different than adding geom_* layers. This is because w/ the separation of visual concerns, data is often declared separately from the geom. The data is foundational and sits below everything. The ink on the page depends on this underlying data once goem_* layers are declared.</p>
-<p>But with annotion layers, not only are you declaring the geom to be used, but you’ve also got to declare the data as you do this.</p>
+<p>In some ways, Deming’s quote parallels the experience of analysts using ggplot2. Adding geom_* layers feels divine and godly (geom_point() = ‘let there be points’, geom_boxplot() ‘let there be boxplots’!), but <em>annotation layers</em> are subject to Deming’s burden of <em>‘bringing data’</em>.</p>
+<p>The geom_* calls feel lightweight and powerful because they refer to the already specified data and aesthetic mappings. Recall the definition of a data visualization</p>
+<p>A data visualization is …</p>
+<p>… is composed of geometric marks …</p>
+<p>… that take on visual channels (aesthetics) …</p>
+<p>… that represent variables in a data set …</p>
+<p>In practice, the data is declared first and second the aesthetic-variable encodings. Finally, with this groundwork laid which geometric mark should take on these aesthetics – the code call to get the layer feels light and nimble and quick!</p>
+<p>The geom_* marks of course do rely on data, but that has already been laid out; they don’t feel like you have to ‘bring data’. So using geom_tile() or geom_point() or geom_line() feels godly – ink springs forth easily onto the page based the data that lies beneath.</p>
+<!-- Annotation layers in grammar of graphics frameworks feel different than adding geom_* layers.  This is because w/ the separation of visual concerns, data is often declared separately from the geom.  The data is foundational and sits below everything.  The ink on the page depends on this underlying data once goem_* layers are declared.   -->
+<p>Annotation layers are different. With annotation layers, but you’ve also got to declare the data as you do this. You also have to declare the geom to be used.</p>
+<p>ggstamp thinks about removing some of the thinking to get an annotation layer. First, they use a stamp prefix and then name the geom that’s desired, i.e. stamp_point(), stamp_text(). A goal too, will be to include the arguments and descriptions so adjustments can more easily be made from IDE with function previews.</p>
+<p>Also, the functions include default data. You will be able to check out what stamp_* functions do without any input (then you can adjust away from the defaults later) – the stamps come ‘pre-inked’ (they’ll automatically bring generic data). They’ll ‘just work’ – maybe not as needed in their final form – but getting something out-of-the box can be a useful starting point for newcomers. That’s my thinking for now at least!</p>
 <p>And the development version from <a href="https://github.com/">GitHub</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("devtools")</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"EvaMaeRey/ggstamp"</span>)</span></code></pre></div>
@@ -93,6 +102,9 @@
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggstamp)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="do">## basic example code</span></span></code></pre></div>
 <p>There are different approaches to getting this done currently…</p>
+<p><a href="https://evamaerey.github.io/ggstamp/flipbook.html">See the flipbook</a></p>
+<iframe src="https://evamaerey.github.io/ggstamp/flipbook.html" title="ggstamp flipbook">
+</iframe>
 </div>
 </div>
   </div>
