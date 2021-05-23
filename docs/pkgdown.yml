@@ -1,0 +1,6 @@
+pandoc: 2.11.2
+pkgdown: 1.4.1
+pkgdown_sha: ~
+articles:
+  stamping: stamping.html
+

@@ -1,2 +1,7 @@
 ^ggstamp\.Rproj$
 ^\.Rproj\.user$
+^README\.Rmd$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^LICENSE\.md$
