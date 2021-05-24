@@ -5,6 +5,8 @@
 
 > ‘In God we trust, all others must bring data.’ - W. Edwards Deming.
 
+> Annotation layers must also bring their own data…
+
 <img src="https://github.com/EvaMaeRey/ggstamp/blob/master/docs/flipbook.gif?raw=true" width="100%" />
 
 <a href="https://evamaerey.github.io/ggstamp/flipbook.html" target="_blank">Open flipbook in a new tab</a>

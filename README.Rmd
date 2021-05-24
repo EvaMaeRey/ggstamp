@@ -17,6 +17,7 @@ knitr::opts_chunk$set(
 
 > 'In God we trust, all others must bring data.' - W. Edwards Deming.
 
+> Annotation layers must also bring their own data...
 
 
 ```{r, echo = F}
