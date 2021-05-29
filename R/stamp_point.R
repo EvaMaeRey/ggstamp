@@ -24,6 +24,7 @@ stamp_point <- function(x = 0,
                        y = 0,
                        size = 8,
                        alpha = 1,
+                       shape = 16,
                        color = "black"){
 
 annotate(geom = "point",
@@ -31,6 +32,7 @@ annotate(geom = "point",
          y = y,
          size = size,
          alpha = alpha,
+         shape = shape,
          color = color)
 
 }

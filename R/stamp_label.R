@@ -25,6 +25,7 @@ stamp_label <- function(x = 0,
                        angle = 0,
                        color = "black",
                        fill = "white",
+                       lineheight = .8,
                        family = "",
                        vjust = .5, ...){
 
@@ -33,6 +34,7 @@ annotate(geom = "label",
          y = y,
          fill = fill,
          label = label,
+         lineheight = lineheight,
          size = size)
 
 }

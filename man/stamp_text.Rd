@@ -12,6 +12,7 @@ stamp_text(
   alpha = 1,
   angle = 0,
   color = "black",
+  lineheight = 0.8,
   family = "",
   vjust = 0.5,
   ...

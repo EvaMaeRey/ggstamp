@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Stamp some text — stamp_text • ggstamp</title>
+<title>Stamp some text — stamp_tile • ggstamp</title>
 
 
 <!-- jquery -->
@@ -35,7 +35,7 @@
 
 
 
-<meta property="og:title" content="Stamp some text — stamp_text" />
+<meta property="og:title" content="Stamp some text — stamp_tile" />
 <meta property="og:description" content="This function adds a text annotation layer" />
 <meta name="twitter:card" content="summary" />
 
@@ -114,26 +114,14 @@
     <div class="page-header">
     <h1>Stamp some text</h1>
     
-    <div class="hidden name"><code>stamp_text.Rd</code></div>
+    <div class="hidden name"><code>stamp_tile.Rd</code></div>
     </div>
 
     <div class="ref-description">
     <p>This function adds a text annotation layer</p>
     </div>
 
-    <pre class="usage"><span class='fu'>stamp_text</span>(
-  <span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>0</span>,
-  <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>0</span>,
-  <span class='kw'>label</span> <span class='kw'>=</span> <span class='st'>"use label\nargument to change\nthis text"</span>,
-  <span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>8</span>,
-  <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>angle</span> <span class='kw'>=</span> <span class='fl'>0</span>,
-  <span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"black"</span>,
-  <span class='kw'>lineheight</span> <span class='kw'>=</span> <span class='fl'>0.8</span>,
-  <span class='kw'>family</span> <span class='kw'>=</span> <span class='st'>""</span>,
-  <span class='kw'>vjust</span> <span class='kw'>=</span> <span class='fl'>0.5</span>,
-  <span class='no'>...</span>
-)</pre>
+    <pre class="usage"><span class='fu'>stamp_tile</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"black"</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -147,12 +135,12 @@
       <td><p>defaults to 0</p></td>
     </tr>
     <tr>
-      <th>label</th>
-      <td><p>defaults with a message about used</p></td>
-    </tr>
-    <tr>
       <th>size</th>
       <td></td>
+    </tr>
+    <tr>
+      <th>label</th>
+      <td><p>defaults with a message about used</p></td>
     </tr>
     </table>
 
@@ -167,8 +155,11 @@
 <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span>(<span class='no'>cars</span>) +
  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span>(<span class='no'>speed</span>, <span class='no'>dist</span>) +
  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span>() +
- <span class='fu'>stamp_text</span>() +
- <span class='fu'>stamp_text</span>(<span class='kw'>label</span> <span class='kw'>=</span> <span class='st'>"hi"</span>, <span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>15</span>:<span class='fl'>18</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>75</span>)</div><div class='img'><img src='stamp_text-1.png' alt='' width='700' height='433' /></div></pre>
+ <span class='fu'>stamp_tile</span>(<span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"red"</span>, <span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>100</span>)</div><div class='img'><img src='stamp_tile-1.png' alt='' width='700' height='433' /></div><div class='input'>
+ <span class='fu'><a href='ggcanvas.html'>ggcanvas</a></span>() +
+ <span class='fu'>stamp_tile</span>(<span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"green"</span>) +
+ <span class='fu'>stamp_tile</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>5</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>.5</span>) +
+ <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/coord_fixed.html'>coord_equal</a></span>()</div><div class='img'><img src='stamp_tile-2.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
