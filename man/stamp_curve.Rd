@@ -9,20 +9,29 @@ stamp_curve(
   xend = 1,
   y = 0,
   yend = 1,
-  size = 1.5,
   alpha = 1,
-  curvature = 0.1,
-  color = "black"
+  color = "black",
+  linetype = "solid",
+  size = 1.5,
+  curvature = 0.1
 )
 }
 \arguments{
 \item{x}{defaults to 0}
 
+\item{xend}{numeric defaults to 1}
+
 \item{y}{defaults to 0}
 
-\item{size}{}
+\item{yend}{numeric defaults to 1}
 
-\item{label}{defaults with a message about used}
+\item{alpha}{a numeric between 0 and 1 for transparency}
+
+\item{linetype}{"solid", "dashed", "dotted"}
+
+\item{size}{numeric indicating line width, defaults to 1.5}
+
+\item{curvature}{a scalar between -1 and 1, 0 is straight, positive is counter clockwise?}
 }
 \value{
 

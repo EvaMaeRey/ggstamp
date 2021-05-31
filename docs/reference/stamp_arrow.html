@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Stamp some text — stamp_arrow • ggstamp</title>
+<title>Stamp an arrow/arrows — stamp_arrow • ggstamp</title>
 
 
 <!-- jquery -->
@@ -35,8 +35,8 @@
 
 
 
-<meta property="og:title" content="Stamp some text — stamp_arrow" />
-<meta property="og:description" content="This function adds a text annotation layer" />
+<meta property="og:title" content="Stamp an arrow/arrows — stamp_arrow" />
+<meta property="og:description" content="This function adds an arrow annotation layer" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -112,13 +112,13 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Stamp some text</h1>
+    <h1>Stamp an arrow/arrows</h1>
     
     <div class="hidden name"><code>stamp_arrow.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This function adds a text annotation layer</p>
+    <p>This function adds an arrow annotation layer</p>
     </div>
 
     <pre class="usage"><span class='fu'>stamp_arrow</span>(
@@ -144,16 +144,44 @@
       <td><p>defaults to 0</p></td>
     </tr>
     <tr>
+      <th>xend</th>
+      <td><p>defaults to 1</p></td>
+    </tr>
+    <tr>
       <th>y</th>
       <td><p>defaults to 0</p></td>
     </tr>
     <tr>
-      <th>size</th>
-      <td></td>
+      <th>yend</th>
+      <td><p>defaults to 1</p></td>
     </tr>
     <tr>
-      <th>label</th>
-      <td><p>defaults with a message about used</p></td>
+      <th>size</th>
+      <td><p>numeric indicating line width</p></td>
+    </tr>
+    <tr>
+      <th>alpha</th>
+      <td><p>numeric between 0 and 1 indicating transparency</p></td>
+    </tr>
+    <tr>
+      <th>ends</th>
+      <td><p>One of "last", "first", or "both", indicating which ends of the line to draw arrow heads.</p></td>
+    </tr>
+    <tr>
+      <th>units</th>
+      <td><p>A character vector specifying the units for the corresponding numeric values.</p></td>
+    </tr>
+    <tr>
+      <th>headlength</th>
+      <td><p>A unit specifying the length of the arrow head (from tip to base).</p></td>
+    </tr>
+    <tr>
+      <th>angle</th>
+      <td><p>The angle of the arrow head in degrees (smaller numbers produce narrower, pointier arrows). Essentially describes the width of the arrow head.</p></td>
+    </tr>
+    <tr>
+      <th>type</th>
+      <td><p>One of "open" or "closed" indicating whether the arrow head should be a closed triangle.</p></td>
     </tr>
     </table>
 

@@ -4,16 +4,36 @@
 \alias{stamp_tile}
 \title{Stamp some text}
 \usage{
-stamp_tile(x = 0, y = 0, size = 2, alpha = 1, color = "black")
+stamp_tile(
+  x = 0,
+  y = 0,
+  size = 0.5,
+  alpha = 1,
+  color = "black",
+  fill = "grey85",
+  height = 1,
+  linetype = "solid",
+  width = 1
+)
 }
 \arguments{
 \item{x}{defaults to 0}
 
 \item{y}{defaults to 0}
 
-\item{size}{}
+\item{size}{line width default is .5}
 
-\item{label}{defaults with a message about used}
+\item{alpha}{0 to 1 indicating transparency}
+
+\item{color}{named or hexcolor for outline}
+
+\item{fill}{named or hexcolor}
+
+\item{height}{full height of tile centered at y}
+
+\item{linetype}{"solid" "dashed" "dotted"}
+
+\item{width}{full width of tile centered at x}
 }
 \value{
 
@@ -26,10 +46,10 @@ library(ggplot2)
 ggplot(cars) +
  aes(speed, dist) +
  geom_point() +
- stamp_tile(color = "red", x = 10, y = 100)
+ stamp_tile(color = "red", x = 10, y = 90:100)
 
  ggcanvas() +
- stamp_tile(color = "green") +
- stamp_tile(x = 1:5, y = 2, size = 3, alpha = .5) +
+ stamp_tile(fill = "green") +
+ stamp_tile(x = 1:5, y = 2, alpha = .8, fill = "steelblue",  width = .95, size = 0) +
  coord_equal()
 }

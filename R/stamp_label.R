@@ -4,7 +4,7 @@
 #'
 #' @param x defaults to 0
 #' @param y defaults to 0
-#' @param label defaults with a message about used
+#' @param label defaults with a message about use
 #' @param size
 #'
 #' @return
@@ -27,7 +27,9 @@ stamp_label <- function(x = 0,
                        fill = "white",
                        lineheight = .8,
                        family = "",
-                       vjust = .5, ...){
+                       vjust = .5,
+                       label.padding = unit(0.5, "lines"),
+                       ...){
 
 annotate(geom = "label",
          x = x,
@@ -35,6 +37,7 @@ annotate(geom = "label",
          fill = fill,
          label = label,
          lineheight = lineheight,
+         label.padding = label.padding,
          size = size)
 
 }

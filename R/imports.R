@@ -8,5 +8,4 @@
 #' @importFrom ggplot2 labs
 #' @importFrom ggplot2 theme
 #' @importFrom ggplot2 annotate
-#'
 NULL

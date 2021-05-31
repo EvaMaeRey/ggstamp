@@ -20,7 +20,7 @@ background-image: url(https://images.unsplash.com/photo-1593448806592-409752fd81
 background-size: cover
 
 # {ggstamp}
-### Gina Reynolds
+### 
 
 
 #### Photo Credit: Glen Carrie
@@ -116,6 +116,64 @@ ggcanvas() +
               alpha = 12:1/12)
 ```
 
+---
+
+
+---
+
+`r chunk_reveal("spoke_ellipse", chunk_options = "fig.width = 8, fig.height = 6")`
+
+```{r spoke_ellipse, include=F}
+ggplot(data = faithful) +
+  aes(x = eruptions - 3, 
+      y = waiting/30 - 1.75,
+      color = waiting) +
+  geom_point(show.legend = F) +
+  stamp_point(color = "plum", size = 50) +
+  stamp_spoke(angle = pi* 0:32/64,
+              color = "paleturquoise4",
+              size = 1) +
+  stamp_spoke(x = 1, y = .2, angle = pi*0:3/6) +
+  stamp_spoke(x = 1, y = .2, size = 12, 
+              -pi/4) +
+  coord_equal() +
+  stamp_ellipse(alpha = .5) + 
+  stamp_ellipse(x0 = -3:2/3, 
+                y = 4:-1/4,
+                a = .25, 
+                b = .4, 
+                alpha = .3,
+                angle = pi*0:-5/5,
+                fill = "slateblue",
+                size = 0) +
+  scale_color_viridis_c(option = "magma", 
+                        direction = -1)
+```
+---
+
+`r chunk_reveal("polygon")`
+
+```{r polygon, include=F}
+ggcanvas() +
+  stamp_polygon(color = "turquoise4", 
+                radius = 3, n = 5, 
+                fill = "turquoise") +
+  stamp_polygon(fill = "slateblue2", 
+                radius = 2, 
+                n = 7) +
+  stamp_polygon(linetype = "dashed", 
+                alpha = .5, 
+                fill = "plum2") +
+  stamp_polygon(x0 = 1, y0 = 1.5, 
+                n = 3, rotation = .25, 
+                size = 0,
+                fill = "goldenrod2") +
+  stamp_polygon(n = 50, 
+                radius = .2, 
+                size = 0) +
+  stamp_spoke(angle = pi * 1:7/15, 
+              radius = 2)
+```
 
 
 ```{css, eval = TRUE, echo = FALSE}

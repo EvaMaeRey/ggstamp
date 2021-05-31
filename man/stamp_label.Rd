@@ -13,8 +13,10 @@ stamp_label(
   angle = 0,
   color = "black",
   fill = "white",
+  lineheight = 0.8,
   family = "",
   vjust = 0.5,
+  label.padding = unit(0.5, "lines"),
   ...
 )
 }
@@ -23,7 +25,7 @@ stamp_label(
 
 \item{y}{defaults to 0}
 
-\item{label}{defaults with a message about used}
+\item{label}{defaults with a message about use}
 
 \item{size}{}
 }

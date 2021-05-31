@@ -2,7 +2,7 @@
 % Please edit documentation in R/stamp_arrow.R
 \name{stamp_arrow}
 \alias{stamp_arrow}
-\title{Stamp some text}
+\title{Stamp an arrow/arrows}
 \usage{
 stamp_arrow(
   x = 0,
@@ -22,17 +22,31 @@ stamp_arrow(
 \arguments{
 \item{x}{defaults to 0}
 
+\item{xend}{defaults to 1}
+
 \item{y}{defaults to 0}
 
-\item{size}{}
+\item{yend}{defaults to 1}
 
-\item{label}{defaults with a message about used}
+\item{size}{numeric indicating line width}
+
+\item{alpha}{numeric between 0 and 1 indicating transparency}
+
+\item{ends}{One of "last", "first", or "both", indicating which ends of the line to draw arrow heads.}
+
+\item{units}{A character vector specifying the units for the corresponding numeric values.}
+
+\item{headlength}{A unit specifying the length of the arrow head (from tip to base).}
+
+\item{angle}{The angle of the arrow head in degrees (smaller numbers produce narrower, pointier arrows). Essentially describes the width of the arrow head.}
+
+\item{type}{One of "open" or "closed" indicating whether the arrow head should be a closed triangle.}
 }
 \value{
 
 }
 \description{
-This function adds a text annotation layer
+This function adds an arrow annotation layer
 }
 \examples{
 library(ggplot2)

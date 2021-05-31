@@ -2,33 +2,51 @@
 % Please edit documentation in R/stamp_point.R
 \name{stamp_point}
 \alias{stamp_point}
-\title{Stamp some text}
+\title{Stamp a point/points}
 \usage{
-stamp_point(x = 0, y = 0, size = 8, alpha = 1, color = "black")
+stamp_point(
+  x = 0,
+  y = 0,
+  size = 8,
+  alpha = 1,
+  shape = "circle",
+  color = "black",
+  stroke = 1,
+  fill = "grey35"
+)
 }
 \arguments{
-\item{x}{defaults to 0}
+\item{x}{a scalar or vector numeric}
 
-\item{y}{defaults to 0}
+\item{y}{a scalar or vector numeric}
 
-\item{size}{}
+\item{size}{a scalar or vector numeric}
 
-\item{label}{defaults with a message about used}
+\item{alpha}{a numeric between 0 and 1 for transparency}
+
+\item{shape}{a numeric or character string, "circle" is default but also try "star", "bullet", "diamond", "triangle"}
+
+\item{color}{a color as a character string or hex, named colors: https://evamaerey.github.io/ggplot2_grammar_guide/named_colors}
+
+\item{stroke}{a numeric - size of shape outline}
+
+\item{fill}{a fill color as a character string or hex, named colors: https://evamaerey.github.io/ggplot2_grammar_guide/named_colors}
 }
 \value{
 
 }
 \description{
-This function adds a text annotation layer
+This function adds a point annotation layer
 }
 \examples{
 library(ggplot2)
 ggplot(cars) +
  aes(speed, dist) +
  geom_point() +
+ stamp_point() +
  stamp_point(color = "red", x = 10, y = 100)
 
- ggcanvas() +
+ggcanvas() +
  stamp_point(color = "green") +
  stamp_point(x = 1:5, y = 2, size = 8, alpha = .5)
 }

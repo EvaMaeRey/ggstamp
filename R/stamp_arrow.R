@@ -1,11 +1,19 @@
-#' Stamp some text
+#' Stamp an arrow/arrows
 #'
-#' This function adds a text annotation layer
+#' @description This function adds an arrow annotation layer
 #'
 #' @param x defaults to 0
 #' @param y defaults to 0
-#' @param label defaults with a message about used
-#' @param size
+#' @param xend defaults to 1
+#' @param yend defaults to 1
+#' @param size numeric indicating line width
+#' @param alpha numeric between 0 and 1 indicating transparency
+#' @param color
+#' @param ends One of "last", "first", or "both", indicating which ends of the line to draw arrow heads.
+#' @param headlength A unit specifying the length of the arrow head (from tip to base).
+#' @param units A character vector specifying the units for the corresponding numeric values.
+#' @param angle The angle of the arrow head in degrees (smaller numbers produce narrower, pointier arrows). Essentially describes the width of the arrow head.
+#' @param type One of "open" or "closed" indicating whether the arrow head should be a closed triangle.
 #'
 #' @return
 #' @export
@@ -34,7 +42,6 @@ stamp_arrow <- function(x = 0, xend = 1,
                         angle = 30,
                         type = "open"){
 
-  # ggcanvas() +
   annotate(geom = "segment",
            x = x,
            y = y,
