@@ -1297,6 +1297,143 @@ ggcanvas() +
 
 
 
+
+---
+
+count: false
+ 
+
+.panel1-spoke_positions-auto[
+
+```r
+*ggcanvas()
+```
+]
+ 
+.panel2-spoke_positions-auto[
+![](flipbook_files/figure-html/spoke_positions_auto_01_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-spoke_positions-auto[
+
+```r
+ggcanvas() +
+* stamp_label(label = "hello",
+*            x = spoke_x(n = 5),
+*            y = spoke_y(n = 5), size = 3)
+```
+]
+ 
+.panel2-spoke_positions-auto[
+![](flipbook_files/figure-html/spoke_positions_auto_02_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-spoke_positions-auto[
+
+```r
+ggcanvas() +
+  stamp_label(label = "hello",
+             x = spoke_x(n = 5),
+             y = spoke_y(n = 5), size = 3) +
+* stamp_point(x = spoke_x(n = 5, rot = 0),
+*             y = spoke_y(n = 5, rot = 0))
+```
+]
+ 
+.panel2-spoke_positions-auto[
+![](flipbook_files/figure-html/spoke_positions_auto_03_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-spoke_positions-auto[
+
+```r
+ggcanvas() +
+  stamp_label(label = "hello",
+             x = spoke_x(n = 5),
+             y = spoke_y(n = 5), size = 3) +
+  stamp_point(x = spoke_x(n = 5, rot = 0),
+              y = spoke_y(n = 5, rot = 0)) +
+* stamp_label(label = c("hi", "bye", "chao"),
+*             size = 4,
+*             x = spoke_x(n = 3, rotation = -.5, radius = .5),
+*             y = spoke_y(n = 3, rotation = -.5, radius = .5))
+```
+]
+ 
+.panel2-spoke_positions-auto[
+![](flipbook_files/figure-html/spoke_positions_auto_04_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-spoke_positions-auto[
+
+```r
+ggcanvas() +
+  stamp_label(label = "hello",
+             x = spoke_x(n = 5),
+             y = spoke_y(n = 5), size = 3) +
+  stamp_point(x = spoke_x(n = 5, rot = 0),
+              y = spoke_y(n = 5, rot = 0)) +
+  stamp_label(label = c("hi", "bye", "chao"),
+              size = 4,
+              x = spoke_x(n = 3, rotation = -.5, radius = .5),
+              y = spoke_y(n = 3, rotation = -.5, radius = .5)) +
+* stamp_polygon(x0 = wrap_x(x0 = 0, n = 5, ncol = 3),
+*               y0 = wrap_y(y0 = 3, n = 5, ncol = 3),
+*               radius = .4)
+```
+]
+ 
+.panel2-spoke_positions-auto[
+![](flipbook_files/figure-html/spoke_positions_auto_05_output-1.png)&lt;!-- --&gt;
+]
+
+&lt;style&gt;
+.panel1-spoke_positions-auto {
+  color: black;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-spoke_positions-auto {
+  color: black;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-spoke_positions-auto {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+
+
 ---
 
 count: false
@@ -1426,6 +1563,8 @@ ggcanvas() +
   font-size: 80%
 }
 &lt;/style&gt;
+
+
 
 
 

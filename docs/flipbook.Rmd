@@ -175,6 +175,27 @@ ggcanvas() +
   stamp_spoke(angle = pi * 1:7/15, 
               radius = 2)
 ```
+
+---
+
+`r chunk_reveal("spoke_positions")`
+
+```{r spoke_positions, include=FALSE}
+ggcanvas() +
+  stamp_label(label = "hello",
+             x = spoke_x(n = 5),
+             y = spoke_y(n = 5), size = 3) +
+  stamp_point(x = spoke_x(n = 5, rot = 0),
+              y = spoke_y(n = 5, rot = 0)) +
+  stamp_label(label = c("hi", "bye", "chao"),
+              size = 4,
+              x = spoke_x(n = 3, rotation = -.5, radius = .5),
+              y = spoke_y(n = 3, rotation = -.5, radius = .5)) + 
+  stamp_polygon(x0 = wrap_x(x0 = 0, n = 5, ncol = 3),
+                y0 = wrap_y(y0 = 3, n = 5, ncol = 3),
+                radius = .4)
+```
+
 ---
 
 `r chunk_reveal("png")`
@@ -193,7 +214,8 @@ ggcanvas() +
 
 ```
 
----
+
+
 
 ```{css, eval = TRUE, echo = FALSE}
 .remark-code{line-height: 1.5; font-size: 78%}
