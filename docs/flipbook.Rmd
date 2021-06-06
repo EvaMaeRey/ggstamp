@@ -163,6 +163,7 @@ ggcanvas() +
                 n = 7) +
   stamp_polygon(linetype = "dashed", 
                 alpha = .5, 
+                x0 = 1:2,
                 fill = "plum2") +
   stamp_polygon(x0 = 1, y0 = 1.5, 
                 n = 3, rotation = .25, 
@@ -174,7 +175,25 @@ ggcanvas() +
   stamp_spoke(angle = pi * 1:7/15, 
               radius = 2)
 ```
+---
 
+`r chunk_reveal("png")`
+
+```{r png, include=F}
+download.file(url = "https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png",
+              destfile = "wiki.png")
+
+ggcanvas() +
+  stamp_png(png = "wiki.png",
+            height = .99,
+            x0 = wrap_x(n = 5, ncol = 3),
+            y0 = wrap_y(n = 5, ncol = 3)) +
+  stamp_png(2, -1, width = .2)
+
+
+```
+
+---
 
 ```{css, eval = TRUE, echo = FALSE}
 .remark-code{line-height: 1.5; font-size: 78%}

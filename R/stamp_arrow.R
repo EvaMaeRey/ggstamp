@@ -1,6 +1,8 @@
 #' Stamp an arrow/arrows
 #'
 #' @description This function adds an arrow annotation layer
+#' Contribute or help document https://github.com/EvaMaeRey/ggstamp/blob/master/R/stamp_arrow.R
+
 #'
 #' @param x defaults to 0
 #' @param y defaults to 0

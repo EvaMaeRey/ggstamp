@@ -28,7 +28,7 @@ stamp_label <- function(x = 0,
                        lineheight = .8,
                        family = "",
                        vjust = .5,
-                       label.padding = unit(0.5, "lines"),
+                       label.padding = ggplot2::unit(0.5, units = "lines"),
                        ...){
 
 annotate(geom = "label",

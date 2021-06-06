@@ -16,7 +16,7 @@ stamp_label(
   lineheight = 0.8,
   family = "",
   vjust = 0.5,
-  label.padding = unit(0.5, "lines"),
+  label.padding = ggplot2::unit(0.5, units = "lines"),
   ...
 )
 }

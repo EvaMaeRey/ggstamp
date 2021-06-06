@@ -5,13 +5,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alternative functions for annotation layer additions • ggstamp</title>
+<title>Annotation in ggplot using stamp_* functions • ggstamp</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="Alternative functions for annotation layer additions">
-<meta property="og:description" content="What the package does (one paragraph).">
+<script src="pkgdown.js"></script><meta property="og:title" content="Annotation in ggplot using stamp_* functions">
+<meta property="og:description" content="Provides easy-to-use annotation functions">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -85,18 +85,22 @@
 <!-- badges: start -->
 
 <p>The goal of ggstamp is to provide convenience functions for creating annotation layers in the ggplot2 and grammar of graphics framework. It is experimental and maybe is not such a good idea; but let’s see where things lead.</p>
-<p>In some ways, Deming’s quote parallels the experience of analysts using ggplot2. Adding geom_* layers feels divine and godly (geom_point() = ‘let there be points’, geom_boxplot() ‘let there be boxplots’!), but <em>annotation layers</em> are subject to Deming’s burden of <em>‘bringing data’</em>.</p>
-<p>The geom_* calls feel lightweight and powerful because they refer to the already specified data and aesthetic mappings. Recall the definition of a data visualization</p>
+<p>In some ways, Deming’s quote parallels the experience of analysts using ggplot2. Adding geom_* layers feels almost godly (geom_point() = ‘let there be points’, geom_boxplot() ‘let there be boxplots’!). But <em>annotation layers</em> are subject to Deming’s burden of <em>‘bringing data’</em>.</p>
+<p>The geom_* calls feel lightweight and powerful because they refer to the <em>already specified</em> data and aesthetic mappings. Recall the definition of a data visualization</p>
 <p>A data visualization is …</p>
 <p>… is composed of geometric marks …</p>
-<p>… that take on visual channels (aesthetics) …</p>
+<p>… that take on variation in visual channels (aesthetics) …</p>
 <p>… that represent variables in a data set …</p>
-<p>In practice, the data is declared first and second the aesthetic-variable encodings. Finally, with this groundwork laid which geometric mark should take on these aesthetics – the code call to get the layer feels light and nimble and quick!</p>
-<p>The geom_* marks of course do rely on data, but that has already been laid out; they don’t feel like you have to ‘bring data’. So using geom_tile() or geom_point() or geom_line() feels a bit supernaturally – ink spring up through the page based the data that lies beneath.</p>
+<p>In practice, the data is declared first and second the aesthetic-variable encodings. Finally, with this <em>groundwork laid</em> which geometric mark should take on these aesthetics – the code call to get the layer feels light and nimble!</p>
+<p>Because geom_* marks have the data already laid out, they don’t feel like you have to ‘bring data’.</p>
+<p>So using geom_tile() or geom_point() or geom_line() feels a bit supernatural – ink spring up through the page based on the combination of 1) the data that lies beneath and 2) the geom_*() call.</p>
 <!-- Annotation layers in grammar of graphics frameworks feel different than adding geom_* layers.  This is because w/ the separation of visual concerns, data is often declared separately from the geom.  The data is foundational and sits below everything.  The ink on the page depends on this underlying data once goem_* layers are declared.   -->
-<p>Annotation layers are different. With annotation layers, but you’ve also got to declare the data as you do this. You also have to declare the geom to be used.</p>
-<p>‘ggstamp’ thinks about removing some of the thinking and focus that’s needed to create annotation layer. First, they use a stamp prefix and then name the geom that’s desired, i.e. stamp_point(), stamp_text() - good for auto-complete IDEs. A goal too, will be to include the arguments and descriptions so adjustments can more easily be made from IDE with function previews.</p>
-<p>Also, the functions include default data. You will be able to check out what stamp_* functions do without any input (then you can adjust away from the defaults later) – the stamps come ‘pre-inked’ (they’ll automatically bring generic data). They’ll ‘just work’ – maybe not as needed in their final form – but getting something out-of-the box can be a useful starting point for newcomers. That’s my thinking for now at least!</p>
+<p>Adding an annotation layer feels different. With annotation geoms/marks, you must <em>simultaneously</em> declare the mark/geom <em>and</em> data.</p>
+<p>In ggplot2, use of the annotate() function is most often prescribed. It’s not so easy for newcomers to use?</p>
+<p>‘ggstamp’ thinks about removing some of the thinking and focus that’s needed to create annotation layer.</p>
+<p>First, they use a stamp prefix and then name the geom that’s desired, i.e. stamp_point(), stamp_text() - good for auto-complete IDEs.</p>
+<p>Also we include the arguments and descriptions so adjustments can more easily be made from IDE with function previews.</p>
+<p>Finally, the functions include default data! You will be able to check out what stamp_* functions do without any input (then you can adjust away from the defaults later); in other words ggstamp functions are ‘pre-inked’ (they’ll automatically bring data). They’ll ‘just work’ – maybe not as needed in their final form – but getting something out-of-the box can be a useful starting point for newcomers.</p>
 <p>And the development version from <a href="https://github.com/">GitHub</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("devtools")</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"EvaMaeRey/ggstamp"</span>)</span></code></pre></div>
@@ -114,7 +118,7 @@
 <div class="developers">
 <h2>Developers</h2>
 <ul class="list-unstyled">
-<li>Gina Reynolds <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/YOUR-ORCID-ID" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" alt="ORCID"></a> </li>
+<li>Gina Reynolds <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0003-2781-9086" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" alt="ORCID"></a> </li>
 </ul>
 </div>
 

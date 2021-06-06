@@ -47,6 +47,7 @@ stamp_arrow(
 }
 \description{
 This function adds an arrow annotation layer
+Contribute or help document https://github.com/EvaMaeRey/ggstamp/blob/master/R/stamp_arrow.R
 }
 \examples{
 library(ggplot2)

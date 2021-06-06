@@ -5,15 +5,13 @@
 \title{Stamp a polygon of n sides}
 \usage{
 stamp_polygon(
-  x = c(0, 1, 0, 1),
-  y = c(0, 0, 1, 1),
   x0 = 0,
   y0 = 0,
   n = 6,
   radius = 1,
   size = 1.5,
   alpha = 1,
-  rotation = 0.5,
+  rotation = -0.5,
   linetype = "solid",
   fill = "grey35",
   color = "black"
@@ -24,22 +22,29 @@ stamp_polygon(
 
 \item{y0}{defaults to 0}
 
-\item{size}{}
-
-\item{label}{defaults with a message about used}
+\item{color}{}
 }
 \value{
 
 }
 \description{
-This function adds a text annotation layer
+This function adds a text annotation layer.
+Contribute or help document https://github.com/EvaMaeRey/ggstamp/blob/master/R/stamp_polygon.R
 }
 \examples{
 library(ggplot2)
 ggplot(cars) +
  aes(speed, dist) +
  geom_point() +
- stamp_polygon(color = "darkred")
+ stamp_polygon(color = "darkred", radius = 5)
+
+ ggcanvas() +
+  stamp_polygon(n = 3, x0 = c(0, 2.5),
+  fill = "magenta", color = "purple") +
+  stamp_label(x = spoke_x(x0 = 0, n = 3),
+              y = spoke_y(y0 = 0, n = 3),
+              label = c("hi", "hello", "bye")) +
+  stamp_point(color = "turquoise")
 
  ggcanvas() +
  stamp_polygon(color = "turquoise4", radius = 3, n = 5, fill = "turquoise") +
