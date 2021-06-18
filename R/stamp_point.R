@@ -32,7 +32,13 @@ stamp_point <- function(x = 0,
                        shape = "circle",
                        color = "black",
                        stroke = 1,
-                       fill = "grey35"){
+                       fill = "grey35",
+                       xy = NULL){
+
+  if(!is.null(xy)){
+    x = xy[,1]
+    y = xy[,2]
+  }
 
 annotate(geom = "point",
          x = x,

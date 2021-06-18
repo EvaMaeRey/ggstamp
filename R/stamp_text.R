@@ -17,6 +17,10 @@
 #'  geom_point() +
 #'  stamp_text() +
 #'  stamp_text(label = "hi", x = 15:18, y = 75)
+#'
+#'  ggcanvas() +
+#'   stamp_text(label = letters[1:4],
+#'   xy = spoke(n = 4))
 stamp_text <- function(x = 0,
                        y = 0,
                        label = "use label\nargument to change\nthis text",
@@ -26,7 +30,14 @@ stamp_text <- function(x = 0,
                        color = "black",
                        lineheight = .8,
                        family = "",
-                       vjust = .5, ...){
+                       vjust = .5,
+                       xy = NULL){
+
+  if(!is.null(xy)){
+    x = xy[,1]
+    y = xy[,2]
+  }
+
 
 annotate(geom = "text",
          x = x,

@@ -206,10 +206,11 @@ download.file(url = "https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_tra
 
 ggcanvas() +
   stamp_png(png = "wiki.png",
-            height = .99,
-            x0 = wrap_x(n = 5, ncol = 3),
-            y0 = wrap_y(n = 5, ncol = 3)) +
-  stamp_png(2, -1, width = .2)
+            x0 = wrap_x_png(n = 5, ncol = 3),
+            y0 = wrap_y_png(n = 5, ncol = 3, 
+                            png = "wiki.png")) +
+  stamp_png(1.4, -1, width = 1.5) + 
+  theme_void()
 
 
 ```

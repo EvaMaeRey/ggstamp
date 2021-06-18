@@ -15,7 +15,7 @@ stamp_text(
   lineheight = 0.8,
   family = "",
   vjust = 0.5,
-  ...
+  xy = NULL
 )
 }
 \arguments{
@@ -40,4 +40,8 @@ ggplot(cars) +
  geom_point() +
  stamp_text() +
  stamp_text(label = "hi", x = 15:18, y = 75)
+
+ ggcanvas() +
+  stamp_text(label = letters[1:4],
+  xy = spoke(n = 4))
 }

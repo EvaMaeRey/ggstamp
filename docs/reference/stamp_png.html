@@ -128,7 +128,8 @@
   <span class='kw'>image</span> <span class='kw'>=</span> <span class='kw pkg'>png</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/png/man/readPNG.html'>readPNG</a></span>(<span class='no'>png</span>),
   <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>1</span>,
   <span class='kw'>height</span> <span class='kw'>=</span> <span class='no'>width</span> * <span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='no'>image</span>)[<span class='fl'>2</span>]/<span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='no'>image</span>)[<span class='fl'>1</span>],
-  <span class='kw'>show.legend</span> <span class='kw'>=</span> <span class='no'>F</span>
+  <span class='kw'>show.legend</span> <span class='kw'>=</span> <span class='no'>F</span>,
+  <span class='kw'>x0y0</span> <span class='kw'>=</span> <span class='kw'>NULL</span>
 )</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -166,10 +167,10 @@
       <span class='kw'>y</span> <span class='kw'>=</span> -(<span class='fl'>0</span>:<span class='fl'>5</span> <span class='kw'>%/%</span> <span class='fl'>5</span>)/<span class='fl'>.75</span>  -<span class='fl'>3</span>, <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>.90</span>) +
   <span class='fu'>stamp_png</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>0</span>:<span class='fl'>2</span> <span class='kw'>%%</span> <span class='fl'>5</span> + <span class='fl'>1</span>,
      <span class='kw'>y</span> <span class='kw'>=</span> -(<span class='fl'>0</span>:<span class='fl'>2</span> <span class='kw'>%/%</span> <span class='fl'>5</span>)/<span class='fl'>.75</span>  -<span class='fl'>6</span>, <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>.90</span>) +
-  <span class='fu'>scale_fill_identity</span>()</div><div class='output co'>#&gt; <span class='message'>Coordinate system already present. Adding new coordinate system, which will replace the existing one.</span></div><div class='output co'>#&gt; <span class='message'>Scale for 'fill' is already present. Adding another scale for 'fill', which</span>
-#&gt; <span class='message'>will replace the existing scale.</span></div><div class='output co'>#&gt; <span class='message'>Scale for 'fill' is already present. Adding another scale for 'fill', which</span>
-#&gt; <span class='message'>will replace the existing scale.</span></div><div class='output co'>#&gt; <span class='message'>Scale for 'fill' is already present. Adding another scale for 'fill', which</span>
-#&gt; <span class='message'>will replace the existing scale.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Raster pixels are placed at uneven horizontal intervals and will be shifted. Consider using geom_tile() instead.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Raster pixels are placed at uneven vertical intervals and will be shifted. Consider using geom_tile() instead.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Raster pixels are placed at uneven horizontal intervals and will be shifted. Consider using geom_tile() instead.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Raster pixels are placed at uneven vertical intervals and will be shifted. Consider using geom_tile() instead.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Raster pixels are placed at uneven horizontal intervals and will be shifted. Consider using geom_tile() instead.</span></div><div class='img'><img src='stamp_png-3.png' alt='' width='700' height='433' /></div></pre>
+  <span class='fu'>scale_fill_identity</span>()</div><div class='output co'>#&gt; <span class='message'>Coordinate system already present. Adding new coordinate system, which will replace the existing one.</span></div><div class='output co'>#&gt; <span class='error'>Error in stamp_png(x = 0:5%%5 + 1, y = -(0:5%/%5)/0.75 - 3, width = 0.9): argument 1 matches multiple formal arguments</span></div><div class='input'>
+<span class='fu'><a href='ggcanvas.html'>ggcanvas</a></span>() +
+  <span class='fu'>stamp_png</span>(<span class='kw'>x0</span> <span class='kw'>=</span> <span class='fu'><a href='wrap_x.html'>wrap_x</a></span>(),
+            <span class='kw'>y0</span> <span class='kw'>=</span> <span class='fu'><a href='wrap_y_png.html'>wrap_y_png</a></span>())</div><div class='img'><img src='stamp_png-3.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

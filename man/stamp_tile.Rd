@@ -13,7 +13,8 @@ stamp_tile(
   fill = "grey85",
   height = 1,
   linetype = "solid",
-  width = 1
+  width = 1,
+  xy = NULL
 )
 }
 \arguments{
@@ -52,4 +53,7 @@ ggplot(cars) +
  stamp_tile(fill = "green") +
  stamp_tile(x = 1:5, y = 2, alpha = .8, fill = "steelblue",  width = .95, size = 0) +
  coord_equal()
+
+ ggcanvas() +
+ stamp_tile(xy = spoke())
 }

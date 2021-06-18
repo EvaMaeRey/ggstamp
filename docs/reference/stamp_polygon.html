@@ -133,7 +133,8 @@ Contribute or help document https://github.com/EvaMaeRey/ggstamp/blob/master/R/s
   <span class='kw'>rotation</span> <span class='kw'>=</span> -<span class='fl'>0.5</span>,
   <span class='kw'>linetype</span> <span class='kw'>=</span> <span class='st'>"solid"</span>,
   <span class='kw'>fill</span> <span class='kw'>=</span> <span class='st'>"grey35"</span>,
-  <span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"black"</span>
+  <span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"black"</span>,
+  <span class='kw'>x0y0</span> <span class='kw'>=</span> <span class='kw'>NULL</span>
 )</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -179,7 +180,13 @@ Contribute or help document https://github.com/EvaMaeRey/ggstamp/blob/master/R/s
  <span class='fu'>stamp_polygon</span>(<span class='kw'>x0</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>y0</span> <span class='kw'>=</span> <span class='fl'>1.5</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>rotation</span> <span class='kw'>=</span> <span class='fl'>.25</span>, <span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>0</span>,
   <span class='kw'>fill</span> <span class='kw'>=</span> <span class='st'>"goldenrod2"</span>) +
  <span class='fu'>stamp_polygon</span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>50</span>, <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>.2</span>, <span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>0</span>) +
- <span class='fu'><a href='stamp_spoke.html'>stamp_spoke</a></span>(<span class='kw'>angle</span> <span class='kw'>=</span> <span class='no'>pi</span> * <span class='fl'>1</span>:<span class='fl'>7</span>/<span class='fl'>15</span>, <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>2</span>)</div><div class='img'><img src='stamp_polygon-3.png' alt='' width='700' height='433' /></div></pre>
+ <span class='fu'><a href='stamp_spoke.html'>stamp_spoke</a></span>(<span class='kw'>angle</span> <span class='kw'>=</span> <span class='no'>pi</span> * <span class='fl'>1</span>:<span class='fl'>7</span>/<span class='fl'>15</span>, <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>2</span>)</div><div class='img'><img src='stamp_polygon-3.png' alt='' width='700' height='433' /></div><div class='input'>
+ <span class='fu'><a href='ggcanvas.html'>ggcanvas</a></span>() +
+  <span class='fu'>stamp_polygon</span>(<span class='kw'>x0y0</span> <span class='kw'>=</span> <span class='fu'><a href='wrap.html'>wrap</a></span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>5</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>height</span> <span class='kw'>=</span> <span class='fl'>1.5</span>),
+                <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>.55</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>7</span>) +
+  <span class='fu'><a href='stamp_text.html'>stamp_text</a></span>(<span class='kw'>xy</span> <span class='kw'>=</span> <span class='fu'><a href='wrap.html'>wrap</a></span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>5</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>3</span>,
+           <span class='kw'>height</span> <span class='kw'>=</span> <span class='fl'>1.5</span>), <span class='kw'>label</span> <span class='kw'>=</span> <span class='no'>LETTERS</span>[<span class='fl'>1</span>:<span class='fl'>5</span>])</div><div class='img'><img src='stamp_polygon-4.png' alt='' width='700' height='433' /></div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

@@ -130,7 +130,8 @@
   <span class='kw'>fill</span> <span class='kw'>=</span> <span class='st'>"grey85"</span>,
   <span class='kw'>height</span> <span class='kw'>=</span> <span class='fl'>1</span>,
   <span class='kw'>linetype</span> <span class='kw'>=</span> <span class='st'>"solid"</span>,
-  <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>1</span>
+  <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>1</span>,
+  <span class='kw'>xy</span> <span class='kw'>=</span> <span class='kw'>NULL</span>
 )</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -189,7 +190,9 @@
  <span class='fu'><a href='ggcanvas.html'>ggcanvas</a></span>() +
  <span class='fu'>stamp_tile</span>(<span class='kw'>fill</span> <span class='kw'>=</span> <span class='st'>"green"</span>) +
  <span class='fu'>stamp_tile</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>5</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>.8</span>, <span class='kw'>fill</span> <span class='kw'>=</span> <span class='st'>"steelblue"</span>,  <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>.95</span>, <span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>0</span>) +
- <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/coord_fixed.html'>coord_equal</a></span>()</div><div class='output co'>#&gt; <span class='message'>Coordinate system already present. Adding new coordinate system, which will replace the existing one.</span></div><div class='img'><img src='stamp_tile-2.png' alt='' width='700' height='433' /></div></pre>
+ <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/coord_fixed.html'>coord_equal</a></span>()</div><div class='output co'>#&gt; <span class='message'>Coordinate system already present. Adding new coordinate system, which will replace the existing one.</span></div><div class='img'><img src='stamp_tile-2.png' alt='' width='700' height='433' /></div><div class='input'>
+ <span class='fu'><a href='ggcanvas.html'>ggcanvas</a></span>() +
+ <span class='fu'>stamp_tile</span>(<span class='kw'>xy</span> <span class='kw'>=</span> <span class='fu'><a href='spoke.html'>spoke</a></span>())</div><div class='img'><img src='stamp_tile-3.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

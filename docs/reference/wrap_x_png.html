@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Stamp some text — stamp_text • ggstamp</title>
+<title>Title — wrap_x_png • ggstamp</title>
 
 
 <!-- jquery -->
@@ -35,8 +35,8 @@
 
 
 
-<meta property="og:title" content="Stamp some text — stamp_text" />
-<meta property="og:description" content="This function adds a text annotation layer" />
+<meta property="og:title" content="Title — wrap_x_png" />
+<meta property="og:description" content="Title" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -112,46 +112,29 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Stamp some text</h1>
+    <h1>Title</h1>
     
-    <div class="hidden name"><code>stamp_text.Rd</code></div>
+    <div class="hidden name"><code>wrap_x_png.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This function adds a text annotation layer</p>
+    <p>Title</p>
     </div>
 
-    <pre class="usage"><span class='fu'>stamp_text</span>(
-  <span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>0</span>,
-  <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>0</span>,
-  <span class='kw'>label</span> <span class='kw'>=</span> <span class='st'>"use label\nargument to change\nthis text"</span>,
-  <span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>8</span>,
-  <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>angle</span> <span class='kw'>=</span> <span class='fl'>0</span>,
-  <span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"black"</span>,
-  <span class='kw'>lineheight</span> <span class='kw'>=</span> <span class='fl'>0.8</span>,
-  <span class='kw'>family</span> <span class='kw'>=</span> <span class='st'>""</span>,
-  <span class='kw'>vjust</span> <span class='kw'>=</span> <span class='fl'>0.5</span>,
-  <span class='kw'>xy</span> <span class='kw'>=</span> <span class='kw'>NULL</span>
+    <pre class="usage"><span class='fu'>wrap_x_png</span>(
+  <span class='kw'>x0</span> <span class='kw'>=</span> <span class='fl'>0</span>,
+  <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>5</span>,
+  <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>3</span>,
+  <span class='kw'>png</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"img"</span>, <span class='st'>"Rlogo.png"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"png"</span>),
+  <span class='kw'>image</span> <span class='kw'>=</span> <span class='kw pkg'>png</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/png/man/readPNG.html'>readPNG</a></span>(<span class='no'>png</span>),
+  <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>1</span>
 )</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>x</th>
-      <td><p>defaults to 0</p></td>
-    </tr>
-    <tr>
-      <th>y</th>
-      <td><p>defaults to 0</p></td>
-    </tr>
-    <tr>
-      <th>label</th>
-      <td><p>defaults with a message about used</p></td>
-    </tr>
-    <tr>
-      <th>size</th>
+      <th>n</th>
       <td></td>
     </tr>
     </table>
@@ -162,23 +145,12 @@
 
 
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>ggplot2</span>)
-<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span>(<span class='no'>cars</span>) +
- <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span>(<span class='no'>speed</span>, <span class='no'>dist</span>) +
- <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span>() +
- <span class='fu'>stamp_text</span>() +
- <span class='fu'>stamp_text</span>(<span class='kw'>label</span> <span class='kw'>=</span> <span class='st'>"hi"</span>, <span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>15</span>:<span class='fl'>18</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>75</span>)</div><div class='img'><img src='stamp_text-1.png' alt='' width='700' height='433' /></div><div class='input'>
- <span class='fu'><a href='ggcanvas.html'>ggcanvas</a></span>() +
-  <span class='fu'>stamp_text</span>(<span class='kw'>label</span> <span class='kw'>=</span> <span class='no'>letters</span>[<span class='fl'>1</span>:<span class='fl'>4</span>],
-  <span class='kw'>xy</span> <span class='kw'>=</span> <span class='fu'><a href='spoke.html'>spoke</a></span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>4</span>))</div><div class='img'><img src='stamp_text-2.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
-      <li><a href="#examples">Examples</a></li>
     </ul>
 
   </div>

@@ -14,7 +14,8 @@ stamp_polygon(
   rotation = -0.5,
   linetype = "solid",
   fill = "grey35",
-  color = "black"
+  color = "black",
+  x0y0 = NULL
 )
 }
 \arguments{
@@ -54,4 +55,11 @@ ggplot(cars) +
   fill = "goldenrod2") +
  stamp_polygon(n = 50, radius = .2, size = 0) +
  stamp_spoke(angle = pi * 1:7/15, radius = 2)
+
+ ggcanvas() +
+  stamp_polygon(x0y0 = wrap(n = 5, ncol = 3, height = 1.5),
+                radius = .55, n = 7) +
+  stamp_text(xy = wrap(n = 5, ncol = 3,
+           height = 1.5), label = LETTERS[1:5])
+
 }

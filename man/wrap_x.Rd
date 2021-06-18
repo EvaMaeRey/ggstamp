@@ -4,7 +4,7 @@
 \alias{wrap_x}
 \title{Title}
 \usage{
-wrap_x(x0 = 0, n = 5, ncol = 3)
+wrap_x(x0 = 0, n = 5, ncol = 3, width = 1)
 }
 \arguments{
 \item{n}{}

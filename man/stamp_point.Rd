@@ -12,7 +12,8 @@ stamp_point(
   shape = "circle",
   color = "black",
   stroke = 1,
-  fill = "grey35"
+  fill = "grey35",
+  xy = NULL
 )
 }
 \arguments{
