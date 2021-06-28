@@ -29,23 +29,24 @@
 #'   stamp_png(x0 = 0:8 %% 5 + 1,
 #'         y = -(0:8 %/% 5)/.75 , width = .90) +
 #'   coord_equal() +
-#'   stamp_png(x = 0:5 %% 5 + 1,
-#'       y = -(0:5 %/% 5)/.75  -3, width = .90) +
-#'   stamp_png(x = 0:2 %% 5 + 1,
-#'      y = -(0:2 %/% 5)/.75  -6, width = .90) +
+#'   stamp_png(x0 = 0:5 %% 5 + 1,
+#'       y0 = -(0:5 %/% 5)/.75  -3, width = .90) +
+#'   stamp_png(x0 = 0:2 %% 5 + 1,
+#'      y0 = -(0:2 %/% 5)/.75  -6, width = .90) +
 #'   scale_fill_identity()
 #'
 #' ggcanvas() +
 #'   stamp_png(x0 = wrap_x(),
-#'             y0 = wrap_y_png())
+#'             y0 = wrap_y_png(), alpha = .5)
 
 stamp_png <- function(x0 = 0,
                         y0 = 0,
                         png = system.file("img", "Rlogo.png", package = "png"),
                         image = png::readPNG(png),
                         width = 1,
-                        height = width*dim(image)[2]/dim(image)[1],
+                        height = width*dim(image)[1]/dim(image)[2],
                         show.legend = F,
+                      alpha = 1,
                         x0y0 = NULL){
 
   if(!is.null(x0y0)){
@@ -56,11 +57,22 @@ stamp_png <- function(x0 = 0,
     data.frame(
       pixel_x = sort(rep(1:dim(image)[2], dim(image)[1])/dim(image)[2]),
       pixel_y = -rep(1:dim(image)[1], dim(image)[2])/dim(image)[1],
-      pixel_red = as.vector(image[ , , 1]),
-      pixel_blue = as.vector(image[ , , 2]),
-      pixel_green = as.vector(image[ , , 3]),
-      pixel_alpha = as.vector(image[ , , 4])) %>%
-    dplyr::mutate(
+      pixel_red   = as.vector(image[ , , 1]),
+      pixel_blue  = as.vector(image[ , , 2]),
+      pixel_green = as.vector(image[ , , 3])) ->
+    image_info
+
+    if (dim(image)[3] == 4){
+
+      image_info$pixel_alpha = as.vector(image[ , , 4]) * alpha
+
+    } else {
+
+      image_info$pixel_alpha = 1
+    }
+
+    image_info %>%
+      dplyr::mutate(
       pixel_fill = rgb(pixel_red, pixel_blue, pixel_green, pixel_alpha)
                ) ->
     image_df

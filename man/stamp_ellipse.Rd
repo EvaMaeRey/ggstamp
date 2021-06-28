@@ -14,7 +14,8 @@ stamp_ellipse(
   alpha = 1,
   linetype = "solid",
   fill = "grey85",
-  color = "black"
+  color = "black",
+  x0y0 = NULL
 )
 }
 \arguments{

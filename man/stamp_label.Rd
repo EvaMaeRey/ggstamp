@@ -17,7 +17,7 @@ stamp_label(
   family = "",
   vjust = 0.5,
   label.padding = ggplot2::unit(0.5, units = "lines"),
-  ...
+  xy = NULL
 )
 }
 \arguments{

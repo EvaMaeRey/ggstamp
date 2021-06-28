@@ -23,7 +23,7 @@
 #'   xy = spoke(n = 4))
 stamp_text <- function(x = 0,
                        y = 0,
-                       label = "use label\nargument to change\nthis text",
+                       label = "some\n text",
                        size = 8,
                        alpha = 1,
                        angle = 0,
@@ -44,7 +44,11 @@ annotate(geom = "text",
          y = y,
          lineheight = lineheight,
          label = label,
-         size = size)
+         size = size,
+         color = color,
+         angle = angle,
+         alpha = alpha,
+         vjust = vjust)
 
 }
 

@@ -31,12 +31,16 @@ background-size: cover
 ```{r, include = F}
 # This is the recommended set up for flipbooks
 # you might think about setting cache to TRUE as you gain practice --- building flipbooks from scratch can be time consuming
-knitr::opts_chunk$set(fig.width = 6, message = FALSE, warning = FALSE, comment = "", cache = F)
+knitr::opts_chunk$set(fig.width = 6, message = FALSE, warning = FALSE, comment = "", cache = T)
 library(flipbookr)
 library(tidyverse)
 ```
 
 
+
+
+
+---
 
 
 `r chunk_reveal("my_cars", chunk_options = "fig.width = 8, fig.height = 6", break_type = "user")`
@@ -73,6 +77,12 @@ ggplot(data = cars) +
     fill = "magenta",
     mean = 14, sd =  2) #BREAK
 ```
+
+
+
+
+
+
 
 ---
 
@@ -116,7 +126,7 @@ ggcanvas() +
               alpha = 12:1/12)
 ```
 
----
+
 
 
 ---
@@ -125,29 +135,41 @@ ggcanvas() +
 
 ```{r spoke_ellipse, include=F}
 ggplot(data = faithful) +
-  aes(x = eruptions - 3, 
+  aes(x = eruptions, 
       y = waiting/30 - 1.75,
       color = waiting) +
+  coord_equal() +
+  scale_color_viridis_c(option = "magma", 
+                        direction = -1) +
   geom_point(show.legend = F) +
-  stamp_point(color = "plum", size = 50) +
+  stamp_polygon(fill = "plum", 
+                size = 0,
+                n = 50,
+                x0 = 5, y0 = -1) +
   stamp_spoke(angle = pi* 0:32/64,
               color = "paleturquoise4",
-              size = 1) +
-  stamp_spoke(x = 1, y = .2, angle = pi*0:3/6) +
-  stamp_spoke(x = 1, y = .2, size = 12, 
-              -pi/4) +
-  coord_equal() +
-  stamp_ellipse(alpha = .5) + 
-  stamp_ellipse(x0 = -3:2/3, 
-                y = 4:-1/4,
+              size = 1,
+                x = 5, y = -1) +
+  stamp_spoke(angle = pi*0:3/6,
+              color = "plum4",
+                x = 5, y = -1) +
+  stamp_ellipse(alpha = .5, 
+                a = 2.2, b = 1,
+                x0 = 3.2, y0 = .65, 
+                angle = .12*pi) + 
+  stamp_ellipse(x0 = 6:11/3, 
+                y = -4:-9/4,
                 a = .25, 
                 b = .4, 
-                alpha = .3,
+                alpha = .2,
                 angle = pi*0:-5/5,
                 fill = "slateblue",
                 size = 0) +
-  scale_color_viridis_c(option = "magma", 
-                        direction = -1)
+  theme_void() +
+  theme(panel.background = 
+          element_rect(fill = "snow2", 
+                       color = "snow2"))
+
 ```
 ---
 
@@ -205,17 +227,81 @@ download.file(url = "https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_tra
               destfile = "wiki.png")
 
 ggcanvas() +
-  stamp_png(png = "wiki.png",
-            x0 = wrap_x_png(n = 5, ncol = 3),
-            y0 = wrap_y_png(n = 5, ncol = 3, 
-                            png = "wiki.png")) +
-  stamp_png(1.4, -1, width = 1.5) + 
+  stamp_png(x0y0 = wrap_png()) +
+  stamp_png(x0y0 = wrap_png(y0 = -3, n = 8)) +
+  stamp_png(x0y0 = wrap_png(y0 = -7.5, n = 3)) +
+  stamp_png(x0 = 4, y0 = -1, width = 3) + 
   theme_void()
-
 
 ```
 
 
+---
+
+`r chunk_reveal("backdrop")`
+
+```{r backdrop, include = F}
+#only supports pngs for now
+magick::image_read("https://images.unsplash.com/photo-1593448806592-409752fd816b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80") %>% 
+  magick::image_resize("300x") %>% 
+  magick::image_write("stamp.png", 
+                      format = "png") 
+
+ggbackdrop(png = "stamp.png") +
+  stamp_curve(curvature = .3, yend = .5) +
+  stamp_polygon(x0 = .8, 
+                y0 = .4, 
+                radius = .2, 
+                alpha = 0,
+                color = "grey97") +
+  stamp_text(x = .8, y = .4, 
+             label = "{ggstamp}",
+                color = "grey97") +
+  theme_void()
+
+```
+
+
+
+---
+
+`r chunk_reveal("the_stamps", chunk_options = "fig.width = 8, fig.height = 6", break_type = "replace", replace = "point", replacements = c("point", "segment", "arrow", "curve", "spoke", "text", "label",  "tile", "polygon"))`
+
+
+```{r the_stamps, include = F}
+library(ggstamp)
+ggcanvas() +
+  stamp_point()
+```
+
+
+---
+
+`r chunk_reveal("the_stamps_functions", chunk_options = "fig.width = 8, fig.height = 6", break_type = "replace", replace = "point", replacements = c("point", "segment", "arrow", "curve", "spoke", "text", "label",  "tile", "polygon"))`
+
+
+```{r the_stamps_functions, include = F}
+library(ggstamp)
+stamp_point
+```
+
+---
+
+`r chunk_reveal("the_wraps", break_type = "replace", replace = "wrap", replacements = c("wrap", "spoke", "honeycomb"))`
+
+```{r the_wraps, include=F}
+ggcanvas() +
+  stamp_polygon(x0y0 = wrap(n = 7),
+                radius = .4)
+```
+
+---
+
+`r chunk_reveal("the_wraps_functions", break_type = "replace", replace = "wrap", replacements = c("wrap", "spoke", "honeycomb"))`
+
+```{r the_wraps_functions, include=F}
+wrap_y
+```
 
 
 ```{css, eval = TRUE, echo = FALSE}

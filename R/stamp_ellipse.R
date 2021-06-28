@@ -29,8 +29,13 @@ stamp_ellipse <- function(x0 = 0,
                        alpha = 1,
                        linetype = "solid",
                        fill = "grey85",
-                       color = "black"){
+                       color = "black",
+                       x0y0 = NULL){
 
+  if(!is.null(x0y0)){
+    x0 = x0y0[,1]
+    y0 = x0y0[,2]
+  }
 
   ggforce::geom_ellipse(data = data.frame(
          x0 = x0,

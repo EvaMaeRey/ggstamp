@@ -7,7 +7,7 @@
 stamp_text(
   x = 0,
   y = 0,
-  label = "use label\\nargument to change\\nthis text",
+  label = "some\\n text",
   size = 8,
   alpha = 1,
   angle = 0,

@@ -19,7 +19,7 @@
 #'  stamp_label(label = "hi", y = c(100,75,50), x = 20)
 stamp_label <- function(x = 0,
                        y = 0,
-                       label = "use label\nargument to change\nthis label",
+                       label = "some\ntext",
                        size = 8,
                        alpha = 1,
                        angle = 0,
@@ -29,7 +29,12 @@ stamp_label <- function(x = 0,
                        family = "",
                        vjust = .5,
                        label.padding = ggplot2::unit(0.5, units = "lines"),
-                       ...){
+                       xy = NULL){
+
+  if(!is.null(xy)){
+    x = xy[,1]
+    y = xy[,2]
+  }
 
 annotate(geom = "label",
          x = x,

@@ -32,6 +32,10 @@ background-size: cover
 
 
 
+
+---
+
+
 count: false
  
 
@@ -355,6 +359,12 @@ ggplot(data = cars) +
   font-size: 80%
 }
 &lt;/style&gt;
+
+
+
+
+
+
 
 
 
@@ -784,7 +794,7 @@ ggcanvas() +
 
 
 
----
+
 
 
 ---
@@ -811,7 +821,7 @@ count: false
 
 ```r
 ggplot(data = faithful) +
-* aes(x = eruptions - 3,
+* aes(x = eruptions,
 *     y = waiting/30 - 1.75,
 *     color = waiting)
 ```
@@ -829,10 +839,10 @@ count: false
 
 ```r
 ggplot(data = faithful) +
-  aes(x = eruptions - 3,
+  aes(x = eruptions,
       y = waiting/30 - 1.75,
       color = waiting) +
-* geom_point(show.legend = F)
+* coord_equal()
 ```
 ]
  
@@ -848,11 +858,12 @@ count: false
 
 ```r
 ggplot(data = faithful) +
-  aes(x = eruptions - 3,
+  aes(x = eruptions,
       y = waiting/30 - 1.75,
       color = waiting) +
-  geom_point(show.legend = F) +
-* stamp_point(color = "plum", size = 50)
+  coord_equal() +
+* scale_color_viridis_c(option = "magma",
+*                       direction = -1)
 ```
 ]
  
@@ -868,14 +879,13 @@ count: false
 
 ```r
 ggplot(data = faithful) +
-  aes(x = eruptions - 3,
+  aes(x = eruptions,
       y = waiting/30 - 1.75,
       color = waiting) +
-  geom_point(show.legend = F) +
-  stamp_point(color = "plum", size = 50) +
-* stamp_spoke(angle = pi* 0:32/64,
-*             color = "paleturquoise4",
-*             size = 1)
+  coord_equal() +
+  scale_color_viridis_c(option = "magma",
+                        direction = -1) +
+* geom_point(show.legend = F)
 ```
 ]
  
@@ -891,15 +901,17 @@ count: false
 
 ```r
 ggplot(data = faithful) +
-  aes(x = eruptions - 3,
+  aes(x = eruptions,
       y = waiting/30 - 1.75,
       color = waiting) +
+  coord_equal() +
+  scale_color_viridis_c(option = "magma",
+                        direction = -1) +
   geom_point(show.legend = F) +
-  stamp_point(color = "plum", size = 50) +
-  stamp_spoke(angle = pi* 0:32/64,
-              color = "paleturquoise4",
-              size = 1) +
-* stamp_spoke(x = 1, y = .2, angle = pi*0:3/6)
+* stamp_polygon(fill = "plum",
+*               size = 0,
+*               n = 50,
+*               x0 = 5, y0 = -1)
 ```
 ]
  
@@ -915,17 +927,21 @@ count: false
 
 ```r
 ggplot(data = faithful) +
-  aes(x = eruptions - 3,
+  aes(x = eruptions,
       y = waiting/30 - 1.75,
       color = waiting) +
+  coord_equal() +
+  scale_color_viridis_c(option = "magma",
+                        direction = -1) +
   geom_point(show.legend = F) +
-  stamp_point(color = "plum", size = 50) +
-  stamp_spoke(angle = pi* 0:32/64,
-              color = "paleturquoise4",
-              size = 1) +
-  stamp_spoke(x = 1, y = .2, angle = pi*0:3/6) +
-* stamp_spoke(x = 1, y = .2, size = 12,
-*             -pi/4)
+  stamp_polygon(fill = "plum",
+                size = 0,
+                n = 50,
+                x0 = 5, y0 = -1) +
+* stamp_spoke(angle = pi* 0:32/64,
+*             color = "paleturquoise4",
+*             size = 1,
+*               x = 5, y = -1)
 ```
 ]
  
@@ -941,18 +957,24 @@ count: false
 
 ```r
 ggplot(data = faithful) +
-  aes(x = eruptions - 3,
+  aes(x = eruptions,
       y = waiting/30 - 1.75,
       color = waiting) +
+  coord_equal() +
+  scale_color_viridis_c(option = "magma",
+                        direction = -1) +
   geom_point(show.legend = F) +
-  stamp_point(color = "plum", size = 50) +
+  stamp_polygon(fill = "plum",
+                size = 0,
+                n = 50,
+                x0 = 5, y0 = -1) +
   stamp_spoke(angle = pi* 0:32/64,
               color = "paleturquoise4",
-              size = 1) +
-  stamp_spoke(x = 1, y = .2, angle = pi*0:3/6) +
-  stamp_spoke(x = 1, y = .2, size = 12,
-              -pi/4) +
-* coord_equal()
+              size = 1,
+                x = 5, y = -1) +
+* stamp_spoke(angle = pi*0:3/6,
+*             color = "plum4",
+*               x = 5, y = -1)
 ```
 ]
  
@@ -968,19 +990,28 @@ count: false
 
 ```r
 ggplot(data = faithful) +
-  aes(x = eruptions - 3,
+  aes(x = eruptions,
       y = waiting/30 - 1.75,
       color = waiting) +
+  coord_equal() +
+  scale_color_viridis_c(option = "magma",
+                        direction = -1) +
   geom_point(show.legend = F) +
-  stamp_point(color = "plum", size = 50) +
+  stamp_polygon(fill = "plum",
+                size = 0,
+                n = 50,
+                x0 = 5, y0 = -1) +
   stamp_spoke(angle = pi* 0:32/64,
               color = "paleturquoise4",
-              size = 1) +
-  stamp_spoke(x = 1, y = .2, angle = pi*0:3/6) +
-  stamp_spoke(x = 1, y = .2, size = 12,
-              -pi/4) +
-  coord_equal() +
-* stamp_ellipse(alpha = .5)
+              size = 1,
+                x = 5, y = -1) +
+  stamp_spoke(angle = pi*0:3/6,
+              color = "plum4",
+                x = 5, y = -1) +
+* stamp_ellipse(alpha = .5,
+*               a = 2.2, b = 1,
+*               x0 = 3.2, y0 = .65,
+*               angle = .12*pi)
 ```
 ]
  
@@ -996,24 +1027,33 @@ count: false
 
 ```r
 ggplot(data = faithful) +
-  aes(x = eruptions - 3,
+  aes(x = eruptions,
       y = waiting/30 - 1.75,
       color = waiting) +
+  coord_equal() +
+  scale_color_viridis_c(option = "magma",
+                        direction = -1) +
   geom_point(show.legend = F) +
-  stamp_point(color = "plum", size = 50) +
+  stamp_polygon(fill = "plum",
+                size = 0,
+                n = 50,
+                x0 = 5, y0 = -1) +
   stamp_spoke(angle = pi* 0:32/64,
               color = "paleturquoise4",
-              size = 1) +
-  stamp_spoke(x = 1, y = .2, angle = pi*0:3/6) +
-  stamp_spoke(x = 1, y = .2, size = 12,
-              -pi/4) +
-  coord_equal() +
-  stamp_ellipse(alpha = .5) +
-* stamp_ellipse(x0 = -3:2/3,
-*               y = 4:-1/4,
+              size = 1,
+                x = 5, y = -1) +
+  stamp_spoke(angle = pi*0:3/6,
+              color = "plum4",
+                x = 5, y = -1) +
+  stamp_ellipse(alpha = .5,
+                a = 2.2, b = 1,
+                x0 = 3.2, y0 = .65,
+                angle = .12*pi) +
+* stamp_ellipse(x0 = 6:11/3,
+*               y = -4:-9/4,
 *               a = .25,
 *               b = .4,
-*               alpha = .3,
+*               alpha = .2,
 *               angle = pi*0:-5/5,
 *               fill = "slateblue",
 *               size = 0)
@@ -1032,34 +1072,140 @@ count: false
 
 ```r
 ggplot(data = faithful) +
-  aes(x = eruptions - 3,
+  aes(x = eruptions,
       y = waiting/30 - 1.75,
       color = waiting) +
+  coord_equal() +
+  scale_color_viridis_c(option = "magma",
+                        direction = -1) +
   geom_point(show.legend = F) +
-  stamp_point(color = "plum", size = 50) +
+  stamp_polygon(fill = "plum",
+                size = 0,
+                n = 50,
+                x0 = 5, y0 = -1) +
   stamp_spoke(angle = pi* 0:32/64,
               color = "paleturquoise4",
-              size = 1) +
-  stamp_spoke(x = 1, y = .2, angle = pi*0:3/6) +
-  stamp_spoke(x = 1, y = .2, size = 12,
-              -pi/4) +
-  coord_equal() +
-  stamp_ellipse(alpha = .5) +
-  stamp_ellipse(x0 = -3:2/3,
-                y = 4:-1/4,
+              size = 1,
+                x = 5, y = -1) +
+  stamp_spoke(angle = pi*0:3/6,
+              color = "plum4",
+                x = 5, y = -1) +
+  stamp_ellipse(alpha = .5,
+                a = 2.2, b = 1,
+                x0 = 3.2, y0 = .65,
+                angle = .12*pi) +
+  stamp_ellipse(x0 = 6:11/3,
+                y = -4:-9/4,
                 a = .25,
                 b = .4,
-                alpha = .3,
+                alpha = .2,
                 angle = pi*0:-5/5,
                 fill = "slateblue",
                 size = 0) +
-* scale_color_viridis_c(option = "magma",
-*                       direction = -1)
+* theme_void()
 ```
 ]
  
 .panel2-spoke_ellipse-auto[
 ![](flipbook_files/figure-html/spoke_ellipse_auto_11_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-spoke_ellipse-auto[
+
+```r
+ggplot(data = faithful) +
+  aes(x = eruptions,
+      y = waiting/30 - 1.75,
+      color = waiting) +
+  coord_equal() +
+  scale_color_viridis_c(option = "magma",
+                        direction = -1) +
+  geom_point(show.legend = F) +
+  stamp_polygon(fill = "plum",
+                size = 0,
+                n = 50,
+                x0 = 5, y0 = -1) +
+  stamp_spoke(angle = pi* 0:32/64,
+              color = "paleturquoise4",
+              size = 1,
+                x = 5, y = -1) +
+  stamp_spoke(angle = pi*0:3/6,
+              color = "plum4",
+                x = 5, y = -1) +
+  stamp_ellipse(alpha = .5,
+                a = 2.2, b = 1,
+                x0 = 3.2, y0 = .65,
+                angle = .12*pi) +
+  stamp_ellipse(x0 = 6:11/3,
+                y = -4:-9/4,
+                a = .25,
+                b = .4,
+                alpha = .2,
+                angle = pi*0:-5/5,
+                fill = "slateblue",
+                size = 0) +
+  theme_void() +
+* theme(panel.background =
+*         element_rect(fill = "snow2",
+*                      color = "snow2"))
+```
+]
+ 
+.panel2-spoke_ellipse-auto[
+![](flipbook_files/figure-html/spoke_ellipse_auto_12_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-spoke_ellipse-auto[
+
+```r
+ggplot(data = faithful) +
+  aes(x = eruptions,
+      y = waiting/30 - 1.75,
+      color = waiting) +
+  coord_equal() +
+  scale_color_viridis_c(option = "magma",
+                        direction = -1) +
+  geom_point(show.legend = F) +
+  stamp_polygon(fill = "plum",
+                size = 0,
+                n = 50,
+                x0 = 5, y0 = -1) +
+  stamp_spoke(angle = pi* 0:32/64,
+              color = "paleturquoise4",
+              size = 1,
+                x = 5, y = -1) +
+  stamp_spoke(angle = pi*0:3/6,
+              color = "plum4",
+                x = 5, y = -1) +
+  stamp_ellipse(alpha = .5,
+                a = 2.2, b = 1,
+                x0 = 3.2, y0 = .65,
+                angle = .12*pi) +
+  stamp_ellipse(x0 = 6:11/3,
+                y = -4:-9/4,
+                a = .25,
+                b = .4,
+                alpha = .2,
+                angle = pi*0:-5/5,
+                fill = "slateblue",
+                size = 0) +
+  theme_void() +
+  theme(panel.background =
+          element_rect(fill = "snow2",
+                       color = "snow2"))
+```
+]
+ 
+.panel2-spoke_ellipse-auto[
+![](flipbook_files/figure-html/spoke_ellipse_auto_13_output-1.png)&lt;!-- --&gt;
 ]
 
 &lt;style&gt;
@@ -1480,10 +1626,7 @@ download.file(url = "https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_tra
               destfile = "wiki.png")
 
 ggcanvas() +
-* stamp_png(png = "wiki.png",
-*           x0 = wrap_x_png(n = 5, ncol = 3),
-*           y0 = wrap_y_png(n = 5, ncol = 3,
-*                           png = "wiki.png"))
+* stamp_png(x0y0 = wrap_png())
 ```
 ]
  
@@ -1502,11 +1645,8 @@ download.file(url = "https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_tra
               destfile = "wiki.png")
 
 ggcanvas() +
-  stamp_png(png = "wiki.png",
-            x0 = wrap_x_png(n = 5, ncol = 3),
-            y0 = wrap_y_png(n = 5, ncol = 3,
-                            png = "wiki.png")) +
-* stamp_png(1.4, -1, width = 1.5)
+  stamp_png(x0y0 = wrap_png()) +
+* stamp_png(x0y0 = wrap_png(y0 = -3, n = 8))
 ```
 ]
  
@@ -1525,12 +1665,9 @@ download.file(url = "https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_tra
               destfile = "wiki.png")
 
 ggcanvas() +
-  stamp_png(png = "wiki.png",
-            x0 = wrap_x_png(n = 5, ncol = 3),
-            y0 = wrap_y_png(n = 5, ncol = 3,
-                            png = "wiki.png")) +
-  stamp_png(1.4, -1, width = 1.5) +
-* theme_void()
+  stamp_png(x0y0 = wrap_png()) +
+  stamp_png(x0y0 = wrap_png(y0 = -3, n = 8)) +
+* stamp_png(x0y0 = wrap_png(y0 = -7.5, n = 3))
 ```
 ]
  
@@ -1549,17 +1686,61 @@ download.file(url = "https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_tra
               destfile = "wiki.png")
 
 ggcanvas() +
-  stamp_png(png = "wiki.png",
-            x0 = wrap_x_png(n = 5, ncol = 3),
-            y0 = wrap_y_png(n = 5, ncol = 3,
-                            png = "wiki.png")) +
-  stamp_png(1.4, -1, width = 1.5) +
-  theme_void()
+  stamp_png(x0y0 = wrap_png()) +
+  stamp_png(x0y0 = wrap_png(y0 = -3, n = 8)) +
+  stamp_png(x0y0 = wrap_png(y0 = -7.5, n = 3)) +
+* stamp_png(x0 = 4, y0 = -1, width = 3)
 ```
 ]
  
 .panel2-png-auto[
 ![](flipbook_files/figure-html/png_auto_06_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-png-auto[
+
+```r
+download.file(url = "https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png",
+              destfile = "wiki.png")
+
+ggcanvas() +
+  stamp_png(x0y0 = wrap_png()) +
+  stamp_png(x0y0 = wrap_png(y0 = -3, n = 8)) +
+  stamp_png(x0y0 = wrap_png(y0 = -7.5, n = 3)) +
+  stamp_png(x0 = 4, y0 = -1, width = 3) +
+* theme_void()
+```
+]
+ 
+.panel2-png-auto[
+![](flipbook_files/figure-html/png_auto_07_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-png-auto[
+
+```r
+download.file(url = "https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png",
+              destfile = "wiki.png")
+
+ggcanvas() +
+  stamp_png(x0y0 = wrap_png()) +
+  stamp_png(x0y0 = wrap_png(y0 = -3, n = 8)) +
+  stamp_png(x0y0 = wrap_png(y0 = -7.5, n = 3)) +
+  stamp_png(x0 = 4, y0 = -1, width = 3) +
+  theme_void()
+```
+]
+ 
+.panel2-png-auto[
+![](flipbook_files/figure-html/png_auto_08_output-1.png)&lt;!-- --&gt;
 ]
 
 &lt;style&gt;
@@ -1590,6 +1771,1083 @@ ggcanvas() +
 &lt;/style&gt;
 
 
+
+
+
+
+---
+
+count: false
+ 
+
+.panel1-backdrop-auto[
+
+```r
+#only supports pngs for now
+*magick::image_read("https://images.unsplash.com/photo-1593448806592-409752fd816b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1500&amp;q=80")
+```
+]
+ 
+.panel2-backdrop-auto[
+&lt;img src="flipbook_files/figure-html/backdrop_auto_01_output-1.png" width="2000" /&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-backdrop-auto[
+
+```r
+#only supports pngs for now
+magick::image_read("https://images.unsplash.com/photo-1593448806592-409752fd816b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1500&amp;q=80") %&gt;%
+* magick::image_resize("300x")
+```
+]
+ 
+.panel2-backdrop-auto[
+&lt;img src="flipbook_files/figure-html/backdrop_auto_02_output-1.png" width="400" /&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-backdrop-auto[
+
+```r
+#only supports pngs for now
+magick::image_read("https://images.unsplash.com/photo-1593448806592-409752fd816b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1500&amp;q=80") %&gt;%
+  magick::image_resize("300x") %&gt;%
+* magick::image_write("stamp.png",
+*                     format = "png")
+```
+]
+ 
+.panel2-backdrop-auto[
+
+]
+
+---
+count: false
+ 
+
+.panel1-backdrop-auto[
+
+```r
+#only supports pngs for now
+magick::image_read("https://images.unsplash.com/photo-1593448806592-409752fd816b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1500&amp;q=80") %&gt;%
+  magick::image_resize("300x") %&gt;%
+  magick::image_write("stamp.png",
+                      format = "png")
+
+*ggbackdrop(png = "stamp.png")
+```
+]
+ 
+.panel2-backdrop-auto[
+![](flipbook_files/figure-html/backdrop_auto_04_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-backdrop-auto[
+
+```r
+#only supports pngs for now
+magick::image_read("https://images.unsplash.com/photo-1593448806592-409752fd816b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1500&amp;q=80") %&gt;%
+  magick::image_resize("300x") %&gt;%
+  magick::image_write("stamp.png",
+                      format = "png")
+
+ggbackdrop(png = "stamp.png") +
+* stamp_curve(curvature = .3, yend = .5)
+```
+]
+ 
+.panel2-backdrop-auto[
+![](flipbook_files/figure-html/backdrop_auto_05_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-backdrop-auto[
+
+```r
+#only supports pngs for now
+magick::image_read("https://images.unsplash.com/photo-1593448806592-409752fd816b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1500&amp;q=80") %&gt;%
+  magick::image_resize("300x") %&gt;%
+  magick::image_write("stamp.png",
+                      format = "png")
+
+ggbackdrop(png = "stamp.png") +
+  stamp_curve(curvature = .3, yend = .5) +
+* stamp_polygon(x0 = .8,
+*               y0 = .4,
+*               radius = .2,
+*               alpha = 0,
+*               color = "grey97")
+```
+]
+ 
+.panel2-backdrop-auto[
+![](flipbook_files/figure-html/backdrop_auto_06_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-backdrop-auto[
+
+```r
+#only supports pngs for now
+magick::image_read("https://images.unsplash.com/photo-1593448806592-409752fd816b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1500&amp;q=80") %&gt;%
+  magick::image_resize("300x") %&gt;%
+  magick::image_write("stamp.png",
+                      format = "png")
+
+ggbackdrop(png = "stamp.png") +
+  stamp_curve(curvature = .3, yend = .5) +
+  stamp_polygon(x0 = .8,
+                y0 = .4,
+                radius = .2,
+                alpha = 0,
+                color = "grey97") +
+* stamp_text(x = .8, y = .4,
+*            label = "{ggstamp}",
+*               color = "grey97")
+```
+]
+ 
+.panel2-backdrop-auto[
+![](flipbook_files/figure-html/backdrop_auto_07_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-backdrop-auto[
+
+```r
+#only supports pngs for now
+magick::image_read("https://images.unsplash.com/photo-1593448806592-409752fd816b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1500&amp;q=80") %&gt;%
+  magick::image_resize("300x") %&gt;%
+  magick::image_write("stamp.png",
+                      format = "png")
+
+ggbackdrop(png = "stamp.png") +
+  stamp_curve(curvature = .3, yend = .5) +
+  stamp_polygon(x0 = .8,
+                y0 = .4,
+                radius = .2,
+                alpha = 0,
+                color = "grey97") +
+  stamp_text(x = .8, y = .4,
+             label = "{ggstamp}",
+                color = "grey97") +
+* theme_void()
+```
+]
+ 
+.panel2-backdrop-auto[
+![](flipbook_files/figure-html/backdrop_auto_08_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-backdrop-auto[
+
+```r
+#only supports pngs for now
+magick::image_read("https://images.unsplash.com/photo-1593448806592-409752fd816b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1500&amp;q=80") %&gt;%
+  magick::image_resize("300x") %&gt;%
+  magick::image_write("stamp.png",
+                      format = "png")
+
+ggbackdrop(png = "stamp.png") +
+  stamp_curve(curvature = .3, yend = .5) +
+  stamp_polygon(x0 = .8,
+                y0 = .4,
+                radius = .2,
+                alpha = 0,
+                color = "grey97") +
+  stamp_text(x = .8, y = .4,
+             label = "{ggstamp}",
+                color = "grey97") +
+  theme_void()
+```
+]
+ 
+.panel2-backdrop-auto[
+![](flipbook_files/figure-html/backdrop_auto_09_output-1.png)&lt;!-- --&gt;
+]
+
+&lt;style&gt;
+.panel1-backdrop-auto {
+  color: black;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-backdrop-auto {
+  color: black;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-backdrop-auto {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+
+
+
+
+---
+
+count: false
+ 
+
+.panel1-the_stamps-replace[
+
+```r
+library(ggstamp)
+ggcanvas() +
+* stamp_point()
+```
+]
+ 
+.panel2-the_stamps-replace[
+![](flipbook_files/figure-html/the_stamps_replace_01_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-the_stamps-replace[
+
+```r
+library(ggstamp)
+ggcanvas() +
+* stamp_segment()
+```
+]
+ 
+.panel2-the_stamps-replace[
+![](flipbook_files/figure-html/the_stamps_replace_02_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-the_stamps-replace[
+
+```r
+library(ggstamp)
+ggcanvas() +
+* stamp_arrow()
+```
+]
+ 
+.panel2-the_stamps-replace[
+![](flipbook_files/figure-html/the_stamps_replace_03_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-the_stamps-replace[
+
+```r
+library(ggstamp)
+ggcanvas() +
+* stamp_curve()
+```
+]
+ 
+.panel2-the_stamps-replace[
+![](flipbook_files/figure-html/the_stamps_replace_04_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-the_stamps-replace[
+
+```r
+library(ggstamp)
+ggcanvas() +
+* stamp_spoke()
+```
+]
+ 
+.panel2-the_stamps-replace[
+![](flipbook_files/figure-html/the_stamps_replace_05_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-the_stamps-replace[
+
+```r
+library(ggstamp)
+ggcanvas() +
+* stamp_text()
+```
+]
+ 
+.panel2-the_stamps-replace[
+![](flipbook_files/figure-html/the_stamps_replace_06_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-the_stamps-replace[
+
+```r
+library(ggstamp)
+ggcanvas() +
+* stamp_label()
+```
+]
+ 
+.panel2-the_stamps-replace[
+![](flipbook_files/figure-html/the_stamps_replace_07_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-the_stamps-replace[
+
+```r
+library(ggstamp)
+ggcanvas() +
+* stamp_tile()
+```
+]
+ 
+.panel2-the_stamps-replace[
+![](flipbook_files/figure-html/the_stamps_replace_08_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-the_stamps-replace[
+
+```r
+library(ggstamp)
+ggcanvas() +
+* stamp_polygon()
+```
+]
+ 
+.panel2-the_stamps-replace[
+![](flipbook_files/figure-html/the_stamps_replace_09_output-1.png)&lt;!-- --&gt;
+]
+
+&lt;style&gt;
+.panel1-the_stamps-replace {
+  color: black;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-the_stamps-replace {
+  color: black;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-the_stamps-replace {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+
+
+
+
+---
+
+count: false
+ 
+
+.panel1-the_stamps_functions-replace[
+
+```r
+library(ggstamp)
+*stamp_point
+```
+]
+ 
+.panel2-the_stamps_functions-replace[
+
+```
+function(x = 0,
+                        y = 0,
+                       size = 8,
+                       alpha = 1,
+                       shape = "circle",
+                       color = "black",
+                       stroke = 1,
+                       fill = "grey35",
+                       xy = NULL){
+
+  if(!is.null(xy)){
+    x = xy[,1]
+    y = xy[,2]
+  }
+
+annotate(geom = "point",
+         x = x,
+         y = y,
+         size = size,
+         alpha = alpha,
+         shape = shape,
+         color = color,
+         stroke = stroke,
+         fill = fill
+         )
+
+}
+&lt;bytecode: 0x7fb6ccd7b0a8&gt;
+&lt;environment: namespace:ggstamp&gt;
+```
+]
+
+---
+count: false
+ 
+
+.panel1-the_stamps_functions-replace[
+
+```r
+library(ggstamp)
+*stamp_segment
+```
+]
+ 
+.panel2-the_stamps_functions-replace[
+
+```
+function(x = 0, xend = 1,
+                         y = 0, yend = 1,
+                        size = 1.5,
+                        alpha = 1,
+                        color = "black"){
+
+  annotate(geom = "segment",
+           x = x,
+           y = y,
+           xend = xend,
+           yend = yend,
+           size = size,
+           alpha = alpha,
+           color = color)
+
+}
+&lt;bytecode: 0x7fb6cc6b9d20&gt;
+&lt;environment: namespace:ggstamp&gt;
+```
+]
+
+---
+count: false
+ 
+
+.panel1-the_stamps_functions-replace[
+
+```r
+library(ggstamp)
+*stamp_arrow
+```
+]
+ 
+.panel2-the_stamps_functions-replace[
+
+```
+function(x = 0, xend = 1,
+                        y = 0, yend = 1,
+                        size = 1.5,
+                        alpha = 1,
+                        color = "black",
+                        ends = "last",
+                        units = "npc",
+                        headlength = .03,
+                        angle = 30,
+                        type = "open"){
+
+  annotate(geom = "segment",
+           x = x,
+           y = y,
+           arrow = arrow(ends = ends, type = type, angle = angle,
+                         length = unit(x = headlength, units = "npc")),
+           xend = xend,
+           yend = yend,
+           size = size,
+           alpha = alpha,
+           color = color)
+
+}
+&lt;bytecode: 0x7fb6cda5d5c0&gt;
+&lt;environment: namespace:ggstamp&gt;
+```
+]
+
+---
+count: false
+ 
+
+.panel1-the_stamps_functions-replace[
+
+```r
+library(ggstamp)
+*stamp_curve
+```
+]
+ 
+.panel2-the_stamps_functions-replace[
+
+```
+function(x = 0, xend = 1,
+                        y = 0, yend = 1,
+                        alpha = 1,
+                        color = "black",
+                        linetype = "solid",
+                        size = 1.5,
+                        curvature = .1
+                        ){
+
+  annotate(geom = "curve",
+           x = x,
+           y = y,
+           xend = xend,
+           yend = yend,
+           linetype = linetype,
+           size = size,
+           alpha = alpha,
+           curvature = curvature,
+           color = color)
+
+}
+&lt;bytecode: 0x7fb6c64a5848&gt;
+&lt;environment: namespace:ggstamp&gt;
+```
+]
+
+---
+count: false
+ 
+
+.panel1-the_stamps_functions-replace[
+
+```r
+library(ggstamp)
+*stamp_spoke
+```
+]
+ 
+.panel2-the_stamps_functions-replace[
+
+```
+function(x = 0,
+                        y = 0,
+                        angle = pi/4,
+                        radius = 1,
+                        size = 1.5,
+                        alpha = 1,
+                        color = "black",
+                        linetype = "solid"){
+
+  annotate(geom = "spoke",
+           x = x,
+           y = y,
+           radius = radius,
+           angle = angle,
+           size = size,
+           alpha = alpha,
+           color = color,
+           linetype = linetype)
+
+}
+&lt;bytecode: 0x7fb6ca32a888&gt;
+&lt;environment: namespace:ggstamp&gt;
+```
+]
+
+---
+count: false
+ 
+
+.panel1-the_stamps_functions-replace[
+
+```r
+library(ggstamp)
+*stamp_text
+```
+]
+ 
+.panel2-the_stamps_functions-replace[
+
+```
+function(x = 0,
+                       y = 0,
+                       label = "some\n text",
+                       size = 8,
+                       alpha = 1,
+                       angle = 0,
+                       color = "black",
+                       lineheight = .8,
+                       family = "",
+                       vjust = .5,
+                       xy = NULL){
+
+  if(!is.null(xy)){
+    x = xy[,1]
+    y = xy[,2]
+  }
+
+
+annotate(geom = "text",
+         x = x,
+         y = y,
+         lineheight = lineheight,
+         label = label,
+         size = size,
+         color = color,
+         angle = angle,
+         alpha = alpha,
+         vjust = vjust)
+
+}
+&lt;bytecode: 0x7fb6c922cc40&gt;
+&lt;environment: namespace:ggstamp&gt;
+```
+]
+
+---
+count: false
+ 
+
+.panel1-the_stamps_functions-replace[
+
+```r
+library(ggstamp)
+*stamp_label
+```
+]
+ 
+.panel2-the_stamps_functions-replace[
+
+```
+function(x = 0,
+                       y = 0,
+                       label = "use label\nargument to change\nthis label",
+                       size = 8,
+                       alpha = 1,
+                       angle = 0,
+                       color = "black",
+                       fill = "white",
+                       lineheight = .8,
+                       family = "",
+                       vjust = .5,
+                       label.padding = ggplot2::unit(0.5, units = "lines"),
+                       xy = NULL){
+
+  if(!is.null(xy)){
+    x = xy[,1]
+    y = xy[,2]
+  }
+
+annotate(geom = "label",
+         x = x,
+         y = y,
+         fill = fill,
+         label = label,
+         lineheight = lineheight,
+         label.padding = label.padding,
+         size = size)
+
+}
+&lt;bytecode: 0x7fb6cb082558&gt;
+&lt;environment: namespace:ggstamp&gt;
+```
+]
+
+---
+count: false
+ 
+
+.panel1-the_stamps_functions-replace[
+
+```r
+library(ggstamp)
+*stamp_tile
+```
+]
+ 
+.panel2-the_stamps_functions-replace[
+
+```
+function(x = 0,
+                       y = 0,
+                       size = .5,
+                       alpha = 1,
+                       color = "black",
+                       fill = "grey85",
+                       height = 1,
+                       linetype = "solid",
+                       width = 1,
+                       xy = NULL
+                       ){
+
+if(!is.null(xy)){
+  x = xy[,1]
+  y = xy[,2]
+}
+
+annotate(geom = "tile",
+         x = x,
+         y = y,
+         alpha = alpha,
+         color = color,
+         fill = fill,
+         height = height,
+         linetype = linetype,
+         size = size,
+         width = width
+
+         )
+
+}
+&lt;bytecode: 0x7fb6ca1a4ee8&gt;
+&lt;environment: namespace:ggstamp&gt;
+```
+]
+
+---
+count: false
+ 
+
+.panel1-the_stamps_functions-replace[
+
+```r
+library(ggstamp)
+*stamp_polygon
+```
+]
+ 
+.panel2-the_stamps_functions-replace[
+
+```
+function(x0 = 0,
+                          y0 = 0,
+                          n = 6,
+                          radius = 1,
+                          size = 1.5,
+                          alpha = 1,
+                          rotation = -.5,
+                          linetype = "solid",
+                          fill = "grey35",
+                          color = "black",
+                          x0y0 = NULL){
+
+  if(!is.null(x0y0)){
+    x0 = x0y0[,1]
+    y0 = x0y0[,2]
+  }
+
+  groups &lt;- max(c(length(x0), length(y0)))
+
+  tibble::tibble(x0, y0, group = 1:groups) %&gt;%
+    tidyr::crossing(the_n = 1:n) %&gt;%
+  dplyr::mutate(
+    x = x0 + radius * cos(-2*pi*0:(n-1)/n - rotation * pi),
+    y = y0 + radius * sin(-2*pi*0:(n-1)/n - rotation * pi)
+  ) -&gt;
+  df
+
+
+  annotate(geom = "polygon",
+           x = df$x,
+           y = df$y,
+           size = size,
+           fill = fill,
+           alpha = alpha,
+           linetype = linetype,
+           color = color,
+           group = df$group
+           )
+
+}
+&lt;bytecode: 0x7fb6cb881e00&gt;
+&lt;environment: namespace:ggstamp&gt;
+```
+]
+
+&lt;style&gt;
+.panel1-the_stamps_functions-replace {
+  color: black;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-the_stamps_functions-replace {
+  color: black;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-the_stamps_functions-replace {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+
+
+
+---
+
+count: false
+ 
+
+.panel1-the_wraps-replace[
+
+```r
+ggcanvas() +
+* stamp_polygon(x0y0 = wrap(n = 7),
+                radius = .4)
+```
+]
+ 
+.panel2-the_wraps-replace[
+![](flipbook_files/figure-html/the_wraps_replace_01_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-the_wraps-replace[
+
+```r
+ggcanvas() +
+* stamp_polygon(x0y0 = spoke(n = 7),
+                radius = .4)
+```
+]
+ 
+.panel2-the_wraps-replace[
+![](flipbook_files/figure-html/the_wraps_replace_02_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-the_wraps-replace[
+
+```r
+ggcanvas() +
+* stamp_polygon(x0y0 = honeycomb(n = 7),
+                radius = .4)
+```
+]
+ 
+.panel2-the_wraps-replace[
+![](flipbook_files/figure-html/the_wraps_replace_03_output-1.png)&lt;!-- --&gt;
+]
+
+&lt;style&gt;
+.panel1-the_wraps-replace {
+  color: black;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-the_wraps-replace {
+  color: black;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-the_wraps-replace {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+
+
+---
+
+count: false
+ 
+
+.panel1-the_wraps_functions-replace[
+
+```r
+*wrap_y
+```
+]
+ 
+.panel2-the_wraps_functions-replace[
+
+```
+function(y0 = 0,
+                   n = 5,
+                   ncol = 3,
+                   height = 1){
+
+  -(0:(n-1) %/% ncol)*height + y0
+
+}
+&lt;bytecode: 0x7f934afc8b68&gt;
+&lt;environment: namespace:ggstamp&gt;
+```
+]
+
+---
+count: false
+ 
+
+.panel1-the_wraps_functions-replace[
+
+```r
+*spoke_y
+```
+]
+ 
+.panel2-the_wraps_functions-replace[
+
+```
+function(y0 = 0,
+                        n = 5,
+                        radius = 1,
+                        rotation = -.5){
+
+  radius * sin(-2*pi*0:(n-1)/n - rotation * pi) + y0
+
+}
+&lt;bytecode: 0x7f934c429a88&gt;
+&lt;environment: namespace:ggstamp&gt;
+```
+]
+
+---
+count: false
+ 
+
+.panel1-the_wraps_functions-replace[
+
+```r
+*honeycomb_y
+```
+]
+ 
+.panel2-the_wraps_functions-replace[
+
+```
+function(y0 = 0, n = 5, ncol = 3, height = 1.5){
+
+  -(0:(n-1) %/% ncol)*height + y0
+
+}
+&lt;bytecode: 0x7f934bba1480&gt;
+&lt;environment: namespace:ggstamp&gt;
+```
+]
+
+&lt;style&gt;
+.panel1-the_wraps_functions-replace {
+  color: black;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-the_wraps_functions-replace {
+  color: black;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-the_wraps_functions-replace {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
 
 
 

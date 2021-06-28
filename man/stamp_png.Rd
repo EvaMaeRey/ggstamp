@@ -10,8 +10,9 @@ stamp_png(
   png = system.file("img", "Rlogo.png", package = "png"),
   image = png::readPNG(png),
   width = 1,
-  height = width * dim(image)[2]/dim(image)[1],
+  height = width * dim(image)[1]/dim(image)[2],
   show.legend = F,
+  alpha = 1,
   x0y0 = NULL
 )
 }
@@ -25,7 +26,7 @@ stamp_png(
 stamp_png
 }
 \examples{
-library(ggplot)
+library(ggplot2)
 ggplot(cars, aes(dist, speed)) +
   geom_point() +
   stamp_png(x0 = 5:11*10, y0 = 10, height = 1, width = 10) +
@@ -40,13 +41,13 @@ ggcanvas() +
   stamp_png(x0 = 0:8 \%\% 5 + 1,
         y = -(0:8 \%/\% 5)/.75 , width = .90) +
   coord_equal() +
-  stamp_png(x = 0:5 \%\% 5 + 1,
-      y = -(0:5 \%/\% 5)/.75  -3, width = .90) +
-  stamp_png(x = 0:2 \%\% 5 + 1,
-     y = -(0:2 \%/\% 5)/.75  -6, width = .90) +
+  stamp_png(x0 = 0:5 \%\% 5 + 1,
+      y0 = -(0:5 \%/\% 5)/.75  -3, width = .90) +
+  stamp_png(x0 = 0:2 \%\% 5 + 1,
+     y0 = -(0:2 \%/\% 5)/.75  -6, width = .90) +
   scale_fill_identity()
 
 ggcanvas() +
   stamp_png(x0 = wrap_x(),
-            y0 = wrap_y_png())
+            y0 = wrap_y_png(), alpha = .5)
 }
