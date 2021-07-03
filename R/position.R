@@ -145,6 +145,17 @@ wrap <- function(x0 = 0,
 
 
 
+#' Title
+#'
+#' @param x0
+#' @param n
+#' @param ncol
+#' @param width
+#'
+#' @return
+#' @export
+#'
+#' @examples
 honeycomb_x <- function(x0 = 0, n = 5, ncol = 3, width = 2*sqrt(.75)){
 
   # major horizontal offset

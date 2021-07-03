@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Stamp some text — stamp_label • ggstamp</title>
+<title>Create a blank canvas — ggdraft • ggstamp</title>
 
 
 <!-- jquery -->
@@ -35,8 +35,8 @@
 
 
 
-<meta property="og:title" content="Stamp some text — stamp_label" />
-<meta property="og:description" content="This function adds a text annotation layer" />
+<meta property="og:title" content="Create a blank canvas — ggdraft" />
+<meta property="og:description" content="Create a blank canvas centered at 0, 0 to use stamps on" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -112,65 +112,23 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Stamp some text</h1>
+    <h1>Create a blank canvas</h1>
     
-    <div class="hidden name"><code>stamp_label.Rd</code></div>
+    <div class="hidden name"><code>ggdraft.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This function adds a text annotation layer</p>
+    <p>Create a blank canvas centered at 0, 0 to use stamps on</p>
     </div>
 
-    <pre class="usage"><span class='fu'>stamp_label</span>(
-  <span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>0</span>,
-  <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>0</span>,
-  <span class='kw'>label</span> <span class='kw'>=</span> <span class='st'>"a nice label"</span>,
-  <span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>8</span>,
-  <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>angle</span> <span class='kw'>=</span> <span class='fl'>0</span>,
-  <span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"black"</span>,
-  <span class='kw'>fill</span> <span class='kw'>=</span> <span class='st'>"white"</span>,
-  <span class='kw'>lineheight</span> <span class='kw'>=</span> <span class='fl'>0.85</span>,
-  <span class='kw'>family</span> <span class='kw'>=</span> <span class='st'>""</span>,
-  <span class='kw'>vjust</span> <span class='kw'>=</span> <span class='fl'>0.5</span>,
-  <span class='kw'>nudge_x</span> <span class='kw'>=</span> <span class='fl'>0</span>,
-  <span class='kw'>nudge_y</span> <span class='kw'>=</span> <span class='fl'>0</span>,
-  <span class='kw'>label.padding</span> <span class='kw'>=</span> <span class='kw pkg'>ggplot2</span><span class='kw ns'>::</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/reexports.html'>unit</a></span>(<span class='fl'>0.5</span>, <span class='kw'>units</span> <span class='kw'>=</span> <span class='st'>"lines"</span>),
-  <span class='kw'>label.r</span> <span class='kw'>=</span> <span class='kw pkg'>ggplot2</span><span class='kw ns'>::</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/reexports.html'>unit</a></span>(<span class='fl'>0.15</span>, <span class='kw'>units</span> <span class='kw'>=</span> <span class='st'>"lines"</span>),
-  <span class='kw'>label.size</span> <span class='kw'>=</span> <span class='fl'>0.3</span>,
-  <span class='kw'>xy</span> <span class='kw'>=</span> <span class='kw'>NULL</span>
-)</pre>
+    <pre class="usage"><span class='fu'>ggdraft</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>height</span> <span class='kw'>=</span> <span class='fl'>1</span>/<span class='fl'>1.618</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>x</th>
-      <td><p>defaults to 0</p></td>
-    </tr>
-    <tr>
       <th>y</th>
-      <td><p>defaults to 0</p></td>
-    </tr>
-    <tr>
-      <th>label</th>
-      <td><p>defaults with a message about use</p></td>
-    </tr>
-    <tr>
-      <th>nudge_x</th>
-      <td><p>Horizontal adjustment to nudge labels by. Useful for offsetting text from points, particularly on discrete scales.</p></td>
-    </tr>
-    <tr>
-      <th>nudge_y</th>
-      <td><p>Vertical adjustment to nudge labels by. Useful for offsetting text from points, particularly on discrete scales.</p></td>
-    </tr>
-    <tr>
-      <th>label.padding</th>
-      <td><p>Amount of padding around label. Defaults to 0.5 lines.</p></td>
-    </tr>
-    <tr>
-      <th>label.r</th>
-      <td><p>Radius of rounded corners. Defaults to 0.15 lines.</p></td>
+      <td></td>
     </tr>
     </table>
 
@@ -182,14 +140,12 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>ggplot2</span>)
-<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span>(<span class='no'>cars</span>) +
- <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span>(<span class='no'>speed</span>, <span class='no'>dist</span>) +
- <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span>() +
- <span class='fu'>stamp_label</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>20</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>10</span>) +
- <span class='fu'>stamp_label</span>(<span class='kw'>label</span> <span class='kw'>=</span> <span class='st'>"hi"</span>,
- <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>100</span>,<span class='fl'>75</span>,<span class='fl'>50</span>), <span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>5</span>, <span class='kw'>fill</span> <span class='kw'>=</span> <span class='st'>"cadetblue2"</span>, <span class='kw'>label.size</span> <span class='kw'>=</span> <span class='fl'>0</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: Ignoring unknown parameters: nudge_x, nudge_y</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Ignoring unknown parameters: nudge_x, nudge_y</span></div><div class='img'><img src='stamp_label-1.png' alt='' width='700' height='433' /></div><div class='input'>
- <span class='fu'><a href='ggcanvas.html'>ggcanvas</a></span>() +
-  <span class='fu'>stamp_label</span>()</div><div class='output co'>#&gt; <span class='warning'>Warning: Ignoring unknown parameters: nudge_x, nudge_y</span></div><div class='img'><img src='stamp_label-2.png' alt='' width='700' height='433' /></div></pre>
+<span class='fu'>ggdraft</span>() +
+<span class='fu'><a href='stamp_curve.html'>stamp_curve</a></span>(<span class='kw'>curvature</span> <span class='kw'>=</span> <span class='fl'>.325</span>, <span class='kw'>yend</span> <span class='kw'>=</span> <span class='fl'>.6</span>) +
+<span class='fu'><a href='stamp_polygon.html'>stamp_polygon</a></span>(<span class='kw'>x0</span> <span class='kw'>=</span> <span class='fl'>.2</span>, <span class='kw'>y0</span> <span class='kw'>=</span> <span class='fl'>.4</span>, <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>.2</span>, <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>.4</span>) +
+<span class='fu'><a href='stamp_text.html'>stamp_text</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>.2</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>.4</span>, <span class='kw'>label</span> <span class='kw'>=</span> <span class='st'>"{ggstamp}"</span>, <span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>5</span>, <span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"grey97"</span>)</div><div class='img'><img src='ggdraft-1.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/last_plot.html'>last_plot</a></span>() +
+<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_void</a></span>()</div><div class='img'><img src='ggdraft-2.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

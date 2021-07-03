@@ -7,16 +7,20 @@
 stamp_label(
   x = 0,
   y = 0,
-  label = "use label\\nargument to change\\nthis label",
+  label = "a nice label",
   size = 8,
   alpha = 1,
   angle = 0,
   color = "black",
   fill = "white",
-  lineheight = 0.8,
+  lineheight = 0.85,
   family = "",
   vjust = 0.5,
+  nudge_x = 0,
+  nudge_y = 0,
   label.padding = ggplot2::unit(0.5, units = "lines"),
+  label.r = ggplot2::unit(0.15, units = "lines"),
+  label.size = 0.3,
   xy = NULL
 )
 }
@@ -27,7 +31,13 @@ stamp_label(
 
 \item{label}{defaults with a message about use}
 
-\item{size}{}
+\item{nudge_x}{Horizontal adjustment to nudge labels by. Useful for offsetting text from points, particularly on discrete scales.}
+
+\item{nudge_y}{Vertical adjustment to nudge labels by. Useful for offsetting text from points, particularly on discrete scales.}
+
+\item{label.padding}{Amount of padding around label. Defaults to 0.5 lines.}
+
+\item{label.r}{Radius of rounded corners. Defaults to 0.15 lines.}
 }
 \value{
 
@@ -40,6 +50,10 @@ library(ggplot2)
 ggplot(cars) +
  aes(speed, dist) +
  geom_point() +
- stamp_label() +
- stamp_label(label = "hi", y = c(100,75,50), x = 20)
+ stamp_label(x = 20, y = 10) +
+ stamp_label(label = "hi",
+ y = c(100,75,50), x = 5, fill = "cadetblue2", label.size = 0)
+
+ ggcanvas() +
+  stamp_label()
 }
