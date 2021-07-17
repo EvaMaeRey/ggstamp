@@ -163,11 +163,13 @@
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>ggplot2</span>)
+    <pre class="examples"><div class='input'><span class='co'># an ellipse</span>
+<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>ggplot2</span>)
 <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span>(<span class='no'>cars</span>) +
  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span>(<span class='no'>speed</span>, <span class='no'>dist</span>) +
  <span class='fu'>stamp_ellipse</span>() +
  <span class='fu'>stamp_ellipse</span>(<span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"plum4"</span>, <span class='kw'>x0</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>y0</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>angle</span> <span class='kw'>=</span> <span class='no'>pi</span>/<span class='fl'>6</span>)</div><div class='img'><img src='stamp_ellipse-1.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='co'># several</span>
 <span class='fu'><a href='ggcanvas.html'>ggcanvas</a></span>() +
  <span class='fu'>stamp_ellipse</span>(<span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"green"</span>) +
  <span class='fu'>stamp_ellipse</span>(<span class='kw'>x0</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>5</span>, <span class='kw'>y0</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>2</span>)</div><div class='img'><img src='stamp_ellipse-2.png' alt='' width='700' height='433' /></div></pre>

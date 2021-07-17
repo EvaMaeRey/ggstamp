@@ -9,10 +9,10 @@ stamp_spoke(
   y = 0,
   angle = pi/4,
   radius = 1,
-  size = 1.5,
   alpha = 1,
   color = "black",
-  linetype = "solid"
+  linetype = "solid",
+  size = 1.5
 )
 }
 \arguments{
@@ -20,21 +20,33 @@ stamp_spoke(
 
 \item{y}{defaults to 0}
 
-\item{linetype}{}
+\item{angle}{direction of spoke in degrees}
+
+\item{radius}{length of spoke}
+
+\item{alpha}{a numeric between 0 and 1 for transparency, zero is fully transparent, 1 fully opaque}
+
+\item{color}{line color}
+
+\item{linetype}{"solid", "dashed", "dotted"}
+
+\item{size}{numeric indicating line width, defaults to 1.5}
 }
 \value{
 
 }
 \description{
-This function adds a text annotation layer
+Stamp a spoke (segment defined by angle and length)
 }
 \examples{
+# on plot
 library(ggplot2)
 ggplot(cars) +
  aes(speed, dist) +
  geom_point() +
  stamp_spoke(color = "darkred", radius = 25)
 
+# on canvas
  ggcanvas() +
  stamp_spoke(color = "green") +
  stamp_spoke(x = 2, y = 2, angle = pi * 1:8/4) +

@@ -129,7 +129,7 @@
   <span class='kw'>png</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"img"</span>, <span class='st'>"Rlogo.png"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"png"</span>),
   <span class='kw'>image</span> <span class='kw'>=</span> <span class='kw pkg'>png</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/png/man/readPNG.html'>readPNG</a></span>(<span class='no'>png</span>),
   <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>height</span> <span class='kw'>=</span> <span class='no'>width</span> * <span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='no'>image</span>)[<span class='fl'>2</span>]/<span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='no'>image</span>)[<span class='fl'>1</span>]
+  <span class='kw'>height</span> <span class='kw'>=</span> <span class='no'>width</span> * <span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='no'>image</span>)[<span class='fl'>1</span>]/<span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='no'>image</span>)[<span class='fl'>2</span>]
 )</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -148,15 +148,11 @@
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>wrap_png</span>()</div><div class='output co'>#&gt;   x0        y0
-#&gt; 1  0  0.000000
-#&gt; 2  1  0.000000
-#&gt; 3  2  0.000000
-#&gt; 4  0 -1.315789
-#&gt; 5  1 -1.315789</div><div class='input'><span class='fu'><a href='ggcanvas.html'>ggcanvas</a></span>() +
-<span class='fu'><a href='stamp_png.html'>stamp_png</a></span>(<span class='kw'>x0y0</span> <span class='kw'>=</span> <span class='fu'>wrap_png</span>(<span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>1.2</span>)) +
-<span class='fu'><a href='stamp_png.html'>stamp_png</a></span>(<span class='kw'>x0y0</span> <span class='kw'>=</span> <span class='fu'>wrap_png</span>(<span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>1.2</span>, <span class='kw'>y0</span> <span class='kw'>=</span> -<span class='fl'>4</span>))</div><div class='output co'>#&gt; <span class='message'>Scale for 'fill' is already present. Adding another scale for 'fill', which</span>
-#&gt; <span class='message'>will replace the existing scale.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Raster pixels are placed at uneven horizontal intervals and will be shifted. Consider using geom_tile() instead.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Raster pixels are placed at uneven vertical intervals and will be shifted. Consider using geom_tile() instead.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Raster pixels are placed at uneven horizontal intervals and will be shifted. Consider using geom_tile() instead.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Raster pixels are placed at uneven vertical intervals and will be shifted. Consider using geom_tile() instead.</span></div><div class='img'><img src='wrap_png-1.png' alt='' width='700' height='433' /></div></pre>
+    <pre class="examples"><div class='input'><span class='fu'><a href='ggcanvas.html'>ggcanvas</a></span>() +
+    <span class='fu'><a href='stamp_png.html'>stamp_png</a></span>(<span class='kw'>x0y0</span> <span class='kw'>=</span> <span class='fu'>wrap_png</span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>7</span>)) +
+    <span class='fu'><a href='stamp_png.html'>stamp_png</a></span>(<span class='kw'>x0y0</span> <span class='kw'>=</span> <span class='fu'>wrap_png</span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>5</span>,
+              <span class='kw'>y0</span> <span class='kw'>=</span> -<span class='fl'>2.5</span>), <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>.85</span>)</div><div class='output co'>#&gt; <span class='message'>Scale for 'fill' is already present. Adding another scale for 'fill', which</span>
+#&gt; <span class='message'>will replace the existing scale.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Raster pixels are placed at uneven horizontal intervals and will be shifted. Consider using geom_tile() instead.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Raster pixels are placed at uneven vertical intervals and will be shifted. Consider using geom_tile() instead.</span></div><div class='img'><img src='wrap_png-1.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

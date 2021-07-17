@@ -125,19 +125,21 @@
   <span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>0</span>,
   <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>0</span>,
   <span class='kw'>label</span> <span class='kw'>=</span> <span class='st'>"a nice label"</span>,
-  <span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>8</span>,
   <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>angle</span> <span class='kw'>=</span> <span class='fl'>0</span>,
   <span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"black"</span>,
   <span class='kw'>fill</span> <span class='kw'>=</span> <span class='st'>"white"</span>,
+  <span class='kw'>family</span> <span class='kw'>=</span> <span class='st'>"Times"</span>,
+  <span class='kw'>fontface</span> <span class='kw'>=</span> <span class='st'>"bold"</span>,
+  <span class='kw'>hjust</span> <span class='kw'>=</span> <span class='fl'>0.5</span>,
   <span class='kw'>lineheight</span> <span class='kw'>=</span> <span class='fl'>0.85</span>,
-  <span class='kw'>family</span> <span class='kw'>=</span> <span class='st'>""</span>,
+  <span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>8</span>,
   <span class='kw'>vjust</span> <span class='kw'>=</span> <span class='fl'>0.5</span>,
   <span class='kw'>nudge_x</span> <span class='kw'>=</span> <span class='fl'>0</span>,
   <span class='kw'>nudge_y</span> <span class='kw'>=</span> <span class='fl'>0</span>,
   <span class='kw'>label.padding</span> <span class='kw'>=</span> <span class='kw pkg'>ggplot2</span><span class='kw ns'>::</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/reexports.html'>unit</a></span>(<span class='fl'>0.5</span>, <span class='kw'>units</span> <span class='kw'>=</span> <span class='st'>"lines"</span>),
   <span class='kw'>label.r</span> <span class='kw'>=</span> <span class='kw pkg'>ggplot2</span><span class='kw ns'>::</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/reexports.html'>unit</a></span>(<span class='fl'>0.15</span>, <span class='kw'>units</span> <span class='kw'>=</span> <span class='st'>"lines"</span>),
   <span class='kw'>label.size</span> <span class='kw'>=</span> <span class='fl'>0.3</span>,
+  <span class='kw'>parse</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
   <span class='kw'>xy</span> <span class='kw'>=</span> <span class='kw'>NULL</span>
 )</pre>
 
@@ -157,6 +159,38 @@
       <td><p>defaults with a message about use</p></td>
     </tr>
     <tr>
+      <th>alpha</th>
+      <td><p>transparency of label</p></td>
+    </tr>
+    <tr>
+      <th>color</th>
+      <td><p>color of text, consider named colors https://evamaerey.github.io/ggplot2_grammar_guide/named_colors</p></td>
+    </tr>
+    <tr>
+      <th>fill</th>
+      <td><p>background color of label, consider named colors https://evamaerey.github.io/ggplot2_grammar_guide/named_colors</p></td>
+    </tr>
+    <tr>
+      <th>family</th>
+      <td><p>font family</p></td>
+    </tr>
+    <tr>
+      <th>hjust</th>
+      <td><p>horizontal justification, between 0 and 1, defaults to .5</p></td>
+    </tr>
+    <tr>
+      <th>lineheight</th>
+      <td><p>spacing between lines if text is wrapped</p></td>
+    </tr>
+    <tr>
+      <th>size</th>
+      <td><p>size of text</p></td>
+    </tr>
+    <tr>
+      <th>vjust</th>
+      <td><p>vertical justification, between 0 and 1, defaults to .5</p></td>
+    </tr>
+    <tr>
       <th>nudge_x</th>
       <td><p>Horizontal adjustment to nudge labels by. Useful for offsetting text from points, particularly on discrete scales.</p></td>
     </tr>
@@ -172,6 +206,18 @@
       <th>label.r</th>
       <td><p>Radius of rounded corners. Defaults to 0.15 lines.</p></td>
     </tr>
+    <tr>
+      <th>label.size</th>
+      <td><p>Size of label border, in mm.</p></td>
+    </tr>
+    <tr>
+      <th>parse</th>
+      <td><p>If TRUE, the labels will be parsed into expressions and displayed as described in ?plotmath.</p></td>
+    </tr>
+    <tr>
+      <th>xy</th>
+      <td><p>a data frame where the first two columns contain x and y positional values</p></td>
+    </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
@@ -181,15 +227,17 @@
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>ggplot2</span>)
+    <pre class="examples"><div class='input'><span class='co'># labels on a plot</span>
+<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>ggplot2</span>)
 <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span>(<span class='no'>cars</span>) +
  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span>(<span class='no'>speed</span>, <span class='no'>dist</span>) +
  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span>() +
  <span class='fu'>stamp_label</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>20</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>10</span>) +
  <span class='fu'>stamp_label</span>(<span class='kw'>label</span> <span class='kw'>=</span> <span class='st'>"hi"</span>,
- <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>100</span>,<span class='fl'>75</span>,<span class='fl'>50</span>), <span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>5</span>, <span class='kw'>fill</span> <span class='kw'>=</span> <span class='st'>"cadetblue2"</span>, <span class='kw'>label.size</span> <span class='kw'>=</span> <span class='fl'>0</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: Ignoring unknown parameters: nudge_x, nudge_y</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Ignoring unknown parameters: nudge_x, nudge_y</span></div><div class='img'><img src='stamp_label-1.png' alt='' width='700' height='433' /></div><div class='input'>
- <span class='fu'><a href='ggcanvas.html'>ggcanvas</a></span>() +
-  <span class='fu'>stamp_label</span>()</div><div class='output co'>#&gt; <span class='warning'>Warning: Ignoring unknown parameters: nudge_x, nudge_y</span></div><div class='img'><img src='stamp_label-2.png' alt='' width='700' height='433' /></div></pre>
+ <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>100</span>, <span class='fl'>75</span>, <span class='fl'>50</span>), <span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>5</span>, <span class='kw'>fill</span> <span class='kw'>=</span> <span class='st'>"cadetblue2"</span>, <span class='kw'>label.size</span> <span class='kw'>=</span> <span class='fl'>0</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: Ignoring unknown parameters: nudge_x, nudge_y</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Ignoring unknown parameters: nudge_x, nudge_y</span></div><div class='img'><img src='stamp_label-1.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='co'># label on a canvas</span>
+<span class='fu'><a href='ggcanvas.html'>ggcanvas</a></span>() +
+   <span class='fu'>stamp_label</span>()</div><div class='output co'>#&gt; <span class='warning'>Warning: Ignoring unknown parameters: nudge_x, nudge_y</span></div><div class='img'><img src='stamp_label-2.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

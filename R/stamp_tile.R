@@ -2,32 +2,40 @@
 #'
 #' This function adds a text annotation layer
 #'
-#' @param x defaults to 0
-#' @param y defaults to 0
 #' @param size line width default is .5
 #' @param alpha 0 to 1 indicating transparency
-#' @param color named or hexcolor for outline
-#' @param fill named or hexcolor
+#' @param color named or hexcolor for outline of tile
 #' @param height full height of tile centered at y
-#' @param linetype "solid" "dashed" "dotted"
 #' @param width full width of tile centered at x
+#' @param linetype "solid" "dashed" "dotted" linetype border
+#' @inheritParams stamp_label
 #'
 #' @return
 #' @export
 #'
 #' @examples
+#' # tile
 #' library(ggplot2)
 #' ggplot(cars) +
 #'  aes(speed, dist) +
 #'  geom_point() +
-#'  stamp_tile(color = "red", x = 10, y = 90:100)
+#'  stamp_tile(color = "red", x = 10,
+#'             y = 90:100) +
+#'  stamp_tile(height = 10,
+#'             xy = spoke(x0 = 20, n = 15,
+#'             radius = 6))
 #'
-#'  ggcanvas() +
+#' # on a canvas
+#' ggcanvas() +
 #'  stamp_tile(fill = "green") +
-#'  stamp_tile(x = 1:5, y = 2, alpha = .8, fill = "steelblue",  width = .95, size = 0) +
+#'  stamp_tile(x = 1:5, y = 2, alpha = .8,
+#'             fill = "steelblue",
+#'             width = .95,
+#'             size = 0) +
 #'  coord_equal()
 #'
-#'  ggcanvas() +
+#' # using a positioner
+#' ggcanvas() +
 #'  stamp_tile(xy = spoke())
 stamp_tile <- function(x = 0,
                        y = 0,

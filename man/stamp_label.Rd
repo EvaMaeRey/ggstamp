@@ -8,19 +8,21 @@ stamp_label(
   x = 0,
   y = 0,
   label = "a nice label",
-  size = 8,
   alpha = 1,
-  angle = 0,
   color = "black",
   fill = "white",
+  family = "Times",
+  fontface = "bold",
+  hjust = 0.5,
   lineheight = 0.85,
-  family = "",
+  size = 8,
   vjust = 0.5,
   nudge_x = 0,
   nudge_y = 0,
   label.padding = ggplot2::unit(0.5, units = "lines"),
   label.r = ggplot2::unit(0.15, units = "lines"),
   label.size = 0.3,
+  parse = FALSE,
   xy = NULL
 )
 }
@@ -31,6 +33,22 @@ stamp_label(
 
 \item{label}{defaults with a message about use}
 
+\item{alpha}{transparency of label}
+
+\item{color}{color of text, consider named colors https://evamaerey.github.io/ggplot2_grammar_guide/named_colors}
+
+\item{fill}{background color of label, consider named colors https://evamaerey.github.io/ggplot2_grammar_guide/named_colors}
+
+\item{family}{font family}
+
+\item{hjust}{horizontal justification, between 0 and 1, defaults to .5}
+
+\item{lineheight}{spacing between lines if text is wrapped}
+
+\item{size}{size of text}
+
+\item{vjust}{vertical justification, between 0 and 1, defaults to .5}
+
 \item{nudge_x}{Horizontal adjustment to nudge labels by. Useful for offsetting text from points, particularly on discrete scales.}
 
 \item{nudge_y}{Vertical adjustment to nudge labels by. Useful for offsetting text from points, particularly on discrete scales.}
@@ -38,6 +56,12 @@ stamp_label(
 \item{label.padding}{Amount of padding around label. Defaults to 0.5 lines.}
 
 \item{label.r}{Radius of rounded corners. Defaults to 0.15 lines.}
+
+\item{label.size}{Size of label border, in mm.}
+
+\item{parse}{If TRUE, the labels will be parsed into expressions and displayed as described in ?plotmath.}
+
+\item{xy}{a data frame where the first two columns contain x and y positional values}
 }
 \value{
 
@@ -46,14 +70,16 @@ stamp_label(
 This function adds a text annotation layer
 }
 \examples{
+# labels on a plot
 library(ggplot2)
 ggplot(cars) +
  aes(speed, dist) +
  geom_point() +
  stamp_label(x = 20, y = 10) +
  stamp_label(label = "hi",
- y = c(100,75,50), x = 5, fill = "cadetblue2", label.size = 0)
+ y = c(100, 75, 50), x = 5, fill = "cadetblue2", label.size = 0)
 
- ggcanvas() +
-  stamp_label()
+# label on a canvas
+ggcanvas() +
+   stamp_label()
 }

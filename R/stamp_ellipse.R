@@ -11,12 +11,14 @@
 #' @export
 #'
 #' @examples
+#' # an ellipse
 #' library(ggplot2)
 #' ggplot(cars) +
 #'  aes(speed, dist) +
 #'  stamp_ellipse() +
 #'  stamp_ellipse(color = "plum4", x0 = 2, y0 = 3, angle = pi/6)
 #'
+#' # several
 #' ggcanvas() +
 #'  stamp_ellipse(color = "green") +
 #'  stamp_ellipse(x0 = 1:5, y0 = 2, size = 2)

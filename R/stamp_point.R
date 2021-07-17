@@ -15,6 +15,7 @@
 #' @export
 #'
 #' @examples
+#' # stamp in plot space
 #' library(ggplot2)
 #' ggplot(cars) +
 #'  aes(speed, dist) +
@@ -22,9 +23,16 @@
 #'  stamp_point() +
 #'  stamp_point(color = "red", x = 10, y = 100)
 #'
+#' # more points on canvas
 #' ggcanvas() +
-#'  stamp_point(color = "green") +
-#'  stamp_point(x = 1:5, y = 2, size = 8, alpha = .5)
+#'  stamp_point(color = "darkgreen") +
+#'  stamp_point(x = 1:5, y = 2,
+#'              size = 8, alpha = .5) +
+#'  stamp_point(xy = wrap(y0 = -2,
+#'              n = 13, ncol = 4),
+#'              color = "plum") +
+#'  stamp_point(xy = wrap(x0 = 1,
+#'              n = 7, ncol = 4, width = .5))
 stamp_point <- function(x = 0,
                         y = 0,
                        size = 8,

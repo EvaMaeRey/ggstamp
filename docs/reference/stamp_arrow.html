@@ -125,17 +125,20 @@ Contribute or help document https://github.com/EvaMaeRey/ggstamp/blob/master/R/s
 
     <pre class="usage"><span class='fu'>stamp_arrow</span>(
   <span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>0</span>,
-  <span class='kw'>xend</span> <span class='kw'>=</span> <span class='fl'>1</span>,
   <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>0</span>,
+  <span class='kw'>xend</span> <span class='kw'>=</span> <span class='fl'>1</span>,
   <span class='kw'>yend</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>1.5</span>,
   <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>1</span>,
   <span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"black"</span>,
+  <span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>1.5</span>,
   <span class='kw'>ends</span> <span class='kw'>=</span> <span class='st'>"last"</span>,
   <span class='kw'>units</span> <span class='kw'>=</span> <span class='st'>"npc"</span>,
   <span class='kw'>headlength</span> <span class='kw'>=</span> <span class='fl'>0.03</span>,
   <span class='kw'>angle</span> <span class='kw'>=</span> <span class='fl'>30</span>,
-  <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"open"</span>
+  <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"open"</span>,
+  <span class='kw'>lineend</span> <span class='kw'>=</span> <span class='st'>"butt"</span>,
+  <span class='kw'>linejoin</span> <span class='kw'>=</span> <span class='st'>"round"</span>,
+  <span class='kw'>arrow.fill</span> <span class='kw'>=</span> <span class='no'>T</span>
 )</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -146,24 +149,24 @@ Contribute or help document https://github.com/EvaMaeRey/ggstamp/blob/master/R/s
       <td><p>defaults to 0</p></td>
     </tr>
     <tr>
-      <th>xend</th>
-      <td><p>defaults to 1</p></td>
-    </tr>
-    <tr>
       <th>y</th>
       <td><p>defaults to 0</p></td>
+    </tr>
+    <tr>
+      <th>xend</th>
+      <td><p>defaults to 1</p></td>
     </tr>
     <tr>
       <th>yend</th>
       <td><p>defaults to 1</p></td>
     </tr>
     <tr>
-      <th>size</th>
-      <td><p>numeric indicating line width</p></td>
-    </tr>
-    <tr>
       <th>alpha</th>
       <td><p>numeric between 0 and 1 indicating transparency</p></td>
+    </tr>
+    <tr>
+      <th>size</th>
+      <td><p>numeric indicating line width</p></td>
     </tr>
     <tr>
       <th>ends</th>
@@ -194,17 +197,22 @@ Contribute or help document https://github.com/EvaMaeRey/ggstamp/blob/master/R/s
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>ggplot2</span>)
+    <pre class="examples"><div class='input'><span class='co'># stamp arrow on plot</span>
+<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>ggplot2</span>)
 <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span>(<span class='no'>cars</span>) +
- <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span>(<span class='no'>speed</span>, <span class='no'>dist</span>) +
- <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span>() +
- <span class='fu'>stamp_arrow</span>(<span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"darkred"</span>,
- <span class='kw'>xend</span> <span class='kw'>=</span> <span class='fl'>15</span>, <span class='kw'>yend</span> <span class='kw'>=</span> <span class='fl'>75</span>)</div><div class='img'><img src='stamp_arrow-1.png' alt='' width='700' height='433' /></div><div class='input'>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span>(<span class='no'>speed</span>, <span class='no'>dist</span>) +
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span>() +
+  <span class='fu'>stamp_arrow</span>() +
+  <span class='fu'>stamp_arrow</span>(<span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"darkred"</span>,
+  <span class='kw'>xend</span> <span class='kw'>=</span> <span class='fl'>15</span>, <span class='kw'>yend</span> <span class='kw'>=</span> <span class='fl'>75</span>)</div><div class='img'><img src='stamp_arrow-1.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='co'># several arrows</span>
  <span class='fu'><a href='ggcanvas.html'>ggcanvas</a></span>() +
  <span class='fu'>stamp_arrow</span>(<span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"steelblue"</span>) +
  <span class='fu'>stamp_arrow</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>5</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>xend</span> <span class='kw'>=</span> <span class='fl'>2</span>:<span class='fl'>6</span>,
- <span class='kw'>headlength</span> <span class='kw'>=</span> <span class='fl'>.04</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"closed"</span>, <span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"darkred"</span>) +
- <span class='fu'>stamp_arrow</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>.5</span>, <span class='kw'>xend</span> <span class='kw'>=</span> <span class='fl'>1.5</span>, <span class='kw'>ends</span> <span class='kw'>=</span> <span class='st'>"both"</span>, <span class='kw'>angle</span> <span class='kw'>=</span> <span class='fl'>60</span>)</div><div class='img'><img src='stamp_arrow-2.png' alt='' width='700' height='433' /></div></pre>
+ <span class='kw'>headlength</span> <span class='kw'>=</span> <span class='fl'>.04</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"closed"</span>,
+ <span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"darkred"</span>) +
+ <span class='fu'>stamp_arrow</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>.5</span>, <span class='kw'>xend</span> <span class='kw'>=</span> <span class='fl'>1.5</span>,
+ <span class='kw'>ends</span> <span class='kw'>=</span> <span class='st'>"both"</span>, <span class='kw'>angle</span> <span class='kw'>=</span> <span class='fl'>60</span>)</div><div class='img'><img src='stamp_arrow-2.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

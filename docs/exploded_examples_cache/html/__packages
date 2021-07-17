@@ -1,0 +1,15 @@
+base
+exampleexploder
+ggplot2
+dplyr
+flipbookr
+tidyverse
+tibble
+tidyr
+readr
+purrr
+stringr
+forcats
+usethis
+devtools
+ggstamp

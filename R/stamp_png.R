@@ -1,6 +1,3 @@
-
-
-
 #' stamp_png
 #'
 #' @param image
@@ -14,31 +11,29 @@
 #' @export
 #'
 #' @examples
+#' # stamp in plotspace
 #' library(ggplot2)
 #' ggplot(cars, aes(dist, speed)) +
 #'   geom_point() +
-#'   stamp_png(x0 = 5:11*10, y0 = 10, height = 1, width = 10) +
+#'   stamp_png(x0 = 5:11*10, y0 = 10,
+#'             height = 1, width = 10) +
 #'   scale_fill_identity()
 #'
+#' # two stamps
 #' ggcanvas() +
 #'   stamp_png() +
-#'   stamp_png(x0 = 2:3, y0 = 6, width = .95) +
+#'   stamp_png(x0 = 2:3, y0 = 6,
+#'             width = .95) +
 #'   scale_fill_identity()
 #'
+#' # png spokes
 #' ggcanvas() +
-#'   stamp_png(x0 = 0:8 %% 5 + 1,
-#'         y = -(0:8 %/% 5)/.75 , width = .90) +
-#'   coord_equal() +
-#'   stamp_png(x0 = 0:5 %% 5 + 1,
-#'       y0 = -(0:5 %/% 5)/.75  -3, width = .90) +
-#'   stamp_png(x0 = 0:2 %% 5 + 1,
-#'      y0 = -(0:2 %/% 5)/.75  -6, width = .90) +
-#'   scale_fill_identity()
+#'   stamp_png()
 #'
+#' # tiling pngs needs work
 #' ggcanvas() +
-#'   stamp_png(x0 = wrap_x(),
-#'             y0 = wrap_y_png(), alpha = .5)
-
+#'   stamp_png(x0y0 = wrap_png(),
+#'   alpha = .75)
 stamp_png <- function(x0 = 0,
                         y0 = 0,
                         png = system.file("img", "Rlogo.png", package = "png"),
@@ -95,82 +90,3 @@ stamp_png <- function(x0 = 0,
 
 }
 
-
-
-
-#' Title
-#'
-#' @param x0
-#' @param n
-#'
-#' @return
-#' @export
-#'
-#' @examples
-wrap_x_png <- function(x0 = 0,
-                       n = 5,
-                       ncol = 3,
-                       png = system.file("img", "Rlogo.png", package = "png"),
-                       image = png::readPNG(png),
-                       width = 1){
-
-  (0:(n-1) %% ncol)*width + x0
-
-}
-
-
-#' Title
-#'
-#' @param x0
-#' @param n
-#'
-#' @return
-#' @export
-#'
-#' @examples
-wrap_y_png <- function(y0 = 0,
-                       n = 5,
-                       ncol = 3,
-                       png = system.file("img", "Rlogo.png", package = "png"),
-                       image = png::readPNG(png),
-                       width = 1,
-                       height = width*dim(image)[2]/dim(image)[1]
-                       ){
-
-  -(0:(n-1) %/% ncol) * height + y0
-
-}
-
-
-#' Title
-#'
-#' @param x0
-#' @param y0
-#' @param n
-#' @param ncol
-#' @param png
-#' @param image
-#' @param width
-#' @param height
-#'
-#' @return
-#' @export
-#'
-#' @examples
-#' wrap_png()
-#' ggcanvas() +
-#' stamp_png(x0y0 = wrap_png(width = 1.2)) +
-#' stamp_png(x0y0 = wrap_png(width = 1.2, y0 = -4))
-wrap_png <- function(x0 = 0,
-                     y0 = 0,
-                     n = 5,
-                     ncol = 3,
-                     png = system.file("img", "Rlogo.png", package = "png"),
-                     image = png::readPNG(png),
-                     width = 1,
-                     height = width*dim(image)[2]/dim(image)[1]){
-
-  data.frame(x0 = wrap_x_png(x0 = x0, n = n, ncol = ncol, png = png, image = image, width = width),
-             y0 = wrap_y_png(y0 = y0, n = n, ncol = ncol, png = png, image = image, height = height))
-
-}

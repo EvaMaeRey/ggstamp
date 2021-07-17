@@ -1,0 +1,713 @@
+---
+title: ggstamp
+subtitle: ""
+author: "Exploded Examples"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: [default, hygge, ninjutsu]
+    nature:
+      ratio: 16:9
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, echo = F}
+knitr::opts_chunk$set(echo = TRUE, message = F, warning = F, fig.height = 6, comment = "")
+options(knitr.duplicate.label = "allow")
+library(ggstamp)
+```
+
+
+---
+
+`r flipbookr::chunk_reveal('ggbackdrop_1', title = '### ggbackdrop')`
+
+```{r ggbackdrop_1, include = F}
+library(ggplot2)
+ggbackdrop() +
+stamp_curve(curvature = .3, yend = 75, xend = 100) +
+stamp_polygon(x0 = 20, y0 = 60, radius = 20, alpha = .4) +
+stamp_text(x = 20, y = 60, label = "{ggstamp}",
+           size = 5, color = "grey97") +
+theme_void()
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('ggcanvas_2', title = '### ggcanvas')`
+
+```{r ggcanvas_2, include = F}
+library(ggplot2)
+ggcanvas() +
+  stamp_point(color = "plum4") +
+  stamp_point(x = 1, y = 1,
+              color = "lightsteelblue3",
+              size = 35) +
+  stamp_arrow(color = "plum4",
+              headlength = .06,
+              type = "closed") +
+  stamp_label(1.5, 2.5, label = "      nnnnn",
+              size = 15,
+              fill = "lemonchiffon", ) +
+  stamp_bubble(2.5, 1.25, size = 100,
+               color = "plum4") +
+  stamp_point(x = c(2,2:4), y = 1:4,
+              color = "paleturquoise",
+              size = 15) +
+  stamp_arrow(y = 2, yend = 1:4,
+              xend = c(2,2:4),
+              color = "cadetblue4") +
+  stamp_label(1, 3.5, label = "Stamps!",
+              fill = "paleturquoise3") +
+  stamp_label(3.2, 1.75, label = "Umm...  n         ",
+              size = 18,
+              fill = "thistle") +
+  stamp_label(3.2, 1.75, label = "Umm...  n Stamps!",
+              size = 18,
+              fill = "thistle") +
+  theme_void() +
+  stamp_curve(x = .25 + log(1:12),
+              xend = 1.5 + sqrt(1:12),
+              y = 0 + 1:12/20,
+              color = "palegreen3",
+              yend = 1:12/6,
+              curvature = -.1,
+              alpha = 12:1/12)
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('ggdraft_3', title = '### ggdraft')`
+
+```{r ggdraft_3, include = F}
+# remove drafting lines
+(ggdraft() +
+stamp_polygon(x0 = 20, y0 = 40,
+              radius = 20, alpha = .4) +
+stamp_polygon(x0 = 85, y0 = 23,
+              radius = 22,
+              n = 5, fill = "seagreen2")
+   ) +
+theme_void()
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('ggdraft_4', title = '### ggdraft')`
+
+```{r ggdraft_4, include = F}
+library(ggplot2)
+ggdraft() +
+stamp_curve(curvature = .13,
+            size = .09,
+            yend = 20:60,
+            xend = 100) +
+stamp_polygon(x0 = 20, y0 = 40,
+              radius = 20, alpha = .4) +
+stamp_text(x = 20, y = 40, label = "{ggstamp}",
+           size = 6, color = "grey97")
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('honeycomb_x_5', title = '### honeycomb_x')`
+
+```{r honeycomb_x_5, include = F}
+honeycomb_x()
+honeycomb_x(n = 10, x0 = 5, ncol = 2)
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('honeycomb_y_6', title = '### honeycomb_y')`
+
+```{r honeycomb_y_6, include = F}
+honeycomb_y()
+ggcanvas() +
+ stamp_polygon(x0 = honeycomb_x(),
+               y0 = honeycomb_y())
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('honeycomb_7', title = '### honeycomb')`
+
+```{r honeycomb_7, include = F}
+# a hive
+ggcanvas() +
+  stamp_polygon(x0y0 = honeycomb(width = 1.8),
+                fill = c("goldenrod3"),
+                alpha = .8,
+                size = 0)  +
+  stamp_polygon(x0y0 = honeycomb(width = 1.8, n = 12)[c(6:9, 11),],
+                fill = c("goldenrod4"),
+                alpha = .8,
+                size = 0) +
+  stamp_polygon(x0y0 = honeycomb(width = 1.8, n = 15)[c(10,12:15),],
+                fill = c("goldenrod2"),
+                alpha = .8,
+                size = 0) +
+  stamp_png(x0y0 = honeycomb(width = 1.8, n = 15)[c(1,5, 10),])
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('honeycomb_8', title = '### honeycomb')`
+
+```{r honeycomb_8, include = F}
+# first example
+honeycomb()
+ggcanvas() +
+ stamp_point(xy = honeycomb()) +
+ stamp_polygon(x0y0 = honeycomb(n = 15, ncol = 4),
+     alpha = .5) +
+ stamp_label(label = 1:15, xy = honeycomb(n = 15, ncol = 4)) +
+ stamp_polygon(n = 4,
+               x0y0 = honeycomb(n = 15, ncol = 4)[15,],
+               fill = "magenta", alpha = .4, radius = sqrt(.75))
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('honeycomb_9', title = '### honeycomb')`
+
+```{r honeycomb_9, include = F}
+# get coords for single position
+honeycomb(n = 15, ncol = 5)[15,]
+honeycomb(n = 15, ncol = 5)[1:4,]
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('spoke_y_10', title = '### spoke_y')`
+
+```{r spoke_y_10, include = F}
+spoke_y(n = 6)
+ggcanvas() +
+stamp_label(label = "hello",
+           x = spoke_x(n = 5),
+           y = spoke_y(n = 5)) +
+stamp_point(x = spoke_x(n = 5, rot = 0),
+            y = spoke_y(n = 5, rot = 0))
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('spoke_11', title = '### spoke')`
+
+```{r spoke_11, include = F}
+# Using w plotspace
+ggcanvas() +
+stamp_label(label = c("hi", "bye", "tchao"),
+            xy = spoke(n = 3,
+            rotation = -.5,
+            radius = .5))
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('spoke_12', title = '### spoke')`
+
+```{r spoke_12, include = F}
+spoke()
+spoke(n = 10)
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('stamp_arrow_13', title = '### stamp_arrow')`
+
+```{r stamp_arrow_13, include = F}
+# several arrows
+ ggcanvas() +
+ stamp_arrow(color = "steelblue") +
+ stamp_arrow(x = 1:5, y = 2, xend = 2:6,
+ headlength = .04, type = "closed",
+ color = "darkred") +
+ stamp_arrow(x = .5, xend = 1.5,
+ ends = "both", angle = 60)
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('stamp_arrow_14', title = '### stamp_arrow')`
+
+```{r stamp_arrow_14, include = F}
+# stamp arrow on plot
+library(ggplot2)
+ggplot(cars) +
+  aes(speed, dist) +
+  geom_point() +
+  stamp_arrow() +
+  stamp_arrow(color = "darkred",
+  xend = 15, yend = 75)
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('stamp_bubble_15', title = '### stamp_bubble')`
+
+```{r stamp_bubble_15, include = F}
+library(ggplot2)
+ggplot(cars) +
+ aes(speed, dist) +
+ stamp_bubble() +
+ stamp_bubble(color = "red", x = 10, y = 100)
+ggcanvas() +
+ stamp_bubble(color = "green") +
+ stamp_bubble(x = 1:5, y = 2, size = 8)
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('stamp_curve_16', title = '### stamp_curve')`
+
+```{r stamp_curve_16, include = F}
+# a curve
+library(ggplot2)
+ggplot(cars) +
+ aes(speed, dist) +
+ geom_point() +
+ stamp_curve(color = "darkred",
+ xend = 15, yend = 75)
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('stamp_curve_17', title = '### stamp_curve')`
+
+```{r stamp_curve_17, include = F}
+# more curves
+ggcanvas() +
+ stamp_curve() +
+ stamp_curve(color = "green") +
+ stamp_curve(x = 1:5, yend = 2, xend = 2:6,
+ size = 8, alpha = .5) +
+ stamp_point(x = 1:5, y = 0)
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('stamp_ellipse_18', title = '### stamp_ellipse')`
+
+```{r stamp_ellipse_18, include = F}
+# an ellipse
+library(ggplot2)
+ggplot(cars) +
+ aes(speed, dist) +
+ stamp_ellipse() +
+ stamp_ellipse(color = "plum4", x0 = 2, y0 = 3, angle = pi/6)
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('stamp_ellipse_19', title = '### stamp_ellipse')`
+
+```{r stamp_ellipse_19, include = F}
+# several
+ggcanvas() +
+ stamp_ellipse(color = "green") +
+ stamp_ellipse(x0 = 1:5, y0 = 2, size = 2)
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('stamp_label_20', title = '### stamp_label')`
+
+```{r stamp_label_20, include = F}
+# label on a canvas
+ggcanvas() +
+   stamp_label()
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('stamp_label_21', title = '### stamp_label')`
+
+```{r stamp_label_21, include = F}
+# labels on a plot
+library(ggplot2)
+ggplot(cars) +
+ aes(speed, dist) +
+ geom_point() +
+ stamp_label(x = 20, y = 10) +
+ stamp_label(label = "hi",
+ y = c(100, 75, 50), x = 5, fill = "cadetblue2", label.size = 0)
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('stamp_png_22', title = '### stamp_png')`
+
+```{r stamp_png_22, include = F}
+# png spokes
+ggcanvas() +
+  stamp_png()
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('stamp_png_23', title = '### stamp_png')`
+
+```{r stamp_png_23, include = F}
+# stamp in plotspace
+library(ggplot2)
+ggplot(cars, aes(dist, speed)) +
+  geom_point() +
+  stamp_png(x0 = 5:11*10, y0 = 10,
+            height = 1, width = 10) +
+  scale_fill_identity()
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('stamp_png_24', title = '### stamp_png')`
+
+```{r stamp_png_24, include = F}
+# tiling pngs needs work
+ggcanvas() +
+  stamp_png(x0y0 = wrap_png(),
+  alpha = .75)
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('stamp_png_25', title = '### stamp_png')`
+
+```{r stamp_png_25, include = F}
+# two stamps
+ggcanvas() +
+  stamp_png() +
+  stamp_png(x0 = 2:3, y0 = 6,
+            width = .95) +
+  scale_fill_identity()
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('stamp_point_26', title = '### stamp_point')`
+
+```{r stamp_point_26, include = F}
+# more points on canvas
+ggcanvas() +
+ stamp_point(color = "darkgreen") +
+ stamp_point(x = 1:5, y = 2,
+             size = 8, alpha = .5) +
+ stamp_point(xy = wrap(y0 = -2,
+             n = 13, ncol = 4),
+             color = "plum") +
+ stamp_point(xy = wrap(x0 = 1,
+             n = 7, ncol = 4, width = .5))
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('stamp_point_27', title = '### stamp_point')`
+
+```{r stamp_point_27, include = F}
+# stamp in plot space
+library(ggplot2)
+ggplot(cars) +
+ aes(speed, dist) +
+ geom_point() +
+ stamp_point() +
+ stamp_point(color = "red", x = 10, y = 100)
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('stamp_polygon_28', title = '### stamp_polygon')`
+
+```{r stamp_polygon_28, include = F}
+# lots of polygons
+ ggcanvas() +
+ stamp_polygon(color = "turquoise4", radius = 3, n = 5, fill = "turquoise") +
+ stamp_polygon(fill = "slateblue2", radius = 2, n = 7) +
+ stamp_polygon(linetype = "dashed", alpha = .5, fill = "plum2") +
+ stamp_polygon(x0 = 1, y0 = 1.5, n = 3, rotation = .25, size = 0,
+  fill = "goldenrod2") +
+ stamp_polygon(n = 50, radius = .2, size = 0) +
+ stamp_spoke(angle = pi * 1:7/15, radius = 2)
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('stamp_polygon_29', title = '### stamp_polygon')`
+
+```{r stamp_polygon_29, include = F}
+# on a canvas
+ ggcanvas() +
+  stamp_polygon(n = 3, x0 = c(0, 2.5),
+  fill = "magenta", color = "purple") +
+  stamp_label(x = spoke_x(x0 = 0, n = 3),
+              y = spoke_y(y0 = 0, n = 3),
+              label = c("hi", "hello", "bye")) +
+  stamp_point(color = "turquoise")
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('stamp_polygon_30', title = '### stamp_polygon')`
+
+```{r stamp_polygon_30, include = F}
+# on plot space
+library(ggplot2)
+ggplot(cars) +
+ aes(speed, dist) +
+ geom_point() +
+ stamp_polygon(color = "darkred", radius = 5)
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('stamp_polygon_31', title = '### stamp_polygon')`
+
+```{r stamp_polygon_31, include = F}
+# some more
+ ggcanvas() +
+  stamp_polygon(x0y0 = wrap(n = 5, ncol = 3, height = 1.5),
+                radius = .55, n = 7) +
+  stamp_text(xy = wrap(n = 5, ncol = 3,
+           height = 1.5), label = LETTERS[1:5])
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('stamp_segment_32', title = '### stamp_segment')`
+
+```{r stamp_segment_32, include = F}
+# segment on plot space
+library(ggplot2)
+ggplot(cars) +
+ aes(speed, dist) +
+ geom_point() +
+ stamp_segment(color = "darkred",
+ xend = 15, yend = 75)
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('stamp_segment_33', title = '### stamp_segment')`
+
+```{r stamp_segment_33, include = F}
+# segments on canvas
+ ggcanvas() +
+ stamp_segment(color = "green") +
+ stamp_segment(x = 1:5, y = 2, xend = 2:6,
+ size = 8, alpha = .5, lineend = "round")
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('stamp_spoke_34', title = '### stamp_spoke')`
+
+```{r stamp_spoke_34, include = F}
+# on canvas
+ ggcanvas() +
+ stamp_spoke(color = "green") +
+ stamp_spoke(x = 2, y = 2, angle = pi * 1:8/4) +
+ stamp_bubble(x = 2, y = 2, size = 15) +
+ stamp_spoke(x = 1.5, y = 0, angle = pi * 1:50/50, alpha = 1:50/50) +
+ stamp_text(x = 2, y = 2, label = "Hi!") +
+ coord_equal() +
+ theme_void()
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('stamp_spoke_35', title = '### stamp_spoke')`
+
+```{r stamp_spoke_35, include = F}
+# on plot
+library(ggplot2)
+ggplot(cars) +
+ aes(speed, dist) +
+ geom_point() +
+ stamp_spoke(color = "darkred", radius = 25)
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('stamp_text_36', title = '### stamp_text')`
+
+```{r stamp_text_36, include = F}
+# cool text
+library(ggplot2)
+ggplot(cars) +
+ aes(speed, dist) +
+ geom_point() +
+ stamp_text(label = stringr::str_wrap("a speed v. stopping distance, 1920s study tells us ...", 30),
+            x = 12, y = 110,
+            size = 5)
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('stamp_text_37', title = '### stamp_text')`
+
+```{r stamp_text_37, include = F}
+# some more
+ ggcanvas() +
+  stamp_text() +
+  stamp_text(label = letters[1:4],
+  xy = spoke(n = 4)) +
+  stamp_text(x = 2) +
+  scale_x_continuous(limits = c(-1,3)) +
+  stamp_text(y = 1:2, x = 2,
+             label = "Hellonthere!") +
+  theme_void() +
+  stamp_point(x = 1, y = 1,
+              alpha = .4) +
+  theme(plot.background =
+       element_rect(fill = "seagreen",
+       size = 0)) +
+  scale_y_continuous(limits = c(-1,3))
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('stamp_tile_38', title = '### stamp_tile')`
+
+```{r stamp_tile_38, include = F}
+# on a canvas
+ggcanvas() +
+ stamp_tile(fill = "green") +
+ stamp_tile(x = 1:5, y = 2, alpha = .8,
+            fill = "steelblue",
+            width = .95,
+            size = 0) +
+ coord_equal()
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('stamp_tile_39', title = '### stamp_tile')`
+
+```{r stamp_tile_39, include = F}
+# tile
+library(ggplot2)
+ggplot(cars) +
+ aes(speed, dist) +
+ geom_point() +
+ stamp_tile(color = "red", x = 10,
+            y = 90:100) +
+ stamp_tile(height = 10,
+            xy = spoke(x0 = 20, n = 15,
+            radius = 6))
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('stamp_tile_40', title = '### stamp_tile')`
+
+```{r stamp_tile_40, include = F}
+# using a positioner
+ggcanvas() +
+ stamp_tile(xy = spoke())
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('wrap_png_41', title = '### wrap_png')`
+
+```{r wrap_png_41, include = F}
+ggcanvas() +
+    stamp_png(x0y0 = wrap_png(n = 7)) +
+    stamp_png(x0y0 = wrap_png(n = 5,
+              y0 = -2.5), width = .85)
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('wrap_42', title = '### wrap')`
+
+```{r wrap_42, include = F}
+wrap()
+wrap(n = 7, ncol = 2)
+```
+
+

@@ -6,12 +6,17 @@
 \usage{
 stamp_segment(
   x = 0,
-  xend = 1,
   y = 0,
+  xend = 1,
   yend = 1,
-  size = 1.5,
   alpha = 1,
-  color = "black"
+  color = "black",
+  linetype = "solid",
+  size = 1.5,
+  lineend = "butt",
+  linejoin = "round",
+  arrow = arrow(length = 0),
+  arrow.fill = NULL
 )
 }
 \arguments{
@@ -19,9 +24,25 @@ stamp_segment(
 
 \item{y}{defaults to 0}
 
-\item{size}{}
+\item{xend}{numeric defaults to 1}
 
-\item{label}{defaults with a message about used}
+\item{yend}{numeric defaults to 1}
+
+\item{alpha}{a numeric between 0 and 1 for transparency, zero is fully transparent, 1 fully opaque}
+
+\item{color}{line color}
+
+\item{linetype}{"solid", "dashed", "dotted"}
+
+\item{size}{numeric indicating line width, defaults to 1.5}
+
+\item{lineend}{Line end style (round, butt, square).}
+
+\item{linejoin}{Line join style (round, mitre, bevel).}
+
+\item{arrow}{specification for arrow heads, as created by arrow().}
+
+\item{arrow.fill}{fill colour to use for the arrow head (if closed). NULL means use colour aesthetic.}
 }
 \value{
 
@@ -30,6 +51,7 @@ stamp_segment(
 This function adds a text annotation layer
 }
 \examples{
+# segment on plot space
 library(ggplot2)
 ggplot(cars) +
  aes(speed, dist) +
@@ -37,8 +59,9 @@ ggplot(cars) +
  stamp_segment(color = "darkred",
  xend = 15, yend = 75)
 
+# segments on canvas
  ggcanvas() +
  stamp_segment(color = "green") +
  stamp_segment(x = 1:5, y = 2, xend = 2:6,
- size = 8, alpha = .5)
+ size = 8, alpha = .5, lineend = "round")
 }

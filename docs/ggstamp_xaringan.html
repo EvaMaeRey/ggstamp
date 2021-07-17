@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>A Data Science Bedtime Story</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Gina Reynolds, 2019" />
+    <script src="libs/header-attrs-2.6/header-attrs.js"></script>
+    <script src="libs/clipboard-2.0.6/clipboard.min.js"></script>
+    <link href="libs/shareon-1.4.1/shareon.min.css" rel="stylesheet" />
+    <script src="libs/shareon-1.4.1/shareon.min.js"></script>
+    <link href="libs/xaringanExtra-shareagain-0.2.6/shareagain.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-shareagain-0.2.6/shareagain.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+
+
+
+
+class: left, top, inverse
+background-image: url(slow_sky.gif)
+background-size: cover
+
+## .Large[Sleepy {ggstamp} Bedtime Story]
+### w ggplot, xarningan and others
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+
+#### Gina Reynolds&lt;br&gt;Photo Credit: Clark Young
+
+
+
+
+
+
+
+
+
+
+---
+class: center, middle
+
+# Chapter 0: Setting the stage with a hypnotic gif
+
+
+
+
+
+---
+class: inverse, middle, center
+# This is a bedtime story.
+---
+class: inverse, middle, center
+# 
+---
+class: inverse, middle, center
+# For ambiance, first set the stage with a hypnotic gif.
+---
+class: inverse, middle, center
+#  We'll slow down the play back time with {magick} to make things less exciting.
+---
+class: inverse, middle, center
+#  And beyond the title slide we'll use a version with washed out color so there is a bit more contrast.
+
+---
+
+
+count: false
+ 
+
+.panel1-prepare_gif-auto[
+
+```r
+# prepping gif
+*gif_url &lt;- "https://media.giphy.com/media/6uVwL25uYHW92/giphy.gif"
+```
+]
+ 
+.panel2-prepare_gif-auto[
+
+]
+
+---
+count: false
+ 
+
+.panel1-prepare_gif-auto[
+
+```r
+# prepping gif
+gif_url &lt;- "https://media.giphy.com/media/6uVwL25uYHW92/giphy.gif"
+*magick::image_read(path = gif_url)
+```
+]
+ 
+.panel2-prepare_gif-auto[
+![](ggstamp_xaringan_files/figure-html/prepare_gif_auto_02_output-1.gif)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-prepare_gif-auto[
+
+```r
+# prepping gif
+gif_url &lt;- "https://media.giphy.com/media/6uVwL25uYHW92/giphy.gif"
+magick::image_read(path = gif_url) %&gt;%
+* magick::image_colorize(
+*   opacity = 40,
+*   color = "white"
+*   )
+```
+]
+ 
+.panel2-prepare_gif-auto[
+![](ggstamp_xaringan_files/figure-html/prepare_gif_auto_03_output-1.gif)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-prepare_gif-auto[
+
+```r
+# prepping gif
+gif_url &lt;- "https://media.giphy.com/media/6uVwL25uYHW92/giphy.gif"
+magick::image_read(path = gif_url) %&gt;%
+  magick::image_colorize(
+    opacity = 40,
+    color = "white"
+    ) %&gt;%
+* magick::image_write_gif(
+*   delay = .3,
+*   path = "washed_out_sky.gif"
+*   )
+```
+]
+ 
+.panel2-prepare_gif-auto[
+
+```
+
+Frame 1 (5%)
+Frame 2 (10%)
+Frame 3 (15%)
+Frame 4 (21%)
+Frame 5 (26%)
+Frame 6 (31%)
+Frame 7 (36%)
+Frame 8 (42%)
+Frame 9 (47%)
+Frame 10 (52%)
+Frame 11 (57%)
+Frame 12 (63%)
+Frame 13 (68%)
+Frame 14 (73%)
+Frame 15 (78%)
+Frame 16 (84%)
+Frame 17 (89%)
+Frame 18 (94%)
+Frame 19 (100%)
+Finalizing encoding... done!
+```
+
+```
+[1] "/Users/evangelinereynolds/Google Drive/r_packages/ggstamp/docs/washed_out_sky.gif"
+```
+]
+
+&lt;style&gt;
+.panel1-prepare_gif-auto {
+  color: black;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-prepare_gif-auto {
+  color: black;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-prepare_gif-auto {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+
+
+
+
+
+
+
+
+---
+
+## We're using {xaringanthemer} to set all the background images. 
+
+
+
+
+```r
+xaringanthemer::style_mono_accent(code_inline_background_color = "darkgrey",
+  # hex color should be provided, or theme_xaringan doesn't work
+  title_slide_background_image = "https://media.giphy.com/media/6uVwL25uYHW92/giphy.gif",
+  background_image = "washed_out_sky.gif",
+  code_font_size = '14px',
+  text_slide_number_color = '#b3b3b3', #grey70
+  footnote_font_size = '0.5em',
+  footnote_position_bottom = "30px"
+)
+```
+
+
+---
+class: center, middle
+
+# Chapter 1: The mistake
+
+---
+
+count: false
+
+&lt;img src="ggstamp_xaringan_files/figure-html/chapter1_user_01_output-1.png" width="100%" /&gt;
+
+---
+count: false
+
+&lt;img src="ggstamp_xaringan_files/figure-html/chapter1_user_02_output-1.png" width="100%" /&gt;
+
+---
+count: false
+
+&lt;img src="ggstamp_xaringan_files/figure-html/chapter1_user_03_output-1.png" width="100%" /&gt;
+
+---
+count: false
+
+&lt;img src="ggstamp_xaringan_files/figure-html/chapter1_user_04_output-1.png" width="100%" /&gt;
+
+---
+count: false
+
+&lt;img src="ggstamp_xaringan_files/figure-html/chapter1_user_05_output-1.png" width="100%" /&gt;
+
+---
+count: false
+
+&lt;img src="ggstamp_xaringan_files/figure-html/chapter1_user_06_output-1.png" width="100%" /&gt;
+
+---
+count: false
+
+&lt;img src="ggstamp_xaringan_files/figure-html/chapter1_user_07_output-1.png" width="100%" /&gt;
+
+---
+count: false
+
+&lt;img src="ggstamp_xaringan_files/figure-html/chapter1_user_08_output-1.png" width="100%" /&gt;
+
+---
+count: false
+
+&lt;img src="ggstamp_xaringan_files/figure-html/chapter1_user_09_output-1.png" width="100%" /&gt;
+
+---
+count: false
+
+&lt;img src="ggstamp_xaringan_files/figure-html/chapter1_user_10_output-1.png" width="100%" /&gt;
+
+&lt;style&gt;
+.panel1-chapter1-user {
+  color: black;
+  width: 99%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-chapter1-user {
+  color: black;
+  width: NA%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-chapter1-user {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+
+
+
+
+
+count: false
+
+&lt;img src="ggstamp_xaringan_files/figure-html/arrows_user_01_output-1.png" width="100%" /&gt;
+
+---
+count: false
+
+&lt;img src="ggstamp_xaringan_files/figure-html/arrows_user_02_output-1.png" width="100%" /&gt;
+
+---
+count: false
+
+&lt;img src="ggstamp_xaringan_files/figure-html/arrows_user_03_output-1.png" width="100%" /&gt;
+
+---
+count: false
+
+&lt;img src="ggstamp_xaringan_files/figure-html/arrows_user_04_output-1.png" width="100%" /&gt;
+
+---
+count: false
+
+&lt;img src="ggstamp_xaringan_files/figure-html/arrows_user_05_output-1.png" width="100%" /&gt;
+
+---
+count: false
+
+&lt;img src="ggstamp_xaringan_files/figure-html/arrows_user_06_output-1.png" width="100%" /&gt;
+
+---
+count: false
+
+&lt;img src="ggstamp_xaringan_files/figure-html/arrows_user_07_output-1.png" width="100%" /&gt;
+
+---
+count: false
+
+&lt;img src="ggstamp_xaringan_files/figure-html/arrows_user_08_output-1.png" width="100%" /&gt;
+
+---
+count: false
+
+&lt;img src="ggstamp_xaringan_files/figure-html/arrows_user_09_output-1.png" width="100%" /&gt;
+
+---
+count: false
+
+&lt;img src="ggstamp_xaringan_files/figure-html/arrows_user_10_output-1.png" width="100%" /&gt;
+
+---
+count: false
+
+&lt;img src="ggstamp_xaringan_files/figure-html/arrows_user_11_output-1.png" width="100%" /&gt;
+
+&lt;style&gt;
+.panel1-arrows-user {
+  color: black;
+  width: 99%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-arrows-user {
+  color: black;
+  width: NA%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-arrows-user {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;style type="text/css"&gt;
+.remark-code{line-height: 1.5; font-size: 80%}
+&lt;/style&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="https://platform.twitter.com/widgets.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:10",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

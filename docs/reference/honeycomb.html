@@ -146,28 +146,41 @@
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='ggcanvas.html'>ggcanvas</a></span>() +
+    <pre class="examples"><div class='input'><span class='co'># first example</span>
+<span class='fu'>honeycomb</span>()</div><div class='output co'>#&gt;          x0   y0
+#&gt; 1 0.0000000  0.0
+#&gt; 2 1.7320508  0.0
+#&gt; 3 3.4641016  0.0
+#&gt; 4 0.8660254 -1.5
+#&gt; 5 2.5980762 -1.5</div><div class='input'><span class='fu'><a href='ggcanvas.html'>ggcanvas</a></span>() +
  <span class='fu'><a href='stamp_point.html'>stamp_point</a></span>(<span class='kw'>xy</span> <span class='kw'>=</span> <span class='fu'>honeycomb</span>()) +
  <span class='fu'><a href='stamp_polygon.html'>stamp_polygon</a></span>(<span class='kw'>x0y0</span> <span class='kw'>=</span> <span class='fu'>honeycomb</span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>15</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>4</span>),
      <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>.5</span>) +
  <span class='fu'><a href='stamp_label.html'>stamp_label</a></span>(<span class='kw'>label</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>15</span>, <span class='kw'>xy</span> <span class='kw'>=</span> <span class='fu'>honeycomb</span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>15</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>4</span>)) +
  <span class='fu'><a href='stamp_polygon.html'>stamp_polygon</a></span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>4</span>,
                <span class='kw'>x0y0</span> <span class='kw'>=</span> <span class='fu'>honeycomb</span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>15</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>4</span>)[<span class='fl'>15</span>,],
-               <span class='kw'>fill</span> <span class='kw'>=</span> <span class='st'>"magenta"</span>, <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>.4</span>, <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/MathFun.html'>sqrt</a></span>(<span class='fl'>.75</span>))</div><div class='output co'>#&gt; <span class='warning'>Warning: Ignoring unknown parameters: nudge_x, nudge_y</span></div><div class='img'><img src='honeycomb-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'>honeycomb</span>()</div><div class='output co'>#&gt;          x0   y0
-#&gt; 1 0.0000000  0.0
-#&gt; 2 1.7320508  0.0
-#&gt; 3 3.4641016  0.0
-#&gt; 4 0.8660254 -1.5
-#&gt; 5 2.5980762 -1.5</div><div class='input'><span class='co'>## get coords for single position...</span>
+               <span class='kw'>fill</span> <span class='kw'>=</span> <span class='st'>"magenta"</span>, <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>.4</span>, <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/MathFun.html'>sqrt</a></span>(<span class='fl'>.75</span>))</div><div class='output co'>#&gt; <span class='warning'>Warning: Ignoring unknown parameters: nudge_x, nudge_y</span></div><div class='img'><img src='honeycomb-1.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='co'># get coords for single position</span>
 <span class='fu'>honeycomb</span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>15</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>5</span>)[<span class='fl'>15</span>,]</div><div class='output co'>#&gt;          x0 y0
-#&gt; 15 6.928203 -3</div><div class='input'>
+#&gt; 15 6.928203 -3</div><div class='input'><span class='fu'>honeycomb</span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>15</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>5</span>)[<span class='fl'>1</span>:<span class='fl'>4</span>,]</div><div class='output co'>#&gt;         x0 y0
+#&gt; 1 0.000000  0
+#&gt; 2 1.732051  0
+#&gt; 3 3.464102  0
+#&gt; 4 5.196152  0</div><div class='input'>
+<span class='co'># a hive</span>
 <span class='fu'><a href='ggcanvas.html'>ggcanvas</a></span>() +
   <span class='fu'><a href='stamp_polygon.html'>stamp_polygon</a></span>(<span class='kw'>x0y0</span> <span class='kw'>=</span> <span class='fu'>honeycomb</span>(<span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>1.8</span>),
-                <span class='kw'>fill</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"goldenrod3"</span>), <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>.8</span>, <span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>0</span>)  +
+                <span class='kw'>fill</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"goldenrod3"</span>),
+                <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>.8</span>,
+                <span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>0</span>)  +
   <span class='fu'><a href='stamp_polygon.html'>stamp_polygon</a></span>(<span class='kw'>x0y0</span> <span class='kw'>=</span> <span class='fu'>honeycomb</span>(<span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>1.8</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>12</span>)[<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>6</span>:<span class='fl'>9</span>, <span class='fl'>11</span>),],
-                <span class='kw'>fill</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"goldenrod4"</span>), <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>.8</span>, <span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>0</span>) +
+                <span class='kw'>fill</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"goldenrod4"</span>),
+                <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>.8</span>,
+                <span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>0</span>) +
   <span class='fu'><a href='stamp_polygon.html'>stamp_polygon</a></span>(<span class='kw'>x0y0</span> <span class='kw'>=</span> <span class='fu'>honeycomb</span>(<span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>1.8</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>15</span>)[<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>10</span>,<span class='fl'>12</span>:<span class='fl'>15</span>),],
-                <span class='kw'>fill</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"goldenrod2"</span>), <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>.8</span>, <span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>0</span>) +
+                <span class='kw'>fill</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"goldenrod2"</span>),
+                <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>.8</span>,
+                <span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>0</span>) +
   <span class='fu'><a href='stamp_png.html'>stamp_png</a></span>(<span class='kw'>x0y0</span> <span class='kw'>=</span> <span class='fu'>honeycomb</span>(<span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>1.8</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>15</span>)[<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>,<span class='fl'>5</span>, <span class='fl'>10</span>),])</div><div class='output co'>#&gt; <span class='warning'>Warning: Raster pixels are placed at uneven horizontal intervals and will be shifted. Consider using geom_tile() instead.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Raster pixels are placed at uneven vertical intervals and will be shifted. Consider using geom_tile() instead.</span></div><div class='img'><img src='honeycomb-2.png' alt='' width='700' height='433' /></div><div class='input'>
 </div></pre>
   </div>

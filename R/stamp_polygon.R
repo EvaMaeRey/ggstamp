@@ -18,12 +18,14 @@
 #' @export
 #'
 #' @examples
+#' # on plot space
 #' library(ggplot2)
 #' ggplot(cars) +
 #'  aes(speed, dist) +
 #'  geom_point() +
 #'  stamp_polygon(color = "darkred", radius = 5)
 #'
+#' # on a canvas
 #'  ggcanvas() +
 #'   stamp_polygon(n = 3, x0 = c(0, 2.5),
 #'   fill = "magenta", color = "purple") +
@@ -32,6 +34,7 @@
 #'               label = c("hi", "hello", "bye")) +
 #'   stamp_point(color = "turquoise")
 #'
+#' # lots of polygons
 #'  ggcanvas() +
 #'  stamp_polygon(color = "turquoise4", radius = 3, n = 5, fill = "turquoise") +
 #'  stamp_polygon(fill = "slateblue2", radius = 2, n = 7) +
@@ -41,6 +44,7 @@
 #'  stamp_polygon(n = 50, radius = .2, size = 0) +
 #'  stamp_spoke(angle = pi * 1:7/15, radius = 2)
 #'
+#' # some more
 #'  ggcanvas() +
 #'   stamp_polygon(x0y0 = wrap(n = 5, ncol = 3, height = 1.5),
 #'                 radius = .55, n = 7) +
@@ -89,4 +93,37 @@ stamp_polygon <- function(x0 = 0,
 }
 
 
-
+# cars %>%
+#   mutate(fvar = dist>75) %>%
+#   ggplot(aes(speed, dist)) +
+#   geom_point() +
+#   facet_wrap(facets = vars(fvar)) +
+#   annotate("point", x = 1, y= 2, color = "green", size = 8) +
+#   my_annotate("point", x = 1, y= 2)
+#
+#
+# my_annotate <- function (geom, x = NULL, y = NULL, xmin = NULL, xmax = NULL,
+#           ymin = NULL, ymax = NULL, xend = NULL, yend = NULL, ...,
+#           na.rm = FALSE)
+# {
+#   position <- compact(list(x = x, xmin = xmin, xmax = xmax,
+#                            xend = xend, y = y, ymin = ymin,
+#                            ymax = ymax, yend = yend, fvar = FALSE
+#                            ))
+#   aesthetics <- c(position, list(...))
+#   lengths <- vapply(aesthetics, length, integer(1))
+#   n <- unique(lengths)
+#   if (length(n) > 1L) {
+#     n <- setdiff(n, 1L)
+#   }
+#   if (length(n) > 1L) {
+#     bad <- lengths != 1L
+#     details <- paste(names(aesthetics)[bad], " (", lengths[bad],
+#                      ")", sep = "", collapse = ", ")
+#     abort(glue("Unequal parameter lengths: {details}"))
+#   }
+#   data <- new_data_frame(position, n = n)
+#   layer(geom = geom, params = list(na.rm = na.rm, ...), stat = StatIdentity,
+#         position = PositionIdentity, data = data, mapping = aes_all(names(data)),
+#         inherit.aes = FALSE, show.legend = FALSE)
+# }

@@ -125,14 +125,19 @@
   <span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>0</span>,
   <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>0</span>,
   <span class='kw'>label</span> <span class='kw'>=</span> <span class='st'>"some\n text"</span>,
-  <span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>8</span>,
   <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>1</span>,
   <span class='kw'>angle</span> <span class='kw'>=</span> <span class='fl'>0</span>,
   <span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"black"</span>,
+  <span class='kw'>family</span> <span class='kw'>=</span> <span class='st'>"times"</span>,
+  <span class='kw'>fontface</span> <span class='kw'>=</span> <span class='st'>"sarif"</span>,
+  <span class='kw'>hjust</span> <span class='kw'>=</span> <span class='fl'>0</span>,
   <span class='kw'>lineheight</span> <span class='kw'>=</span> <span class='fl'>0.8</span>,
-  <span class='kw'>family</span> <span class='kw'>=</span> <span class='st'>""</span>,
+  <span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>8</span>,
   <span class='kw'>vjust</span> <span class='kw'>=</span> <span class='fl'>0.5</span>,
-  <span class='kw'>xy</span> <span class='kw'>=</span> <span class='kw'>NULL</span>
+  <span class='kw'>xy</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>parse</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>nudge_x</span> <span class='kw'>=</span> <span class='fl'>0</span>,
+  <span class='kw'>nudge_y</span> <span class='kw'>=</span> <span class='fl'>0</span>
 )</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -148,11 +153,51 @@
     </tr>
     <tr>
       <th>label</th>
-      <td><p>defaults with a message about used</p></td>
+      <td><p>defaults with a message about use</p></td>
+    </tr>
+    <tr>
+      <th>alpha</th>
+      <td><p>transparency of label</p></td>
+    </tr>
+    <tr>
+      <th>color</th>
+      <td><p>color of text, consider named colors https://evamaerey.github.io/ggplot2_grammar_guide/named_colors</p></td>
+    </tr>
+    <tr>
+      <th>family</th>
+      <td><p>font family</p></td>
+    </tr>
+    <tr>
+      <th>hjust</th>
+      <td><p>horizontal justification, between 0 and 1, defaults to .5</p></td>
+    </tr>
+    <tr>
+      <th>lineheight</th>
+      <td><p>spacing between lines if text is wrapped</p></td>
     </tr>
     <tr>
       <th>size</th>
-      <td></td>
+      <td><p>size of text</p></td>
+    </tr>
+    <tr>
+      <th>vjust</th>
+      <td><p>vertical justification, between 0 and 1, defaults to .5</p></td>
+    </tr>
+    <tr>
+      <th>xy</th>
+      <td><p>a data frame where the first two columns contain x and y positional values</p></td>
+    </tr>
+    <tr>
+      <th>parse</th>
+      <td><p>If TRUE, the labels will be parsed into expressions and displayed as described in ?plotmath.</p></td>
+    </tr>
+    <tr>
+      <th>nudge_x</th>
+      <td><p>Horizontal adjustment to nudge labels by. Useful for offsetting text from points, particularly on discrete scales.</p></td>
+    </tr>
+    <tr>
+      <th>nudge_y</th>
+      <td><p>Vertical adjustment to nudge labels by. Useful for offsetting text from points, particularly on discrete scales.</p></td>
     </tr>
     </table>
 
@@ -163,15 +208,30 @@
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>ggplot2</span>)
+    <pre class="examples"><div class='input'><span class='co'># cool text</span>
+<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>ggplot2</span>)
 <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span>(<span class='no'>cars</span>) +
  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span>(<span class='no'>speed</span>, <span class='no'>dist</span>) +
  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span>() +
- <span class='fu'>stamp_text</span>() +
- <span class='fu'>stamp_text</span>(<span class='kw'>label</span> <span class='kw'>=</span> <span class='st'>"hi"</span>, <span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>15</span>:<span class='fl'>18</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>75</span>)</div><div class='img'><img src='stamp_text-1.png' alt='' width='700' height='433' /></div><div class='input'>
+ <span class='fu'>stamp_text</span>(<span class='kw'>label</span> <span class='kw'>=</span> <span class='kw pkg'>stringr</span><span class='kw ns'>::</span><span class='fu'><a href='https://stringr.tidyverse.org/reference/str_wrap.html'>str_wrap</a></span>(<span class='st'>"a speed v. stopping distance, 1920s study tells us ..."</span>, <span class='fl'>30</span>),
+            <span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>12</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>110</span>,
+            <span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>5</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: Ignoring unknown parameters: nudge_x, nudge_y</span></div><div class='img'><img src='stamp_text-1.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='co'># some more</span>
  <span class='fu'><a href='ggcanvas.html'>ggcanvas</a></span>() +
+  <span class='fu'>stamp_text</span>() +
   <span class='fu'>stamp_text</span>(<span class='kw'>label</span> <span class='kw'>=</span> <span class='no'>letters</span>[<span class='fl'>1</span>:<span class='fl'>4</span>],
-  <span class='kw'>xy</span> <span class='kw'>=</span> <span class='fu'><a href='spoke.html'>spoke</a></span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>4</span>))</div><div class='img'><img src='stamp_text-2.png' alt='' width='700' height='433' /></div></pre>
+  <span class='kw'>xy</span> <span class='kw'>=</span> <span class='fu'><a href='spoke.html'>spoke</a></span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>4</span>)) +
+  <span class='fu'>stamp_text</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>2</span>) +
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_continuous.html'>scale_x_continuous</a></span>(<span class='kw'>limits</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(-<span class='fl'>1</span>,<span class='fl'>3</span>)) +
+  <span class='fu'>stamp_text</span>(<span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>2</span>, <span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>2</span>,
+             <span class='kw'>label</span> <span class='kw'>=</span> <span class='st'>"Hello\nthere!"</span>) +
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_void</a></span>() +
+  <span class='fu'><a href='stamp_point.html'>stamp_point</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>1</span>,
+              <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>.4</span>) +
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/theme.html'>theme</a></span>(<span class='kw'>plot.background</span> <span class='kw'>=</span>
+       <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_rect</a></span>(<span class='kw'>fill</span> <span class='kw'>=</span> <span class='st'>"seagreen"</span>,
+       <span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>0</span>)) +
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_continuous.html'>scale_y_continuous</a></span>(<span class='kw'>limits</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(-<span class='fl'>1</span>,<span class='fl'>3</span>))</div><div class='output co'>#&gt; <span class='warning'>Warning: Ignoring unknown parameters: nudge_x, nudge_y</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Ignoring unknown parameters: nudge_x, nudge_y</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Ignoring unknown parameters: nudge_x, nudge_y</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Ignoring unknown parameters: nudge_x, nudge_y</span></div><div class='img'><img src='stamp_text-2.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

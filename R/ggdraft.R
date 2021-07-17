@@ -11,20 +11,32 @@
 #' @examples
 #' library(ggplot2)
 #' ggdraft() +
-#' stamp_curve(curvature = .325, yend = .6) +
-#' stamp_polygon(x0 = .2, y0 = .4, radius = .2, alpha = .4) +
-#' stamp_text(x = .2, y = .4, label = "{ggstamp}", size = 5, color = "grey97")
+#' stamp_curve(curvature = .13,
+#'             size = .09,
+#'             yend = 20:60,
+#'             xend = 100) +
+#' stamp_polygon(x0 = 20, y0 = 40,
+#'               radius = 20, alpha = .4) +
+#' stamp_text(x = 20, y = 40, label = "{ggstamp}",
+#'            size = 6, color = "grey97")
 #'
-#' last_plot() +
+#' # remove drafting lines
+#' (ggdraft() +
+#' stamp_polygon(x0 = 20, y0 = 40,
+#'               radius = 20, alpha = .4) +
+#' stamp_polygon(x0 = 85, y0 = 23,
+#'               radius = 22,
+#'               n = 5, fill = "seagreen2")
+#'    ) +
 #' theme_void()
 ggdraft <- function(x = 0, y = 0,
-                    width = 1,
-                    height = 1/1.618){
+                    width = 100,
+                    height = width/1.618){
 
   ggplot2::ggplot(data = data.frame(x = c(x, x + width),
                                     y = c(y, y + height)),
                                     mapping = aes(x = x, y = y)) +
-    ggplot2::coord_equal(expand = TRUE, clip = "off") +
+    ggplot2::coord_equal(expand = FALSE, clip = "on", xlim = c(x, x + width), ylim = c(y, y + height)) +
     ggplot2::theme(panel.grid = element_line(color = "grey35"),
       panel.background = ggplot2::element_rect(fill = NA),
       panel.ontop = TRUE,
@@ -33,7 +45,8 @@ ggdraft <- function(x = 0, y = 0,
       panel.background = element_rect(fill = "transparent"), # bg of the panel
       plot.background = element_rect(fill = "transparent", color = NA), # bg of the plot
       legend.background = element_rect(fill = "transparent"), # get rid of legend bg
-      legend.box.background = element_rect(fill = "transparent") # get rid of legend panel bg
+      legend.box.background = element_rect(fill = "transparent"), # get rid of legend panel bg
+      axis.title = element_blank()
     )
 
 }

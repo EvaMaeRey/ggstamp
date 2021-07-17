@@ -2,36 +2,56 @@
 #'
 #' This function adds a text annotation layer
 #'
-#' @param x defaults to 0
-#' @param y defaults to 0
-#' @param label defaults with a message about used
-#' @param size
+#' @inheritParams stamp_label
+#' @Params angle angle of text
 #'
 #' @return
 #' @export
 #'
 #' @examples
+#' # cool text
 #' library(ggplot2)
 #' ggplot(cars) +
 #'  aes(speed, dist) +
 #'  geom_point() +
-#'  stamp_text() +
-#'  stamp_text(label = "hi", x = 15:18, y = 75)
+#'  stamp_text(label = stringr::str_wrap("a speed v. stopping distance, 1920s study tells us ...", 30),
+#'             x = 12, y = 110,
+#'             size = 5)
 #'
+#' # some more
 #'  ggcanvas() +
+#'   stamp_text() +
 #'   stamp_text(label = letters[1:4],
-#'   xy = spoke(n = 4))
+#'   xy = spoke(n = 4)) +
+#'   stamp_text(x = 2) +
+#'   scale_x_continuous(limits = c(-1,3)) +
+#'   stamp_text(y = 1:2, x = 2,
+#'              label = "Hello\nthere!") +
+#'   theme_void() +
+#'   stamp_point(x = 1, y = 1,
+#'               alpha = .4) +
+#'   theme(plot.background =
+#'        element_rect(fill = "seagreen",
+#'        size = 0)) +
+#'   scale_y_continuous(limits = c(-1,3))
 stamp_text <- function(x = 0,
                        y = 0,
                        label = "some\n text",
-                       size = 8,
                        alpha = 1,
                        angle = 0,
                        color = "black",
+                       family = "times",
+                       fontface = "sarif",
+                       hjust = 0,
                        lineheight = .8,
-                       family = "",
+                       size = 8,
                        vjust = .5,
-                       xy = NULL){
+
+                       xy = NULL,
+
+                       parse = FALSE,
+                       nudge_x = 0,
+                       nudge_y = 0){
 
   if(!is.null(xy)){
     x = xy[,1]
@@ -48,7 +68,10 @@ annotate(geom = "text",
          color = color,
          angle = angle,
          alpha = alpha,
-         vjust = vjust)
+         vjust = vjust,
+         parse = parse,
+         nudge_x = nudge_x,
+         nudge_y = nudge_y)
 
 }
 

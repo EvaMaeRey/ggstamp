@@ -4,7 +4,7 @@
 \alias{ggdraft}
 \title{Create a blank canvas}
 \usage{
-ggdraft(x = 0, y = 0, width = 1, height = 1/1.618)
+ggdraft(x = 0, y = 0, width = 100, height = width/1.618)
 }
 \arguments{
 \item{y}{}
@@ -18,10 +18,22 @@ Create a blank canvas centered at 0, 0 to use stamps on
 \examples{
 library(ggplot2)
 ggdraft() +
-stamp_curve(curvature = .325, yend = .6) +
-stamp_polygon(x0 = .2, y0 = .4, radius = .2, alpha = .4) +
-stamp_text(x = .2, y = .4, label = "{ggstamp}", size = 5, color = "grey97")
+stamp_curve(curvature = .13,
+            size = .09,
+            yend = 20:60,
+            xend = 100) +
+stamp_polygon(x0 = 20, y0 = 40,
+              radius = 20, alpha = .4) +
+stamp_text(x = 20, y = 40, label = "{ggstamp}",
+           size = 6, color = "grey97")
 
-last_plot() +
+# remove drafting lines
+(ggdraft() +
+stamp_polygon(x0 = 20, y0 = 40,
+              radius = 20, alpha = .4) +
+stamp_polygon(x0 = 85, y0 = 23,
+              radius = 22,
+              n = 5, fill = "seagreen2")
+   ) +
 theme_void()
 }

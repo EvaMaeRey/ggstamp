@@ -2,36 +2,53 @@
 % Please edit documentation in R/stamp_curve.R
 \name{stamp_curve}
 \alias{stamp_curve}
-\title{Stamp some text}
+\title{Stamp a curve}
 \usage{
 stamp_curve(
   x = 0,
-  xend = 1,
   y = 0,
+  xend = 1,
   yend = 1,
   alpha = 1,
   color = "black",
   linetype = "solid",
   size = 1.5,
-  curvature = 0.1
+  lineend = "butt",
+  curvature = 0.1,
+  angle = 90,
+  ncp = 5
 )
 }
 \arguments{
 \item{x}{defaults to 0}
 
-\item{xend}{numeric defaults to 1}
-
 \item{y}{defaults to 0}
+
+\item{xend}{numeric defaults to 1}
 
 \item{yend}{numeric defaults to 1}
 
-\item{alpha}{a numeric between 0 and 1 for transparency}
+\item{alpha}{a numeric between 0 and 1 for transparency, zero is fully transparent, 1 fully opaque}
+
+\item{color}{line color}
 
 \item{linetype}{"solid", "dashed", "dotted"}
 
 \item{size}{numeric indicating line width, defaults to 1.5}
 
-\item{curvature}{a scalar between -1 and 1, 0 is straight, positive is counter clockwise?}
+\item{lineend}{Line end style (round, butt, square).}
+
+\item{curvature}{A numeric value giving the amount of curvature. Negative values produce left-hand curves, positive values produce right-hand curves, and zero produces a straight line.}
+
+\item{angle}{A numeric value between 0 and 180, giving an amount to skew the control points of the curve. Values less than 90 skew the curve towards the start point and values greater than 90 skew the curve towards the end point.}
+
+\item{ncp}{The number of control points used to draw the curve. More control points creates a smoother curve.}
+
+\item{arrow}{specification for arrow heads, as created by arrow().}
+
+\item{arrow.fill}{fill colour to use for the arrow head (if closed). NULL means use colour aesthetic.}
+
+\item{linejoin}{Line join style (round, mitre, bevel).}
 }
 \value{
 
@@ -40,6 +57,7 @@ stamp_curve(
 This function adds a text annotation layer
 }
 \examples{
+# a curve
 library(ggplot2)
 ggplot(cars) +
  aes(speed, dist) +
@@ -47,7 +65,9 @@ ggplot(cars) +
  stamp_curve(color = "darkred",
  xend = 15, yend = 75)
 
- ggcanvas() +
+# more curves
+ggcanvas() +
+ stamp_curve() +
  stamp_curve(color = "green") +
  stamp_curve(x = 1:5, yend = 2, xend = 2:6,
  size = 8, alpha = .5) +

@@ -6,31 +6,34 @@
 \usage{
 stamp_arrow(
   x = 0,
-  xend = 1,
   y = 0,
+  xend = 1,
   yend = 1,
-  size = 1.5,
   alpha = 1,
   color = "black",
+  size = 1.5,
   ends = "last",
   units = "npc",
   headlength = 0.03,
   angle = 30,
-  type = "open"
+  type = "open",
+  lineend = "butt",
+  linejoin = "round",
+  arrow.fill = T
 )
 }
 \arguments{
 \item{x}{defaults to 0}
 
-\item{xend}{defaults to 1}
-
 \item{y}{defaults to 0}
+
+\item{xend}{defaults to 1}
 
 \item{yend}{defaults to 1}
 
-\item{size}{numeric indicating line width}
-
 \item{alpha}{numeric between 0 and 1 indicating transparency}
+
+\item{size}{numeric indicating line width}
 
 \item{ends}{One of "last", "first", or "both", indicating which ends of the line to draw arrow heads.}
 
@@ -50,16 +53,21 @@ This function adds an arrow annotation layer
 Contribute or help document https://github.com/EvaMaeRey/ggstamp/blob/master/R/stamp_arrow.R
 }
 \examples{
+# stamp arrow on plot
 library(ggplot2)
 ggplot(cars) +
- aes(speed, dist) +
- geom_point() +
- stamp_arrow(color = "darkred",
- xend = 15, yend = 75)
+  aes(speed, dist) +
+  geom_point() +
+  stamp_arrow() +
+  stamp_arrow(color = "darkred",
+  xend = 15, yend = 75)
 
+# several arrows
  ggcanvas() +
  stamp_arrow(color = "steelblue") +
  stamp_arrow(x = 1:5, y = 2, xend = 2:6,
- headlength = .04, type = "closed", color = "darkred") +
- stamp_arrow(x = .5, xend = 1.5, ends = "both", angle = 60)
+ headlength = .04, type = "closed",
+ color = "darkred") +
+ stamp_arrow(x = .5, xend = 1.5,
+ ends = "both", angle = 60)
 }

@@ -1,0 +1,220 @@
+---
+title: "A Data Science Bedtime Story"
+subtitle: "With flipbookr and xaringan"
+author: "Gina Reynolds, 2019"
+output:
+  xaringan::moon_reader:
+    seal: false
+    lib_dir: libs
+    css: [xaringan-themer.css]
+    nature:
+      ratio: 16:10
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      beforeInit: "https://platform.twitter.com/widgets.js"
+---
+
+
+
+
+
+
+
+class: left, top, inverse
+background-image: url(slow_sky.gif)
+background-size: cover
+
+## .Large[Sleepy {ggstamp} Bedtime Story]
+### w ggplot, xarningan and others
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+#### Gina Reynolds<br>Photo Credit: Clark Young
+
+
+```{r setup, include = F}
+# This is the recommended set up for flipbooks
+# you might think about setting cache to TRUE as you gain practice --- building flipbooks from scratch can be time consuming
+knitr::opts_chunk$set(fig.width = 6, message = FALSE, warning = FALSE, comment = "", cache = T, fig.retina = 3, dev.args = list(bg = "transparent"))
+library(flipbookr)
+library(tidyverse)
+```
+
+
+```{r, echo = F}
+xaringanExtra::use_share_again()
+```
+
+
+
+
+---
+class: center, middle
+
+# Chapter 0: Setting the stage with a hypnotic gif
+
+
+```{r, include = F}
+"This is a bedtime story.    For ambiance, first set the stage with a hypnotic gif.   We'll slow down the play back time with {magick} to make things less exciting.   And beyond the title slide we'll use a version with washed out color so there is a bit more contrast." -> hypnotic
+```
+
+
+`r text_reveal(text = hypnotic,  sep = "  ")`
+
+---
+
+
+`r chunk_reveal("prepare_gif")`
+
+
+```{r prepare_gif, include = F}
+# prepping gif
+gif_url <- "https://media.giphy.com/media/6uVwL25uYHW92/giphy.gif"
+magick::image_read(path = gif_url) %>% 
+  magick::image_colorize(
+    opacity = 40, 
+    color = "white"
+    ) %>% 
+  magick::image_write_gif(
+    delay = .3, 
+    path = "washed_out_sky.gif"
+    )
+```
+
+
+```{r, include=FALSE}
+# Slow down gif and save.
+magick::image_read("https://media.giphy.com/media/6uVwL25uYHW92/giphy.gif") %>% 
+  magick::image_write_gif(delay = .2, path = "slow_sky.gif")
+```
+
+
+
+---
+
+## We're using {xaringanthemer} to set all the background images. 
+
+
+
+```{r xaringan-themer}
+xaringanthemer::style_mono_accent(code_inline_background_color = "darkgrey",
+  # hex color should be provided, or theme_xaringan doesn't work
+  title_slide_background_image = "https://media.giphy.com/media/6uVwL25uYHW92/giphy.gif",
+  background_image = "washed_out_sky.gif",
+  code_font_size = '14px',
+  text_slide_number_color = '#b3b3b3', #grey70
+  footnote_font_size = '0.5em',
+  footnote_position_bottom = "30px"
+)
+```
+
+
+---
+class: center, middle
+
+# Chapter 1: The mistake
+
+---
+
+`r chunk_reveal("chapter1", break_type = "user", display_type = "output", chunk_options = "fig.width = 10, out.width = '100%'")`
+
+
+```{r chapter1, include = F}
+library(ggplot2)
+library(ggstamp)
+ggplot(data = cars) +
+  aes(speed, dist) +
+  theme_minimal(base_size = 15) + #BREAK
+  geom_point(color = "oldlace") + #BREAK
+  stamp_point(color = "darkolivegreen3") + #BREAK
+  stamp_point(color = "slateblue", 
+              x = c(10, 15), 
+              y = c(100, 90)) + #BREAK
+  stamp_curve(x = 6, xend = c(10, 14.75),
+              y = 9.5, yend = c(95, 85), color = "oldlace",
+              curvature = .2) + #BREAK
+  stamp_bubble(fill = "plum2", 
+               color = "plum4",
+               size = 15,
+               x = 5, y = 8) + #BREAK
+  stamp_label(label = "This is a stamp",
+              x = 20, size = 10,
+              y = 15) + #BREAK
+  stamp_text(label = "This\ntoo",
+             x = 18,
+             y = 110, color = "oldlace",
+             lineheight = .8) + #BREAK
+  stamp_segment(x = 20, xend = 18, color = "oldlace",
+                y = 23, yend = 100) + #BREAK
+  ggxmean::stamp_normal_dist(
+    height = 200, alpha = .7,
+    fill = "magenta",
+    mean = 14, sd =  2) #BREAK
+```
+
+
+
+`r chunk_reveal("arrows", break_type = "user", display_type = "output", chunk_options = "fig.width = 10, out.width = '100%'")`
+
+
+
+
+```{r arrows, include=F}
+ggdraft(width = 5, height = 4) + 
+  geom_blank() +
+  theme(panel.grid = element_blank()) +
+  stamp_point(color = "plum4") + #BREAK
+  stamp_point(x = 1, y = 1, 
+              color = "lightsteelblue3",
+              size = 35) + #BREAK
+  stamp_arrow(color = "plum4", 
+              headlength = .06, 
+              type = "closed") + #BREAK
+  stamp_label(1.5, 2.5, label = "      \n\n\n\n\n", 
+              size = 15,
+              fill = "lemonchiffon", ) + #BREAK
+  stamp_bubble(2.5, 1.25, size = 100, 
+               color = "plum4") + #BREAK
+  stamp_point(x = c(2,2:4), y = 1:4,
+              color = "paleturquoise",
+              size = 15) + #BREAK
+  stamp_arrow(y = 2, yend = 1:4, 
+              xend = c(2,2:4),
+              color = "cadetblue4") + #BREAK
+  stamp_label(1, 3.5, label = "Stamps!",
+              fill = "paleturquoise3") + #BREAK
+  stamp_label(3.2, 1.75, label = "Umm...  \n         ",
+              size = 18,
+              fill = "thistle") + #BREAK
+  stamp_label(3.2, 1.75, label = "Umm...  \n Stamps!",
+              size = 18,
+              fill = "thistle") + #BREAK
+  stamp_curve(x = .25 + log(1:12), 
+              xend = 1.5 + sqrt(1:12),  
+              y = 0 + 1:12/20,
+              color = "palegreen3",
+              yend = 1:12/6, 
+              curvature = -.1,
+              alpha = 12:1/12) #BREAK
+```
+
+
+
+
+
+
+
+
+```{css, eval = TRUE, echo = FALSE}
+.remark-code{line-height: 1.5; font-size: 80%}
+```

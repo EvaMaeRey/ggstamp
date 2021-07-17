@@ -33,12 +33,14 @@ This function adds a text annotation layer.
 Contribute or help document https://github.com/EvaMaeRey/ggstamp/blob/master/R/stamp_polygon.R
 }
 \examples{
+# on plot space
 library(ggplot2)
 ggplot(cars) +
  aes(speed, dist) +
  geom_point() +
  stamp_polygon(color = "darkred", radius = 5)
 
+# on a canvas
  ggcanvas() +
   stamp_polygon(n = 3, x0 = c(0, 2.5),
   fill = "magenta", color = "purple") +
@@ -47,6 +49,7 @@ ggplot(cars) +
               label = c("hi", "hello", "bye")) +
   stamp_point(color = "turquoise")
 
+# lots of polygons
  ggcanvas() +
  stamp_polygon(color = "turquoise4", radius = 3, n = 5, fill = "turquoise") +
  stamp_polygon(fill = "slateblue2", radius = 2, n = 7) +
@@ -56,6 +59,7 @@ ggplot(cars) +
  stamp_polygon(n = 50, radius = .2, size = 0) +
  stamp_spoke(angle = pi * 1:7/15, radius = 2)
 
+# some more
  ggcanvas() +
   stamp_polygon(x0y0 = wrap(n = 5, ncol = 3, height = 1.5),
                 radius = .55, n = 7) +

@@ -21,28 +21,43 @@
 #' @export
 #'
 #' @examples
+#' # stamp arrow on plot
 #' library(ggplot2)
 #' ggplot(cars) +
-#'  aes(speed, dist) +
-#'  geom_point() +
-#'  stamp_arrow(color = "darkred",
-#'  xend = 15, yend = 75)
+#'   aes(speed, dist) +
+#'   geom_point() +
+#'   stamp_arrow() +
+#'   stamp_arrow(color = "darkred",
+#'   xend = 15, yend = 75)
 #'
+#' # several arrows
 #'  ggcanvas() +
 #'  stamp_arrow(color = "steelblue") +
 #'  stamp_arrow(x = 1:5, y = 2, xend = 2:6,
-#'  headlength = .04, type = "closed", color = "darkred") +
-#'  stamp_arrow(x = .5, xend = 1.5, ends = "both", angle = 60)
-stamp_arrow <- function(x = 0, xend = 1,
-                        y = 0, yend = 1,
-                        size = 1.5,
+#'  headlength = .04, type = "closed",
+#'  color = "darkred") +
+#'  stamp_arrow(x = .5, xend = 1.5,
+#'  ends = "both", angle = 60)
+stamp_arrow <- function(x = 0,
+                        y = 0,
+                        xend = 1,
+                        yend = 1,
+
                         alpha = 1,
                         color = "black",
+                        size = 1.5,
+
+                        # define arrow
                         ends = "last",
                         units = "npc",
                         headlength = .03,
                         angle = 30,
-                        type = "open"){
+                        type = "open",
+
+                        lineend = "butt",
+                        linejoin = "round",
+                        arrow.fill = T
+                        ){
 
   annotate(geom = "segment",
            x = x,

@@ -1,26 +1,21 @@
 #' Stamp a spoke (segment defined by angle and length)
 #'
-#' This function adds a text annotation layer
-#'
-#' @param x defaults to 0
-#' @param y defaults to 0
-#' @param size
-#' @param angle
-#' @param radius
-#' @param alpha
-#' @param color
-#' @param linetype
+#' @param angle direction of spoke in degrees
+#' @param radius length of spoke
+#' @inheritParams stamp_curve
 #'
 #' @return
 #' @export
 #'
 #' @examples
+#' # on plot
 #' library(ggplot2)
 #' ggplot(cars) +
 #'  aes(speed, dist) +
 #'  geom_point() +
 #'  stamp_spoke(color = "darkred", radius = 25)
 #'
+#' # on canvas
 #'  ggcanvas() +
 #'  stamp_spoke(color = "green") +
 #'  stamp_spoke(x = 2, y = 2, angle = pi * 1:8/4) +
@@ -33,20 +28,24 @@ stamp_spoke <- function(x = 0,
                         y = 0,
                         angle = pi/4,
                         radius = 1,
-                        size = 1.5,
+
                         alpha = 1,
                         color = "black",
-                        linetype = "solid"){
+                        linetype = "solid",
+                        size = 1.5
+                        ){
 
   annotate(geom = "spoke",
            x = x,
            y = y,
            radius = radius,
            angle = angle,
-           size = size,
+
            alpha = alpha,
            color = color,
-           linetype = linetype)
+           linetype = linetype,
+           size = size
+           )
 
 }
 
