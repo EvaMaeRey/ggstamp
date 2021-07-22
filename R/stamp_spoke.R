@@ -19,8 +19,10 @@
 #'  ggcanvas() +
 #'  stamp_spoke(color = "green") +
 #'  stamp_spoke(x = 2, y = 2, angle = pi * 1:8/4) +
-#'  stamp_bubble(x = 2, y = 2, size = 15) +
-#'  stamp_spoke(x = 1.5, y = 0, angle = pi * 1:50/50, alpha = 1:50/50) +
+#'  stamp_circle(x0 = 2, y0 = 2, radius = 1) +
+#'  stamp_spoke(x = 1.5, y = 0,
+#'             angle = pi * 1:50/50,
+#'             alpha = 1:50/50) +
 #'  stamp_text(x = 2, y = 2, label = "Hi!") +
 #'  coord_equal() +
 #'  theme_void()

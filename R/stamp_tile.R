@@ -22,7 +22,7 @@
 #'  stamp_tile(color = "red", x = 10,
 #'             y = 90:100) +
 #'  stamp_tile(height = 10,
-#'             xy = spoke(x0 = 20, n = 15,
+#'             xy = pos_spoke(x0 = 20, n = 15,
 #'             radius = 6))
 #'
 #' # on a canvas
@@ -36,7 +36,7 @@
 #'
 #' # using a positioner
 #' ggcanvas() +
-#'  stamp_tile(xy = spoke())
+#'  stamp_tile(xy = pos_spoke())
 stamp_tile <- function(x = 0,
                        y = 0,
                        size = .5,

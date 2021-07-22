@@ -29,8 +29,8 @@
 #'  ggcanvas() +
 #'   stamp_polygon(n = 3, x0 = c(0, 2.5),
 #'   fill = "magenta", color = "purple") +
-#'   stamp_label(x = spoke_x(x0 = 0, n = 3),
-#'               y = spoke_y(y0 = 0, n = 3),
+#'   stamp_label(x = pos_spoke_x(x0 = 0, n = 3),
+#'               y = pos_spoke_y(y0 = 0, n = 3),
 #'               label = c("hi", "hello", "bye")) +
 #'   stamp_point(color = "turquoise")
 #'
@@ -46,9 +46,9 @@
 #'
 #' # some more
 #'  ggcanvas() +
-#'   stamp_polygon(x0y0 = wrap(n = 5, ncol = 3, height = 1.5),
+#'   stamp_polygon(x0y0 = pos_wrap(n = 5, ncol = 3, height = 1.5),
 #'                 radius = .55, n = 7) +
-#'   stamp_text(xy = wrap(n = 5, ncol = 3,
+#'   stamp_text(xy = pos_wrap(n = 5, ncol = 3,
 #'            height = 1.5), label = LETTERS[1:5])
 #'
 stamp_polygon <- function(x0 = 0,

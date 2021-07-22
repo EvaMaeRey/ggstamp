@@ -30,8 +30,8 @@ ggcanvas() +
   stamp_label(1.5, 2.5, label = "      \n\n\n\n\n",
               size = 15,
               fill = "lemonchiffon", ) +
-  stamp_bubble(2.5, 1.25, size = 100,
-               color = "plum4") +
+  stamp_circle(2.5, 1.25,
+               fill = "plum4") +
   stamp_point(x = c(2,2:4), y = 1:4,
               color = "paleturquoise",
               size = 15) +

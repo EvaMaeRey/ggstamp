@@ -32,7 +32,7 @@
 #'
 #' # tiling pngs needs work
 #' ggcanvas() +
-#'   stamp_png(x0y0 = wrap_png(),
+#'   stamp_png(x0y0 = pos_wrap_png(),
 #'   alpha = .75)
 stamp_png <- function(x0 = 0,
                         y0 = 0,

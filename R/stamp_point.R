@@ -28,10 +28,10 @@
 #'  stamp_point(color = "darkgreen") +
 #'  stamp_point(x = 1:5, y = 2,
 #'              size = 8, alpha = .5) +
-#'  stamp_point(xy = wrap(y0 = -2,
+#'  stamp_point(xy = pos_wrap(y0 = -2,
 #'              n = 13, ncol = 4),
 #'              color = "plum") +
-#'  stamp_point(xy = wrap(x0 = 1,
+#'  stamp_point(xy = pos_wrap(x0 = 1,
 #'              n = 7, ncol = 4, width = .5))
 stamp_point <- function(x = 0,
                         y = 0,

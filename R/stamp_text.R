@@ -22,7 +22,7 @@
 #'  ggcanvas() +
 #'   stamp_text() +
 #'   stamp_text(label = letters[1:4],
-#'   xy = spoke(n = 4)) +
+#'   xy = pos_spoke(n = 4)) +
 #'   stamp_text(x = 2) +
 #'   scale_x_continuous(limits = c(-1,3)) +
 #'   stamp_text(y = 1:2, x = 2,
