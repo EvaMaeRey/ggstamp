@@ -14,8 +14,11 @@
 #' stamp_curve(curvature = .3, yend = 75, xend = 100) +
 #' stamp_polygon(x0 = 20, y0 = 60, radius = 20, alpha = .4) +
 #' stamp_text(x = 20, y = 60, label = "{ggstamp}",
-#'            size = 5, color = "grey97") +
-#' theme_void()
+#'            size = 5, color = "grey97")
+#'
+#' # voiding grid
+#' last_plot() +
+#'    theme_void()
 ggbackdrop <- function(x = 0, y = 0,
                        width = 100,
                        alpha = 1,
@@ -32,12 +35,24 @@ ggbackdrop <- function(x = 0, y = 0,
               x0 = x + .5 * width,
               y0 = y + .5 * height
               ) +
-    ggplot2::coord_equal(expand = TRUE, clip = "off") +
-    ggplot2::theme(panel.grid = element_line(color = "grey35"),
+    ggplot2::coord_equal(expand = FALSE, clip = "off") +
+    ggplot2::theme(panel.grid = element_line(color = alpha("grey35", 1)),
+                   axis.text.x.top = element_text(),
+                   axis.text.y.right = element_text(),
       panel.background = ggplot2::element_rect(fill = NA),
-      panel.ontop = TRUE,
+      panel.ontop = TRUE) ->
+g
 
-    )
+if(width == 100){
+
+  g +
+  scale_x_continuous(breaks = 0:5*20)+
+  scale_y_continuous(breaks = 0:5*20) ->
+g
+
+}
+
+  g
 
 }
 

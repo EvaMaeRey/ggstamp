@@ -29,6 +29,9 @@ ggbackdrop() +
 stamp_curve(curvature = .3, yend = 75, xend = 100) +
 stamp_polygon(x0 = 20, y0 = 60, radius = 20, alpha = .4) +
 stamp_text(x = 20, y = 60, label = "{ggstamp}",
-           size = 5, color = "grey97") +
-theme_void()
+           size = 5, color = "grey97")
+
+# voiding grid
+last_plot() +
+   theme_void()
 }

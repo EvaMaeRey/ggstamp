@@ -30,12 +30,13 @@ count: false
 .panel1-ggbackdrop_1-auto[
 
 ```r
-*library(ggplot2)
+# voiding grid
+*last_plot()
 ```
 ]
  
 .panel2-ggbackdrop_1-auto[
-
+![](exploded_examples_files/figure-html/ggbackdrop_1_auto_01_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
@@ -45,89 +46,14 @@ count: false
 .panel1-ggbackdrop_1-auto[
 
 ```r
-library(ggplot2)
-*ggbackdrop()
+# voiding grid
+last_plot() +
+*  theme_void()
 ```
 ]
  
 .panel2-ggbackdrop_1-auto[
 ![](exploded_examples_files/figure-html/ggbackdrop_1_auto_02_output-1.png)&lt;!-- --&gt;
-]
-
----
-count: false
- 
-### ggbackdrop
-.panel1-ggbackdrop_1-auto[
-
-```r
-library(ggplot2)
-ggbackdrop() +
-*stamp_curve(curvature = .3, yend = 75, xend = 100)
-```
-]
- 
-.panel2-ggbackdrop_1-auto[
-![](exploded_examples_files/figure-html/ggbackdrop_1_auto_03_output-1.png)&lt;!-- --&gt;
-]
-
----
-count: false
- 
-### ggbackdrop
-.panel1-ggbackdrop_1-auto[
-
-```r
-library(ggplot2)
-ggbackdrop() +
-stamp_curve(curvature = .3, yend = 75, xend = 100) +
-*stamp_polygon(x0 = 20, y0 = 60, radius = 20, alpha = .4)
-```
-]
- 
-.panel2-ggbackdrop_1-auto[
-![](exploded_examples_files/figure-html/ggbackdrop_1_auto_04_output-1.png)&lt;!-- --&gt;
-]
-
----
-count: false
- 
-### ggbackdrop
-.panel1-ggbackdrop_1-auto[
-
-```r
-library(ggplot2)
-ggbackdrop() +
-stamp_curve(curvature = .3, yend = 75, xend = 100) +
-stamp_polygon(x0 = 20, y0 = 60, radius = 20, alpha = .4) +
-*stamp_text(x = 20, y = 60, label = "{ggstamp}",
-*          size = 5, color = "grey97")
-```
-]
- 
-.panel2-ggbackdrop_1-auto[
-![](exploded_examples_files/figure-html/ggbackdrop_1_auto_05_output-1.png)&lt;!-- --&gt;
-]
-
----
-count: false
- 
-### ggbackdrop
-.panel1-ggbackdrop_1-auto[
-
-```r
-library(ggplot2)
-ggbackdrop() +
-stamp_curve(curvature = .3, yend = 75, xend = 100) +
-stamp_polygon(x0 = 20, y0 = 60, radius = 20, alpha = .4) +
-stamp_text(x = 20, y = 60, label = "{ggstamp}",
-           size = 5, color = "grey97") +
-*theme_void()
-```
-]
- 
-.panel2-ggbackdrop_1-auto[
-![](exploded_examples_files/figure-html/ggbackdrop_1_auto_06_output-1.png)&lt;!-- --&gt;
 ]
 
 &lt;style&gt;
@@ -167,15 +93,135 @@ stamp_text(x = 20, y = 60, label = "{ggstamp}",
 
 count: false
  
-### ggcanvas
-.panel1-ggcanvas_2-auto[
+### ggbackdrop
+.panel1-ggbackdrop_2-auto[
 
 ```r
 *library(ggplot2)
 ```
 ]
  
-.panel2-ggcanvas_2-auto[
+.panel2-ggbackdrop_2-auto[
+
+]
+
+---
+count: false
+ 
+### ggbackdrop
+.panel1-ggbackdrop_2-auto[
+
+```r
+library(ggplot2)
+*ggbackdrop()
+```
+]
+ 
+.panel2-ggbackdrop_2-auto[
+![](exploded_examples_files/figure-html/ggbackdrop_2_auto_02_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### ggbackdrop
+.panel1-ggbackdrop_2-auto[
+
+```r
+library(ggplot2)
+ggbackdrop() +
+*stamp_curve(curvature = .3, yend = 75, xend = 100)
+```
+]
+ 
+.panel2-ggbackdrop_2-auto[
+![](exploded_examples_files/figure-html/ggbackdrop_2_auto_03_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### ggbackdrop
+.panel1-ggbackdrop_2-auto[
+
+```r
+library(ggplot2)
+ggbackdrop() +
+stamp_curve(curvature = .3, yend = 75, xend = 100) +
+*stamp_polygon(x0 = 20, y0 = 60, radius = 20, alpha = .4)
+```
+]
+ 
+.panel2-ggbackdrop_2-auto[
+![](exploded_examples_files/figure-html/ggbackdrop_2_auto_04_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### ggbackdrop
+.panel1-ggbackdrop_2-auto[
+
+```r
+library(ggplot2)
+ggbackdrop() +
+stamp_curve(curvature = .3, yend = 75, xend = 100) +
+stamp_polygon(x0 = 20, y0 = 60, radius = 20, alpha = .4) +
+*stamp_text(x = 20, y = 60, label = "{ggstamp}",
+*          size = 5, color = "grey97")
+```
+]
+ 
+.panel2-ggbackdrop_2-auto[
+![](exploded_examples_files/figure-html/ggbackdrop_2_auto_05_output-1.png)&lt;!-- --&gt;
+]
+
+&lt;style&gt;
+.panel1-ggbackdrop_2-auto {
+  color: black;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-ggbackdrop_2-auto {
+  color: black;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-ggbackdrop_2-auto {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+
+
+
+
+---
+
+count: false
+ 
+### ggcanvas
+.panel1-ggcanvas_3-auto[
+
+```r
+*library(ggplot2)
+```
+]
+ 
+.panel2-ggcanvas_3-auto[
 
 ]
 
@@ -183,7 +229,7 @@ count: false
 count: false
  
 ### ggcanvas
-.panel1-ggcanvas_2-auto[
+.panel1-ggcanvas_3-auto[
 
 ```r
 library(ggplot2)
@@ -191,15 +237,15 @@ library(ggplot2)
 ```
 ]
  
-.panel2-ggcanvas_2-auto[
-![](exploded_examples_files/figure-html/ggcanvas_2_auto_02_output-1.png)&lt;!-- --&gt;
+.panel2-ggcanvas_3-auto[
+![](exploded_examples_files/figure-html/ggcanvas_3_auto_02_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### ggcanvas
-.panel1-ggcanvas_2-auto[
+.panel1-ggcanvas_3-auto[
 
 ```r
 library(ggplot2)
@@ -208,15 +254,15 @@ ggcanvas() +
 ```
 ]
  
-.panel2-ggcanvas_2-auto[
-![](exploded_examples_files/figure-html/ggcanvas_2_auto_03_output-1.png)&lt;!-- --&gt;
+.panel2-ggcanvas_3-auto[
+![](exploded_examples_files/figure-html/ggcanvas_3_auto_03_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### ggcanvas
-.panel1-ggcanvas_2-auto[
+.panel1-ggcanvas_3-auto[
 
 ```r
 library(ggplot2)
@@ -228,15 +274,15 @@ ggcanvas() +
 ```
 ]
  
-.panel2-ggcanvas_2-auto[
-![](exploded_examples_files/figure-html/ggcanvas_2_auto_04_output-1.png)&lt;!-- --&gt;
+.panel2-ggcanvas_3-auto[
+![](exploded_examples_files/figure-html/ggcanvas_3_auto_04_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### ggcanvas
-.panel1-ggcanvas_2-auto[
+.panel1-ggcanvas_3-auto[
 
 ```r
 library(ggplot2)
@@ -251,15 +297,15 @@ ggcanvas() +
 ```
 ]
  
-.panel2-ggcanvas_2-auto[
-![](exploded_examples_files/figure-html/ggcanvas_2_auto_05_output-1.png)&lt;!-- --&gt;
+.panel2-ggcanvas_3-auto[
+![](exploded_examples_files/figure-html/ggcanvas_3_auto_05_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### ggcanvas
-.panel1-ggcanvas_2-auto[
+.panel1-ggcanvas_3-auto[
 
 ```r
 library(ggplot2)
@@ -277,15 +323,15 @@ ggcanvas() +
 ```
 ]
  
-.panel2-ggcanvas_2-auto[
-![](exploded_examples_files/figure-html/ggcanvas_2_auto_06_output-1.png)&lt;!-- --&gt;
+.panel2-ggcanvas_3-auto[
+![](exploded_examples_files/figure-html/ggcanvas_3_auto_06_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### ggcanvas
-.panel1-ggcanvas_2-auto[
+.panel1-ggcanvas_3-auto[
 
 ```r
 library(ggplot2)
@@ -305,15 +351,15 @@ ggcanvas() +
 ```
 ]
  
-.panel2-ggcanvas_2-auto[
-![](exploded_examples_files/figure-html/ggcanvas_2_auto_07_output-1.png)&lt;!-- --&gt;
+.panel2-ggcanvas_3-auto[
+![](exploded_examples_files/figure-html/ggcanvas_3_auto_07_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### ggcanvas
-.panel1-ggcanvas_2-auto[
+.panel1-ggcanvas_3-auto[
 
 ```r
 library(ggplot2)
@@ -336,15 +382,15 @@ ggcanvas() +
 ```
 ]
  
-.panel2-ggcanvas_2-auto[
-![](exploded_examples_files/figure-html/ggcanvas_2_auto_08_output-1.png)&lt;!-- --&gt;
+.panel2-ggcanvas_3-auto[
+![](exploded_examples_files/figure-html/ggcanvas_3_auto_08_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### ggcanvas
-.panel1-ggcanvas_2-auto[
+.panel1-ggcanvas_3-auto[
 
 ```r
 library(ggplot2)
@@ -370,15 +416,15 @@ ggcanvas() +
 ```
 ]
  
-.panel2-ggcanvas_2-auto[
-![](exploded_examples_files/figure-html/ggcanvas_2_auto_09_output-1.png)&lt;!-- --&gt;
+.panel2-ggcanvas_3-auto[
+![](exploded_examples_files/figure-html/ggcanvas_3_auto_09_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### ggcanvas
-.panel1-ggcanvas_2-auto[
+.panel1-ggcanvas_3-auto[
 
 ```r
 library(ggplot2)
@@ -406,15 +452,15 @@ ggcanvas() +
 ```
 ]
  
-.panel2-ggcanvas_2-auto[
-![](exploded_examples_files/figure-html/ggcanvas_2_auto_10_output-1.png)&lt;!-- --&gt;
+.panel2-ggcanvas_3-auto[
+![](exploded_examples_files/figure-html/ggcanvas_3_auto_10_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### ggcanvas
-.panel1-ggcanvas_2-auto[
+.panel1-ggcanvas_3-auto[
 
 ```r
 library(ggplot2)
@@ -445,15 +491,15 @@ ggcanvas() +
 ```
 ]
  
-.panel2-ggcanvas_2-auto[
-![](exploded_examples_files/figure-html/ggcanvas_2_auto_11_output-1.png)&lt;!-- --&gt;
+.panel2-ggcanvas_3-auto[
+![](exploded_examples_files/figure-html/ggcanvas_3_auto_11_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### ggcanvas
-.panel1-ggcanvas_2-auto[
+.panel1-ggcanvas_3-auto[
 
 ```r
 library(ggplot2)
@@ -487,15 +533,15 @@ ggcanvas() +
 ```
 ]
  
-.panel2-ggcanvas_2-auto[
-![](exploded_examples_files/figure-html/ggcanvas_2_auto_12_output-1.png)&lt;!-- --&gt;
+.panel2-ggcanvas_3-auto[
+![](exploded_examples_files/figure-html/ggcanvas_3_auto_12_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### ggcanvas
-.panel1-ggcanvas_2-auto[
+.panel1-ggcanvas_3-auto[
 
 ```r
 library(ggplot2)
@@ -530,15 +576,15 @@ ggcanvas() +
 ```
 ]
  
-.panel2-ggcanvas_2-auto[
-![](exploded_examples_files/figure-html/ggcanvas_2_auto_13_output-1.png)&lt;!-- --&gt;
+.panel2-ggcanvas_3-auto[
+![](exploded_examples_files/figure-html/ggcanvas_3_auto_13_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### ggcanvas
-.panel1-ggcanvas_2-auto[
+.panel1-ggcanvas_3-auto[
 
 ```r
 library(ggplot2)
@@ -580,12 +626,12 @@ ggcanvas() +
 ```
 ]
  
-.panel2-ggcanvas_2-auto[
-![](exploded_examples_files/figure-html/ggcanvas_2_auto_14_output-1.png)&lt;!-- --&gt;
+.panel2-ggcanvas_3-auto[
+![](exploded_examples_files/figure-html/ggcanvas_3_auto_14_output-1.png)&lt;!-- --&gt;
 ]
 
 &lt;style&gt;
-.panel1-ggcanvas_2-auto {
+.panel1-ggcanvas_3-auto {
   color: black;
   width: 38.6060606060606%;
   hight: 32%;
@@ -593,7 +639,7 @@ ggcanvas() +
   padding-left: 1%;
   font-size: 80%
 }
-.panel2-ggcanvas_2-auto {
+.panel2-ggcanvas_3-auto {
   color: black;
   width: 59.3939393939394%;
   hight: 32%;
@@ -601,7 +647,7 @@ ggcanvas() +
   padding-left: 1%;
   font-size: 80%
 }
-.panel3-ggcanvas_2-auto {
+.panel3-ggcanvas_3-auto {
   color: black;
   width: NA%;
   hight: 33%;
@@ -622,7 +668,7 @@ ggcanvas() +
 count: false
  
 ### ggdraft
-.panel1-ggdraft_3-auto[
+.panel1-ggdraft_4-auto[
 
 ```r
 # remove drafting lines
@@ -636,15 +682,15 @@ count: false
 ```
 ]
  
-.panel2-ggdraft_3-auto[
-![](exploded_examples_files/figure-html/ggdraft_3_auto_01_output-1.png)&lt;!-- --&gt;
+.panel2-ggdraft_4-auto[
+![](exploded_examples_files/figure-html/ggdraft_4_auto_01_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### ggdraft
-.panel1-ggdraft_3-auto[
+.panel1-ggdraft_4-auto[
 
 ```r
 # remove drafting lines
@@ -659,139 +705,8 @@ stamp_polygon(x0 = 85, y0 = 23,
 ```
 ]
  
-.panel2-ggdraft_3-auto[
-![](exploded_examples_files/figure-html/ggdraft_3_auto_02_output-1.png)&lt;!-- --&gt;
-]
-
-&lt;style&gt;
-.panel1-ggdraft_3-auto {
-  color: black;
-  width: 38.6060606060606%;
-  hight: 32%;
-  float: left;
-  padding-left: 1%;
-  font-size: 80%
-}
-.panel2-ggdraft_3-auto {
-  color: black;
-  width: 59.3939393939394%;
-  hight: 32%;
-  float: left;
-  padding-left: 1%;
-  font-size: 80%
-}
-.panel3-ggdraft_3-auto {
-  color: black;
-  width: NA%;
-  hight: 33%;
-  float: left;
-  padding-left: 1%;
-  font-size: 80%
-}
-&lt;/style&gt;
-
-
-
-
-
-
-
----
-
-count: false
- 
-### ggdraft
-.panel1-ggdraft_4-auto[
-
-```r
-*library(ggplot2)
-```
-]
- 
-.panel2-ggdraft_4-auto[
-
-]
-
----
-count: false
- 
-### ggdraft
-.panel1-ggdraft_4-auto[
-
-```r
-library(ggplot2)
-*ggdraft()
-```
-]
- 
 .panel2-ggdraft_4-auto[
 ![](exploded_examples_files/figure-html/ggdraft_4_auto_02_output-1.png)&lt;!-- --&gt;
-]
-
----
-count: false
- 
-### ggdraft
-.panel1-ggdraft_4-auto[
-
-```r
-library(ggplot2)
-ggdraft() +
-*stamp_curve(curvature = .13,
-*           size = .09,
-*           yend = 20:60,
-*           xend = 100)
-```
-]
- 
-.panel2-ggdraft_4-auto[
-![](exploded_examples_files/figure-html/ggdraft_4_auto_03_output-1.png)&lt;!-- --&gt;
-]
-
----
-count: false
- 
-### ggdraft
-.panel1-ggdraft_4-auto[
-
-```r
-library(ggplot2)
-ggdraft() +
-stamp_curve(curvature = .13,
-            size = .09,
-            yend = 20:60,
-            xend = 100) +
-*stamp_polygon(x0 = 20, y0 = 40,
-*             radius = 20, alpha = .4)
-```
-]
- 
-.panel2-ggdraft_4-auto[
-![](exploded_examples_files/figure-html/ggdraft_4_auto_04_output-1.png)&lt;!-- --&gt;
-]
-
----
-count: false
- 
-### ggdraft
-.panel1-ggdraft_4-auto[
-
-```r
-library(ggplot2)
-ggdraft() +
-stamp_curve(curvature = .13,
-            size = .09,
-            yend = 20:60,
-            xend = 100) +
-stamp_polygon(x0 = 20, y0 = 40,
-              radius = 20, alpha = .4) +
-*stamp_text(x = 20, y = 40, label = "{ggstamp}",
-*          size = 6, color = "grey97")
-```
-]
- 
-.panel2-ggdraft_4-auto[
-![](exploded_examples_files/figure-html/ggdraft_4_auto_05_output-1.png)&lt;!-- --&gt;
 ]
 
 &lt;style&gt;
@@ -831,15 +746,146 @@ stamp_polygon(x0 = 20, y0 = 40,
 
 count: false
  
+### ggdraft
+.panel1-ggdraft_5-auto[
+
+```r
+*library(ggplot2)
+```
+]
+ 
+.panel2-ggdraft_5-auto[
+
+]
+
+---
+count: false
+ 
+### ggdraft
+.panel1-ggdraft_5-auto[
+
+```r
+library(ggplot2)
+*ggdraft()
+```
+]
+ 
+.panel2-ggdraft_5-auto[
+![](exploded_examples_files/figure-html/ggdraft_5_auto_02_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### ggdraft
+.panel1-ggdraft_5-auto[
+
+```r
+library(ggplot2)
+ggdraft() +
+*stamp_curve(curvature = .13,
+*           size = .09,
+*           yend = 20:60,
+*           xend = 100)
+```
+]
+ 
+.panel2-ggdraft_5-auto[
+![](exploded_examples_files/figure-html/ggdraft_5_auto_03_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### ggdraft
+.panel1-ggdraft_5-auto[
+
+```r
+library(ggplot2)
+ggdraft() +
+stamp_curve(curvature = .13,
+            size = .09,
+            yend = 20:60,
+            xend = 100) +
+*stamp_polygon(x0 = 20, y0 = 40,
+*             radius = 20, alpha = .4)
+```
+]
+ 
+.panel2-ggdraft_5-auto[
+![](exploded_examples_files/figure-html/ggdraft_5_auto_04_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### ggdraft
+.panel1-ggdraft_5-auto[
+
+```r
+library(ggplot2)
+ggdraft() +
+stamp_curve(curvature = .13,
+            size = .09,
+            yend = 20:60,
+            xend = 100) +
+stamp_polygon(x0 = 20, y0 = 40,
+              radius = 20, alpha = .4) +
+*stamp_text(x = 20, y = 40, label = "{ggstamp}",
+*          size = 6, color = "grey97")
+```
+]
+ 
+.panel2-ggdraft_5-auto[
+![](exploded_examples_files/figure-html/ggdraft_5_auto_05_output-1.png)&lt;!-- --&gt;
+]
+
+&lt;style&gt;
+.panel1-ggdraft_5-auto {
+  color: black;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-ggdraft_5-auto {
+  color: black;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-ggdraft_5-auto {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+
+
+
+
+---
+
+count: false
+ 
 ### pos_honeycomb_x
-.panel1-pos_honeycomb_x_5-auto[
+.panel1-pos_honeycomb_x_6-auto[
 
 ```r
 *pos_honeycomb_x()
 ```
 ]
  
-.panel2-pos_honeycomb_x_5-auto[
+.panel2-pos_honeycomb_x_6-auto[
 
 ```
 [1] 0.0000000 1.7320508 3.4641016 0.8660254 2.5980762
@@ -850,7 +896,7 @@ count: false
 count: false
  
 ### pos_honeycomb_x
-.panel1-pos_honeycomb_x_5-auto[
+.panel1-pos_honeycomb_x_6-auto[
 
 ```r
 pos_honeycomb_x()
@@ -858,7 +904,7 @@ pos_honeycomb_x()
 ```
 ]
  
-.panel2-pos_honeycomb_x_5-auto[
+.panel2-pos_honeycomb_x_6-auto[
 
 ```
 [1] 0.0000000 1.7320508 3.4641016 0.8660254 2.5980762
@@ -871,7 +917,7 @@ pos_honeycomb_x()
 ]
 
 &lt;style&gt;
-.panel1-pos_honeycomb_x_5-auto {
+.panel1-pos_honeycomb_x_6-auto {
   color: black;
   width: 38.6060606060606%;
   hight: 32%;
@@ -879,7 +925,7 @@ pos_honeycomb_x()
   padding-left: 1%;
   font-size: 80%
 }
-.panel2-pos_honeycomb_x_5-auto {
+.panel2-pos_honeycomb_x_6-auto {
   color: black;
   width: 59.3939393939394%;
   hight: 32%;
@@ -887,7 +933,7 @@ pos_honeycomb_x()
   padding-left: 1%;
   font-size: 80%
 }
-.panel3-pos_honeycomb_x_5-auto {
+.panel3-pos_honeycomb_x_6-auto {
   color: black;
   width: NA%;
   hight: 33%;
@@ -908,14 +954,14 @@ pos_honeycomb_x()
 count: false
  
 ### pos_honeycomb_y
-.panel1-pos_honeycomb_y_6-auto[
+.panel1-pos_honeycomb_y_7-auto[
 
 ```r
 *pos_honeycomb_y()
 ```
 ]
  
-.panel2-pos_honeycomb_y_6-auto[
+.panel2-pos_honeycomb_y_7-auto[
 
 ```
 [1]  0.0  0.0  0.0 -1.5 -1.5
@@ -926,7 +972,7 @@ count: false
 count: false
  
 ### pos_honeycomb_y
-.panel1-pos_honeycomb_y_6-auto[
+.panel1-pos_honeycomb_y_7-auto[
 
 ```r
 pos_honeycomb_y()
@@ -934,20 +980,20 @@ pos_honeycomb_y()
 ```
 ]
  
-.panel2-pos_honeycomb_y_6-auto[
+.panel2-pos_honeycomb_y_7-auto[
 
 ```
 [1]  0.0  0.0  0.0 -1.5 -1.5
 ```
 
-![](exploded_examples_files/figure-html/pos_honeycomb_y_6_auto_02_output-1.png)&lt;!-- --&gt;
+![](exploded_examples_files/figure-html/pos_honeycomb_y_7_auto_02_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### pos_honeycomb_y
-.panel1-pos_honeycomb_y_6-auto[
+.panel1-pos_honeycomb_y_7-auto[
 
 ```r
 pos_honeycomb_y()
@@ -957,17 +1003,17 @@ ggcanvas() +
 ```
 ]
  
-.panel2-pos_honeycomb_y_6-auto[
+.panel2-pos_honeycomb_y_7-auto[
 
 ```
 [1]  0.0  0.0  0.0 -1.5 -1.5
 ```
 
-![](exploded_examples_files/figure-html/pos_honeycomb_y_6_auto_03_output-1.png)&lt;!-- --&gt;
+![](exploded_examples_files/figure-html/pos_honeycomb_y_7_auto_03_output-1.png)&lt;!-- --&gt;
 ]
 
 &lt;style&gt;
-.panel1-pos_honeycomb_y_6-auto {
+.panel1-pos_honeycomb_y_7-auto {
   color: black;
   width: 38.6060606060606%;
   hight: 32%;
@@ -975,7 +1021,7 @@ ggcanvas() +
   padding-left: 1%;
   font-size: 80%
 }
-.panel2-pos_honeycomb_y_6-auto {
+.panel2-pos_honeycomb_y_7-auto {
   color: black;
   width: 59.3939393939394%;
   hight: 32%;
@@ -983,7 +1029,7 @@ ggcanvas() +
   padding-left: 1%;
   font-size: 80%
 }
-.panel3-pos_honeycomb_y_6-auto {
+.panel3-pos_honeycomb_y_7-auto {
   color: black;
   width: NA%;
   hight: 33%;
@@ -1004,7 +1050,7 @@ ggcanvas() +
 count: false
  
 ### pos_honeycomb
-.panel1-pos_honeycomb_7-auto[
+.panel1-pos_honeycomb_8-auto[
 
 ```r
 # a hive
@@ -1012,15 +1058,15 @@ count: false
 ```
 ]
  
-.panel2-pos_honeycomb_7-auto[
-![](exploded_examples_files/figure-html/pos_honeycomb_7_auto_01_output-1.png)&lt;!-- --&gt;
+.panel2-pos_honeycomb_8-auto[
+![](exploded_examples_files/figure-html/pos_honeycomb_8_auto_01_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### pos_honeycomb
-.panel1-pos_honeycomb_7-auto[
+.panel1-pos_honeycomb_8-auto[
 
 ```r
 # a hive
@@ -1032,15 +1078,15 @@ ggcanvas() +
 ```
 ]
  
-.panel2-pos_honeycomb_7-auto[
-![](exploded_examples_files/figure-html/pos_honeycomb_7_auto_02_output-1.png)&lt;!-- --&gt;
+.panel2-pos_honeycomb_8-auto[
+![](exploded_examples_files/figure-html/pos_honeycomb_8_auto_02_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### pos_honeycomb
-.panel1-pos_honeycomb_7-auto[
+.panel1-pos_honeycomb_8-auto[
 
 ```r
 # a hive
@@ -1056,15 +1102,15 @@ ggcanvas() +
 ```
 ]
  
-.panel2-pos_honeycomb_7-auto[
-![](exploded_examples_files/figure-html/pos_honeycomb_7_auto_03_output-1.png)&lt;!-- --&gt;
+.panel2-pos_honeycomb_8-auto[
+![](exploded_examples_files/figure-html/pos_honeycomb_8_auto_03_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### pos_honeycomb
-.panel1-pos_honeycomb_7-auto[
+.panel1-pos_honeycomb_8-auto[
 
 ```r
 # a hive
@@ -1084,15 +1130,15 @@ ggcanvas() +
 ```
 ]
  
-.panel2-pos_honeycomb_7-auto[
-![](exploded_examples_files/figure-html/pos_honeycomb_7_auto_04_output-1.png)&lt;!-- --&gt;
+.panel2-pos_honeycomb_8-auto[
+![](exploded_examples_files/figure-html/pos_honeycomb_8_auto_04_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### pos_honeycomb
-.panel1-pos_honeycomb_7-auto[
+.panel1-pos_honeycomb_8-auto[
 
 ```r
 # a hive
@@ -1113,216 +1159,8 @@ ggcanvas() +
 ```
 ]
  
-.panel2-pos_honeycomb_7-auto[
-![](exploded_examples_files/figure-html/pos_honeycomb_7_auto_05_output-1.png)&lt;!-- --&gt;
-]
-
-&lt;style&gt;
-.panel1-pos_honeycomb_7-auto {
-  color: black;
-  width: 38.6060606060606%;
-  hight: 32%;
-  float: left;
-  padding-left: 1%;
-  font-size: 80%
-}
-.panel2-pos_honeycomb_7-auto {
-  color: black;
-  width: 59.3939393939394%;
-  hight: 32%;
-  float: left;
-  padding-left: 1%;
-  font-size: 80%
-}
-.panel3-pos_honeycomb_7-auto {
-  color: black;
-  width: NA%;
-  hight: 33%;
-  float: left;
-  padding-left: 1%;
-  font-size: 80%
-}
-&lt;/style&gt;
-
-
-
-
-
-
-
----
-
-count: false
- 
-### pos_honeycomb
-.panel1-pos_honeycomb_8-auto[
-
-```r
-# first example
-*pos_honeycomb()
-```
-]
- 
 .panel2-pos_honeycomb_8-auto[
-
-```
-         x0   y0
-1 0.0000000  0.0
-2 1.7320508  0.0
-3 3.4641016  0.0
-4 0.8660254 -1.5
-5 2.5980762 -1.5
-```
-]
-
----
-count: false
- 
-### pos_honeycomb
-.panel1-pos_honeycomb_8-auto[
-
-```r
-# first example
-pos_honeycomb()
-*ggcanvas()
-```
-]
- 
-.panel2-pos_honeycomb_8-auto[
-
-```
-         x0   y0
-1 0.0000000  0.0
-2 1.7320508  0.0
-3 3.4641016  0.0
-4 0.8660254 -1.5
-5 2.5980762 -1.5
-```
-
-![](exploded_examples_files/figure-html/pos_honeycomb_8_auto_02_output-1.png)&lt;!-- --&gt;
-]
-
----
-count: false
- 
-### pos_honeycomb
-.panel1-pos_honeycomb_8-auto[
-
-```r
-# first example
-pos_honeycomb()
-ggcanvas() +
-*stamp_point(xy = pos_honeycomb())
-```
-]
- 
-.panel2-pos_honeycomb_8-auto[
-
-```
-         x0   y0
-1 0.0000000  0.0
-2 1.7320508  0.0
-3 3.4641016  0.0
-4 0.8660254 -1.5
-5 2.5980762 -1.5
-```
-
-![](exploded_examples_files/figure-html/pos_honeycomb_8_auto_03_output-1.png)&lt;!-- --&gt;
-]
-
----
-count: false
- 
-### pos_honeycomb
-.panel1-pos_honeycomb_8-auto[
-
-```r
-# first example
-pos_honeycomb()
-ggcanvas() +
- stamp_point(xy = pos_honeycomb()) +
-*stamp_polygon(x0y0 = pos_honeycomb(n = 15, ncol = 4),
-*    alpha = .5)
-```
-]
- 
-.panel2-pos_honeycomb_8-auto[
-
-```
-         x0   y0
-1 0.0000000  0.0
-2 1.7320508  0.0
-3 3.4641016  0.0
-4 0.8660254 -1.5
-5 2.5980762 -1.5
-```
-
-![](exploded_examples_files/figure-html/pos_honeycomb_8_auto_04_output-1.png)&lt;!-- --&gt;
-]
-
----
-count: false
- 
-### pos_honeycomb
-.panel1-pos_honeycomb_8-auto[
-
-```r
-# first example
-pos_honeycomb()
-ggcanvas() +
- stamp_point(xy = pos_honeycomb()) +
- stamp_polygon(x0y0 = pos_honeycomb(n = 15, ncol = 4),
-     alpha = .5) +
-*stamp_label(label = 1:15, xy = pos_honeycomb(n = 15, ncol = 4))
-```
-]
- 
-.panel2-pos_honeycomb_8-auto[
-
-```
-         x0   y0
-1 0.0000000  0.0
-2 1.7320508  0.0
-3 3.4641016  0.0
-4 0.8660254 -1.5
-5 2.5980762 -1.5
-```
-
 ![](exploded_examples_files/figure-html/pos_honeycomb_8_auto_05_output-1.png)&lt;!-- --&gt;
-]
-
----
-count: false
- 
-### pos_honeycomb
-.panel1-pos_honeycomb_8-auto[
-
-```r
-# first example
-pos_honeycomb()
-ggcanvas() +
- stamp_point(xy = pos_honeycomb()) +
- stamp_polygon(x0y0 = pos_honeycomb(n = 15, ncol = 4),
-     alpha = .5) +
- stamp_label(label = 1:15, xy = pos_honeycomb(n = 15, ncol = 4)) +
-*stamp_polygon(n = 4,
-*              x0y0 = pos_honeycomb(n = 15, ncol = 4)[15,],
-*              fill = "magenta", alpha = .4, radius = sqrt(.75))
-```
-]
- 
-.panel2-pos_honeycomb_8-auto[
-
-```
-         x0   y0
-1 0.0000000  0.0
-2 1.7320508  0.0
-3 3.4641016  0.0
-4 0.8660254 -1.5
-5 2.5980762 -1.5
-```
-
-![](exploded_examples_files/figure-html/pos_honeycomb_8_auto_06_output-1.png)&lt;!-- --&gt;
 ]
 
 &lt;style&gt;
@@ -1366,16 +1204,20 @@ count: false
 .panel1-pos_honeycomb_9-auto[
 
 ```r
-# get coords for single position
-*pos_honeycomb(n = 15, ncol = 5)[15,]
+# first example
+*pos_honeycomb()
 ```
 ]
  
 .panel2-pos_honeycomb_9-auto[
 
 ```
-         x0 y0
-15 6.928203 -3
+         x0   y0
+1 0.0000000  0.0
+2 1.7320508  0.0
+3 3.4641016  0.0
+4 0.8660254 -1.5
+5 2.5980762 -1.5
 ```
 ]
 
@@ -1386,26 +1228,147 @@ count: false
 .panel1-pos_honeycomb_9-auto[
 
 ```r
-# get coords for single position
-pos_honeycomb(n = 15, ncol = 5)[15,]
-*pos_honeycomb(n = 15, ncol = 5)[1:4,]
+# first example
+pos_honeycomb()
+*ggcanvas()
 ```
 ]
  
 .panel2-pos_honeycomb_9-auto[
 
 ```
-         x0 y0
-15 6.928203 -3
+         x0   y0
+1 0.0000000  0.0
+2 1.7320508  0.0
+3 3.4641016  0.0
+4 0.8660254 -1.5
+5 2.5980762 -1.5
 ```
 
+![](exploded_examples_files/figure-html/pos_honeycomb_9_auto_02_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### pos_honeycomb
+.panel1-pos_honeycomb_9-auto[
+
+```r
+# first example
+pos_honeycomb()
+ggcanvas() +
+*stamp_point(xy = pos_honeycomb())
 ```
-        x0 y0
-1 0.000000  0
-2 1.732051  0
-3 3.464102  0
-4 5.196152  0
+]
+ 
+.panel2-pos_honeycomb_9-auto[
+
 ```
+         x0   y0
+1 0.0000000  0.0
+2 1.7320508  0.0
+3 3.4641016  0.0
+4 0.8660254 -1.5
+5 2.5980762 -1.5
+```
+
+![](exploded_examples_files/figure-html/pos_honeycomb_9_auto_03_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### pos_honeycomb
+.panel1-pos_honeycomb_9-auto[
+
+```r
+# first example
+pos_honeycomb()
+ggcanvas() +
+ stamp_point(xy = pos_honeycomb()) +
+*stamp_polygon(x0y0 = pos_honeycomb(n = 15, ncol = 4),
+*    alpha = .5)
+```
+]
+ 
+.panel2-pos_honeycomb_9-auto[
+
+```
+         x0   y0
+1 0.0000000  0.0
+2 1.7320508  0.0
+3 3.4641016  0.0
+4 0.8660254 -1.5
+5 2.5980762 -1.5
+```
+
+![](exploded_examples_files/figure-html/pos_honeycomb_9_auto_04_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### pos_honeycomb
+.panel1-pos_honeycomb_9-auto[
+
+```r
+# first example
+pos_honeycomb()
+ggcanvas() +
+ stamp_point(xy = pos_honeycomb()) +
+ stamp_polygon(x0y0 = pos_honeycomb(n = 15, ncol = 4),
+     alpha = .5) +
+*stamp_label(label = 1:15, xy = pos_honeycomb(n = 15, ncol = 4))
+```
+]
+ 
+.panel2-pos_honeycomb_9-auto[
+
+```
+         x0   y0
+1 0.0000000  0.0
+2 1.7320508  0.0
+3 3.4641016  0.0
+4 0.8660254 -1.5
+5 2.5980762 -1.5
+```
+
+![](exploded_examples_files/figure-html/pos_honeycomb_9_auto_05_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### pos_honeycomb
+.panel1-pos_honeycomb_9-auto[
+
+```r
+# first example
+pos_honeycomb()
+ggcanvas() +
+ stamp_point(xy = pos_honeycomb()) +
+ stamp_polygon(x0y0 = pos_honeycomb(n = 15, ncol = 4),
+     alpha = .5) +
+ stamp_label(label = 1:15, xy = pos_honeycomb(n = 15, ncol = 4)) +
+*stamp_polygon(n = 4,
+*              x0y0 = pos_honeycomb(n = 15, ncol = 4)[15,],
+*              fill = "magenta", alpha = .4, radius = sqrt(.75))
+```
+]
+ 
+.panel2-pos_honeycomb_9-auto[
+
+```
+         x0   y0
+1 0.0000000  0.0
+2 1.7320508  0.0
+3 3.4641016  0.0
+4 0.8660254 -1.5
+5 2.5980762 -1.5
+```
+
+![](exploded_examples_files/figure-html/pos_honeycomb_9_auto_06_output-1.png)&lt;!-- --&gt;
 ]
 
 &lt;style&gt;
@@ -1445,15 +1408,98 @@ pos_honeycomb(n = 15, ncol = 5)[15,]
 
 count: false
  
+### pos_honeycomb
+.panel1-pos_honeycomb_10-auto[
+
+```r
+# get coords for single position
+*pos_honeycomb(n = 15, ncol = 5)[15,]
+```
+]
+ 
+.panel2-pos_honeycomb_10-auto[
+
+```
+         x0 y0
+15 6.928203 -3
+```
+]
+
+---
+count: false
+ 
+### pos_honeycomb
+.panel1-pos_honeycomb_10-auto[
+
+```r
+# get coords for single position
+pos_honeycomb(n = 15, ncol = 5)[15,]
+*pos_honeycomb(n = 15, ncol = 5)[1:4,]
+```
+]
+ 
+.panel2-pos_honeycomb_10-auto[
+
+```
+         x0 y0
+15 6.928203 -3
+```
+
+```
+        x0 y0
+1 0.000000  0
+2 1.732051  0
+3 3.464102  0
+4 5.196152  0
+```
+]
+
+&lt;style&gt;
+.panel1-pos_honeycomb_10-auto {
+  color: black;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-pos_honeycomb_10-auto {
+  color: black;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-pos_honeycomb_10-auto {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+
+
+
+
+---
+
+count: false
+ 
 ### pos_spoke_x
-.panel1-pos_spoke_x_10-auto[
+.panel1-pos_spoke_x_11-auto[
 
 ```r
 *pos_spoke_x()
 ```
 ]
  
-.panel2-pos_spoke_x_10-auto[
+.panel2-pos_spoke_x_11-auto[
 
 ```
 [1]  6.123234e-17  9.510565e-01  5.877853e-01 -5.877853e-01 -9.510565e-01
@@ -1464,7 +1510,7 @@ count: false
 count: false
  
 ### pos_spoke_x
-.panel1-pos_spoke_x_10-auto[
+.panel1-pos_spoke_x_11-auto[
 
 ```r
 pos_spoke_x()
@@ -1472,7 +1518,7 @@ pos_spoke_x()
 ```
 ]
  
-.panel2-pos_spoke_x_10-auto[
+.panel2-pos_spoke_x_11-auto[
 
 ```
 [1]  6.123234e-17  9.510565e-01  5.877853e-01 -5.877853e-01 -9.510565e-01
@@ -1485,7 +1531,7 @@ pos_spoke_x()
 ]
 
 &lt;style&gt;
-.panel1-pos_spoke_x_10-auto {
+.panel1-pos_spoke_x_11-auto {
   color: black;
   width: 38.6060606060606%;
   hight: 32%;
@@ -1493,7 +1539,7 @@ pos_spoke_x()
   padding-left: 1%;
   font-size: 80%
 }
-.panel2-pos_spoke_x_10-auto {
+.panel2-pos_spoke_x_11-auto {
   color: black;
   width: 59.3939393939394%;
   hight: 32%;
@@ -1501,7 +1547,7 @@ pos_spoke_x()
   padding-left: 1%;
   font-size: 80%
 }
-.panel3-pos_spoke_x_10-auto {
+.panel3-pos_spoke_x_11-auto {
   color: black;
   width: NA%;
   hight: 33%;
@@ -1522,14 +1568,14 @@ pos_spoke_x()
 count: false
  
 ### pos_spoke_y
-.panel1-pos_spoke_y_11-auto[
+.panel1-pos_spoke_y_12-auto[
 
 ```r
 *pos_spoke_y(n = 6)
 ```
 ]
  
-.panel2-pos_spoke_y_11-auto[
+.panel2-pos_spoke_y_12-auto[
 
 ```
 [1]  1.0  0.5 -0.5 -1.0 -0.5  0.5
@@ -1540,7 +1586,7 @@ count: false
 count: false
  
 ### pos_spoke_y
-.panel1-pos_spoke_y_11-auto[
+.panel1-pos_spoke_y_12-auto[
 
 ```r
 pos_spoke_y(n = 6)
@@ -1548,20 +1594,20 @@ pos_spoke_y(n = 6)
 ```
 ]
  
-.panel2-pos_spoke_y_11-auto[
+.panel2-pos_spoke_y_12-auto[
 
 ```
 [1]  1.0  0.5 -0.5 -1.0 -0.5  0.5
 ```
 
-![](exploded_examples_files/figure-html/pos_spoke_y_11_auto_02_output-1.png)&lt;!-- --&gt;
+![](exploded_examples_files/figure-html/pos_spoke_y_12_auto_02_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### pos_spoke_y
-.panel1-pos_spoke_y_11-auto[
+.panel1-pos_spoke_y_12-auto[
 
 ```r
 pos_spoke_y(n = 6)
@@ -1572,20 +1618,20 @@ ggcanvas() +
 ```
 ]
  
-.panel2-pos_spoke_y_11-auto[
+.panel2-pos_spoke_y_12-auto[
 
 ```
 [1]  1.0  0.5 -0.5 -1.0 -0.5  0.5
 ```
 
-![](exploded_examples_files/figure-html/pos_spoke_y_11_auto_03_output-1.png)&lt;!-- --&gt;
+![](exploded_examples_files/figure-html/pos_spoke_y_12_auto_03_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### pos_spoke_y
-.panel1-pos_spoke_y_11-auto[
+.panel1-pos_spoke_y_12-auto[
 
 ```r
 pos_spoke_y(n = 6)
@@ -1598,17 +1644,17 @@ stamp_label(label = "hello",
 ```
 ]
  
-.panel2-pos_spoke_y_11-auto[
+.panel2-pos_spoke_y_12-auto[
 
 ```
 [1]  1.0  0.5 -0.5 -1.0 -0.5  0.5
 ```
 
-![](exploded_examples_files/figure-html/pos_spoke_y_11_auto_04_output-1.png)&lt;!-- --&gt;
+![](exploded_examples_files/figure-html/pos_spoke_y_12_auto_04_output-1.png)&lt;!-- --&gt;
 ]
 
 &lt;style&gt;
-.panel1-pos_spoke_y_11-auto {
+.panel1-pos_spoke_y_12-auto {
   color: black;
   width: 38.6060606060606%;
   hight: 32%;
@@ -1616,7 +1662,7 @@ stamp_label(label = "hello",
   padding-left: 1%;
   font-size: 80%
 }
-.panel2-pos_spoke_y_11-auto {
+.panel2-pos_spoke_y_12-auto {
   color: black;
   width: 59.3939393939394%;
   hight: 32%;
@@ -1624,7 +1670,7 @@ stamp_label(label = "hello",
   padding-left: 1%;
   font-size: 80%
 }
-.panel3-pos_spoke_y_11-auto {
+.panel3-pos_spoke_y_12-auto {
   color: black;
   width: NA%;
   hight: 33%;
@@ -1645,7 +1691,7 @@ stamp_label(label = "hello",
 count: false
  
 ### pos_spoke
-.panel1-pos_spoke_12-auto[
+.panel1-pos_spoke_13-auto[
 
 ```r
 # Using w plotspace
@@ -1653,15 +1699,15 @@ count: false
 ```
 ]
  
-.panel2-pos_spoke_12-auto[
-![](exploded_examples_files/figure-html/pos_spoke_12_auto_01_output-1.png)&lt;!-- --&gt;
+.panel2-pos_spoke_13-auto[
+![](exploded_examples_files/figure-html/pos_spoke_13_auto_01_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### pos_spoke
-.panel1-pos_spoke_12-auto[
+.panel1-pos_spoke_13-auto[
 
 ```r
 # Using w plotspace
@@ -1673,103 +1719,8 @@ ggcanvas() +
 ```
 ]
  
-.panel2-pos_spoke_12-auto[
-![](exploded_examples_files/figure-html/pos_spoke_12_auto_02_output-1.png)&lt;!-- --&gt;
-]
-
-&lt;style&gt;
-.panel1-pos_spoke_12-auto {
-  color: black;
-  width: 38.6060606060606%;
-  hight: 32%;
-  float: left;
-  padding-left: 1%;
-  font-size: 80%
-}
-.panel2-pos_spoke_12-auto {
-  color: black;
-  width: 59.3939393939394%;
-  hight: 32%;
-  float: left;
-  padding-left: 1%;
-  font-size: 80%
-}
-.panel3-pos_spoke_12-auto {
-  color: black;
-  width: NA%;
-  hight: 33%;
-  float: left;
-  padding-left: 1%;
-  font-size: 80%
-}
-&lt;/style&gt;
-
-
-
-
-
-
-
----
-
-count: false
- 
-### pos_spoke
-.panel1-pos_spoke_13-auto[
-
-```r
-*pos_spoke()
-```
-]
- 
 .panel2-pos_spoke_13-auto[
-
-```
-             x0        y0
-1  6.123234e-17  1.000000
-2  9.510565e-01  0.309017
-3  5.877853e-01 -0.809017
-4 -5.877853e-01 -0.809017
-5 -9.510565e-01  0.309017
-```
-]
-
----
-count: false
- 
-### pos_spoke
-.panel1-pos_spoke_13-auto[
-
-```r
-pos_spoke()
-*pos_spoke(n = 10)
-```
-]
- 
-.panel2-pos_spoke_13-auto[
-
-```
-             x0        y0
-1  6.123234e-17  1.000000
-2  9.510565e-01  0.309017
-3  5.877853e-01 -0.809017
-4 -5.877853e-01 -0.809017
-5 -9.510565e-01  0.309017
-```
-
-```
-              x0        y0
-1   6.123234e-17  1.000000
-2   5.877853e-01  0.809017
-3   9.510565e-01  0.309017
-4   9.510565e-01 -0.309017
-5   5.877853e-01 -0.809017
-6   6.123234e-17 -1.000000
-7  -5.877853e-01 -0.809017
-8  -9.510565e-01 -0.309017
-9  -9.510565e-01  0.309017
-10 -5.877853e-01  0.809017
-```
+![](exploded_examples_files/figure-html/pos_spoke_13_auto_02_output-1.png)&lt;!-- --&gt;
 ]
 
 &lt;style&gt;
@@ -1809,23 +1760,291 @@ pos_spoke()
 
 count: false
  
+### pos_spoke
+.panel1-pos_spoke_14-auto[
+
+```r
+*pos_spoke()
+```
+]
+ 
+.panel2-pos_spoke_14-auto[
+
+```
+             x0        y0
+1  6.123234e-17  1.000000
+2  9.510565e-01  0.309017
+3  5.877853e-01 -0.809017
+4 -5.877853e-01 -0.809017
+5 -9.510565e-01  0.309017
+```
+]
+
+---
+count: false
+ 
+### pos_spoke
+.panel1-pos_spoke_14-auto[
+
+```r
+pos_spoke()
+*pos_spoke(n = 10)
+```
+]
+ 
+.panel2-pos_spoke_14-auto[
+
+```
+             x0        y0
+1  6.123234e-17  1.000000
+2  9.510565e-01  0.309017
+3  5.877853e-01 -0.809017
+4 -5.877853e-01 -0.809017
+5 -9.510565e-01  0.309017
+```
+
+```
+              x0        y0
+1   6.123234e-17  1.000000
+2   5.877853e-01  0.809017
+3   9.510565e-01  0.309017
+4   9.510565e-01 -0.309017
+5   5.877853e-01 -0.809017
+6   6.123234e-17 -1.000000
+7  -5.877853e-01 -0.809017
+8  -9.510565e-01 -0.309017
+9  -9.510565e-01  0.309017
+10 -5.877853e-01  0.809017
+```
+]
+
+&lt;style&gt;
+.panel1-pos_spoke_14-auto {
+  color: black;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-pos_spoke_14-auto {
+  color: black;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-pos_spoke_14-auto {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+
+
+
+
+---
+
+count: false
+ 
+### pos_wrap_multi
+.panel1-pos_wrap_multi_15-auto[
+
+```r
+# in plot
+*ggcanvas()
+```
+]
+ 
+.panel2-pos_wrap_multi_15-auto[
+![](exploded_examples_files/figure-html/pos_wrap_multi_15_auto_01_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### pos_wrap_multi
+.panel1-pos_wrap_multi_15-auto[
+
+```r
+# in plot
+ggcanvas() +
+* stamp_point(xy =
+*     pos_wrap_multi(n = c(5, 10),
+*                    ncol = 4))
+```
+]
+ 
+.panel2-pos_wrap_multi_15-auto[
+![](exploded_examples_files/figure-html/pos_wrap_multi_15_auto_02_output-1.png)&lt;!-- --&gt;
+]
+
+&lt;style&gt;
+.panel1-pos_wrap_multi_15-auto {
+  color: black;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-pos_wrap_multi_15-auto {
+  color: black;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-pos_wrap_multi_15-auto {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+
+
+
+
+---
+
+count: false
+ 
+### pos_wrap_multi
+.panel1-pos_wrap_multi_16-auto[
+
+```r
+# just printing
+*pos_wrap_multi(n = c(3, 4), ncol = 2)
+```
+]
+ 
+.panel2-pos_wrap_multi_16-auto[
+
+```
+  x0 y0
+1  0  0
+2  1  0
+3  0 -1
+4  3  0
+5  4  0
+6  3 -1
+7  4 -1
+```
+]
+
+---
+count: false
+ 
+### pos_wrap_multi
+.panel1-pos_wrap_multi_16-auto[
+
+```r
+# just printing
+pos_wrap_multi(n = c(3, 4), ncol = 2)
+*pos_wrap_multi()
+```
+]
+ 
+.panel2-pos_wrap_multi_16-auto[
+
+```
+  x0 y0
+1  0  0
+2  1  0
+3  0 -1
+4  3  0
+5  4  0
+6  3 -1
+7  4 -1
+```
+
+```
+   x0 y0
+1   0  0
+2   1  0
+3   2  0
+4   0 -1
+5   1 -1
+6   4  0
+7   5  0
+8   6  0
+9   4 -1
+10  5 -1
+11  6 -1
+12  4 -2
+13  5 -2
+```
+]
+
+&lt;style&gt;
+.panel1-pos_wrap_multi_16-auto {
+  color: black;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-pos_wrap_multi_16-auto {
+  color: black;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-pos_wrap_multi_16-auto {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+
+
+
+
+---
+
+count: false
+ 
 ### pos_wrap_png
-.panel1-pos_wrap_png_14-auto[
+.panel1-pos_wrap_png_17-auto[
 
 ```r
 *ggcanvas()
 ```
 ]
  
-.panel2-pos_wrap_png_14-auto[
-![](exploded_examples_files/figure-html/pos_wrap_png_14_auto_01_output-1.png)&lt;!-- --&gt;
+.panel2-pos_wrap_png_17-auto[
+![](exploded_examples_files/figure-html/pos_wrap_png_17_auto_01_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### pos_wrap_png
-.panel1-pos_wrap_png_14-auto[
+.panel1-pos_wrap_png_17-auto[
 
 ```r
 ggcanvas() +
@@ -1833,15 +2052,15 @@ ggcanvas() +
 ```
 ]
  
-.panel2-pos_wrap_png_14-auto[
-![](exploded_examples_files/figure-html/pos_wrap_png_14_auto_02_output-1.png)&lt;!-- --&gt;
+.panel2-pos_wrap_png_17-auto[
+![](exploded_examples_files/figure-html/pos_wrap_png_17_auto_02_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### pos_wrap_png
-.panel1-pos_wrap_png_14-auto[
+.panel1-pos_wrap_png_17-auto[
 
 ```r
 ggcanvas() +
@@ -1851,12 +2070,12 @@ ggcanvas() +
 ```
 ]
  
-.panel2-pos_wrap_png_14-auto[
-![](exploded_examples_files/figure-html/pos_wrap_png_14_auto_03_output-1.png)&lt;!-- --&gt;
+.panel2-pos_wrap_png_17-auto[
+![](exploded_examples_files/figure-html/pos_wrap_png_17_auto_03_output-1.png)&lt;!-- --&gt;
 ]
 
 &lt;style&gt;
-.panel1-pos_wrap_png_14-auto {
+.panel1-pos_wrap_png_17-auto {
   color: black;
   width: 38.6060606060606%;
   hight: 32%;
@@ -1864,7 +2083,7 @@ ggcanvas() +
   padding-left: 1%;
   font-size: 80%
 }
-.panel2-pos_wrap_png_14-auto {
+.panel2-pos_wrap_png_17-auto {
   color: black;
   width: 59.3939393939394%;
   hight: 32%;
@@ -1872,7 +2091,7 @@ ggcanvas() +
   padding-left: 1%;
   font-size: 80%
 }
-.panel3-pos_wrap_png_14-auto {
+.panel3-pos_wrap_png_17-auto {
   color: black;
   width: NA%;
   hight: 33%;
@@ -1893,14 +2112,14 @@ ggcanvas() +
 count: false
  
 ### pos_wrap
-.panel1-pos_wrap_15-auto[
+.panel1-pos_wrap_18-auto[
 
 ```r
 *pos_wrap()
 ```
 ]
  
-.panel2-pos_wrap_15-auto[
+.panel2-pos_wrap_18-auto[
 
 ```
   x0 y0
@@ -1916,7 +2135,7 @@ count: false
 count: false
  
 ### pos_wrap
-.panel1-pos_wrap_15-auto[
+.panel1-pos_wrap_18-auto[
 
 ```r
 pos_wrap()
@@ -1924,7 +2143,7 @@ pos_wrap()
 ```
 ]
  
-.panel2-pos_wrap_15-auto[
+.panel2-pos_wrap_18-auto[
 
 ```
   x0 y0
@@ -1948,7 +2167,7 @@ pos_wrap()
 ]
 
 &lt;style&gt;
-.panel1-pos_wrap_15-auto {
+.panel1-pos_wrap_18-auto {
   color: black;
   width: 38.6060606060606%;
   hight: 32%;
@@ -1956,7 +2175,7 @@ pos_wrap()
   padding-left: 1%;
   font-size: 80%
 }
-.panel2-pos_wrap_15-auto {
+.panel2-pos_wrap_18-auto {
   color: black;
   width: 59.3939393939394%;
   hight: 32%;
@@ -1964,7 +2183,7 @@ pos_wrap()
   padding-left: 1%;
   font-size: 80%
 }
-.panel3-pos_wrap_15-auto {
+.panel3-pos_wrap_18-auto {
   color: black;
   width: NA%;
   hight: 33%;
@@ -1985,7 +2204,7 @@ pos_wrap()
 count: false
  
 ### stamp_arrow
-.panel1-stamp_arrow_16-auto[
+.panel1-stamp_arrow_19-auto[
 
 ```r
 # several arrows
@@ -1993,15 +2212,15 @@ count: false
 ```
 ]
  
-.panel2-stamp_arrow_16-auto[
-![](exploded_examples_files/figure-html/stamp_arrow_16_auto_01_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_arrow_19-auto[
+![](exploded_examples_files/figure-html/stamp_arrow_19_auto_01_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_arrow
-.panel1-stamp_arrow_16-auto[
+.panel1-stamp_arrow_19-auto[
 
 ```r
 # several arrows
@@ -2010,15 +2229,15 @@ count: false
 ```
 ]
  
-.panel2-stamp_arrow_16-auto[
-![](exploded_examples_files/figure-html/stamp_arrow_16_auto_02_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_arrow_19-auto[
+![](exploded_examples_files/figure-html/stamp_arrow_19_auto_02_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_arrow
-.panel1-stamp_arrow_16-auto[
+.panel1-stamp_arrow_19-auto[
 
 ```r
 # several arrows
@@ -2030,15 +2249,15 @@ count: false
 ```
 ]
  
-.panel2-stamp_arrow_16-auto[
-![](exploded_examples_files/figure-html/stamp_arrow_16_auto_03_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_arrow_19-auto[
+![](exploded_examples_files/figure-html/stamp_arrow_19_auto_03_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_arrow
-.panel1-stamp_arrow_16-auto[
+.panel1-stamp_arrow_19-auto[
 
 ```r
 # several arrows
@@ -2052,12 +2271,12 @@ count: false
 ```
 ]
  
-.panel2-stamp_arrow_16-auto[
-![](exploded_examples_files/figure-html/stamp_arrow_16_auto_04_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_arrow_19-auto[
+![](exploded_examples_files/figure-html/stamp_arrow_19_auto_04_output-1.png)&lt;!-- --&gt;
 ]
 
 &lt;style&gt;
-.panel1-stamp_arrow_16-auto {
+.panel1-stamp_arrow_19-auto {
   color: black;
   width: 38.6060606060606%;
   hight: 32%;
@@ -2065,7 +2284,7 @@ count: false
   padding-left: 1%;
   font-size: 80%
 }
-.panel2-stamp_arrow_16-auto {
+.panel2-stamp_arrow_19-auto {
   color: black;
   width: 59.3939393939394%;
   hight: 32%;
@@ -2073,7 +2292,7 @@ count: false
   padding-left: 1%;
   font-size: 80%
 }
-.panel3-stamp_arrow_16-auto {
+.panel3-stamp_arrow_19-auto {
   color: black;
   width: NA%;
   hight: 33%;
@@ -2094,7 +2313,7 @@ count: false
 count: false
  
 ### stamp_arrow
-.panel1-stamp_arrow_17-auto[
+.panel1-stamp_arrow_20-auto[
 
 ```r
 # stamp arrow on plot
@@ -2102,7 +2321,7 @@ count: false
 ```
 ]
  
-.panel2-stamp_arrow_17-auto[
+.panel2-stamp_arrow_20-auto[
 
 ]
 
@@ -2110,7 +2329,7 @@ count: false
 count: false
  
 ### stamp_arrow
-.panel1-stamp_arrow_17-auto[
+.panel1-stamp_arrow_20-auto[
 
 ```r
 # stamp arrow on plot
@@ -2119,15 +2338,15 @@ library(ggplot2)
 ```
 ]
  
-.panel2-stamp_arrow_17-auto[
-![](exploded_examples_files/figure-html/stamp_arrow_17_auto_02_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_arrow_20-auto[
+![](exploded_examples_files/figure-html/stamp_arrow_20_auto_02_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_arrow
-.panel1-stamp_arrow_17-auto[
+.panel1-stamp_arrow_20-auto[
 
 ```r
 # stamp arrow on plot
@@ -2137,15 +2356,15 @@ ggplot(cars) +
 ```
 ]
  
-.panel2-stamp_arrow_17-auto[
-![](exploded_examples_files/figure-html/stamp_arrow_17_auto_03_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_arrow_20-auto[
+![](exploded_examples_files/figure-html/stamp_arrow_20_auto_03_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_arrow
-.panel1-stamp_arrow_17-auto[
+.panel1-stamp_arrow_20-auto[
 
 ```r
 # stamp arrow on plot
@@ -2156,15 +2375,15 @@ ggplot(cars) +
 ```
 ]
  
-.panel2-stamp_arrow_17-auto[
-![](exploded_examples_files/figure-html/stamp_arrow_17_auto_04_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_arrow_20-auto[
+![](exploded_examples_files/figure-html/stamp_arrow_20_auto_04_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_arrow
-.panel1-stamp_arrow_17-auto[
+.panel1-stamp_arrow_20-auto[
 
 ```r
 # stamp arrow on plot
@@ -2176,15 +2395,15 @@ ggplot(cars) +
 ```
 ]
  
-.panel2-stamp_arrow_17-auto[
-![](exploded_examples_files/figure-html/stamp_arrow_17_auto_05_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_arrow_20-auto[
+![](exploded_examples_files/figure-html/stamp_arrow_20_auto_05_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_arrow
-.panel1-stamp_arrow_17-auto[
+.panel1-stamp_arrow_20-auto[
 
 ```r
 # stamp arrow on plot
@@ -2198,12 +2417,12 @@ ggplot(cars) +
 ```
 ]
  
-.panel2-stamp_arrow_17-auto[
-![](exploded_examples_files/figure-html/stamp_arrow_17_auto_06_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_arrow_20-auto[
+![](exploded_examples_files/figure-html/stamp_arrow_20_auto_06_output-1.png)&lt;!-- --&gt;
 ]
 
 &lt;style&gt;
-.panel1-stamp_arrow_17-auto {
+.panel1-stamp_arrow_20-auto {
   color: black;
   width: 38.6060606060606%;
   hight: 32%;
@@ -2211,7 +2430,7 @@ ggplot(cars) +
   padding-left: 1%;
   font-size: 80%
 }
-.panel2-stamp_arrow_17-auto {
+.panel2-stamp_arrow_20-auto {
   color: black;
   width: 59.3939393939394%;
   hight: 32%;
@@ -2219,410 +2438,7 @@ ggplot(cars) +
   padding-left: 1%;
   font-size: 80%
 }
-.panel3-stamp_arrow_17-auto {
-  color: black;
-  width: NA%;
-  hight: 33%;
-  float: left;
-  padding-left: 1%;
-  font-size: 80%
-}
-&lt;/style&gt;
-
-
-
-
-
-
-
----
-
-count: false
- 
-### stamp_circle
-.panel1-stamp_circle_18-auto[
-
-```r
-# lots of circles
-*ggcanvas()
-```
-]
- 
-.panel2-stamp_circle_18-auto[
-![](exploded_examples_files/figure-html/stamp_circle_18_auto_01_output-1.png)&lt;!-- --&gt;
-]
-
----
-count: false
- 
-### stamp_circle
-.panel1-stamp_circle_18-auto[
-
-```r
-# lots of circles
- ggcanvas() +
-*stamp_circle(color = "turquoise4", radius = 3, fill = "turquoise")
-```
-]
- 
-.panel2-stamp_circle_18-auto[
-![](exploded_examples_files/figure-html/stamp_circle_18_auto_02_output-1.png)&lt;!-- --&gt;
-]
-
----
-count: false
- 
-### stamp_circle
-.panel1-stamp_circle_18-auto[
-
-```r
-# lots of circles
- ggcanvas() +
- stamp_circle(color = "turquoise4", radius = 3, fill = "turquoise") +
-*stamp_circle(fill = "slateblue2", radius = 2)
-```
-]
- 
-.panel2-stamp_circle_18-auto[
-![](exploded_examples_files/figure-html/stamp_circle_18_auto_03_output-1.png)&lt;!-- --&gt;
-]
-
----
-count: false
- 
-### stamp_circle
-.panel1-stamp_circle_18-auto[
-
-```r
-# lots of circles
- ggcanvas() +
- stamp_circle(color = "turquoise4", radius = 3, fill = "turquoise") +
- stamp_circle(fill = "slateblue2", radius = 2) +
-*stamp_circle(linetype = "dashed", alpha = .5, fill = "plum2")
-```
-]
- 
-.panel2-stamp_circle_18-auto[
-![](exploded_examples_files/figure-html/stamp_circle_18_auto_04_output-1.png)&lt;!-- --&gt;
-]
-
----
-count: false
- 
-### stamp_circle
-.panel1-stamp_circle_18-auto[
-
-```r
-# lots of circles
- ggcanvas() +
- stamp_circle(color = "turquoise4", radius = 3, fill = "turquoise") +
- stamp_circle(fill = "slateblue2", radius = 2) +
- stamp_circle(linetype = "dashed", alpha = .5, fill = "plum2") +
-*stamp_circle(x0 = 1, y0 = 1.5, rotation = .25, size = 0,
-* fill = "goldenrod2")
-```
-]
- 
-.panel2-stamp_circle_18-auto[
-![](exploded_examples_files/figure-html/stamp_circle_18_auto_05_output-1.png)&lt;!-- --&gt;
-]
-
----
-count: false
- 
-### stamp_circle
-.panel1-stamp_circle_18-auto[
-
-```r
-# lots of circles
- ggcanvas() +
- stamp_circle(color = "turquoise4", radius = 3, fill = "turquoise") +
- stamp_circle(fill = "slateblue2", radius = 2) +
- stamp_circle(linetype = "dashed", alpha = .5, fill = "plum2") +
- stamp_circle(x0 = 1, y0 = 1.5, rotation = .25, size = 0,
-  fill = "goldenrod2") +
-*stamp_circle(n = 50, radius = .2, size = 0)
-```
-]
- 
-.panel2-stamp_circle_18-auto[
-![](exploded_examples_files/figure-html/stamp_circle_18_auto_06_output-1.png)&lt;!-- --&gt;
-]
-
----
-count: false
- 
-### stamp_circle
-.panel1-stamp_circle_18-auto[
-
-```r
-# lots of circles
- ggcanvas() +
- stamp_circle(color = "turquoise4", radius = 3, fill = "turquoise") +
- stamp_circle(fill = "slateblue2", radius = 2) +
- stamp_circle(linetype = "dashed", alpha = .5, fill = "plum2") +
- stamp_circle(x0 = 1, y0 = 1.5, rotation = .25, size = 0,
-  fill = "goldenrod2") +
- stamp_circle(n = 50, radius = .2, size = 0) +
-*stamp_spoke(angle = pi * 1:7/15, radius = 2)
-```
-]
- 
-.panel2-stamp_circle_18-auto[
-![](exploded_examples_files/figure-html/stamp_circle_18_auto_07_output-1.png)&lt;!-- --&gt;
-]
-
-&lt;style&gt;
-.panel1-stamp_circle_18-auto {
-  color: black;
-  width: 38.6060606060606%;
-  hight: 32%;
-  float: left;
-  padding-left: 1%;
-  font-size: 80%
-}
-.panel2-stamp_circle_18-auto {
-  color: black;
-  width: 59.3939393939394%;
-  hight: 32%;
-  float: left;
-  padding-left: 1%;
-  font-size: 80%
-}
-.panel3-stamp_circle_18-auto {
-  color: black;
-  width: NA%;
-  hight: 33%;
-  float: left;
-  padding-left: 1%;
-  font-size: 80%
-}
-&lt;/style&gt;
-
-
-
-
-
-
-
----
-
-count: false
- 
-### stamp_circle
-.panel1-stamp_circle_19-auto[
-
-```r
-# on a canvas
-*ggcanvas()
-```
-]
- 
-.panel2-stamp_circle_19-auto[
-![](exploded_examples_files/figure-html/stamp_circle_19_auto_01_output-1.png)&lt;!-- --&gt;
-]
-
----
-count: false
- 
-### stamp_circle
-.panel1-stamp_circle_19-auto[
-
-```r
-# on a canvas
- ggcanvas() +
-* stamp_circle(x0 = c(0, 2.5),
-* fill = "magenta", color = "purple")
-```
-]
- 
-.panel2-stamp_circle_19-auto[
-![](exploded_examples_files/figure-html/stamp_circle_19_auto_02_output-1.png)&lt;!-- --&gt;
-]
-
----
-count: false
- 
-### stamp_circle
-.panel1-stamp_circle_19-auto[
-
-```r
-# on a canvas
- ggcanvas() +
-  stamp_circle(x0 = c(0, 2.5),
-  fill = "magenta", color = "purple") +
-* stamp_label(xy = pos_spoke(x0 = 0, n = 3),
-*             label = c("hi", "hello", "bye"))
-```
-]
- 
-.panel2-stamp_circle_19-auto[
-![](exploded_examples_files/figure-html/stamp_circle_19_auto_03_output-1.png)&lt;!-- --&gt;
-]
-
----
-count: false
- 
-### stamp_circle
-.panel1-stamp_circle_19-auto[
-
-```r
-# on a canvas
- ggcanvas() +
-  stamp_circle(x0 = c(0, 2.5),
-  fill = "magenta", color = "purple") +
-  stamp_label(xy = pos_spoke(x0 = 0, n = 3),
-              label = c("hi", "hello", "bye")) +
-* stamp_point(color = "turquoise")
-```
-]
- 
-.panel2-stamp_circle_19-auto[
-![](exploded_examples_files/figure-html/stamp_circle_19_auto_04_output-1.png)&lt;!-- --&gt;
-]
-
-&lt;style&gt;
-.panel1-stamp_circle_19-auto {
-  color: black;
-  width: 38.6060606060606%;
-  hight: 32%;
-  float: left;
-  padding-left: 1%;
-  font-size: 80%
-}
-.panel2-stamp_circle_19-auto {
-  color: black;
-  width: 59.3939393939394%;
-  hight: 32%;
-  float: left;
-  padding-left: 1%;
-  font-size: 80%
-}
-.panel3-stamp_circle_19-auto {
-  color: black;
-  width: NA%;
-  hight: 33%;
-  float: left;
-  padding-left: 1%;
-  font-size: 80%
-}
-&lt;/style&gt;
-
-
-
-
-
-
-
----
-
-count: false
- 
-### stamp_circle
-.panel1-stamp_circle_20-auto[
-
-```r
-# on plot space
-*library(ggplot2)
-```
-]
- 
-.panel2-stamp_circle_20-auto[
-
-]
-
----
-count: false
- 
-### stamp_circle
-.panel1-stamp_circle_20-auto[
-
-```r
-# on plot space
-library(ggplot2)
-*ggplot(cars)
-```
-]
- 
-.panel2-stamp_circle_20-auto[
-![](exploded_examples_files/figure-html/stamp_circle_20_auto_02_output-1.png)&lt;!-- --&gt;
-]
-
----
-count: false
- 
-### stamp_circle
-.panel1-stamp_circle_20-auto[
-
-```r
-# on plot space
-library(ggplot2)
-ggplot(cars) +
-*aes(speed, dist)
-```
-]
- 
-.panel2-stamp_circle_20-auto[
-![](exploded_examples_files/figure-html/stamp_circle_20_auto_03_output-1.png)&lt;!-- --&gt;
-]
-
----
-count: false
- 
-### stamp_circle
-.panel1-stamp_circle_20-auto[
-
-```r
-# on plot space
-library(ggplot2)
-ggplot(cars) +
- aes(speed, dist) +
-*geom_point()
-```
-]
- 
-.panel2-stamp_circle_20-auto[
-![](exploded_examples_files/figure-html/stamp_circle_20_auto_04_output-1.png)&lt;!-- --&gt;
-]
-
----
-count: false
- 
-### stamp_circle
-.panel1-stamp_circle_20-auto[
-
-```r
-# on plot space
-library(ggplot2)
-ggplot(cars) +
- aes(speed, dist) +
- geom_point() +
-*stamp_circle(color = "darkred", radius = 12)
-```
-]
- 
-.panel2-stamp_circle_20-auto[
-![](exploded_examples_files/figure-html/stamp_circle_20_auto_05_output-1.png)&lt;!-- --&gt;
-]
-
-&lt;style&gt;
-.panel1-stamp_circle_20-auto {
-  color: black;
-  width: 38.6060606060606%;
-  hight: 32%;
-  float: left;
-  padding-left: 1%;
-  font-size: 80%
-}
-.panel2-stamp_circle_20-auto {
-  color: black;
-  width: 59.3939393939394%;
-  hight: 32%;
-  float: left;
-  padding-left: 1%;
-  font-size: 80%
-}
-.panel3-stamp_circle_20-auto {
+.panel3-stamp_arrow_20-auto {
   color: black;
   width: NA%;
   hight: 33%;
@@ -2646,7 +2462,7 @@ count: false
 .panel1-stamp_circle_21-auto[
 
 ```r
-# some more
+# lots of circles
 *ggcanvas()
 ```
 ]
@@ -2662,15 +2478,117 @@ count: false
 .panel1-stamp_circle_21-auto[
 
 ```r
-# some more
+# lots of circles
  ggcanvas() +
-* stamp_circle(x0y0 = pos_wrap(n = 5, ncol = 3, height = 1.5),
-*              radius = .55)
+*stamp_circle(color = "turquoise4", radius = 3, fill = "turquoise")
 ```
 ]
  
 .panel2-stamp_circle_21-auto[
 ![](exploded_examples_files/figure-html/stamp_circle_21_auto_02_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_circle
+.panel1-stamp_circle_21-auto[
+
+```r
+# lots of circles
+ ggcanvas() +
+ stamp_circle(color = "turquoise4", radius = 3, fill = "turquoise") +
+*stamp_circle(fill = "slateblue2", radius = 2)
+```
+]
+ 
+.panel2-stamp_circle_21-auto[
+![](exploded_examples_files/figure-html/stamp_circle_21_auto_03_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_circle
+.panel1-stamp_circle_21-auto[
+
+```r
+# lots of circles
+ ggcanvas() +
+ stamp_circle(color = "turquoise4", radius = 3, fill = "turquoise") +
+ stamp_circle(fill = "slateblue2", radius = 2) +
+*stamp_circle(linetype = "dashed", alpha = .5, fill = "plum2")
+```
+]
+ 
+.panel2-stamp_circle_21-auto[
+![](exploded_examples_files/figure-html/stamp_circle_21_auto_04_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_circle
+.panel1-stamp_circle_21-auto[
+
+```r
+# lots of circles
+ ggcanvas() +
+ stamp_circle(color = "turquoise4", radius = 3, fill = "turquoise") +
+ stamp_circle(fill = "slateblue2", radius = 2) +
+ stamp_circle(linetype = "dashed", alpha = .5, fill = "plum2") +
+*stamp_circle(x0 = 1, y0 = 1.5, rotation = .25, size = 0,
+* fill = "goldenrod2")
+```
+]
+ 
+.panel2-stamp_circle_21-auto[
+![](exploded_examples_files/figure-html/stamp_circle_21_auto_05_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_circle
+.panel1-stamp_circle_21-auto[
+
+```r
+# lots of circles
+ ggcanvas() +
+ stamp_circle(color = "turquoise4", radius = 3, fill = "turquoise") +
+ stamp_circle(fill = "slateblue2", radius = 2) +
+ stamp_circle(linetype = "dashed", alpha = .5, fill = "plum2") +
+ stamp_circle(x0 = 1, y0 = 1.5, rotation = .25, size = 0,
+  fill = "goldenrod2") +
+*stamp_circle(n = 50, radius = .2, size = 0)
+```
+]
+ 
+.panel2-stamp_circle_21-auto[
+![](exploded_examples_files/figure-html/stamp_circle_21_auto_06_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_circle
+.panel1-stamp_circle_21-auto[
+
+```r
+# lots of circles
+ ggcanvas() +
+ stamp_circle(color = "turquoise4", radius = 3, fill = "turquoise") +
+ stamp_circle(fill = "slateblue2", radius = 2) +
+ stamp_circle(linetype = "dashed", alpha = .5, fill = "plum2") +
+ stamp_circle(x0 = 1, y0 = 1.5, rotation = .25, size = 0,
+  fill = "goldenrod2") +
+ stamp_circle(n = 50, radius = .2, size = 0) +
+*stamp_spoke(angle = pi * 1:7/15, radius = 2)
+```
+]
+ 
+.panel2-stamp_circle_21-auto[
+![](exploded_examples_files/figure-html/stamp_circle_21_auto_07_output-1.png)&lt;!-- --&gt;
 ]
 
 &lt;style&gt;
@@ -2710,8 +2628,309 @@ count: false
 
 count: false
  
+### stamp_circle
+.panel1-stamp_circle_22-auto[
+
+```r
+# on a canvas
+*ggcanvas()
+```
+]
+ 
+.panel2-stamp_circle_22-auto[
+![](exploded_examples_files/figure-html/stamp_circle_22_auto_01_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_circle
+.panel1-stamp_circle_22-auto[
+
+```r
+# on a canvas
+ ggcanvas() +
+* stamp_circle(x0 = c(0, 2.5),
+* fill = "magenta", color = "purple")
+```
+]
+ 
+.panel2-stamp_circle_22-auto[
+![](exploded_examples_files/figure-html/stamp_circle_22_auto_02_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_circle
+.panel1-stamp_circle_22-auto[
+
+```r
+# on a canvas
+ ggcanvas() +
+  stamp_circle(x0 = c(0, 2.5),
+  fill = "magenta", color = "purple") +
+* stamp_label(xy = pos_spoke(x0 = 0, n = 3),
+*             label = c("hi", "hello", "bye"))
+```
+]
+ 
+.panel2-stamp_circle_22-auto[
+![](exploded_examples_files/figure-html/stamp_circle_22_auto_03_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_circle
+.panel1-stamp_circle_22-auto[
+
+```r
+# on a canvas
+ ggcanvas() +
+  stamp_circle(x0 = c(0, 2.5),
+  fill = "magenta", color = "purple") +
+  stamp_label(xy = pos_spoke(x0 = 0, n = 3),
+              label = c("hi", "hello", "bye")) +
+* stamp_point(color = "turquoise")
+```
+]
+ 
+.panel2-stamp_circle_22-auto[
+![](exploded_examples_files/figure-html/stamp_circle_22_auto_04_output-1.png)&lt;!-- --&gt;
+]
+
+&lt;style&gt;
+.panel1-stamp_circle_22-auto {
+  color: black;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-stamp_circle_22-auto {
+  color: black;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-stamp_circle_22-auto {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+
+
+
+
+---
+
+count: false
+ 
+### stamp_circle
+.panel1-stamp_circle_23-auto[
+
+```r
+# on plot space
+*library(ggplot2)
+```
+]
+ 
+.panel2-stamp_circle_23-auto[
+
+]
+
+---
+count: false
+ 
+### stamp_circle
+.panel1-stamp_circle_23-auto[
+
+```r
+# on plot space
+library(ggplot2)
+*ggplot(cars)
+```
+]
+ 
+.panel2-stamp_circle_23-auto[
+![](exploded_examples_files/figure-html/stamp_circle_23_auto_02_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_circle
+.panel1-stamp_circle_23-auto[
+
+```r
+# on plot space
+library(ggplot2)
+ggplot(cars) +
+*aes(speed, dist)
+```
+]
+ 
+.panel2-stamp_circle_23-auto[
+![](exploded_examples_files/figure-html/stamp_circle_23_auto_03_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_circle
+.panel1-stamp_circle_23-auto[
+
+```r
+# on plot space
+library(ggplot2)
+ggplot(cars) +
+ aes(speed, dist) +
+*geom_point()
+```
+]
+ 
+.panel2-stamp_circle_23-auto[
+![](exploded_examples_files/figure-html/stamp_circle_23_auto_04_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_circle
+.panel1-stamp_circle_23-auto[
+
+```r
+# on plot space
+library(ggplot2)
+ggplot(cars) +
+ aes(speed, dist) +
+ geom_point() +
+*stamp_circle(color = "darkred", radius = 12)
+```
+]
+ 
+.panel2-stamp_circle_23-auto[
+![](exploded_examples_files/figure-html/stamp_circle_23_auto_05_output-1.png)&lt;!-- --&gt;
+]
+
+&lt;style&gt;
+.panel1-stamp_circle_23-auto {
+  color: black;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-stamp_circle_23-auto {
+  color: black;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-stamp_circle_23-auto {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+
+
+
+
+---
+
+count: false
+ 
+### stamp_circle
+.panel1-stamp_circle_24-auto[
+
+```r
+# some more
+*ggcanvas()
+```
+]
+ 
+.panel2-stamp_circle_24-auto[
+![](exploded_examples_files/figure-html/stamp_circle_24_auto_01_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_circle
+.panel1-stamp_circle_24-auto[
+
+```r
+# some more
+ ggcanvas() +
+* stamp_circle(x0y0 = pos_wrap(n = 5, ncol = 3, height = 1.5),
+*              radius = .55)
+```
+]
+ 
+.panel2-stamp_circle_24-auto[
+![](exploded_examples_files/figure-html/stamp_circle_24_auto_02_output-1.png)&lt;!-- --&gt;
+]
+
+&lt;style&gt;
+.panel1-stamp_circle_24-auto {
+  color: black;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-stamp_circle_24-auto {
+  color: black;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-stamp_circle_24-auto {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+
+
+
+
+---
+
+count: false
+ 
 ### stamp_curve
-.panel1-stamp_curve_22-auto[
+.panel1-stamp_curve_25-auto[
 
 ```r
 # a curve
@@ -2719,7 +2938,7 @@ count: false
 ```
 ]
  
-.panel2-stamp_curve_22-auto[
+.panel2-stamp_curve_25-auto[
 
 ]
 
@@ -2727,7 +2946,7 @@ count: false
 count: false
  
 ### stamp_curve
-.panel1-stamp_curve_22-auto[
+.panel1-stamp_curve_25-auto[
 
 ```r
 # a curve
@@ -2736,15 +2955,15 @@ library(ggplot2)
 ```
 ]
  
-.panel2-stamp_curve_22-auto[
-![](exploded_examples_files/figure-html/stamp_curve_22_auto_02_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_curve_25-auto[
+![](exploded_examples_files/figure-html/stamp_curve_25_auto_02_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_curve
-.panel1-stamp_curve_22-auto[
+.panel1-stamp_curve_25-auto[
 
 ```r
 # a curve
@@ -2754,15 +2973,15 @@ ggplot(cars) +
 ```
 ]
  
-.panel2-stamp_curve_22-auto[
-![](exploded_examples_files/figure-html/stamp_curve_22_auto_03_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_curve_25-auto[
+![](exploded_examples_files/figure-html/stamp_curve_25_auto_03_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_curve
-.panel1-stamp_curve_22-auto[
+.panel1-stamp_curve_25-auto[
 
 ```r
 # a curve
@@ -2773,15 +2992,15 @@ ggplot(cars) +
 ```
 ]
  
-.panel2-stamp_curve_22-auto[
-![](exploded_examples_files/figure-html/stamp_curve_22_auto_04_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_curve_25-auto[
+![](exploded_examples_files/figure-html/stamp_curve_25_auto_04_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_curve
-.panel1-stamp_curve_22-auto[
+.panel1-stamp_curve_25-auto[
 
 ```r
 # a curve
@@ -2794,12 +3013,12 @@ ggplot(cars) +
 ```
 ]
  
-.panel2-stamp_curve_22-auto[
-![](exploded_examples_files/figure-html/stamp_curve_22_auto_05_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_curve_25-auto[
+![](exploded_examples_files/figure-html/stamp_curve_25_auto_05_output-1.png)&lt;!-- --&gt;
 ]
 
 &lt;style&gt;
-.panel1-stamp_curve_22-auto {
+.panel1-stamp_curve_25-auto {
   color: black;
   width: 38.6060606060606%;
   hight: 32%;
@@ -2807,7 +3026,7 @@ ggplot(cars) +
   padding-left: 1%;
   font-size: 80%
 }
-.panel2-stamp_curve_22-auto {
+.panel2-stamp_curve_25-auto {
   color: black;
   width: 59.3939393939394%;
   hight: 32%;
@@ -2815,7 +3034,7 @@ ggplot(cars) +
   padding-left: 1%;
   font-size: 80%
 }
-.panel3-stamp_curve_22-auto {
+.panel3-stamp_curve_25-auto {
   color: black;
   width: NA%;
   hight: 33%;
@@ -2836,7 +3055,7 @@ ggplot(cars) +
 count: false
  
 ### stamp_curve
-.panel1-stamp_curve_23-auto[
+.panel1-stamp_curve_26-auto[
 
 ```r
 # more curves
@@ -2844,15 +3063,15 @@ count: false
 ```
 ]
  
-.panel2-stamp_curve_23-auto[
-![](exploded_examples_files/figure-html/stamp_curve_23_auto_01_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_curve_26-auto[
+![](exploded_examples_files/figure-html/stamp_curve_26_auto_01_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_curve
-.panel1-stamp_curve_23-auto[
+.panel1-stamp_curve_26-auto[
 
 ```r
 # more curves
@@ -2861,15 +3080,15 @@ ggcanvas() +
 ```
 ]
  
-.panel2-stamp_curve_23-auto[
-![](exploded_examples_files/figure-html/stamp_curve_23_auto_02_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_curve_26-auto[
+![](exploded_examples_files/figure-html/stamp_curve_26_auto_02_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_curve
-.panel1-stamp_curve_23-auto[
+.panel1-stamp_curve_26-auto[
 
 ```r
 # more curves
@@ -2879,15 +3098,15 @@ ggcanvas() +
 ```
 ]
  
-.panel2-stamp_curve_23-auto[
-![](exploded_examples_files/figure-html/stamp_curve_23_auto_03_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_curve_26-auto[
+![](exploded_examples_files/figure-html/stamp_curve_26_auto_03_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_curve
-.panel1-stamp_curve_23-auto[
+.panel1-stamp_curve_26-auto[
 
 ```r
 # more curves
@@ -2899,15 +3118,15 @@ ggcanvas() +
 ```
 ]
  
-.panel2-stamp_curve_23-auto[
-![](exploded_examples_files/figure-html/stamp_curve_23_auto_04_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_curve_26-auto[
+![](exploded_examples_files/figure-html/stamp_curve_26_auto_04_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_curve
-.panel1-stamp_curve_23-auto[
+.panel1-stamp_curve_26-auto[
 
 ```r
 # more curves
@@ -2920,12 +3139,12 @@ ggcanvas() +
 ```
 ]
  
-.panel2-stamp_curve_23-auto[
-![](exploded_examples_files/figure-html/stamp_curve_23_auto_05_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_curve_26-auto[
+![](exploded_examples_files/figure-html/stamp_curve_26_auto_05_output-1.png)&lt;!-- --&gt;
 ]
 
 &lt;style&gt;
-.panel1-stamp_curve_23-auto {
+.panel1-stamp_curve_26-auto {
   color: black;
   width: 38.6060606060606%;
   hight: 32%;
@@ -2933,7 +3152,7 @@ ggcanvas() +
   padding-left: 1%;
   font-size: 80%
 }
-.panel2-stamp_curve_23-auto {
+.panel2-stamp_curve_26-auto {
   color: black;
   width: 59.3939393939394%;
   hight: 32%;
@@ -2941,7 +3160,7 @@ ggcanvas() +
   padding-left: 1%;
   font-size: 80%
 }
-.panel3-stamp_curve_23-auto {
+.panel3-stamp_curve_26-auto {
   color: black;
   width: NA%;
   hight: 33%;
@@ -2962,7 +3181,7 @@ ggcanvas() +
 count: false
  
 ### stamp_ellipse
-.panel1-stamp_ellipse_24-auto[
+.panel1-stamp_ellipse_27-auto[
 
 ```r
 # an ellipse
@@ -2970,7 +3189,7 @@ count: false
 ```
 ]
  
-.panel2-stamp_ellipse_24-auto[
+.panel2-stamp_ellipse_27-auto[
 
 ]
 
@@ -2978,7 +3197,7 @@ count: false
 count: false
  
 ### stamp_ellipse
-.panel1-stamp_ellipse_24-auto[
+.panel1-stamp_ellipse_27-auto[
 
 ```r
 # an ellipse
@@ -2987,15 +3206,15 @@ library(ggplot2)
 ```
 ]
  
-.panel2-stamp_ellipse_24-auto[
-![](exploded_examples_files/figure-html/stamp_ellipse_24_auto_02_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_ellipse_27-auto[
+![](exploded_examples_files/figure-html/stamp_ellipse_27_auto_02_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_ellipse
-.panel1-stamp_ellipse_24-auto[
+.panel1-stamp_ellipse_27-auto[
 
 ```r
 # an ellipse
@@ -3005,15 +3224,15 @@ ggplot(cars) +
 ```
 ]
  
-.panel2-stamp_ellipse_24-auto[
-![](exploded_examples_files/figure-html/stamp_ellipse_24_auto_03_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_ellipse_27-auto[
+![](exploded_examples_files/figure-html/stamp_ellipse_27_auto_03_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_ellipse
-.panel1-stamp_ellipse_24-auto[
+.panel1-stamp_ellipse_27-auto[
 
 ```r
 # an ellipse
@@ -3024,15 +3243,15 @@ ggplot(cars) +
 ```
 ]
  
-.panel2-stamp_ellipse_24-auto[
-![](exploded_examples_files/figure-html/stamp_ellipse_24_auto_04_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_ellipse_27-auto[
+![](exploded_examples_files/figure-html/stamp_ellipse_27_auto_04_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_ellipse
-.panel1-stamp_ellipse_24-auto[
+.panel1-stamp_ellipse_27-auto[
 
 ```r
 # an ellipse
@@ -3044,12 +3263,12 @@ ggplot(cars) +
 ```
 ]
  
-.panel2-stamp_ellipse_24-auto[
-![](exploded_examples_files/figure-html/stamp_ellipse_24_auto_05_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_ellipse_27-auto[
+![](exploded_examples_files/figure-html/stamp_ellipse_27_auto_05_output-1.png)&lt;!-- --&gt;
 ]
 
 &lt;style&gt;
-.panel1-stamp_ellipse_24-auto {
+.panel1-stamp_ellipse_27-auto {
   color: black;
   width: 38.6060606060606%;
   hight: 32%;
@@ -3057,7 +3276,7 @@ ggplot(cars) +
   padding-left: 1%;
   font-size: 80%
 }
-.panel2-stamp_ellipse_24-auto {
+.panel2-stamp_ellipse_27-auto {
   color: black;
   width: 59.3939393939394%;
   hight: 32%;
@@ -3065,7 +3284,7 @@ ggplot(cars) +
   padding-left: 1%;
   font-size: 80%
 }
-.panel3-stamp_ellipse_24-auto {
+.panel3-stamp_ellipse_27-auto {
   color: black;
   width: NA%;
   hight: 33%;
@@ -3086,7 +3305,7 @@ ggplot(cars) +
 count: false
  
 ### stamp_ellipse
-.panel1-stamp_ellipse_25-auto[
+.panel1-stamp_ellipse_28-auto[
 
 ```r
 # several
@@ -3094,15 +3313,15 @@ count: false
 ```
 ]
  
-.panel2-stamp_ellipse_25-auto[
-![](exploded_examples_files/figure-html/stamp_ellipse_25_auto_01_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_ellipse_28-auto[
+![](exploded_examples_files/figure-html/stamp_ellipse_28_auto_01_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_ellipse
-.panel1-stamp_ellipse_25-auto[
+.panel1-stamp_ellipse_28-auto[
 
 ```r
 # several
@@ -3111,15 +3330,15 @@ ggcanvas() +
 ```
 ]
  
-.panel2-stamp_ellipse_25-auto[
-![](exploded_examples_files/figure-html/stamp_ellipse_25_auto_02_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_ellipse_28-auto[
+![](exploded_examples_files/figure-html/stamp_ellipse_28_auto_02_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_ellipse
-.panel1-stamp_ellipse_25-auto[
+.panel1-stamp_ellipse_28-auto[
 
 ```r
 # several
@@ -3129,12 +3348,12 @@ ggcanvas() +
 ```
 ]
  
-.panel2-stamp_ellipse_25-auto[
-![](exploded_examples_files/figure-html/stamp_ellipse_25_auto_03_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_ellipse_28-auto[
+![](exploded_examples_files/figure-html/stamp_ellipse_28_auto_03_output-1.png)&lt;!-- --&gt;
 ]
 
 &lt;style&gt;
-.panel1-stamp_ellipse_25-auto {
+.panel1-stamp_ellipse_28-auto {
   color: black;
   width: 38.6060606060606%;
   hight: 32%;
@@ -3142,7 +3361,7 @@ ggcanvas() +
   padding-left: 1%;
   font-size: 80%
 }
-.panel2-stamp_ellipse_25-auto {
+.panel2-stamp_ellipse_28-auto {
   color: black;
   width: 59.3939393939394%;
   hight: 32%;
@@ -3150,7 +3369,732 @@ ggcanvas() +
   padding-left: 1%;
   font-size: 80%
 }
-.panel3-stamp_ellipse_25-auto {
+.panel3-stamp_ellipse_28-auto {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+
+
+
+
+---
+
+count: false
+ 
+### stamp_heart
+.panel1-stamp_heart_29-auto[
+
+```r
+# lots of polygons
+*ggcanvas()
+```
+]
+ 
+.panel2-stamp_heart_29-auto[
+![](exploded_examples_files/figure-html/stamp_heart_29_auto_01_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_heart
+.panel1-stamp_heart_29-auto[
+
+```r
+# lots of polygons
+ ggcanvas() +
+*stamp_heart(color = "turquoise4", radius = 3, fill = "turquoise")
+```
+]
+ 
+.panel2-stamp_heart_29-auto[
+![](exploded_examples_files/figure-html/stamp_heart_29_auto_02_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_heart
+.panel1-stamp_heart_29-auto[
+
+```r
+# lots of polygons
+ ggcanvas() +
+ stamp_heart(color = "turquoise4", radius = 3, fill = "turquoise") +
+*stamp_heart(fill = "slateblue2")
+```
+]
+ 
+.panel2-stamp_heart_29-auto[
+![](exploded_examples_files/figure-html/stamp_heart_29_auto_03_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_heart
+.panel1-stamp_heart_29-auto[
+
+```r
+# lots of polygons
+ ggcanvas() +
+ stamp_heart(color = "turquoise4", radius = 3, fill = "turquoise") +
+ stamp_heart(fill = "slateblue2") +
+*stamp_heart(linetype = "dashed", alpha = .5, fill = "plum2")
+```
+]
+ 
+.panel2-stamp_heart_29-auto[
+![](exploded_examples_files/figure-html/stamp_heart_29_auto_04_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_heart
+.panel1-stamp_heart_29-auto[
+
+```r
+# lots of polygons
+ ggcanvas() +
+ stamp_heart(color = "turquoise4", radius = 3, fill = "turquoise") +
+ stamp_heart(fill = "slateblue2") +
+ stamp_heart(linetype = "dashed", alpha = .5, fill = "plum2") +
+*stamp_heart(x0 = 1, y0 = 1.5, n = 3, rotation = .25, size = 0,
+* fill = "goldenrod2")
+```
+]
+ 
+.panel2-stamp_heart_29-auto[
+![](exploded_examples_files/figure-html/stamp_heart_29_auto_05_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_heart
+.panel1-stamp_heart_29-auto[
+
+```r
+# lots of polygons
+ ggcanvas() +
+ stamp_heart(color = "turquoise4", radius = 3, fill = "turquoise") +
+ stamp_heart(fill = "slateblue2") +
+ stamp_heart(linetype = "dashed", alpha = .5, fill = "plum2") +
+ stamp_heart(x0 = 1, y0 = 1.5, n = 3, rotation = .25, size = 0,
+  fill = "goldenrod2") +
+*stamp_heart(n = 50, radius = .2, size = 0)
+```
+]
+ 
+.panel2-stamp_heart_29-auto[
+![](exploded_examples_files/figure-html/stamp_heart_29_auto_06_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_heart
+.panel1-stamp_heart_29-auto[
+
+```r
+# lots of polygons
+ ggcanvas() +
+ stamp_heart(color = "turquoise4", radius = 3, fill = "turquoise") +
+ stamp_heart(fill = "slateblue2") +
+ stamp_heart(linetype = "dashed", alpha = .5, fill = "plum2") +
+ stamp_heart(x0 = 1, y0 = 1.5, n = 3, rotation = .25, size = 0,
+  fill = "goldenrod2") +
+ stamp_heart(n = 50, radius = .2, size = 0) +
+*stamp_spoke(angle = pi * 1:7/15, radius = 2)
+```
+]
+ 
+.panel2-stamp_heart_29-auto[
+![](exploded_examples_files/figure-html/stamp_heart_29_auto_07_output-1.png)&lt;!-- --&gt;
+]
+
+&lt;style&gt;
+.panel1-stamp_heart_29-auto {
+  color: black;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-stamp_heart_29-auto {
+  color: black;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-stamp_heart_29-auto {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+
+
+
+
+---
+
+count: false
+ 
+### stamp_heart
+.panel1-stamp_heart_30-auto[
+
+```r
+# on a canvas
+*ggcanvas()
+```
+]
+ 
+.panel2-stamp_heart_30-auto[
+![](exploded_examples_files/figure-html/stamp_heart_30_auto_01_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_heart
+.panel1-stamp_heart_30-auto[
+
+```r
+# on a canvas
+ ggcanvas() +
+* stamp_heart(n = 18, x0 = c(0, 2.5),
+* fill = "magenta", color = "purple")
+```
+]
+ 
+.panel2-stamp_heart_30-auto[
+![](exploded_examples_files/figure-html/stamp_heart_30_auto_02_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_heart
+.panel1-stamp_heart_30-auto[
+
+```r
+# on a canvas
+ ggcanvas() +
+  stamp_heart(n = 18, x0 = c(0, 2.5),
+  fill = "magenta", color = "purple") +
+* stamp_label(x = pos_spoke_x(x0 = 0, n = 3),
+*             y = pos_spoke_y(y0 = 0, n = 3),
+*             label = c("hi", "hello", "bye"))
+```
+]
+ 
+.panel2-stamp_heart_30-auto[
+![](exploded_examples_files/figure-html/stamp_heart_30_auto_03_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_heart
+.panel1-stamp_heart_30-auto[
+
+```r
+# on a canvas
+ ggcanvas() +
+  stamp_heart(n = 18, x0 = c(0, 2.5),
+  fill = "magenta", color = "purple") +
+  stamp_label(x = pos_spoke_x(x0 = 0, n = 3),
+              y = pos_spoke_y(y0 = 0, n = 3),
+              label = c("hi", "hello", "bye")) +
+* stamp_point(color = "turquoise")
+```
+]
+ 
+.panel2-stamp_heart_30-auto[
+![](exploded_examples_files/figure-html/stamp_heart_30_auto_04_output-1.png)&lt;!-- --&gt;
+]
+
+&lt;style&gt;
+.panel1-stamp_heart_30-auto {
+  color: black;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-stamp_heart_30-auto {
+  color: black;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-stamp_heart_30-auto {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+
+
+
+
+---
+
+count: false
+ 
+### stamp_heart
+.panel1-stamp_heart_31-auto[
+
+```r
+# on plot space
+*library(ggplot2)
+```
+]
+ 
+.panel2-stamp_heart_31-auto[
+
+]
+
+---
+count: false
+ 
+### stamp_heart
+.panel1-stamp_heart_31-auto[
+
+```r
+# on plot space
+library(ggplot2)
+*ggplot(cars)
+```
+]
+ 
+.panel2-stamp_heart_31-auto[
+![](exploded_examples_files/figure-html/stamp_heart_31_auto_02_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_heart
+.panel1-stamp_heart_31-auto[
+
+```r
+# on plot space
+library(ggplot2)
+ggplot(cars) +
+*aes(speed, dist)
+```
+]
+ 
+.panel2-stamp_heart_31-auto[
+![](exploded_examples_files/figure-html/stamp_heart_31_auto_03_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_heart
+.panel1-stamp_heart_31-auto[
+
+```r
+# on plot space
+library(ggplot2)
+ggplot(cars) +
+ aes(speed, dist) +
+*geom_point()
+```
+]
+ 
+.panel2-stamp_heart_31-auto[
+![](exploded_examples_files/figure-html/stamp_heart_31_auto_04_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_heart
+.panel1-stamp_heart_31-auto[
+
+```r
+# on plot space
+library(ggplot2)
+ggplot(cars) +
+ aes(speed, dist) +
+ geom_point() +
+*stamp_heart(color = "darkred",
+*            fill = "pink")
+```
+]
+ 
+.panel2-stamp_heart_31-auto[
+![](exploded_examples_files/figure-html/stamp_heart_31_auto_05_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_heart
+.panel1-stamp_heart_31-auto[
+
+```r
+# on plot space
+library(ggplot2)
+ggplot(cars) +
+ aes(speed, dist) +
+ geom_point() +
+ stamp_heart(color = "darkred",
+             fill = "pink")
+*ggcanvas()
+```
+]
+ 
+.panel2-stamp_heart_31-auto[
+![](exploded_examples_files/figure-html/stamp_heart_31_auto_06_output-1.png)&lt;!-- --&gt;![](exploded_examples_files/figure-html/stamp_heart_31_auto_06_output-2.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_heart
+.panel1-stamp_heart_31-auto[
+
+```r
+# on plot space
+library(ggplot2)
+ggplot(cars) +
+ aes(speed, dist) +
+ geom_point() +
+ stamp_heart(color = "darkred",
+             fill = "pink")
+ ggcanvas() +
+* stamp_heart()
+```
+]
+ 
+.panel2-stamp_heart_31-auto[
+![](exploded_examples_files/figure-html/stamp_heart_31_auto_07_output-1.png)&lt;!-- --&gt;![](exploded_examples_files/figure-html/stamp_heart_31_auto_07_output-2.png)&lt;!-- --&gt;
+]
+
+&lt;style&gt;
+.panel1-stamp_heart_31-auto {
+  color: black;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-stamp_heart_31-auto {
+  color: black;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-stamp_heart_31-auto {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+
+
+
+
+---
+
+count: false
+ 
+### stamp_heart
+.panel1-stamp_heart_32-auto[
+
+```r
+# some more
+*ggcanvas()
+```
+]
+ 
+.panel2-stamp_heart_32-auto[
+![](exploded_examples_files/figure-html/stamp_heart_32_auto_01_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_heart
+.panel1-stamp_heart_32-auto[
+
+```r
+# some more
+ ggcanvas() +
+* stamp_heart(x0y0 = pos_wrap(n = 5, ncol = 3, height = 1.5),
+*               radius = .5)
+```
+]
+ 
+.panel2-stamp_heart_32-auto[
+![](exploded_examples_files/figure-html/stamp_heart_32_auto_02_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_heart
+.panel1-stamp_heart_32-auto[
+
+```r
+# some more
+ ggcanvas() +
+  stamp_heart(x0y0 = pos_wrap(n = 5, ncol = 3, height = 1.5),
+                radius = .5) +
+* stamp_text(xy = pos_wrap(n = 5, ncol = 3,
+*          height = 1.5), label = LETTERS[1:5])
+```
+]
+ 
+.panel2-stamp_heart_32-auto[
+![](exploded_examples_files/figure-html/stamp_heart_32_auto_03_output-1.png)&lt;!-- --&gt;
+]
+
+&lt;style&gt;
+.panel1-stamp_heart_32-auto {
+  color: black;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-stamp_heart_32-auto {
+  color: black;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-stamp_heart_32-auto {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+
+
+
+
+---
+
+count: false
+ 
+### stamp_hline
+.panel1-stamp_hline_33-auto[
+
+```r
+# on a canvas
+*ggcanvas()
+```
+]
+ 
+.panel2-stamp_hline_33-auto[
+![](exploded_examples_files/figure-html/stamp_hline_33_auto_01_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_hline
+.panel1-stamp_hline_33-auto[
+
+```r
+# on a canvas
+ggcanvas() +
+*stamp_hline()
+```
+]
+ 
+.panel2-stamp_hline_33-auto[
+![](exploded_examples_files/figure-html/stamp_hline_33_auto_02_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_hline
+.panel1-stamp_hline_33-auto[
+
+```r
+# on a canvas
+ggcanvas() +
+stamp_hline() +
+*stamp_hline(1:6,
+*          linetype = rep(c("dotted", "dashed"), 3))
+```
+]
+ 
+.panel2-stamp_hline_33-auto[
+![](exploded_examples_files/figure-html/stamp_hline_33_auto_03_output-1.png)&lt;!-- --&gt;
+]
+
+&lt;style&gt;
+.panel1-stamp_hline_33-auto {
+  color: black;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-stamp_hline_33-auto {
+  color: black;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-stamp_hline_33-auto {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+
+
+
+
+---
+
+count: false
+ 
+### stamp_hline
+.panel1-stamp_hline_34-auto[
+
+```r
+*library(ggplot2)
+```
+]
+ 
+.panel2-stamp_hline_34-auto[
+
+]
+
+---
+count: false
+ 
+### stamp_hline
+.panel1-stamp_hline_34-auto[
+
+```r
+library(ggplot2)
+*ggplot(cars)
+```
+]
+ 
+.panel2-stamp_hline_34-auto[
+![](exploded_examples_files/figure-html/stamp_hline_34_auto_02_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_hline
+.panel1-stamp_hline_34-auto[
+
+```r
+library(ggplot2)
+ggplot(cars) +
+*aes(speed, dist)
+```
+]
+ 
+.panel2-stamp_hline_34-auto[
+![](exploded_examples_files/figure-html/stamp_hline_34_auto_03_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_hline
+.panel1-stamp_hline_34-auto[
+
+```r
+library(ggplot2)
+ggplot(cars) +
+aes(speed, dist) +
+*stamp_hline()
+```
+]
+ 
+.panel2-stamp_hline_34-auto[
+![](exploded_examples_files/figure-html/stamp_hline_34_auto_04_output-1.png)&lt;!-- --&gt;
+]
+
+&lt;style&gt;
+.panel1-stamp_hline_34-auto {
+  color: black;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-stamp_hline_34-auto {
+  color: black;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-stamp_hline_34-auto {
   color: black;
   width: NA%;
   hight: 33%;
@@ -3171,7 +4115,7 @@ ggcanvas() +
 count: false
  
 ### stamp_label
-.panel1-stamp_label_26-auto[
+.panel1-stamp_label_35-auto[
 
 ```r
 # label on a canvas
@@ -3179,15 +4123,15 @@ count: false
 ```
 ]
  
-.panel2-stamp_label_26-auto[
-![](exploded_examples_files/figure-html/stamp_label_26_auto_01_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_label_35-auto[
+![](exploded_examples_files/figure-html/stamp_label_35_auto_01_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_label
-.panel1-stamp_label_26-auto[
+.panel1-stamp_label_35-auto[
 
 ```r
 # label on a canvas
@@ -3196,12 +4140,12 @@ ggcanvas() +
 ```
 ]
  
-.panel2-stamp_label_26-auto[
-![](exploded_examples_files/figure-html/stamp_label_26_auto_02_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_label_35-auto[
+![](exploded_examples_files/figure-html/stamp_label_35_auto_02_output-1.png)&lt;!-- --&gt;
 ]
 
 &lt;style&gt;
-.panel1-stamp_label_26-auto {
+.panel1-stamp_label_35-auto {
   color: black;
   width: 38.6060606060606%;
   hight: 32%;
@@ -3209,7 +4153,7 @@ ggcanvas() +
   padding-left: 1%;
   font-size: 80%
 }
-.panel2-stamp_label_26-auto {
+.panel2-stamp_label_35-auto {
   color: black;
   width: 59.3939393939394%;
   hight: 32%;
@@ -3217,7 +4161,7 @@ ggcanvas() +
   padding-left: 1%;
   font-size: 80%
 }
-.panel3-stamp_label_26-auto {
+.panel3-stamp_label_35-auto {
   color: black;
   width: NA%;
   hight: 33%;
@@ -3238,7 +4182,7 @@ ggcanvas() +
 count: false
  
 ### stamp_label
-.panel1-stamp_label_27-auto[
+.panel1-stamp_label_36-auto[
 
 ```r
 # labels on a plot
@@ -3246,7 +4190,7 @@ count: false
 ```
 ]
  
-.panel2-stamp_label_27-auto[
+.panel2-stamp_label_36-auto[
 
 ]
 
@@ -3254,7 +4198,7 @@ count: false
 count: false
  
 ### stamp_label
-.panel1-stamp_label_27-auto[
+.panel1-stamp_label_36-auto[
 
 ```r
 # labels on a plot
@@ -3263,15 +4207,15 @@ library(ggplot2)
 ```
 ]
  
-.panel2-stamp_label_27-auto[
-![](exploded_examples_files/figure-html/stamp_label_27_auto_02_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_label_36-auto[
+![](exploded_examples_files/figure-html/stamp_label_36_auto_02_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_label
-.panel1-stamp_label_27-auto[
+.panel1-stamp_label_36-auto[
 
 ```r
 # labels on a plot
@@ -3281,15 +4225,15 @@ ggplot(cars) +
 ```
 ]
  
-.panel2-stamp_label_27-auto[
-![](exploded_examples_files/figure-html/stamp_label_27_auto_03_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_label_36-auto[
+![](exploded_examples_files/figure-html/stamp_label_36_auto_03_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_label
-.panel1-stamp_label_27-auto[
+.panel1-stamp_label_36-auto[
 
 ```r
 # labels on a plot
@@ -3300,15 +4244,15 @@ ggplot(cars) +
 ```
 ]
  
-.panel2-stamp_label_27-auto[
-![](exploded_examples_files/figure-html/stamp_label_27_auto_04_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_label_36-auto[
+![](exploded_examples_files/figure-html/stamp_label_36_auto_04_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_label
-.panel1-stamp_label_27-auto[
+.panel1-stamp_label_36-auto[
 
 ```r
 # labels on a plot
@@ -3320,15 +4264,15 @@ ggplot(cars) +
 ```
 ]
  
-.panel2-stamp_label_27-auto[
-![](exploded_examples_files/figure-html/stamp_label_27_auto_05_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_label_36-auto[
+![](exploded_examples_files/figure-html/stamp_label_36_auto_05_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_label
-.panel1-stamp_label_27-auto[
+.panel1-stamp_label_36-auto[
 
 ```r
 # labels on a plot
@@ -3342,12 +4286,12 @@ ggplot(cars) +
 ```
 ]
  
-.panel2-stamp_label_27-auto[
-![](exploded_examples_files/figure-html/stamp_label_27_auto_06_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_label_36-auto[
+![](exploded_examples_files/figure-html/stamp_label_36_auto_06_output-1.png)&lt;!-- --&gt;
 ]
 
 &lt;style&gt;
-.panel1-stamp_label_27-auto {
+.panel1-stamp_label_36-auto {
   color: black;
   width: 38.6060606060606%;
   hight: 32%;
@@ -3355,7 +4299,7 @@ ggplot(cars) +
   padding-left: 1%;
   font-size: 80%
 }
-.panel2-stamp_label_27-auto {
+.panel2-stamp_label_36-auto {
   color: black;
   width: 59.3939393939394%;
   hight: 32%;
@@ -3363,7 +4307,7 @@ ggplot(cars) +
   padding-left: 1%;
   font-size: 80%
 }
-.panel3-stamp_label_27-auto {
+.panel3-stamp_label_36-auto {
   color: black;
   width: NA%;
   hight: 33%;
@@ -3384,7 +4328,7 @@ ggplot(cars) +
 count: false
  
 ### stamp_png
-.panel1-stamp_png_28-auto[
+.panel1-stamp_png_37-auto[
 
 ```r
 # png spokes
@@ -3392,15 +4336,15 @@ count: false
 ```
 ]
  
-.panel2-stamp_png_28-auto[
-![](exploded_examples_files/figure-html/stamp_png_28_auto_01_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_png_37-auto[
+![](exploded_examples_files/figure-html/stamp_png_37_auto_01_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_png
-.panel1-stamp_png_28-auto[
+.panel1-stamp_png_37-auto[
 
 ```r
 # png spokes
@@ -3409,12 +4353,12 @@ ggcanvas() +
 ```
 ]
  
-.panel2-stamp_png_28-auto[
-![](exploded_examples_files/figure-html/stamp_png_28_auto_02_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_png_37-auto[
+![](exploded_examples_files/figure-html/stamp_png_37_auto_02_output-1.png)&lt;!-- --&gt;
 ]
 
 &lt;style&gt;
-.panel1-stamp_png_28-auto {
+.panel1-stamp_png_37-auto {
   color: black;
   width: 38.6060606060606%;
   hight: 32%;
@@ -3422,7 +4366,7 @@ ggcanvas() +
   padding-left: 1%;
   font-size: 80%
 }
-.panel2-stamp_png_28-auto {
+.panel2-stamp_png_37-auto {
   color: black;
   width: 59.3939393939394%;
   hight: 32%;
@@ -3430,7 +4374,7 @@ ggcanvas() +
   padding-left: 1%;
   font-size: 80%
 }
-.panel3-stamp_png_28-auto {
+.panel3-stamp_png_37-auto {
   color: black;
   width: NA%;
   hight: 33%;
@@ -3451,7 +4395,7 @@ ggcanvas() +
 count: false
  
 ### stamp_png
-.panel1-stamp_png_29-auto[
+.panel1-stamp_png_38-auto[
 
 ```r
 # stamp in plotspace
@@ -3459,7 +4403,7 @@ count: false
 ```
 ]
  
-.panel2-stamp_png_29-auto[
+.panel2-stamp_png_38-auto[
 
 ]
 
@@ -3467,7 +4411,7 @@ count: false
 count: false
  
 ### stamp_png
-.panel1-stamp_png_29-auto[
+.panel1-stamp_png_38-auto[
 
 ```r
 # stamp in plotspace
@@ -3476,15 +4420,15 @@ library(ggplot2)
 ```
 ]
  
-.panel2-stamp_png_29-auto[
-![](exploded_examples_files/figure-html/stamp_png_29_auto_02_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_png_38-auto[
+![](exploded_examples_files/figure-html/stamp_png_38_auto_02_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_png
-.panel1-stamp_png_29-auto[
+.panel1-stamp_png_38-auto[
 
 ```r
 # stamp in plotspace
@@ -3494,15 +4438,15 @@ ggplot(cars, aes(dist, speed)) +
 ```
 ]
  
-.panel2-stamp_png_29-auto[
-![](exploded_examples_files/figure-html/stamp_png_29_auto_03_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_png_38-auto[
+![](exploded_examples_files/figure-html/stamp_png_38_auto_03_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_png
-.panel1-stamp_png_29-auto[
+.panel1-stamp_png_38-auto[
 
 ```r
 # stamp in plotspace
@@ -3514,15 +4458,15 @@ ggplot(cars, aes(dist, speed)) +
 ```
 ]
  
-.panel2-stamp_png_29-auto[
-![](exploded_examples_files/figure-html/stamp_png_29_auto_04_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_png_38-auto[
+![](exploded_examples_files/figure-html/stamp_png_38_auto_04_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_png
-.panel1-stamp_png_29-auto[
+.panel1-stamp_png_38-auto[
 
 ```r
 # stamp in plotspace
@@ -3535,12 +4479,12 @@ ggplot(cars, aes(dist, speed)) +
 ```
 ]
  
-.panel2-stamp_png_29-auto[
-![](exploded_examples_files/figure-html/stamp_png_29_auto_05_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_png_38-auto[
+![](exploded_examples_files/figure-html/stamp_png_38_auto_05_output-1.png)&lt;!-- --&gt;
 ]
 
 &lt;style&gt;
-.panel1-stamp_png_29-auto {
+.panel1-stamp_png_38-auto {
   color: black;
   width: 38.6060606060606%;
   hight: 32%;
@@ -3548,7 +4492,7 @@ ggplot(cars, aes(dist, speed)) +
   padding-left: 1%;
   font-size: 80%
 }
-.panel2-stamp_png_29-auto {
+.panel2-stamp_png_38-auto {
   color: black;
   width: 59.3939393939394%;
   hight: 32%;
@@ -3556,7 +4500,7 @@ ggplot(cars, aes(dist, speed)) +
   padding-left: 1%;
   font-size: 80%
 }
-.panel3-stamp_png_29-auto {
+.panel3-stamp_png_38-auto {
   color: black;
   width: NA%;
   hight: 33%;
@@ -3577,7 +4521,7 @@ ggplot(cars, aes(dist, speed)) +
 count: false
  
 ### stamp_png
-.panel1-stamp_png_30-auto[
+.panel1-stamp_png_39-auto[
 
 ```r
 # tiling pngs needs work
@@ -3585,15 +4529,15 @@ count: false
 ```
 ]
  
-.panel2-stamp_png_30-auto[
-![](exploded_examples_files/figure-html/stamp_png_30_auto_01_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_png_39-auto[
+![](exploded_examples_files/figure-html/stamp_png_39_auto_01_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_png
-.panel1-stamp_png_30-auto[
+.panel1-stamp_png_39-auto[
 
 ```r
 # tiling pngs needs work
@@ -3603,12 +4547,12 @@ ggcanvas() +
 ```
 ]
  
-.panel2-stamp_png_30-auto[
-![](exploded_examples_files/figure-html/stamp_png_30_auto_02_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_png_39-auto[
+![](exploded_examples_files/figure-html/stamp_png_39_auto_02_output-1.png)&lt;!-- --&gt;
 ]
 
 &lt;style&gt;
-.panel1-stamp_png_30-auto {
+.panel1-stamp_png_39-auto {
   color: black;
   width: 38.6060606060606%;
   hight: 32%;
@@ -3616,7 +4560,7 @@ ggcanvas() +
   padding-left: 1%;
   font-size: 80%
 }
-.panel2-stamp_png_30-auto {
+.panel2-stamp_png_39-auto {
   color: black;
   width: 59.3939393939394%;
   hight: 32%;
@@ -3624,7 +4568,7 @@ ggcanvas() +
   padding-left: 1%;
   font-size: 80%
 }
-.panel3-stamp_png_30-auto {
+.panel3-stamp_png_39-auto {
   color: black;
   width: NA%;
   hight: 33%;
@@ -3645,7 +4589,7 @@ ggcanvas() +
 count: false
  
 ### stamp_png
-.panel1-stamp_png_31-auto[
+.panel1-stamp_png_40-auto[
 
 ```r
 # two stamps
@@ -3653,15 +4597,15 @@ count: false
 ```
 ]
  
-.panel2-stamp_png_31-auto[
-![](exploded_examples_files/figure-html/stamp_png_31_auto_01_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_png_40-auto[
+![](exploded_examples_files/figure-html/stamp_png_40_auto_01_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_png
-.panel1-stamp_png_31-auto[
+.panel1-stamp_png_40-auto[
 
 ```r
 # two stamps
@@ -3670,15 +4614,15 @@ ggcanvas() +
 ```
 ]
  
-.panel2-stamp_png_31-auto[
-![](exploded_examples_files/figure-html/stamp_png_31_auto_02_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_png_40-auto[
+![](exploded_examples_files/figure-html/stamp_png_40_auto_02_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_png
-.panel1-stamp_png_31-auto[
+.panel1-stamp_png_40-auto[
 
 ```r
 # two stamps
@@ -3689,15 +4633,15 @@ ggcanvas() +
 ```
 ]
  
-.panel2-stamp_png_31-auto[
-![](exploded_examples_files/figure-html/stamp_png_31_auto_03_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_png_40-auto[
+![](exploded_examples_files/figure-html/stamp_png_40_auto_03_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_png
-.panel1-stamp_png_31-auto[
+.panel1-stamp_png_40-auto[
 
 ```r
 # two stamps
@@ -3709,12 +4653,12 @@ ggcanvas() +
 ```
 ]
  
-.panel2-stamp_png_31-auto[
-![](exploded_examples_files/figure-html/stamp_png_31_auto_04_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_png_40-auto[
+![](exploded_examples_files/figure-html/stamp_png_40_auto_04_output-1.png)&lt;!-- --&gt;
 ]
 
 &lt;style&gt;
-.panel1-stamp_png_31-auto {
+.panel1-stamp_png_40-auto {
   color: black;
   width: 38.6060606060606%;
   hight: 32%;
@@ -3722,7 +4666,7 @@ ggcanvas() +
   padding-left: 1%;
   font-size: 80%
 }
-.panel2-stamp_png_31-auto {
+.panel2-stamp_png_40-auto {
   color: black;
   width: 59.3939393939394%;
   hight: 32%;
@@ -3730,7 +4674,7 @@ ggcanvas() +
   padding-left: 1%;
   font-size: 80%
 }
-.panel3-stamp_png_31-auto {
+.panel3-stamp_png_40-auto {
   color: black;
   width: NA%;
   hight: 33%;
@@ -3751,7 +4695,7 @@ ggcanvas() +
 count: false
  
 ### stamp_point
-.panel1-stamp_point_32-auto[
+.panel1-stamp_point_41-auto[
 
 ```r
 # more points on canvas
@@ -3759,15 +4703,15 @@ count: false
 ```
 ]
  
-.panel2-stamp_point_32-auto[
-![](exploded_examples_files/figure-html/stamp_point_32_auto_01_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_point_41-auto[
+![](exploded_examples_files/figure-html/stamp_point_41_auto_01_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_point
-.panel1-stamp_point_32-auto[
+.panel1-stamp_point_41-auto[
 
 ```r
 # more points on canvas
@@ -3776,15 +4720,15 @@ ggcanvas() +
 ```
 ]
  
-.panel2-stamp_point_32-auto[
-![](exploded_examples_files/figure-html/stamp_point_32_auto_02_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_point_41-auto[
+![](exploded_examples_files/figure-html/stamp_point_41_auto_02_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_point
-.panel1-stamp_point_32-auto[
+.panel1-stamp_point_41-auto[
 
 ```r
 # more points on canvas
@@ -3795,15 +4739,15 @@ ggcanvas() +
 ```
 ]
  
-.panel2-stamp_point_32-auto[
-![](exploded_examples_files/figure-html/stamp_point_32_auto_03_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_point_41-auto[
+![](exploded_examples_files/figure-html/stamp_point_41_auto_03_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_point
-.panel1-stamp_point_32-auto[
+.panel1-stamp_point_41-auto[
 
 ```r
 # more points on canvas
@@ -3817,15 +4761,15 @@ ggcanvas() +
 ```
 ]
  
-.panel2-stamp_point_32-auto[
-![](exploded_examples_files/figure-html/stamp_point_32_auto_04_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_point_41-auto[
+![](exploded_examples_files/figure-html/stamp_point_41_auto_04_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_point
-.panel1-stamp_point_32-auto[
+.panel1-stamp_point_41-auto[
 
 ```r
 # more points on canvas
@@ -3841,12 +4785,12 @@ ggcanvas() +
 ```
 ]
  
-.panel2-stamp_point_32-auto[
-![](exploded_examples_files/figure-html/stamp_point_32_auto_05_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_point_41-auto[
+![](exploded_examples_files/figure-html/stamp_point_41_auto_05_output-1.png)&lt;!-- --&gt;
 ]
 
 &lt;style&gt;
-.panel1-stamp_point_32-auto {
+.panel1-stamp_point_41-auto {
   color: black;
   width: 38.6060606060606%;
   hight: 32%;
@@ -3854,7 +4798,7 @@ ggcanvas() +
   padding-left: 1%;
   font-size: 80%
 }
-.panel2-stamp_point_32-auto {
+.panel2-stamp_point_41-auto {
   color: black;
   width: 59.3939393939394%;
   hight: 32%;
@@ -3862,7 +4806,7 @@ ggcanvas() +
   padding-left: 1%;
   font-size: 80%
 }
-.panel3-stamp_point_32-auto {
+.panel3-stamp_point_41-auto {
   color: black;
   width: NA%;
   hight: 33%;
@@ -3883,7 +4827,7 @@ ggcanvas() +
 count: false
  
 ### stamp_point
-.panel1-stamp_point_33-auto[
+.panel1-stamp_point_42-auto[
 
 ```r
 # stamp in plot space
@@ -3891,7 +4835,7 @@ count: false
 ```
 ]
  
-.panel2-stamp_point_33-auto[
+.panel2-stamp_point_42-auto[
 
 ]
 
@@ -3899,7 +4843,7 @@ count: false
 count: false
  
 ### stamp_point
-.panel1-stamp_point_33-auto[
+.panel1-stamp_point_42-auto[
 
 ```r
 # stamp in plot space
@@ -3908,15 +4852,15 @@ library(ggplot2)
 ```
 ]
  
-.panel2-stamp_point_33-auto[
-![](exploded_examples_files/figure-html/stamp_point_33_auto_02_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_point_42-auto[
+![](exploded_examples_files/figure-html/stamp_point_42_auto_02_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_point
-.panel1-stamp_point_33-auto[
+.panel1-stamp_point_42-auto[
 
 ```r
 # stamp in plot space
@@ -3926,15 +4870,15 @@ ggplot(cars) +
 ```
 ]
  
-.panel2-stamp_point_33-auto[
-![](exploded_examples_files/figure-html/stamp_point_33_auto_03_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_point_42-auto[
+![](exploded_examples_files/figure-html/stamp_point_42_auto_03_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_point
-.panel1-stamp_point_33-auto[
+.panel1-stamp_point_42-auto[
 
 ```r
 # stamp in plot space
@@ -3945,15 +4889,15 @@ ggplot(cars) +
 ```
 ]
  
-.panel2-stamp_point_33-auto[
-![](exploded_examples_files/figure-html/stamp_point_33_auto_04_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_point_42-auto[
+![](exploded_examples_files/figure-html/stamp_point_42_auto_04_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_point
-.panel1-stamp_point_33-auto[
+.panel1-stamp_point_42-auto[
 
 ```r
 # stamp in plot space
@@ -3965,15 +4909,15 @@ ggplot(cars) +
 ```
 ]
  
-.panel2-stamp_point_33-auto[
-![](exploded_examples_files/figure-html/stamp_point_33_auto_05_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_point_42-auto[
+![](exploded_examples_files/figure-html/stamp_point_42_auto_05_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_point
-.panel1-stamp_point_33-auto[
+.panel1-stamp_point_42-auto[
 
 ```r
 # stamp in plot space
@@ -3986,12 +4930,12 @@ ggplot(cars) +
 ```
 ]
  
-.panel2-stamp_point_33-auto[
-![](exploded_examples_files/figure-html/stamp_point_33_auto_06_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_point_42-auto[
+![](exploded_examples_files/figure-html/stamp_point_42_auto_06_output-1.png)&lt;!-- --&gt;
 ]
 
 &lt;style&gt;
-.panel1-stamp_point_33-auto {
+.panel1-stamp_point_42-auto {
   color: black;
   width: 38.6060606060606%;
   hight: 32%;
@@ -3999,7 +4943,7 @@ ggplot(cars) +
   padding-left: 1%;
   font-size: 80%
 }
-.panel2-stamp_point_33-auto {
+.panel2-stamp_point_42-auto {
   color: black;
   width: 59.3939393939394%;
   hight: 32%;
@@ -4007,7 +4951,7 @@ ggplot(cars) +
   padding-left: 1%;
   font-size: 80%
 }
-.panel3-stamp_point_33-auto {
+.panel3-stamp_point_42-auto {
   color: black;
   width: NA%;
   hight: 33%;
@@ -4028,7 +4972,7 @@ ggplot(cars) +
 count: false
  
 ### stamp_polygon
-.panel1-stamp_polygon_34-auto[
+.panel1-stamp_polygon_43-auto[
 
 ```r
 # lots of polygons
@@ -4036,15 +4980,15 @@ count: false
 ```
 ]
  
-.panel2-stamp_polygon_34-auto[
-![](exploded_examples_files/figure-html/stamp_polygon_34_auto_01_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_polygon_43-auto[
+![](exploded_examples_files/figure-html/stamp_polygon_43_auto_01_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_polygon
-.panel1-stamp_polygon_34-auto[
+.panel1-stamp_polygon_43-auto[
 
 ```r
 # lots of polygons
@@ -4053,15 +4997,15 @@ count: false
 ```
 ]
  
-.panel2-stamp_polygon_34-auto[
-![](exploded_examples_files/figure-html/stamp_polygon_34_auto_02_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_polygon_43-auto[
+![](exploded_examples_files/figure-html/stamp_polygon_43_auto_02_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_polygon
-.panel1-stamp_polygon_34-auto[
+.panel1-stamp_polygon_43-auto[
 
 ```r
 # lots of polygons
@@ -4071,15 +5015,15 @@ count: false
 ```
 ]
  
-.panel2-stamp_polygon_34-auto[
-![](exploded_examples_files/figure-html/stamp_polygon_34_auto_03_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_polygon_43-auto[
+![](exploded_examples_files/figure-html/stamp_polygon_43_auto_03_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_polygon
-.panel1-stamp_polygon_34-auto[
+.panel1-stamp_polygon_43-auto[
 
 ```r
 # lots of polygons
@@ -4090,15 +5034,15 @@ count: false
 ```
 ]
  
-.panel2-stamp_polygon_34-auto[
-![](exploded_examples_files/figure-html/stamp_polygon_34_auto_04_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_polygon_43-auto[
+![](exploded_examples_files/figure-html/stamp_polygon_43_auto_04_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_polygon
-.panel1-stamp_polygon_34-auto[
+.panel1-stamp_polygon_43-auto[
 
 ```r
 # lots of polygons
@@ -4111,15 +5055,15 @@ count: false
 ```
 ]
  
-.panel2-stamp_polygon_34-auto[
-![](exploded_examples_files/figure-html/stamp_polygon_34_auto_05_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_polygon_43-auto[
+![](exploded_examples_files/figure-html/stamp_polygon_43_auto_05_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_polygon
-.panel1-stamp_polygon_34-auto[
+.panel1-stamp_polygon_43-auto[
 
 ```r
 # lots of polygons
@@ -4133,15 +5077,15 @@ count: false
 ```
 ]
  
-.panel2-stamp_polygon_34-auto[
-![](exploded_examples_files/figure-html/stamp_polygon_34_auto_06_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_polygon_43-auto[
+![](exploded_examples_files/figure-html/stamp_polygon_43_auto_06_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_polygon
-.panel1-stamp_polygon_34-auto[
+.panel1-stamp_polygon_43-auto[
 
 ```r
 # lots of polygons
@@ -4156,12 +5100,12 @@ count: false
 ```
 ]
  
-.panel2-stamp_polygon_34-auto[
-![](exploded_examples_files/figure-html/stamp_polygon_34_auto_07_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_polygon_43-auto[
+![](exploded_examples_files/figure-html/stamp_polygon_43_auto_07_output-1.png)&lt;!-- --&gt;
 ]
 
 &lt;style&gt;
-.panel1-stamp_polygon_34-auto {
+.panel1-stamp_polygon_43-auto {
   color: black;
   width: 38.6060606060606%;
   hight: 32%;
@@ -4169,7 +5113,7 @@ count: false
   padding-left: 1%;
   font-size: 80%
 }
-.panel2-stamp_polygon_34-auto {
+.panel2-stamp_polygon_43-auto {
   color: black;
   width: 59.3939393939394%;
   hight: 32%;
@@ -4177,7 +5121,7 @@ count: false
   padding-left: 1%;
   font-size: 80%
 }
-.panel3-stamp_polygon_34-auto {
+.panel3-stamp_polygon_43-auto {
   color: black;
   width: NA%;
   hight: 33%;
@@ -4198,7 +5142,7 @@ count: false
 count: false
  
 ### stamp_polygon
-.panel1-stamp_polygon_35-auto[
+.panel1-stamp_polygon_44-auto[
 
 ```r
 # on a canvas
@@ -4206,15 +5150,15 @@ count: false
 ```
 ]
  
-.panel2-stamp_polygon_35-auto[
-![](exploded_examples_files/figure-html/stamp_polygon_35_auto_01_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_polygon_44-auto[
+![](exploded_examples_files/figure-html/stamp_polygon_44_auto_01_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_polygon
-.panel1-stamp_polygon_35-auto[
+.panel1-stamp_polygon_44-auto[
 
 ```r
 # on a canvas
@@ -4224,15 +5168,15 @@ count: false
 ```
 ]
  
-.panel2-stamp_polygon_35-auto[
-![](exploded_examples_files/figure-html/stamp_polygon_35_auto_02_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_polygon_44-auto[
+![](exploded_examples_files/figure-html/stamp_polygon_44_auto_02_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_polygon
-.panel1-stamp_polygon_35-auto[
+.panel1-stamp_polygon_44-auto[
 
 ```r
 # on a canvas
@@ -4245,15 +5189,15 @@ count: false
 ```
 ]
  
-.panel2-stamp_polygon_35-auto[
-![](exploded_examples_files/figure-html/stamp_polygon_35_auto_03_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_polygon_44-auto[
+![](exploded_examples_files/figure-html/stamp_polygon_44_auto_03_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_polygon
-.panel1-stamp_polygon_35-auto[
+.panel1-stamp_polygon_44-auto[
 
 ```r
 # on a canvas
@@ -4267,12 +5211,12 @@ count: false
 ```
 ]
  
-.panel2-stamp_polygon_35-auto[
-![](exploded_examples_files/figure-html/stamp_polygon_35_auto_04_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_polygon_44-auto[
+![](exploded_examples_files/figure-html/stamp_polygon_44_auto_04_output-1.png)&lt;!-- --&gt;
 ]
 
 &lt;style&gt;
-.panel1-stamp_polygon_35-auto {
+.panel1-stamp_polygon_44-auto {
   color: black;
   width: 38.6060606060606%;
   hight: 32%;
@@ -4280,7 +5224,7 @@ count: false
   padding-left: 1%;
   font-size: 80%
 }
-.panel2-stamp_polygon_35-auto {
+.panel2-stamp_polygon_44-auto {
   color: black;
   width: 59.3939393939394%;
   hight: 32%;
@@ -4288,7 +5232,7 @@ count: false
   padding-left: 1%;
   font-size: 80%
 }
-.panel3-stamp_polygon_35-auto {
+.panel3-stamp_polygon_44-auto {
   color: black;
   width: NA%;
   hight: 33%;
@@ -4309,7 +5253,7 @@ count: false
 count: false
  
 ### stamp_polygon
-.panel1-stamp_polygon_36-auto[
+.panel1-stamp_polygon_45-auto[
 
 ```r
 # on plot space
@@ -4317,7 +5261,7 @@ count: false
 ```
 ]
  
-.panel2-stamp_polygon_36-auto[
+.panel2-stamp_polygon_45-auto[
 
 ]
 
@@ -4325,7 +5269,7 @@ count: false
 count: false
  
 ### stamp_polygon
-.panel1-stamp_polygon_36-auto[
+.panel1-stamp_polygon_45-auto[
 
 ```r
 # on plot space
@@ -4334,15 +5278,15 @@ library(ggplot2)
 ```
 ]
  
-.panel2-stamp_polygon_36-auto[
-![](exploded_examples_files/figure-html/stamp_polygon_36_auto_02_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_polygon_45-auto[
+![](exploded_examples_files/figure-html/stamp_polygon_45_auto_02_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_polygon
-.panel1-stamp_polygon_36-auto[
+.panel1-stamp_polygon_45-auto[
 
 ```r
 # on plot space
@@ -4352,15 +5296,15 @@ ggplot(cars) +
 ```
 ]
  
-.panel2-stamp_polygon_36-auto[
-![](exploded_examples_files/figure-html/stamp_polygon_36_auto_03_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_polygon_45-auto[
+![](exploded_examples_files/figure-html/stamp_polygon_45_auto_03_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_polygon
-.panel1-stamp_polygon_36-auto[
+.panel1-stamp_polygon_45-auto[
 
 ```r
 # on plot space
@@ -4371,15 +5315,15 @@ ggplot(cars) +
 ```
 ]
  
-.panel2-stamp_polygon_36-auto[
-![](exploded_examples_files/figure-html/stamp_polygon_36_auto_04_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_polygon_45-auto[
+![](exploded_examples_files/figure-html/stamp_polygon_45_auto_04_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_polygon
-.panel1-stamp_polygon_36-auto[
+.panel1-stamp_polygon_45-auto[
 
 ```r
 # on plot space
@@ -4391,12 +5335,12 @@ ggplot(cars) +
 ```
 ]
  
-.panel2-stamp_polygon_36-auto[
-![](exploded_examples_files/figure-html/stamp_polygon_36_auto_05_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_polygon_45-auto[
+![](exploded_examples_files/figure-html/stamp_polygon_45_auto_05_output-1.png)&lt;!-- --&gt;
 ]
 
 &lt;style&gt;
-.panel1-stamp_polygon_36-auto {
+.panel1-stamp_polygon_45-auto {
   color: black;
   width: 38.6060606060606%;
   hight: 32%;
@@ -4404,7 +5348,7 @@ ggplot(cars) +
   padding-left: 1%;
   font-size: 80%
 }
-.panel2-stamp_polygon_36-auto {
+.panel2-stamp_polygon_45-auto {
   color: black;
   width: 59.3939393939394%;
   hight: 32%;
@@ -4412,7 +5356,7 @@ ggplot(cars) +
   padding-left: 1%;
   font-size: 80%
 }
-.panel3-stamp_polygon_36-auto {
+.panel3-stamp_polygon_45-auto {
   color: black;
   width: NA%;
   hight: 33%;
@@ -4433,7 +5377,7 @@ ggplot(cars) +
 count: false
  
 ### stamp_polygon
-.panel1-stamp_polygon_37-auto[
+.panel1-stamp_polygon_46-auto[
 
 ```r
 # some more
@@ -4441,15 +5385,15 @@ count: false
 ```
 ]
  
-.panel2-stamp_polygon_37-auto[
-![](exploded_examples_files/figure-html/stamp_polygon_37_auto_01_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_polygon_46-auto[
+![](exploded_examples_files/figure-html/stamp_polygon_46_auto_01_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_polygon
-.panel1-stamp_polygon_37-auto[
+.panel1-stamp_polygon_46-auto[
 
 ```r
 # some more
@@ -4459,15 +5403,15 @@ count: false
 ```
 ]
  
-.panel2-stamp_polygon_37-auto[
-![](exploded_examples_files/figure-html/stamp_polygon_37_auto_02_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_polygon_46-auto[
+![](exploded_examples_files/figure-html/stamp_polygon_46_auto_02_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_polygon
-.panel1-stamp_polygon_37-auto[
+.panel1-stamp_polygon_46-auto[
 
 ```r
 # some more
@@ -4479,12 +5423,12 @@ count: false
 ```
 ]
  
-.panel2-stamp_polygon_37-auto[
-![](exploded_examples_files/figure-html/stamp_polygon_37_auto_03_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_polygon_46-auto[
+![](exploded_examples_files/figure-html/stamp_polygon_46_auto_03_output-1.png)&lt;!-- --&gt;
 ]
 
 &lt;style&gt;
-.panel1-stamp_polygon_37-auto {
+.panel1-stamp_polygon_46-auto {
   color: black;
   width: 38.6060606060606%;
   hight: 32%;
@@ -4492,7 +5436,7 @@ count: false
   padding-left: 1%;
   font-size: 80%
 }
-.panel2-stamp_polygon_37-auto {
+.panel2-stamp_polygon_46-auto {
   color: black;
   width: 59.3939393939394%;
   hight: 32%;
@@ -4500,7 +5444,266 @@ count: false
   padding-left: 1%;
   font-size: 80%
 }
-.panel3-stamp_polygon_37-auto {
+.panel3-stamp_polygon_46-auto {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+
+
+
+
+---
+
+count: false
+ 
+### stamp_rect
+.panel1-stamp_rect_47-auto[
+
+```r
+# on a canvas
+*ggcanvas()
+```
+]
+ 
+.panel2-stamp_rect_47-auto[
+![](exploded_examples_files/figure-html/stamp_rect_47_auto_01_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_rect
+.panel1-stamp_rect_47-auto[
+
+```r
+# on a canvas
+ggcanvas() +
+*stamp_rect(fill = "green")
+```
+]
+ 
+.panel2-stamp_rect_47-auto[
+![](exploded_examples_files/figure-html/stamp_rect_47_auto_02_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_rect
+.panel1-stamp_rect_47-auto[
+
+```r
+# on a canvas
+ggcanvas() +
+ stamp_rect(fill = "green") +
+*stamp_rect(alpha = .8,
+*           fill = "steelblue",
+*           size = 0,
+*           xmin = 2, xmax = 3,
+*           ymin = 5, ymax = 8)
+```
+]
+ 
+.panel2-stamp_rect_47-auto[
+![](exploded_examples_files/figure-html/stamp_rect_47_auto_03_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_rect
+.panel1-stamp_rect_47-auto[
+
+```r
+# on a canvas
+ggcanvas() +
+ stamp_rect(fill = "green") +
+ stamp_rect(alpha = .8,
+            fill = "steelblue",
+            size = 0,
+            xmin = 2, xmax = 3,
+            ymin = 5, ymax = 8) +
+*coord_equal()
+```
+]
+ 
+.panel2-stamp_rect_47-auto[
+![](exploded_examples_files/figure-html/stamp_rect_47_auto_04_output-1.png)&lt;!-- --&gt;
+]
+
+&lt;style&gt;
+.panel1-stamp_rect_47-auto {
+  color: black;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-stamp_rect_47-auto {
+  color: black;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-stamp_rect_47-auto {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+
+
+
+
+---
+
+count: false
+ 
+### stamp_rect
+.panel1-stamp_rect_48-auto[
+
+```r
+# rect
+*library(ggplot2)
+```
+]
+ 
+.panel2-stamp_rect_48-auto[
+
+]
+
+---
+count: false
+ 
+### stamp_rect
+.panel1-stamp_rect_48-auto[
+
+```r
+# rect
+library(ggplot2)
+*ggplot(cars)
+```
+]
+ 
+.panel2-stamp_rect_48-auto[
+![](exploded_examples_files/figure-html/stamp_rect_48_auto_02_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_rect
+.panel1-stamp_rect_48-auto[
+
+```r
+# rect
+library(ggplot2)
+ggplot(cars) +
+*aes(speed, dist)
+```
+]
+ 
+.panel2-stamp_rect_48-auto[
+![](exploded_examples_files/figure-html/stamp_rect_48_auto_03_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_rect
+.panel1-stamp_rect_48-auto[
+
+```r
+# rect
+library(ggplot2)
+ggplot(cars) +
+ aes(speed, dist) +
+*geom_point()
+```
+]
+ 
+.panel2-stamp_rect_48-auto[
+![](exploded_examples_files/figure-html/stamp_rect_48_auto_04_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_rect
+.panel1-stamp_rect_48-auto[
+
+```r
+# rect
+library(ggplot2)
+ggplot(cars) +
+ aes(speed, dist) +
+ geom_point() +
+*stamp_rect(color = "red")
+```
+]
+ 
+.panel2-stamp_rect_48-auto[
+![](exploded_examples_files/figure-html/stamp_rect_48_auto_05_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_rect
+.panel1-stamp_rect_48-auto[
+
+```r
+# rect
+library(ggplot2)
+ggplot(cars) +
+ aes(speed, dist) +
+ geom_point() +
+ stamp_rect(color = "red") +
+*stamp_rect(
+*           xxyy = data.frame(xmin = 1:4*3, xmax = 2:5*3,
+*           ymin = 1:4*6, ymax = 1:8*6))
+```
+]
+ 
+.panel2-stamp_rect_48-auto[
+![](exploded_examples_files/figure-html/stamp_rect_48_auto_06_output-1.png)&lt;!-- --&gt;
+]
+
+&lt;style&gt;
+.panel1-stamp_rect_48-auto {
+  color: black;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-stamp_rect_48-auto {
+  color: black;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-stamp_rect_48-auto {
   color: black;
   width: NA%;
   hight: 33%;
@@ -4521,7 +5724,7 @@ count: false
 count: false
  
 ### stamp_segment
-.panel1-stamp_segment_38-auto[
+.panel1-stamp_segment_49-auto[
 
 ```r
 # segment on plot space
@@ -4529,7 +5732,7 @@ count: false
 ```
 ]
  
-.panel2-stamp_segment_38-auto[
+.panel2-stamp_segment_49-auto[
 
 ]
 
@@ -4537,7 +5740,7 @@ count: false
 count: false
  
 ### stamp_segment
-.panel1-stamp_segment_38-auto[
+.panel1-stamp_segment_49-auto[
 
 ```r
 # segment on plot space
@@ -4546,15 +5749,15 @@ library(ggplot2)
 ```
 ]
  
-.panel2-stamp_segment_38-auto[
-![](exploded_examples_files/figure-html/stamp_segment_38_auto_02_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_segment_49-auto[
+![](exploded_examples_files/figure-html/stamp_segment_49_auto_02_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_segment
-.panel1-stamp_segment_38-auto[
+.panel1-stamp_segment_49-auto[
 
 ```r
 # segment on plot space
@@ -4564,15 +5767,15 @@ ggplot(cars) +
 ```
 ]
  
-.panel2-stamp_segment_38-auto[
-![](exploded_examples_files/figure-html/stamp_segment_38_auto_03_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_segment_49-auto[
+![](exploded_examples_files/figure-html/stamp_segment_49_auto_03_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_segment
-.panel1-stamp_segment_38-auto[
+.panel1-stamp_segment_49-auto[
 
 ```r
 # segment on plot space
@@ -4583,15 +5786,15 @@ ggplot(cars) +
 ```
 ]
  
-.panel2-stamp_segment_38-auto[
-![](exploded_examples_files/figure-html/stamp_segment_38_auto_04_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_segment_49-auto[
+![](exploded_examples_files/figure-html/stamp_segment_49_auto_04_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_segment
-.panel1-stamp_segment_38-auto[
+.panel1-stamp_segment_49-auto[
 
 ```r
 # segment on plot space
@@ -4604,12 +5807,12 @@ ggplot(cars) +
 ```
 ]
  
-.panel2-stamp_segment_38-auto[
-![](exploded_examples_files/figure-html/stamp_segment_38_auto_05_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_segment_49-auto[
+![](exploded_examples_files/figure-html/stamp_segment_49_auto_05_output-1.png)&lt;!-- --&gt;
 ]
 
 &lt;style&gt;
-.panel1-stamp_segment_38-auto {
+.panel1-stamp_segment_49-auto {
   color: black;
   width: 38.6060606060606%;
   hight: 32%;
@@ -4617,7 +5820,7 @@ ggplot(cars) +
   padding-left: 1%;
   font-size: 80%
 }
-.panel2-stamp_segment_38-auto {
+.panel2-stamp_segment_49-auto {
   color: black;
   width: 59.3939393939394%;
   hight: 32%;
@@ -4625,7 +5828,7 @@ ggplot(cars) +
   padding-left: 1%;
   font-size: 80%
 }
-.panel3-stamp_segment_38-auto {
+.panel3-stamp_segment_49-auto {
   color: black;
   width: NA%;
   hight: 33%;
@@ -4646,7 +5849,7 @@ ggplot(cars) +
 count: false
  
 ### stamp_segment
-.panel1-stamp_segment_39-auto[
+.panel1-stamp_segment_50-auto[
 
 ```r
 # segments on canvas
@@ -4654,15 +5857,15 @@ count: false
 ```
 ]
  
-.panel2-stamp_segment_39-auto[
-![](exploded_examples_files/figure-html/stamp_segment_39_auto_01_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_segment_50-auto[
+![](exploded_examples_files/figure-html/stamp_segment_50_auto_01_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_segment
-.panel1-stamp_segment_39-auto[
+.panel1-stamp_segment_50-auto[
 
 ```r
 # segments on canvas
@@ -4671,15 +5874,15 @@ count: false
 ```
 ]
  
-.panel2-stamp_segment_39-auto[
-![](exploded_examples_files/figure-html/stamp_segment_39_auto_02_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_segment_50-auto[
+![](exploded_examples_files/figure-html/stamp_segment_50_auto_02_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_segment
-.panel1-stamp_segment_39-auto[
+.panel1-stamp_segment_50-auto[
 
 ```r
 # segments on canvas
@@ -4690,12 +5893,12 @@ count: false
 ```
 ]
  
-.panel2-stamp_segment_39-auto[
-![](exploded_examples_files/figure-html/stamp_segment_39_auto_03_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_segment_50-auto[
+![](exploded_examples_files/figure-html/stamp_segment_50_auto_03_output-1.png)&lt;!-- --&gt;
 ]
 
 &lt;style&gt;
-.panel1-stamp_segment_39-auto {
+.panel1-stamp_segment_50-auto {
   color: black;
   width: 38.6060606060606%;
   hight: 32%;
@@ -4703,7 +5906,7 @@ count: false
   padding-left: 1%;
   font-size: 80%
 }
-.panel2-stamp_segment_39-auto {
+.panel2-stamp_segment_50-auto {
   color: black;
   width: 59.3939393939394%;
   hight: 32%;
@@ -4711,7 +5914,7 @@ count: false
   padding-left: 1%;
   font-size: 80%
 }
-.panel3-stamp_segment_39-auto {
+.panel3-stamp_segment_50-auto {
   color: black;
   width: NA%;
   hight: 33%;
@@ -4732,7 +5935,7 @@ count: false
 count: false
  
 ### stamp_spoke
-.panel1-stamp_spoke_40-auto[
+.panel1-stamp_spoke_51-auto[
 
 ```r
 # on canvas
@@ -4740,15 +5943,15 @@ count: false
 ```
 ]
  
-.panel2-stamp_spoke_40-auto[
-![](exploded_examples_files/figure-html/stamp_spoke_40_auto_01_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_spoke_51-auto[
+![](exploded_examples_files/figure-html/stamp_spoke_51_auto_01_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_spoke
-.panel1-stamp_spoke_40-auto[
+.panel1-stamp_spoke_51-auto[
 
 ```r
 # on canvas
@@ -4757,15 +5960,15 @@ count: false
 ```
 ]
  
-.panel2-stamp_spoke_40-auto[
-![](exploded_examples_files/figure-html/stamp_spoke_40_auto_02_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_spoke_51-auto[
+![](exploded_examples_files/figure-html/stamp_spoke_51_auto_02_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_spoke
-.panel1-stamp_spoke_40-auto[
+.panel1-stamp_spoke_51-auto[
 
 ```r
 # on canvas
@@ -4775,15 +5978,15 @@ count: false
 ```
 ]
  
-.panel2-stamp_spoke_40-auto[
-![](exploded_examples_files/figure-html/stamp_spoke_40_auto_03_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_spoke_51-auto[
+![](exploded_examples_files/figure-html/stamp_spoke_51_auto_03_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_spoke
-.panel1-stamp_spoke_40-auto[
+.panel1-stamp_spoke_51-auto[
 
 ```r
 # on canvas
@@ -4794,15 +5997,15 @@ count: false
 ```
 ]
  
-.panel2-stamp_spoke_40-auto[
-![](exploded_examples_files/figure-html/stamp_spoke_40_auto_04_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_spoke_51-auto[
+![](exploded_examples_files/figure-html/stamp_spoke_51_auto_04_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_spoke
-.panel1-stamp_spoke_40-auto[
+.panel1-stamp_spoke_51-auto[
 
 ```r
 # on canvas
@@ -4816,15 +6019,15 @@ count: false
 ```
 ]
  
-.panel2-stamp_spoke_40-auto[
-![](exploded_examples_files/figure-html/stamp_spoke_40_auto_05_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_spoke_51-auto[
+![](exploded_examples_files/figure-html/stamp_spoke_51_auto_05_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_spoke
-.panel1-stamp_spoke_40-auto[
+.panel1-stamp_spoke_51-auto[
 
 ```r
 # on canvas
@@ -4839,15 +6042,15 @@ count: false
 ```
 ]
  
-.panel2-stamp_spoke_40-auto[
-![](exploded_examples_files/figure-html/stamp_spoke_40_auto_06_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_spoke_51-auto[
+![](exploded_examples_files/figure-html/stamp_spoke_51_auto_06_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_spoke
-.panel1-stamp_spoke_40-auto[
+.panel1-stamp_spoke_51-auto[
 
 ```r
 # on canvas
@@ -4863,15 +6066,15 @@ count: false
 ```
 ]
  
-.panel2-stamp_spoke_40-auto[
-![](exploded_examples_files/figure-html/stamp_spoke_40_auto_07_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_spoke_51-auto[
+![](exploded_examples_files/figure-html/stamp_spoke_51_auto_07_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_spoke
-.panel1-stamp_spoke_40-auto[
+.panel1-stamp_spoke_51-auto[
 
 ```r
 # on canvas
@@ -4888,12 +6091,12 @@ count: false
 ```
 ]
  
-.panel2-stamp_spoke_40-auto[
-![](exploded_examples_files/figure-html/stamp_spoke_40_auto_08_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_spoke_51-auto[
+![](exploded_examples_files/figure-html/stamp_spoke_51_auto_08_output-1.png)&lt;!-- --&gt;
 ]
 
 &lt;style&gt;
-.panel1-stamp_spoke_40-auto {
+.panel1-stamp_spoke_51-auto {
   color: black;
   width: 38.6060606060606%;
   hight: 32%;
@@ -4901,7 +6104,7 @@ count: false
   padding-left: 1%;
   font-size: 80%
 }
-.panel2-stamp_spoke_40-auto {
+.panel2-stamp_spoke_51-auto {
   color: black;
   width: 59.3939393939394%;
   hight: 32%;
@@ -4909,7 +6112,7 @@ count: false
   padding-left: 1%;
   font-size: 80%
 }
-.panel3-stamp_spoke_40-auto {
+.panel3-stamp_spoke_51-auto {
   color: black;
   width: NA%;
   hight: 33%;
@@ -4930,7 +6133,7 @@ count: false
 count: false
  
 ### stamp_spoke
-.panel1-stamp_spoke_41-auto[
+.panel1-stamp_spoke_52-auto[
 
 ```r
 # on plot
@@ -4938,7 +6141,7 @@ count: false
 ```
 ]
  
-.panel2-stamp_spoke_41-auto[
+.panel2-stamp_spoke_52-auto[
 
 ]
 
@@ -4946,7 +6149,7 @@ count: false
 count: false
  
 ### stamp_spoke
-.panel1-stamp_spoke_41-auto[
+.panel1-stamp_spoke_52-auto[
 
 ```r
 # on plot
@@ -4955,15 +6158,15 @@ library(ggplot2)
 ```
 ]
  
-.panel2-stamp_spoke_41-auto[
-![](exploded_examples_files/figure-html/stamp_spoke_41_auto_02_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_spoke_52-auto[
+![](exploded_examples_files/figure-html/stamp_spoke_52_auto_02_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_spoke
-.panel1-stamp_spoke_41-auto[
+.panel1-stamp_spoke_52-auto[
 
 ```r
 # on plot
@@ -4973,15 +6176,15 @@ ggplot(cars) +
 ```
 ]
  
-.panel2-stamp_spoke_41-auto[
-![](exploded_examples_files/figure-html/stamp_spoke_41_auto_03_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_spoke_52-auto[
+![](exploded_examples_files/figure-html/stamp_spoke_52_auto_03_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_spoke
-.panel1-stamp_spoke_41-auto[
+.panel1-stamp_spoke_52-auto[
 
 ```r
 # on plot
@@ -4992,15 +6195,15 @@ ggplot(cars) +
 ```
 ]
  
-.panel2-stamp_spoke_41-auto[
-![](exploded_examples_files/figure-html/stamp_spoke_41_auto_04_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_spoke_52-auto[
+![](exploded_examples_files/figure-html/stamp_spoke_52_auto_04_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_spoke
-.panel1-stamp_spoke_41-auto[
+.panel1-stamp_spoke_52-auto[
 
 ```r
 # on plot
@@ -5012,12 +6215,12 @@ ggplot(cars) +
 ```
 ]
  
-.panel2-stamp_spoke_41-auto[
-![](exploded_examples_files/figure-html/stamp_spoke_41_auto_05_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_spoke_52-auto[
+![](exploded_examples_files/figure-html/stamp_spoke_52_auto_05_output-1.png)&lt;!-- --&gt;
 ]
 
 &lt;style&gt;
-.panel1-stamp_spoke_41-auto {
+.panel1-stamp_spoke_52-auto {
   color: black;
   width: 38.6060606060606%;
   hight: 32%;
@@ -5025,7 +6228,7 @@ ggplot(cars) +
   padding-left: 1%;
   font-size: 80%
 }
-.panel2-stamp_spoke_41-auto {
+.panel2-stamp_spoke_52-auto {
   color: black;
   width: 59.3939393939394%;
   hight: 32%;
@@ -5033,7 +6236,7 @@ ggplot(cars) +
   padding-left: 1%;
   font-size: 80%
 }
-.panel3-stamp_spoke_41-auto {
+.panel3-stamp_spoke_52-auto {
   color: black;
   width: NA%;
   hight: 33%;
@@ -5053,62 +6256,129 @@ ggplot(cars) +
 
 count: false
  
-### stamp_text
-.panel1-stamp_text_42-auto[
+### stamp_text_box
+.panel1-stamp_text_box_53-auto[
 
 ```r
-# cool text
+# label on a canvas
+*ggcanvas()
+```
+]
+ 
+.panel2-stamp_text_box_53-auto[
+![](exploded_examples_files/figure-html/stamp_text_box_53_auto_01_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_text_box
+.panel1-stamp_text_box_53-auto[
+
+```r
+# label on a canvas
+ggcanvas() +
+*  stamp_label()
+```
+]
+ 
+.panel2-stamp_text_box_53-auto[
+![](exploded_examples_files/figure-html/stamp_text_box_53_auto_02_output-1.png)&lt;!-- --&gt;
+]
+
+&lt;style&gt;
+.panel1-stamp_text_box_53-auto {
+  color: black;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-stamp_text_box_53-auto {
+  color: black;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-stamp_text_box_53-auto {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+
+
+
+
+---
+
+count: false
+ 
+### stamp_text_box
+.panel1-stamp_text_box_54-auto[
+
+```r
+# labels on a plot
 *library(ggplot2)
 ```
 ]
  
-.panel2-stamp_text_42-auto[
+.panel2-stamp_text_box_54-auto[
 
 ]
 
 ---
 count: false
  
-### stamp_text
-.panel1-stamp_text_42-auto[
+### stamp_text_box
+.panel1-stamp_text_box_54-auto[
 
 ```r
-# cool text
+# labels on a plot
 library(ggplot2)
 *ggplot(cars)
 ```
 ]
  
-.panel2-stamp_text_42-auto[
-![](exploded_examples_files/figure-html/stamp_text_42_auto_02_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_text_box_54-auto[
+![](exploded_examples_files/figure-html/stamp_text_box_54_auto_02_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
-### stamp_text
-.panel1-stamp_text_42-auto[
+### stamp_text_box
+.panel1-stamp_text_box_54-auto[
 
 ```r
-# cool text
+# labels on a plot
 library(ggplot2)
 ggplot(cars) +
 *aes(speed, dist)
 ```
 ]
  
-.panel2-stamp_text_42-auto[
-![](exploded_examples_files/figure-html/stamp_text_42_auto_03_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_text_box_54-auto[
+![](exploded_examples_files/figure-html/stamp_text_box_54_auto_03_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
-### stamp_text
-.panel1-stamp_text_42-auto[
+### stamp_text_box
+.panel1-stamp_text_box_54-auto[
 
 ```r
-# cool text
+# labels on a plot
 library(ggplot2)
 ggplot(cars) +
  aes(speed, dist) +
@@ -5116,34 +6386,54 @@ ggplot(cars) +
 ```
 ]
  
-.panel2-stamp_text_42-auto[
-![](exploded_examples_files/figure-html/stamp_text_42_auto_04_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_text_box_54-auto[
+![](exploded_examples_files/figure-html/stamp_text_box_54_auto_04_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
-### stamp_text
-.panel1-stamp_text_42-auto[
+### stamp_text_box
+.panel1-stamp_text_box_54-auto[
 
 ```r
-# cool text
+# labels on a plot
 library(ggplot2)
 ggplot(cars) +
  aes(speed, dist) +
  geom_point() +
-*stamp_text(label = stringr::str_wrap("a speed v. stopping distance, 1920s study tells us ...", 30),
-*           x = 12, y = 110,
-*           size = 5)
+*stamp_label(x = 20, y = 10)
 ```
 ]
  
-.panel2-stamp_text_42-auto[
-![](exploded_examples_files/figure-html/stamp_text_42_auto_05_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_text_box_54-auto[
+![](exploded_examples_files/figure-html/stamp_text_box_54_auto_05_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_text_box
+.panel1-stamp_text_box_54-auto[
+
+```r
+# labels on a plot
+library(ggplot2)
+ggplot(cars) +
+ aes(speed, dist) +
+ geom_point() +
+ stamp_label(x = 20, y = 10) +
+*stamp_label(label = "hi",
+*y = c(100, 75, 50), x = 5, fill = "cadetblue2", label.size = 0)
+```
+]
+ 
+.panel2-stamp_text_box_54-auto[
+![](exploded_examples_files/figure-html/stamp_text_box_54_auto_06_output-1.png)&lt;!-- --&gt;
 ]
 
 &lt;style&gt;
-.panel1-stamp_text_42-auto {
+.panel1-stamp_text_box_54-auto {
   color: black;
   width: 38.6060606060606%;
   hight: 32%;
@@ -5151,7 +6441,7 @@ ggplot(cars) +
   padding-left: 1%;
   font-size: 80%
 }
-.panel2-stamp_text_42-auto {
+.panel2-stamp_text_box_54-auto {
   color: black;
   width: 59.3939393939394%;
   hight: 32%;
@@ -5159,7 +6449,7 @@ ggplot(cars) +
   padding-left: 1%;
   font-size: 80%
 }
-.panel3-stamp_text_42-auto {
+.panel3-stamp_text_box_54-auto {
   color: black;
   width: NA%;
   hight: 33%;
@@ -5180,7 +6470,7 @@ ggplot(cars) +
 count: false
  
 ### stamp_text
-.panel1-stamp_text_43-auto[
+.panel1-stamp_text_55-auto[
 
 ```r
 # some more
@@ -5188,15 +6478,15 @@ count: false
 ```
 ]
  
-.panel2-stamp_text_43-auto[
-![](exploded_examples_files/figure-html/stamp_text_43_auto_01_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_text_55-auto[
+![](exploded_examples_files/figure-html/stamp_text_55_auto_01_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_text
-.panel1-stamp_text_43-auto[
+.panel1-stamp_text_55-auto[
 
 ```r
 # some more
@@ -5205,15 +6495,15 @@ count: false
 ```
 ]
  
-.panel2-stamp_text_43-auto[
-![](exploded_examples_files/figure-html/stamp_text_43_auto_02_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_text_55-auto[
+![](exploded_examples_files/figure-html/stamp_text_55_auto_02_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_text
-.panel1-stamp_text_43-auto[
+.panel1-stamp_text_55-auto[
 
 ```r
 # some more
@@ -5224,15 +6514,15 @@ count: false
 ```
 ]
  
-.panel2-stamp_text_43-auto[
-![](exploded_examples_files/figure-html/stamp_text_43_auto_03_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_text_55-auto[
+![](exploded_examples_files/figure-html/stamp_text_55_auto_03_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_text
-.panel1-stamp_text_43-auto[
+.panel1-stamp_text_55-auto[
 
 ```r
 # some more
@@ -5244,15 +6534,15 @@ count: false
 ```
 ]
  
-.panel2-stamp_text_43-auto[
-![](exploded_examples_files/figure-html/stamp_text_43_auto_04_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_text_55-auto[
+![](exploded_examples_files/figure-html/stamp_text_55_auto_04_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_text
-.panel1-stamp_text_43-auto[
+.panel1-stamp_text_55-auto[
 
 ```r
 # some more
@@ -5265,15 +6555,15 @@ count: false
 ```
 ]
  
-.panel2-stamp_text_43-auto[
-![](exploded_examples_files/figure-html/stamp_text_43_auto_05_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_text_55-auto[
+![](exploded_examples_files/figure-html/stamp_text_55_auto_05_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_text
-.panel1-stamp_text_43-auto[
+.panel1-stamp_text_55-auto[
 
 ```r
 # some more
@@ -5288,15 +6578,15 @@ count: false
 ```
 ]
  
-.panel2-stamp_text_43-auto[
-![](exploded_examples_files/figure-html/stamp_text_43_auto_06_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_text_55-auto[
+![](exploded_examples_files/figure-html/stamp_text_55_auto_06_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_text
-.panel1-stamp_text_43-auto[
+.panel1-stamp_text_55-auto[
 
 ```r
 # some more
@@ -5312,15 +6602,15 @@ count: false
 ```
 ]
  
-.panel2-stamp_text_43-auto[
-![](exploded_examples_files/figure-html/stamp_text_43_auto_07_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_text_55-auto[
+![](exploded_examples_files/figure-html/stamp_text_55_auto_07_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_text
-.panel1-stamp_text_43-auto[
+.panel1-stamp_text_55-auto[
 
 ```r
 # some more
@@ -5338,15 +6628,15 @@ count: false
 ```
 ]
  
-.panel2-stamp_text_43-auto[
-![](exploded_examples_files/figure-html/stamp_text_43_auto_08_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_text_55-auto[
+![](exploded_examples_files/figure-html/stamp_text_55_auto_08_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_text
-.panel1-stamp_text_43-auto[
+.panel1-stamp_text_55-auto[
 
 ```r
 # some more
@@ -5367,15 +6657,15 @@ count: false
 ```
 ]
  
-.panel2-stamp_text_43-auto[
-![](exploded_examples_files/figure-html/stamp_text_43_auto_09_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_text_55-auto[
+![](exploded_examples_files/figure-html/stamp_text_55_auto_09_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_text
-.panel1-stamp_text_43-auto[
+.panel1-stamp_text_55-auto[
 
 ```r
 # some more
@@ -5397,12 +6687,12 @@ count: false
 ```
 ]
  
-.panel2-stamp_text_43-auto[
-![](exploded_examples_files/figure-html/stamp_text_43_auto_10_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_text_55-auto[
+![](exploded_examples_files/figure-html/stamp_text_55_auto_10_output-1.png)&lt;!-- --&gt;
 ]
 
 &lt;style&gt;
-.panel1-stamp_text_43-auto {
+.panel1-stamp_text_55-auto {
   color: black;
   width: 38.6060606060606%;
   hight: 32%;
@@ -5410,7 +6700,7 @@ count: false
   padding-left: 1%;
   font-size: 80%
 }
-.panel2-stamp_text_43-auto {
+.panel2-stamp_text_55-auto {
   color: black;
   width: 59.3939393939394%;
   hight: 32%;
@@ -5418,7 +6708,490 @@ count: false
   padding-left: 1%;
   font-size: 80%
 }
-.panel3-stamp_text_43-auto {
+.panel3-stamp_text_55-auto {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+
+
+
+
+---
+
+count: false
+ 
+### stamp_text
+.panel1-stamp_text_56-auto[
+
+```r
+# stamping text on a plot
+*library(ggplot2)
+```
+]
+ 
+.panel2-stamp_text_56-auto[
+
+]
+
+---
+count: false
+ 
+### stamp_text
+.panel1-stamp_text_56-auto[
+
+```r
+# stamping text on a plot
+library(ggplot2)
+*ggplot(cars)
+```
+]
+ 
+.panel2-stamp_text_56-auto[
+![](exploded_examples_files/figure-html/stamp_text_56_auto_02_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_text
+.panel1-stamp_text_56-auto[
+
+```r
+# stamping text on a plot
+library(ggplot2)
+ggplot(cars) +
+*aes(speed, dist)
+```
+]
+ 
+.panel2-stamp_text_56-auto[
+![](exploded_examples_files/figure-html/stamp_text_56_auto_03_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_text
+.panel1-stamp_text_56-auto[
+
+```r
+# stamping text on a plot
+library(ggplot2)
+ggplot(cars) +
+ aes(speed, dist) +
+*geom_point()
+```
+]
+ 
+.panel2-stamp_text_56-auto[
+![](exploded_examples_files/figure-html/stamp_text_56_auto_04_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_text
+.panel1-stamp_text_56-auto[
+
+```r
+# stamping text on a plot
+library(ggplot2)
+ggplot(cars) +
+ aes(speed, dist) +
+ geom_point() +
+*stamp_text(label = "A 1920s study on speed v. stopping distance tells us there is a correlation between how fast a car is going and how long it takes to stop.",
+*           x = 3, y = 110,
+*           size = 5,
+*           text_wrap = TRUE,
+*           hjust = 0)
+```
+]
+ 
+.panel2-stamp_text_56-auto[
+![](exploded_examples_files/figure-html/stamp_text_56_auto_05_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_text
+.panel1-stamp_text_56-auto[
+
+```r
+# stamping text on a plot
+library(ggplot2)
+ggplot(cars) +
+ aes(speed, dist) +
+ geom_point() +
+ stamp_text(label = "A 1920s study on speed v. stopping distance tells us there is a correlation between how fast a car is going and how long it takes to stop.",
+            x = 3, y = 110,
+            size = 5,
+            text_wrap = TRUE,
+            hjust = 0) +
+*stamp_text(label = "The Pearsonncorrelationnis about 0.81",
+*          x = 18, y = 15,
+*          size = 5, hjust = 0)
+```
+]
+ 
+.panel2-stamp_text_56-auto[
+![](exploded_examples_files/figure-html/stamp_text_56_auto_06_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_text
+.panel1-stamp_text_56-auto[
+
+```r
+# stamping text on a plot
+library(ggplot2)
+ggplot(cars) +
+ aes(speed, dist) +
+ geom_point() +
+ stamp_text(label = "A 1920s study on speed v. stopping distance tells us there is a correlation between how fast a car is going and how long it takes to stop.",
+            x = 3, y = 110,
+            size = 5,
+            text_wrap = TRUE,
+            hjust = 0) +
+ stamp_text(label = "The Pearsonncorrelationnis about 0.81",
+           x = 18, y = 15,
+           size = 5, hjust = 0) +
+*stamp_text(label = 'bold(italic(p)*"-value"&lt;"0.01")',
+*           parse = TRUE,
+*           size = 5, x = 23, y = 2)
+```
+]
+ 
+.panel2-stamp_text_56-auto[
+![](exploded_examples_files/figure-html/stamp_text_56_auto_07_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_text
+.panel1-stamp_text_56-auto[
+
+```r
+# stamping text on a plot
+library(ggplot2)
+ggplot(cars) +
+ aes(speed, dist) +
+ geom_point() +
+ stamp_text(label = "A 1920s study on speed v. stopping distance tells us there is a correlation between how fast a car is going and how long it takes to stop.",
+            x = 3, y = 110,
+            size = 5,
+            text_wrap = TRUE,
+            hjust = 0) +
+ stamp_text(label = "The Pearsonncorrelationnis about 0.81",
+           x = 18, y = 15,
+           size = 5, hjust = 0) +
+ stamp_text(label = 'bold(italic(p)*"-value"&lt;"0.01")',
+            parse = TRUE,
+            size = 5, x = 23, y = 2)
+*cor.test(cars$speed, cars$dist)
+```
+]
+ 
+.panel2-stamp_text_56-auto[
+![](exploded_examples_files/figure-html/stamp_text_56_auto_08_output-1.png)&lt;!-- --&gt;
+
+```
+
+	Pearson's product-moment correlation
+
+data:  cars$speed and cars$dist
+t = 9.464, df = 48, p-value = 1.49e-12
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ 0.6816422 0.8862036
+sample estimates:
+      cor 
+0.8068949 
+```
+]
+
+&lt;style&gt;
+.panel1-stamp_text_56-auto {
+  color: black;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-stamp_text_56-auto {
+  color: black;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-stamp_text_56-auto {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+
+
+
+
+---
+
+count: false
+ 
+### stamp_textbox
+.panel1-stamp_textbox_57-auto[
+
+```r
+# label on a canvas
+*library(ggtext)
+```
+]
+ 
+.panel2-stamp_textbox_57-auto[
+
+]
+
+---
+count: false
+ 
+### stamp_textbox
+.panel1-stamp_textbox_57-auto[
+
+```r
+# label on a canvas
+library(ggtext)
+*ggcanvas()
+```
+]
+ 
+.panel2-stamp_textbox_57-auto[
+![](exploded_examples_files/figure-html/stamp_textbox_57_auto_02_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_textbox
+.panel1-stamp_textbox_57-auto[
+
+```r
+# label on a canvas
+library(ggtext)
+ggcanvas() +
+*  stamp_textbox()
+```
+]
+ 
+.panel2-stamp_textbox_57-auto[
+![](exploded_examples_files/figure-html/stamp_textbox_57_auto_03_output-1.png)&lt;!-- --&gt;
+]
+
+&lt;style&gt;
+.panel1-stamp_textbox_57-auto {
+  color: black;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-stamp_textbox_57-auto {
+  color: black;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-stamp_textbox_57-auto {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+
+
+
+
+---
+
+count: false
+ 
+### stamp_textbox
+.panel1-stamp_textbox_58-auto[
+
+```r
+# labels on a plot
+*library(ggplot2)
+```
+]
+ 
+.panel2-stamp_textbox_58-auto[
+
+]
+
+---
+count: false
+ 
+### stamp_textbox
+.panel1-stamp_textbox_58-auto[
+
+```r
+# labels on a plot
+library(ggplot2)
+*ggplot(cars)
+```
+]
+ 
+.panel2-stamp_textbox_58-auto[
+![](exploded_examples_files/figure-html/stamp_textbox_58_auto_02_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_textbox
+.panel1-stamp_textbox_58-auto[
+
+```r
+# labels on a plot
+library(ggplot2)
+ggplot(cars) +
+*aes(speed, dist)
+```
+]
+ 
+.panel2-stamp_textbox_58-auto[
+![](exploded_examples_files/figure-html/stamp_textbox_58_auto_03_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_textbox
+.panel1-stamp_textbox_58-auto[
+
+```r
+# labels on a plot
+library(ggplot2)
+ggplot(cars) +
+ aes(speed, dist) +
+*geom_point()
+```
+]
+ 
+.panel2-stamp_textbox_58-auto[
+![](exploded_examples_files/figure-html/stamp_textbox_58_auto_04_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_textbox
+.panel1-stamp_textbox_58-auto[
+
+```r
+# labels on a plot
+library(ggplot2)
+ggplot(cars) +
+ aes(speed, dist) +
+ geom_point() +
+*stamp_textbox(x = 20, y = 10)
+```
+]
+ 
+.panel2-stamp_textbox_58-auto[
+![](exploded_examples_files/figure-html/stamp_textbox_58_auto_05_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_textbox
+.panel1-stamp_textbox_58-auto[
+
+```r
+# labels on a plot
+library(ggplot2)
+ggplot(cars) +
+ aes(speed, dist) +
+ geom_point() +
+ stamp_textbox(x = 20, y = 10) +
+*stamp_textbox(x = 20, y = 40, label = "*hello*")
+```
+]
+ 
+.panel2-stamp_textbox_58-auto[
+![](exploded_examples_files/figure-html/stamp_textbox_58_auto_06_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_textbox
+.panel1-stamp_textbox_58-auto[
+
+```r
+# labels on a plot
+library(ggplot2)
+ggplot(cars) +
+ aes(speed, dist) +
+ geom_point() +
+ stamp_textbox(x = 20, y = 10) +
+ stamp_textbox(x = 20, y = 40, label = "*hello*") +
+*stamp_textbox(label = "**world**", hjust = 0,
+*y = 77, x = 5, fill = "cadetblue2", label.size = 0)
+```
+]
+ 
+.panel2-stamp_textbox_58-auto[
+![](exploded_examples_files/figure-html/stamp_textbox_58_auto_07_output-1.png)&lt;!-- --&gt;
+]
+
+&lt;style&gt;
+.panel1-stamp_textbox_58-auto {
+  color: black;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-stamp_textbox_58-auto {
+  color: black;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-stamp_textbox_58-auto {
   color: black;
   width: NA%;
   hight: 33%;
@@ -5439,7 +7212,7 @@ count: false
 count: false
  
 ### stamp_tile
-.panel1-stamp_tile_44-auto[
+.panel1-stamp_tile_59-auto[
 
 ```r
 # on a canvas
@@ -5447,15 +7220,15 @@ count: false
 ```
 ]
  
-.panel2-stamp_tile_44-auto[
-![](exploded_examples_files/figure-html/stamp_tile_44_auto_01_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_tile_59-auto[
+![](exploded_examples_files/figure-html/stamp_tile_59_auto_01_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_tile
-.panel1-stamp_tile_44-auto[
+.panel1-stamp_tile_59-auto[
 
 ```r
 # on a canvas
@@ -5464,15 +7237,15 @@ ggcanvas() +
 ```
 ]
  
-.panel2-stamp_tile_44-auto[
-![](exploded_examples_files/figure-html/stamp_tile_44_auto_02_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_tile_59-auto[
+![](exploded_examples_files/figure-html/stamp_tile_59_auto_02_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_tile
-.panel1-stamp_tile_44-auto[
+.panel1-stamp_tile_59-auto[
 
 ```r
 # on a canvas
@@ -5485,15 +7258,15 @@ ggcanvas() +
 ```
 ]
  
-.panel2-stamp_tile_44-auto[
-![](exploded_examples_files/figure-html/stamp_tile_44_auto_03_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_tile_59-auto[
+![](exploded_examples_files/figure-html/stamp_tile_59_auto_03_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_tile
-.panel1-stamp_tile_44-auto[
+.panel1-stamp_tile_59-auto[
 
 ```r
 # on a canvas
@@ -5507,12 +7280,12 @@ ggcanvas() +
 ```
 ]
  
-.panel2-stamp_tile_44-auto[
-![](exploded_examples_files/figure-html/stamp_tile_44_auto_04_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_tile_59-auto[
+![](exploded_examples_files/figure-html/stamp_tile_59_auto_04_output-1.png)&lt;!-- --&gt;
 ]
 
 &lt;style&gt;
-.panel1-stamp_tile_44-auto {
+.panel1-stamp_tile_59-auto {
   color: black;
   width: 38.6060606060606%;
   hight: 32%;
@@ -5520,7 +7293,7 @@ ggcanvas() +
   padding-left: 1%;
   font-size: 80%
 }
-.panel2-stamp_tile_44-auto {
+.panel2-stamp_tile_59-auto {
   color: black;
   width: 59.3939393939394%;
   hight: 32%;
@@ -5528,7 +7301,7 @@ ggcanvas() +
   padding-left: 1%;
   font-size: 80%
 }
-.panel3-stamp_tile_44-auto {
+.panel3-stamp_tile_59-auto {
   color: black;
   width: NA%;
   hight: 33%;
@@ -5549,7 +7322,7 @@ ggcanvas() +
 count: false
  
 ### stamp_tile
-.panel1-stamp_tile_45-auto[
+.panel1-stamp_tile_60-auto[
 
 ```r
 # tile
@@ -5557,7 +7330,7 @@ count: false
 ```
 ]
  
-.panel2-stamp_tile_45-auto[
+.panel2-stamp_tile_60-auto[
 
 ]
 
@@ -5565,7 +7338,7 @@ count: false
 count: false
  
 ### stamp_tile
-.panel1-stamp_tile_45-auto[
+.panel1-stamp_tile_60-auto[
 
 ```r
 # tile
@@ -5574,15 +7347,15 @@ library(ggplot2)
 ```
 ]
  
-.panel2-stamp_tile_45-auto[
-![](exploded_examples_files/figure-html/stamp_tile_45_auto_02_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_tile_60-auto[
+![](exploded_examples_files/figure-html/stamp_tile_60_auto_02_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_tile
-.panel1-stamp_tile_45-auto[
+.panel1-stamp_tile_60-auto[
 
 ```r
 # tile
@@ -5592,15 +7365,15 @@ ggplot(cars) +
 ```
 ]
  
-.panel2-stamp_tile_45-auto[
-![](exploded_examples_files/figure-html/stamp_tile_45_auto_03_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_tile_60-auto[
+![](exploded_examples_files/figure-html/stamp_tile_60_auto_03_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_tile
-.panel1-stamp_tile_45-auto[
+.panel1-stamp_tile_60-auto[
 
 ```r
 # tile
@@ -5611,15 +7384,15 @@ ggplot(cars) +
 ```
 ]
  
-.panel2-stamp_tile_45-auto[
-![](exploded_examples_files/figure-html/stamp_tile_45_auto_04_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_tile_60-auto[
+![](exploded_examples_files/figure-html/stamp_tile_60_auto_04_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_tile
-.panel1-stamp_tile_45-auto[
+.panel1-stamp_tile_60-auto[
 
 ```r
 # tile
@@ -5632,15 +7405,15 @@ ggplot(cars) +
 ```
 ]
  
-.panel2-stamp_tile_45-auto[
-![](exploded_examples_files/figure-html/stamp_tile_45_auto_05_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_tile_60-auto[
+![](exploded_examples_files/figure-html/stamp_tile_60_auto_05_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_tile
-.panel1-stamp_tile_45-auto[
+.panel1-stamp_tile_60-auto[
 
 ```r
 # tile
@@ -5656,12 +7429,12 @@ ggplot(cars) +
 ```
 ]
  
-.panel2-stamp_tile_45-auto[
-![](exploded_examples_files/figure-html/stamp_tile_45_auto_06_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_tile_60-auto[
+![](exploded_examples_files/figure-html/stamp_tile_60_auto_06_output-1.png)&lt;!-- --&gt;
 ]
 
 &lt;style&gt;
-.panel1-stamp_tile_45-auto {
+.panel1-stamp_tile_60-auto {
   color: black;
   width: 38.6060606060606%;
   hight: 32%;
@@ -5669,7 +7442,7 @@ ggplot(cars) +
   padding-left: 1%;
   font-size: 80%
 }
-.panel2-stamp_tile_45-auto {
+.panel2-stamp_tile_60-auto {
   color: black;
   width: 59.3939393939394%;
   hight: 32%;
@@ -5677,7 +7450,7 @@ ggplot(cars) +
   padding-left: 1%;
   font-size: 80%
 }
-.panel3-stamp_tile_45-auto {
+.panel3-stamp_tile_60-auto {
   color: black;
   width: NA%;
   hight: 33%;
@@ -5698,7 +7471,7 @@ ggplot(cars) +
 count: false
  
 ### stamp_tile
-.panel1-stamp_tile_46-auto[
+.panel1-stamp_tile_61-auto[
 
 ```r
 # using a positioner
@@ -5706,15 +7479,15 @@ count: false
 ```
 ]
  
-.panel2-stamp_tile_46-auto[
-![](exploded_examples_files/figure-html/stamp_tile_46_auto_01_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_tile_61-auto[
+![](exploded_examples_files/figure-html/stamp_tile_61_auto_01_output-1.png)&lt;!-- --&gt;
 ]
 
 ---
 count: false
  
 ### stamp_tile
-.panel1-stamp_tile_46-auto[
+.panel1-stamp_tile_61-auto[
 
 ```r
 # using a positioner
@@ -5723,12 +7496,12 @@ ggcanvas() +
 ```
 ]
  
-.panel2-stamp_tile_46-auto[
-![](exploded_examples_files/figure-html/stamp_tile_46_auto_02_output-1.png)&lt;!-- --&gt;
+.panel2-stamp_tile_61-auto[
+![](exploded_examples_files/figure-html/stamp_tile_61_auto_02_output-1.png)&lt;!-- --&gt;
 ]
 
 &lt;style&gt;
-.panel1-stamp_tile_46-auto {
+.panel1-stamp_tile_61-auto {
   color: black;
   width: 38.6060606060606%;
   hight: 32%;
@@ -5736,7 +7509,7 @@ ggcanvas() +
   padding-left: 1%;
   font-size: 80%
 }
-.panel2-stamp_tile_46-auto {
+.panel2-stamp_tile_61-auto {
   color: black;
   width: 59.3939393939394%;
   hight: 32%;
@@ -5744,7 +7517,212 @@ ggcanvas() +
   padding-left: 1%;
   font-size: 80%
 }
-.panel3-stamp_tile_46-auto {
+.panel3-stamp_tile_61-auto {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+
+
+
+
+---
+
+count: false
+ 
+### stamp_vline
+.panel1-stamp_vline_62-auto[
+
+```r
+# on a canvas
+*ggcanvas()
+```
+]
+ 
+.panel2-stamp_vline_62-auto[
+![](exploded_examples_files/figure-html/stamp_vline_62_auto_01_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_vline
+.panel1-stamp_vline_62-auto[
+
+```r
+# on a canvas
+ggcanvas() +
+*stamp_vline(color = "cadetblue")
+```
+]
+ 
+.panel2-stamp_vline_62-auto[
+![](exploded_examples_files/figure-html/stamp_vline_62_auto_02_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_vline
+.panel1-stamp_vline_62-auto[
+
+```r
+# on a canvas
+ggcanvas() +
+stamp_vline(color = "cadetblue") +
+*stamp_vline(0:5,
+*          linetype = rep(c("dotted", "dashed"), 3))
+```
+]
+ 
+.panel2-stamp_vline_62-auto[
+![](exploded_examples_files/figure-html/stamp_vline_62_auto_03_output-1.png)&lt;!-- --&gt;
+]
+
+&lt;style&gt;
+.panel1-stamp_vline_62-auto {
+  color: black;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-stamp_vline_62-auto {
+  color: black;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-stamp_vline_62-auto {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+
+
+
+
+---
+
+count: false
+ 
+### stamp_vline
+.panel1-stamp_vline_63-auto[
+
+```r
+*library(ggplot2)
+```
+]
+ 
+.panel2-stamp_vline_63-auto[
+
+]
+
+---
+count: false
+ 
+### stamp_vline
+.panel1-stamp_vline_63-auto[
+
+```r
+library(ggplot2)
+*ggplot(cars)
+```
+]
+ 
+.panel2-stamp_vline_63-auto[
+![](exploded_examples_files/figure-html/stamp_vline_63_auto_02_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_vline
+.panel1-stamp_vline_63-auto[
+
+```r
+library(ggplot2)
+ggplot(cars) +
+*aes(speed, dist)
+```
+]
+ 
+.panel2-stamp_vline_63-auto[
+![](exploded_examples_files/figure-html/stamp_vline_63_auto_03_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_vline
+.panel1-stamp_vline_63-auto[
+
+```r
+library(ggplot2)
+ggplot(cars) +
+aes(speed, dist) +
+*geom_point()
+```
+]
+ 
+.panel2-stamp_vline_63-auto[
+![](exploded_examples_files/figure-html/stamp_vline_63_auto_04_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+### stamp_vline
+.panel1-stamp_vline_63-auto[
+
+```r
+library(ggplot2)
+ggplot(cars) +
+aes(speed, dist) +
+geom_point() +
+*stamp_vline()
+```
+]
+ 
+.panel2-stamp_vline_63-auto[
+![](exploded_examples_files/figure-html/stamp_vline_63_auto_05_output-1.png)&lt;!-- --&gt;
+]
+
+&lt;style&gt;
+.panel1-stamp_vline_63-auto {
+  color: black;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-stamp_vline_63-auto {
+  color: black;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-stamp_vline_63-auto {
   color: black;
   width: NA%;
   hight: 33%;
