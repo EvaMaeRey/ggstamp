@@ -127,3 +127,6 @@ stamp_polygon <- function(x0 = 0,
 #         position = PositionIdentity, data = data, mapping = aes_all(names(data)),
 #         inherit.aes = FALSE, show.legend = FALSE)
 # }
+
+
+

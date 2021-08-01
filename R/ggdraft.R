@@ -47,7 +47,19 @@ ggdraft <- function(x = 0, y = 0,
       legend.background = element_rect(fill = "transparent"), # get rid of legend bg
       legend.box.background = element_rect(fill = "transparent"), # get rid of legend panel bg
       axis.title = element_blank()
-    )
+    ) ->
+  g
+
+
+  if(width == 100){
+
+    g +
+      scale_x_continuous(breaks = 0:5*20) +
+      scale_y_continuous(breaks = 0:5*20) ->
+      g
+
+  }
+
+  g
 
 }
-

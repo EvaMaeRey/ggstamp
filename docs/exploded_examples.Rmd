@@ -684,9 +684,99 @@ ggplot(cars) +
 
 ---
 
-`r flipbookr::chunk_reveal('stamp_polygon_43', title = '### stamp_polygon')`
+`r flipbookr::chunk_reveal('stamp_polygon_holes_43', title = '### stamp_polygon_holes')`
 
-```{r stamp_polygon_43, include = F}
+```{r stamp_polygon_holes_43, include = F}
+# some more
+ ggcanvas() +
+  stamp_png(width = 3) +
+  stamp_polygon_holes(x0y0 = pos_honeycomb(n = 5),
+  radius = .95,
+                        radius_outer = Inf) +
+  stamp_polygon(alpha = .2, radius = .95,
+                color = "grey30")
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('stamp_polygon_inverse_44', title = '### stamp_polygon_inverse')`
+
+```{r stamp_polygon_inverse_44, include = F}
+# lots of polygons
+ ggcanvas() +
+ stamp_polygon_inverse(radius = 3, n = 5,
+                       fill = "turquoise") +
+ stamp_polygon_inverse(fill = "slateblue2",
+                       radius = 1.5, n = 7) +
+ stamp_polygon_inverse(linetype = "dashed",
+                       alpha = .5, fill = "plum2") +
+ stamp_polygon_inverse(x0 = 1, y0 = 1.5, n = 3,
+                       rotation = .25, size = 0,
+                       fill = "goldenrod2") +
+ stamp_polygon_inverse(n = 50, radius = .2,
+                       size = 0) +
+ stamp_spoke(angle = pi * 1:7/15, radius = 2)
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('stamp_polygon_inverse_45', title = '### stamp_polygon_inverse')`
+
+```{r stamp_polygon_inverse_45, include = F}
+# on a canvas
+ ggcanvas() +
+  stamp_polygon_inverse(n = 3, x0 = c(0,2.5),
+  fill = "magenta", color = "purple") +
+  stamp_label(x = pos_spoke_x(x0 = 0, n = 3),
+              y = pos_spoke_y(y0 = 0, n = 3),
+              label = c("hi", "hello", "bye")) +
+  stamp_point(color = "turquoise")
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('stamp_polygon_inverse_46', title = '### stamp_polygon_inverse')`
+
+```{r stamp_polygon_inverse_46, include = F}
+# on plot space
+library(ggplot2)
+ggplot(cars) +
+ aes(speed, dist) +
+ geom_point() +
+ stamp_polygon_inverse(x0 = 20, y0 =50, color = "darkred",
+ size = .5,
+ radius = 10)
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('stamp_polygon_inverse_47', title = '### stamp_polygon_inverse')`
+
+```{r stamp_polygon_inverse_47, include = F}
+# some more
+ ggcanvas() +
+  stamp_png() +
+  stamp_polygon_inverse(radius = .45,
+                        radius_outer = Inf) +
+  stamp_polygon(alpha = .2, radius = .45,
+                color = "grey30")
+```
+
+
+
+---
+
+`r flipbookr::chunk_reveal('stamp_polygon_48', title = '### stamp_polygon')`
+
+```{r stamp_polygon_48, include = F}
 # lots of polygons
  ggcanvas() +
  stamp_polygon(color = "turquoise4", radius = 3, n = 5, fill = "turquoise") +
@@ -702,9 +792,9 @@ ggplot(cars) +
 
 ---
 
-`r flipbookr::chunk_reveal('stamp_polygon_44', title = '### stamp_polygon')`
+`r flipbookr::chunk_reveal('stamp_polygon_49', title = '### stamp_polygon')`
 
-```{r stamp_polygon_44, include = F}
+```{r stamp_polygon_49, include = F}
 # on a canvas
  ggcanvas() +
   stamp_polygon(n = 3, x0 = c(0, 2.5),
@@ -719,9 +809,9 @@ ggplot(cars) +
 
 ---
 
-`r flipbookr::chunk_reveal('stamp_polygon_45', title = '### stamp_polygon')`
+`r flipbookr::chunk_reveal('stamp_polygon_50', title = '### stamp_polygon')`
 
-```{r stamp_polygon_45, include = F}
+```{r stamp_polygon_50, include = F}
 # on plot space
 library(ggplot2)
 ggplot(cars) +
@@ -734,9 +824,9 @@ ggplot(cars) +
 
 ---
 
-`r flipbookr::chunk_reveal('stamp_polygon_46', title = '### stamp_polygon')`
+`r flipbookr::chunk_reveal('stamp_polygon_51', title = '### stamp_polygon')`
 
-```{r stamp_polygon_46, include = F}
+```{r stamp_polygon_51, include = F}
 # some more
  ggcanvas() +
   stamp_polygon(x0y0 = pos_wrap(n = 5, ncol = 3, height = 1.5),
@@ -749,9 +839,9 @@ ggplot(cars) +
 
 ---
 
-`r flipbookr::chunk_reveal('stamp_rect_47', title = '### stamp_rect')`
+`r flipbookr::chunk_reveal('stamp_rect_52', title = '### stamp_rect')`
 
-```{r stamp_rect_47, include = F}
+```{r stamp_rect_52, include = F}
 # on a canvas
 ggcanvas() +
  stamp_rect(fill = "green") +
@@ -767,9 +857,9 @@ ggcanvas() +
 
 ---
 
-`r flipbookr::chunk_reveal('stamp_rect_48', title = '### stamp_rect')`
+`r flipbookr::chunk_reveal('stamp_rect_53', title = '### stamp_rect')`
 
-```{r stamp_rect_48, include = F}
+```{r stamp_rect_53, include = F}
 # rect
 library(ggplot2)
 ggplot(cars) +
@@ -785,9 +875,9 @@ ggplot(cars) +
 
 ---
 
-`r flipbookr::chunk_reveal('stamp_segment_49', title = '### stamp_segment')`
+`r flipbookr::chunk_reveal('stamp_segment_54', title = '### stamp_segment')`
 
-```{r stamp_segment_49, include = F}
+```{r stamp_segment_54, include = F}
 # segment on plot space
 library(ggplot2)
 ggplot(cars) +
@@ -801,9 +891,9 @@ ggplot(cars) +
 
 ---
 
-`r flipbookr::chunk_reveal('stamp_segment_50', title = '### stamp_segment')`
+`r flipbookr::chunk_reveal('stamp_segment_55', title = '### stamp_segment')`
 
-```{r stamp_segment_50, include = F}
+```{r stamp_segment_55, include = F}
 # segments on canvas
  ggcanvas() +
  stamp_segment(color = "green") +
@@ -815,9 +905,9 @@ ggplot(cars) +
 
 ---
 
-`r flipbookr::chunk_reveal('stamp_spoke_51', title = '### stamp_spoke')`
+`r flipbookr::chunk_reveal('stamp_spoke_56', title = '### stamp_spoke')`
 
-```{r stamp_spoke_51, include = F}
+```{r stamp_spoke_56, include = F}
 # on canvas
  ggcanvas() +
  stamp_spoke(color = "green") +
@@ -835,9 +925,9 @@ ggplot(cars) +
 
 ---
 
-`r flipbookr::chunk_reveal('stamp_spoke_52', title = '### stamp_spoke')`
+`r flipbookr::chunk_reveal('stamp_spoke_57', title = '### stamp_spoke')`
 
-```{r stamp_spoke_52, include = F}
+```{r stamp_spoke_57, include = F}
 # on plot
 library(ggplot2)
 ggplot(cars) +
@@ -850,9 +940,9 @@ ggplot(cars) +
 
 ---
 
-`r flipbookr::chunk_reveal('stamp_text_box_53', title = '### stamp_text_box')`
+`r flipbookr::chunk_reveal('stamp_text_box_58', title = '### stamp_text_box')`
 
-```{r stamp_text_box_53, include = F}
+```{r stamp_text_box_58, include = F}
 # label on a canvas
 ggcanvas() +
    stamp_label()
@@ -862,9 +952,9 @@ ggcanvas() +
 
 ---
 
-`r flipbookr::chunk_reveal('stamp_text_box_54', title = '### stamp_text_box')`
+`r flipbookr::chunk_reveal('stamp_text_box_59', title = '### stamp_text_box')`
 
-```{r stamp_text_box_54, include = F}
+```{r stamp_text_box_59, include = F}
 # labels on a plot
 library(ggplot2)
 ggplot(cars) +
@@ -879,9 +969,9 @@ ggplot(cars) +
 
 ---
 
-`r flipbookr::chunk_reveal('stamp_text_55', title = '### stamp_text')`
+`r flipbookr::chunk_reveal('stamp_text_60', title = '### stamp_text')`
 
-```{r stamp_text_55, include = F}
+```{r stamp_text_60, include = F}
 # some more
  ggcanvas() +
   stamp_text() +
@@ -904,9 +994,9 @@ ggplot(cars) +
 
 ---
 
-`r flipbookr::chunk_reveal('stamp_text_56', title = '### stamp_text')`
+`r flipbookr::chunk_reveal('stamp_text_61', title = '### stamp_text')`
 
-```{r stamp_text_56, include = F}
+```{r stamp_text_61, include = F}
 # stamping text on a plot
 library(ggplot2)
 ggplot(cars) +
@@ -930,40 +1020,42 @@ ggplot(cars) +
 
 ---
 
-`r flipbookr::chunk_reveal('stamp_textbox_57', title = '### stamp_textbox')`
+`r flipbookr::chunk_reveal('stamp_textbox_62', title = '### stamp_textbox')`
 
-```{r stamp_textbox_57, include = F}
+```{r stamp_textbox_62, include = F}
 # label on a canvas
 library(ggtext)
-ggcanvas() +
-   stamp_textbox()
+ggdraft() +
+   stamp_textbox(40, 30, width = unit(0.3, "npc")) +
+   stamp_point(x = 1:3*10, y = 1)
 ```
 
 
 
 ---
 
-`r flipbookr::chunk_reveal('stamp_textbox_58', title = '### stamp_textbox')`
+`r flipbookr::chunk_reveal('stamp_textbox_63', title = '### stamp_textbox')`
 
-```{r stamp_textbox_58, include = F}
+```{r stamp_textbox_63, include = F}
 # labels on a plot
 library(ggplot2)
 ggplot(cars) +
  aes(speed, dist) +
  geom_point() +
- stamp_textbox(x = 20, y = 10) +
- stamp_textbox(x = 20, y = 40, label = "*hello*") +
+ stamp_textbox(x = 20, y = 40) +
+ stamp_textbox(x = 20, y = 20, label = "*hello*") +
  stamp_textbox(label = "**world**", hjust = 0,
- y = 77, x = 5, fill = "cadetblue2", label.size = 0)
+ y = 10, x = 5, fill = "cadetblue2", label.size = 0) +
+ stamp_point()
 ```
 
 
 
 ---
 
-`r flipbookr::chunk_reveal('stamp_tile_59', title = '### stamp_tile')`
+`r flipbookr::chunk_reveal('stamp_tile_64', title = '### stamp_tile')`
 
-```{r stamp_tile_59, include = F}
+```{r stamp_tile_64, include = F}
 # on a canvas
 ggcanvas() +
  stamp_tile(fill = "green") +
@@ -978,9 +1070,9 @@ ggcanvas() +
 
 ---
 
-`r flipbookr::chunk_reveal('stamp_tile_60', title = '### stamp_tile')`
+`r flipbookr::chunk_reveal('stamp_tile_65', title = '### stamp_tile')`
 
-```{r stamp_tile_60, include = F}
+```{r stamp_tile_65, include = F}
 # tile
 library(ggplot2)
 ggplot(cars) +
@@ -997,9 +1089,9 @@ ggplot(cars) +
 
 ---
 
-`r flipbookr::chunk_reveal('stamp_tile_61', title = '### stamp_tile')`
+`r flipbookr::chunk_reveal('stamp_tile_66', title = '### stamp_tile')`
 
-```{r stamp_tile_61, include = F}
+```{r stamp_tile_66, include = F}
 # using a positioner
 ggcanvas() +
  stamp_tile(xy = pos_spoke())
@@ -1009,9 +1101,9 @@ ggcanvas() +
 
 ---
 
-`r flipbookr::chunk_reveal('stamp_vline_62', title = '### stamp_vline')`
+`r flipbookr::chunk_reveal('stamp_vline_67', title = '### stamp_vline')`
 
-```{r stamp_vline_62, include = F}
+```{r stamp_vline_67, include = F}
 # on a canvas
 ggcanvas() +
 stamp_vline(color = "cadetblue") +
@@ -1023,9 +1115,9 @@ stamp_vline(0:5,
 
 ---
 
-`r flipbookr::chunk_reveal('stamp_vline_63', title = '### stamp_vline')`
+`r flipbookr::chunk_reveal('stamp_vline_68', title = '### stamp_vline')`
 
-```{r stamp_vline_63, include = F}
+```{r stamp_vline_68, include = F}
 library(ggplot2)
 ggplot(cars) +
 aes(speed, dist) +

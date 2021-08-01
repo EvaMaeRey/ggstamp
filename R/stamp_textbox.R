@@ -13,7 +13,6 @@
 #' @param fill background color of label, consider named colors https://evamaerey.github.io/ggplot2_grammar_guide/named_colors
 #' @param lineheight spacing between lines if text is wrapped
 #' @param family font family
-#' @param fontface
 #' @param hjust horizontal justification, between 0 and 1, defaults to .5
 #' @param size size of text
 #' @param vjust vertical justification, between 0 and 1, defaults to .5
@@ -25,6 +24,8 @@
 #' @param nudge_x Horizontal adjustment to nudge labels by. Useful for offsetting text from points, particularly on discrete scales.
 #' @param nudge_y Vertical adjustment to nudge labels by. Useful for offsetting text from points, particularly on discrete scales.
 #'
+#' @param orientation
+#' @param width
 #'
 #' @return
 #' @export
@@ -35,15 +36,17 @@
 #' ggplot(cars) +
 #'  aes(speed, dist) +
 #'  geom_point() +
-#'  stamp_textbox(x = 20, y = 10) +
-#'  stamp_textbox(x = 20, y = 40, label = "*hello*") +
+#'  stamp_textbox(x = 20, y = 40) +
+#'  stamp_textbox(x = 20, y = 20, label = "*hello*") +
 #'  stamp_textbox(label = "**world**", hjust = 0,
-#'  y = 77, x = 5, fill = "cadetblue2", label.size = 0)
+#'  y = 10, x = 5, fill = "cadetblue2", label.size = 0) +
+#'  stamp_point()
 #'
 #' # label on a canvas
 #' library(ggtext)
-#' ggcanvas() +
-#'    stamp_textbox()
+#' ggdraft() +
+#'    stamp_textbox(40, 30, width = unit(0.3, "npc")) +
+#'    stamp_point(x = 1:3*10, y = 1)
 #'
 stamp_textbox <- function(x = 0,
                        y = 0,
