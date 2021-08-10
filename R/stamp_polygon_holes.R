@@ -20,12 +20,12 @@
 #' @examples
 #' # some more
 #'  ggcanvas() +
-#'   stamp_png(width = 3) +
-#'   stamp_polygon_holes(x0y0 = pos_honeycomb(n = 5),
-#'   radius = .95,
-#'                         radius_outer = Inf) +
-#'   stamp_polygon(alpha = .2, radius = .95,
-#'                 color = "grey30")
+#'   stamp_png(width = 7, x0 = 2.5, y0 = -2.5) +
+#'   stamp_polygon_holes(x0y0 = pos_honeycomb(n = 400, ncol = 20, width = .3,
+#'   x0 = .03, y0 = -.03), fill = "grey35", radius = .14) +
+#'   stamp_polygon_holes(x0y0 = pos_honeycomb(n = 400, ncol = 20, width = .3),
+#'   radius = .14, fill = "goldenrod3", n = 6,
+#'                         radius_outer = Inf)
 stamp_polygon_holes <- function(x0 = 0,
                           y0 = 0,
                           n = 6,
@@ -47,24 +47,33 @@ stamp_polygon_holes <- function(x0 = 0,
   groups <- max(c(length(x0), length(y0)))
 
   tibble::tibble(x0, y0, group = 1:groups) %>%
-    tidyr::crossing(the_n = 0:n) %>%
+    tidyr::crossing(the_n = 0:(n+1)) %>%
   dplyr::mutate(
-    x = c(x0 + radius * cos(-2*pi*0:(n)/n - rotation * pi)),
-    y = c(y0 + radius * sin(-2*pi*0:(n)/n - rotation * pi))
-  ) ->
+    x = c(x0 + radius * cos(-2*pi*0:(n +1)/(n) - rotation * pi)),
+    y = c(y0 + radius * sin(-2*pi*0:(n +1)/(n) - rotation * pi))
+  ) %>%
+    dplyr::mutate(x = ifelse(the_n == (n+1), radius_outer, x)) %>%
+    dplyr::mutate(y = ifelse(the_n == (n+1), radius_outer, y)) ->
   df_poly
 
   # tibble::tibble(x0, y0, group = 1:groups) %>%
   #   tidyr::crossing(the_n = 1:5) %>%
   dplyr::tibble(
-  x = c(1, -1, -1, 1, 1)*radius_outer,
-  y = c(1, 1, -1,-1, 1)*radius_outer
+  x = c(1, -1, -1, 1, 1) * radius_outer,
+  y = c(1, 1, -1,-1, 1) * radius_outer
   ) %>%
       dplyr::mutate(group = 0) ->
   outer
 
   dplyr::bind_rows(outer, df_poly) ->
     df
+
+  # df %>%
+  #   mutate(id = 1:n()) %>%
+  #   ggplot() +
+  #   aes(x = x, y = y, label = id) +
+  #   geom_text(alpha = .5) +
+  #   coord_cartesian(clip ="off")
 
   annotate(geom = "polygon",
            x = df$x,

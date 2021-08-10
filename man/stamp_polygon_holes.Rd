@@ -36,10 +36,10 @@ Contribute or help document https://github.com/EvaMaeRey/ggstamp/blob/master/R/s
 \examples{
 # some more
  ggcanvas() +
-  stamp_png(width = 3) +
-  stamp_polygon_holes(x0y0 = pos_honeycomb(n = 5),
-  radius = .95,
-                        radius_outer = Inf) +
-  stamp_polygon(alpha = .2, radius = .95,
-                color = "grey30")
+  stamp_png(width = 7, x0 = 2.5, y0 = -2.5) +
+  stamp_polygon_holes(x0y0 = pos_honeycomb(n = 400, ncol = 20, width = .3,
+  x0 = .03, y0 = -.03), fill = "grey35", radius = .14) +
+  stamp_polygon_holes(x0y0 = pos_honeycomb(n = 400, ncol = 20, width = .3),
+  radius = .14, fill = "goldenrod3", n = 6,
+                        radius_outer = Inf)
 }

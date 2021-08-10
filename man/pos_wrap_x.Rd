@@ -4,7 +4,7 @@
 \alias{pos_wrap_x}
 \title{Title}
 \usage{
-pos_wrap_x(x0 = 0, n = 5, ncol = 3, width = 1)
+pos_wrap_x(x0 = 0, n = 5, ncol = 3, width = 1, snake = FALSE)
 }
 \arguments{
 \item{n}{}
@@ -14,4 +14,9 @@ pos_wrap_x(x0 = 0, n = 5, ncol = 3, width = 1)
 }
 \description{
 Title
+}
+\examples{
+pos_wrap_x()
+pos_wrap_x(n = 12)
+pos_wrap_x(snake = TRUE)
 }

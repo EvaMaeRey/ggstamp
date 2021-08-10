@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Stamp a polygon of n sides — stamp_polygon_holes • ggstamp</title>
+<title>Stamp some text — stamp_path • ggstamp</title>
 
 
 <!-- jquery -->
@@ -35,9 +35,8 @@
 
 
 
-<meta property="og:title" content="Stamp a polygon of n sides — stamp_polygon_holes" />
-<meta property="og:description" content="This function adds a text annotation layer.
-Contribute or help document https://github.com/EvaMaeRey/ggstamp/blob/master/R/stamp_polygon.R" />
+<meta property="og:title" content="Stamp some text — stamp_path" />
+<meta property="og:description" content="This function adds a text annotation layer" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -113,45 +112,71 @@ Contribute or help document https://github.com/EvaMaeRey/ggstamp/blob/master/R/s
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Stamp a polygon of n sides</h1>
+    <h1>Stamp some text</h1>
     
-    <div class="hidden name"><code>stamp_polygon_holes.Rd</code></div>
+    <div class="hidden name"><code>stamp_path.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This function adds a text annotation layer.
-Contribute or help document https://github.com/EvaMaeRey/ggstamp/blob/master/R/stamp_polygon.R</p>
+    <p>This function adds a text annotation layer</p>
     </div>
 
-    <pre class="usage"><span class='fu'>stamp_polygon_holes</span>(
-  <span class='kw'>x0</span> <span class='kw'>=</span> <span class='fl'>0</span>,
-  <span class='kw'>y0</span> <span class='kw'>=</span> <span class='fl'>0</span>,
-  <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>6</span>,
-  <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>radius_outer</span> <span class='kw'>=</span> <span class='fl'>Inf</span>,
-  <span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>0</span>,
+    <pre class="usage"><span class='fu'>stamp_path</span>(
+  <span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>0</span>:<span class='fl'>3</span>,
+  <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>1</span>),
   <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>rotation</span> <span class='kw'>=</span> -<span class='fl'>0.5</span>,
-  <span class='kw'>linetype</span> <span class='kw'>=</span> <span class='st'>"solid"</span>,
-  <span class='kw'>fill</span> <span class='kw'>=</span> <span class='st'>"white"</span>,
   <span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"black"</span>,
-  <span class='kw'>x0y0</span> <span class='kw'>=</span> <span class='kw'>NULL</span>
+  <span class='kw'>linetype</span> <span class='kw'>=</span> <span class='st'>"solid"</span>,
+  <span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>1.5</span>,
+  <span class='kw'>lineend</span> <span class='kw'>=</span> <span class='st'>"butt"</span>,
+  <span class='kw'>linejoin</span> <span class='kw'>=</span> <span class='st'>"round"</span>,
+  <span class='kw'>arrow</span> <span class='kw'>=</span> <span class='fu'>arrow</span>(<span class='kw'>length</span> <span class='kw'>=</span> <span class='fl'>0</span>),
+  <span class='kw'>arrow.fill</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>xy</span> <span class='kw'>=</span> <span class='kw'>NULL</span>
 )</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>x0</th>
+      <th>x</th>
       <td><p>defaults to 0</p></td>
     </tr>
     <tr>
-      <th>y0</th>
+      <th>y</th>
       <td><p>defaults to 0</p></td>
+    </tr>
+    <tr>
+      <th>alpha</th>
+      <td><p>a numeric between 0 and 1 for transparency, zero is fully transparent, 1 fully opaque</p></td>
     </tr>
     <tr>
       <th>color</th>
-      <td></td>
+      <td><p>line color</p></td>
+    </tr>
+    <tr>
+      <th>linetype</th>
+      <td><p>"solid", "dashed", "dotted"</p></td>
+    </tr>
+    <tr>
+      <th>size</th>
+      <td><p>numeric indicating line width, defaults to 1.5</p></td>
+    </tr>
+    <tr>
+      <th>lineend</th>
+      <td><p>Line end style (round, butt, square).</p></td>
+    </tr>
+    <tr>
+      <th>linejoin</th>
+      <td><p>Line join style (round, mitre, bevel).</p></td>
+    </tr>
+    <tr>
+      <th>arrow</th>
+      <td><p>specification for arrow heads, as created by arrow().</p></td>
+    </tr>
+    <tr>
+      <th>arrow.fill</th>
+      <td><p>fill colour to use for the arrow head (if closed). NULL means use colour aesthetic.</p></td>
     </tr>
     </table>
 
@@ -162,14 +187,13 @@ Contribute or help document https://github.com/EvaMaeRey/ggstamp/blob/master/R/s
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># some more</span>
+    <pre class="examples"><div class='input'><span class='co'># segments on canvas</span>
  <span class='fu'><a href='ggcanvas.html'>ggcanvas</a></span>() +
-  <span class='fu'><a href='stamp_png.html'>stamp_png</a></span>(<span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>7</span>, <span class='kw'>x0</span> <span class='kw'>=</span> <span class='fl'>2.5</span>, <span class='kw'>y0</span> <span class='kw'>=</span> -<span class='fl'>2.5</span>) +
-  <span class='fu'>stamp_polygon_holes</span>(<span class='kw'>x0y0</span> <span class='kw'>=</span> <span class='fu'><a href='pos_honeycomb.html'>pos_honeycomb</a></span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>400</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>20</span>, <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>.3</span>,
-  <span class='kw'>x0</span> <span class='kw'>=</span> <span class='fl'>.03</span>, <span class='kw'>y0</span> <span class='kw'>=</span> -<span class='fl'>.03</span>), <span class='kw'>fill</span> <span class='kw'>=</span> <span class='st'>"grey35"</span>, <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>.14</span>) +
-  <span class='fu'>stamp_polygon_holes</span>(<span class='kw'>x0y0</span> <span class='kw'>=</span> <span class='fu'><a href='pos_honeycomb.html'>pos_honeycomb</a></span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>400</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>20</span>, <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>.3</span>),
-  <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>.14</span>, <span class='kw'>fill</span> <span class='kw'>=</span> <span class='st'>"goldenrod3"</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>6</span>,
-                        <span class='kw'>radius_outer</span> <span class='kw'>=</span> <span class='fl'>Inf</span>)</div><div class='img'><img src='stamp_polygon_holes-1.png' alt='' width='700' height='433' /></div></pre>
+ <span class='fu'>stamp_path</span>(<span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"green"</span>) +
+ <span class='fu'>stamp_path</span>(<span class='kw'>xy</span> <span class='kw'>=</span> <span class='fu'><a href='pos_honeycomb.html'>pos_honeycomb</a></span>(<span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>12</span>),
+            <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>.5</span>, <span class='kw'>lineend</span> <span class='kw'>=</span> <span class='st'>"round"</span>)</div><div class='img'><img src='stamp_path-1.png' alt='' width='700' height='433' /></div><div class='input'>
+
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

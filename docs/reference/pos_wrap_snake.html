@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Stamp a polygon of n sides — stamp_polygon_holes • ggstamp</title>
+<title>Title — pos_wrap_snake • ggstamp</title>
 
 
 <!-- jquery -->
@@ -35,9 +35,8 @@
 
 
 
-<meta property="og:title" content="Stamp a polygon of n sides — stamp_polygon_holes" />
-<meta property="og:description" content="This function adds a text annotation layer.
-Contribute or help document https://github.com/EvaMaeRey/ggstamp/blob/master/R/stamp_polygon.R" />
+<meta property="og:title" content="Title — pos_wrap_snake" />
+<meta property="og:description" content="Title" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -113,44 +112,22 @@ Contribute or help document https://github.com/EvaMaeRey/ggstamp/blob/master/R/s
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Stamp a polygon of n sides</h1>
+    <h1>Title</h1>
     
-    <div class="hidden name"><code>stamp_polygon_holes.Rd</code></div>
+    <div class="hidden name"><code>pos_wrap_snake.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This function adds a text annotation layer.
-Contribute or help document https://github.com/EvaMaeRey/ggstamp/blob/master/R/stamp_polygon.R</p>
+    <p>Title</p>
     </div>
 
-    <pre class="usage"><span class='fu'>stamp_polygon_holes</span>(
-  <span class='kw'>x0</span> <span class='kw'>=</span> <span class='fl'>0</span>,
-  <span class='kw'>y0</span> <span class='kw'>=</span> <span class='fl'>0</span>,
-  <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>6</span>,
-  <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>radius_outer</span> <span class='kw'>=</span> <span class='fl'>Inf</span>,
-  <span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>0</span>,
-  <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>rotation</span> <span class='kw'>=</span> -<span class='fl'>0.5</span>,
-  <span class='kw'>linetype</span> <span class='kw'>=</span> <span class='st'>"solid"</span>,
-  <span class='kw'>fill</span> <span class='kw'>=</span> <span class='st'>"white"</span>,
-  <span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"black"</span>,
-  <span class='kw'>x0y0</span> <span class='kw'>=</span> <span class='kw'>NULL</span>
-)</pre>
+    <pre class="usage"><span class='fu'>pos_wrap_snake</span>(<span class='kw'>x0</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>y0</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>5</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>height</span> <span class='kw'>=</span> <span class='no'>width</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>x0</th>
-      <td><p>defaults to 0</p></td>
-    </tr>
-    <tr>
-      <th>y0</th>
-      <td><p>defaults to 0</p></td>
-    </tr>
-    <tr>
-      <th>color</th>
+      <th>ncol</th>
       <td></td>
     </tr>
     </table>
@@ -162,14 +139,16 @@ Contribute or help document https://github.com/EvaMaeRey/ggstamp/blob/master/R/s
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># some more</span>
- <span class='fu'><a href='ggcanvas.html'>ggcanvas</a></span>() +
-  <span class='fu'><a href='stamp_png.html'>stamp_png</a></span>(<span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>7</span>, <span class='kw'>x0</span> <span class='kw'>=</span> <span class='fl'>2.5</span>, <span class='kw'>y0</span> <span class='kw'>=</span> -<span class='fl'>2.5</span>) +
-  <span class='fu'>stamp_polygon_holes</span>(<span class='kw'>x0y0</span> <span class='kw'>=</span> <span class='fu'><a href='pos_honeycomb.html'>pos_honeycomb</a></span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>400</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>20</span>, <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>.3</span>,
-  <span class='kw'>x0</span> <span class='kw'>=</span> <span class='fl'>.03</span>, <span class='kw'>y0</span> <span class='kw'>=</span> -<span class='fl'>.03</span>), <span class='kw'>fill</span> <span class='kw'>=</span> <span class='st'>"grey35"</span>, <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>.14</span>) +
-  <span class='fu'>stamp_polygon_holes</span>(<span class='kw'>x0y0</span> <span class='kw'>=</span> <span class='fu'><a href='pos_honeycomb.html'>pos_honeycomb</a></span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>400</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>20</span>, <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>.3</span>),
-  <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>.14</span>, <span class='kw'>fill</span> <span class='kw'>=</span> <span class='st'>"goldenrod3"</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>6</span>,
-                        <span class='kw'>radius_outer</span> <span class='kw'>=</span> <span class='fl'>Inf</span>)</div><div class='img'><img src='stamp_polygon_holes-1.png' alt='' width='700' height='433' /></div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>pos_wrap_snake</span>()</div><div class='output co'>#&gt;   x0 y0
+#&gt; 1  0  0
+#&gt; 2  1  0
+#&gt; 3  2  0
+#&gt; 4  2 -1
+#&gt; 5  1 -1</div><div class='input'>
+<span class='fu'><a href='ggcanvas.html'>ggcanvas</a></span>() +
+ <span class='fu'><a href='stamp_path.html'>stamp_path</a></span>(<span class='kw'>xy</span> <span class='kw'>=</span> <span class='fu'>pos_wrap_snake</span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>9</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>3</span>)) +
+ <span class='fu'><a href='stamp_label.html'>stamp_label</a></span>(<span class='kw'>xy</span> <span class='kw'>=</span> <span class='fu'>pos_wrap_snake</span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>9</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>3</span>),
+ <span class='kw'>label</span> <span class='kw'>=</span> <span class='no'>LETTERS</span>[<span class='fl'>1</span>:<span class='fl'>9</span>])</div><div class='output co'>#&gt; <span class='warning'>Warning: Ignoring unknown parameters: nudge_x, nudge_y</span></div><div class='img'><img src='pos_wrap_snake-1.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

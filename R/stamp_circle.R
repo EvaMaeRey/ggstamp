@@ -49,7 +49,7 @@
 #'                radius = .55)
 #'
 stamp_circle <- function(x0 = 0,
-                          y0 = 0,
+                         y0 = 0,
                           n = 100,
                           radius = 1,
                           size = 1.5,
@@ -67,7 +67,7 @@ stamp_circle <- function(x0 = 0,
 
   stamp_polygon(
            x0 = x0,
-           y0 = x0,
+           y0 = y0,
            n = n,
            radius = radius,
            size = size,
