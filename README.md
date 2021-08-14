@@ -84,19 +84,7 @@ devtools::install_github("EvaMaeRey/ggstamp")
 
 ``` r
 library(tidyverse)
-#> ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──
-#> ✓ ggplot2 3.3.5     ✓ purrr   0.3.4
-#> ✓ tibble  3.1.2     ✓ dplyr   1.0.7
-#> ✓ tidyr   1.0.2     ✓ stringr 1.4.0
-#> ✓ readr   1.3.1     ✓ forcats 0.5.0
-#> Warning: package 'ggplot2' was built under R version 3.6.2
-#> Warning: package 'tibble' was built under R version 3.6.2
-#> Warning: package 'purrr' was built under R version 3.6.2
-#> Warning: package 'dplyr' was built under R version 3.6.2
-#> ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-#> x dplyr::filter() masks stats::filter()
-#> x dplyr::lag()    masks stats::lag()
-library(ggstamp)
+library(ggstamp)  
 set.seed(1243)
 tibble::tibble(x = rnorm(40000, sd = .7),
        y = rnorm(40000, sd = .7)) %>% 
@@ -106,7 +94,7 @@ tibble::tibble(x = rnorm(40000, sd = .7),
   coord_equal() + 
   stamp_polygon_inverse(radius = 2, radius_outer = Inf
                         ) + 
-  stamp_polygon(alpha = .2, n = 5,
+  stamp_polygon(alpha = .2, n = 5, size = 1.5,
                 fill = "magenta", color = "grey15",
                 rotation = -.55) + 
   stamp_polygon(radius = .4, n = 3,
@@ -116,17 +104,15 @@ tibble::tibble(x = rnorm(40000, sd = .7),
              x = .7, y = -1,
              color = "snow1") + 
   stamp_text(angle = 30, label = "github.com/EvaMaeRey/ggstamp",
-             x = .7, y = -1.5, size = 1.8,
+             x = .7, y = -1.45, size = 1.8,
              color = "grey85") + 
   stamp_polygon(radius = 2, 
-                alpha = 0, 
+                alpha = 0, size = 2,
                 color = "plum3") + 
   theme_void() +
   ggxmean::stamp_normal_dist(sd = .2, alpha = .8, height = 1.5) + 
   stamp_point(xy = pos_wrap(n = 22, ncol = 6, width = .15, x0 = -.95, y0 = -.3), size = 1,
               color = "seagreen2")
-#> Warning: Ignoring unknown parameters: nudge_x, nudge_y
-#> Warning: Ignoring unknown parameters: nudge_x, nudge_y
 ```
 
 <img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />

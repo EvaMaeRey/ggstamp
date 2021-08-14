@@ -7,6 +7,8 @@ output: github_document
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
+  message = F,
+  warning = F,
   comment = "#>",
   fig.path = "man/figures/README-",
   out.width = "100%"
@@ -78,7 +80,7 @@ devtools::install_github("EvaMaeRey/ggstamp")
 
 ```{r}
 library(tidyverse)
-library(ggstamp)
+library(ggstamp)  
 set.seed(1243)
 tibble::tibble(x = rnorm(40000, sd = .7),
        y = rnorm(40000, sd = .7)) %>% 
@@ -88,7 +90,7 @@ tibble::tibble(x = rnorm(40000, sd = .7),
   coord_equal() + 
   stamp_polygon_inverse(radius = 2, radius_outer = Inf
                         ) + 
-  stamp_polygon(alpha = .2, n = 5,
+  stamp_polygon(alpha = .2, n = 5, size = 1.5,
                 fill = "magenta", color = "grey15",
                 rotation = -.55) + 
   stamp_polygon(radius = .4, n = 3,
@@ -98,10 +100,10 @@ tibble::tibble(x = rnorm(40000, sd = .7),
              x = .7, y = -1,
              color = "snow1") + 
   stamp_text(angle = 30, label = "github.com/EvaMaeRey/ggstamp",
-             x = .7, y = -1.5, size = 1.8,
+             x = .7, y = -1.45, size = 1.8,
              color = "grey85") + 
   stamp_polygon(radius = 2, 
-                alpha = 0, 
+                alpha = 0, size = 2,
                 color = "plum3") + 
   theme_void() +
   ggxmean::stamp_normal_dist(sd = .2, alpha = .8, height = 1.5) + 
