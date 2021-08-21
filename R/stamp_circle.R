@@ -48,17 +48,44 @@
 #'   stamp_circle(x0y0 = pos_wrap(n = 5, ncol = 3, height = 1.5),
 #'                radius = .55)
 #'
+#' # venn
+#' ggcanvas() +
+#'   stamp_circle(
+#'   x0y0 = pos_spoke(n = 3)[1,],
+#'   radius = 1.2,
+#'    alpha = .3, fill = "blue") +
+#'   stamp_circle(
+#'   x0y0 = pos_spoke(n = 3)[2,],
+#'   radius = 1.2,
+#'    alpha = .3, fill = "red") +
+#'   stamp_circle(
+#'   x0y0 = pos_spoke(n = 3)[3,],
+#'   radius = 1.2,
+#'    alpha = .3,
+#'    fill = "green") +
+#'   stamp_text(xy = pos_spoke(n = 3),
+#'     label = c("A", "B", "C"))  +
+#'   stamp_text(xy = pos_spoke(n = 3,
+#'                   rotation = -.166,
+#'                   radius = .65),
+#'     label = c("A&B", "B&C", "A&C"),
+#'     size = 4) +
+#'     stamp_text(label = "A&B&C",
+#'     size = 2) +
+#'   theme_void_fill()
+#'
+#'
 stamp_circle <- function(x0 = 0,
                          y0 = 0,
-                          n = 100,
-                          radius = 1,
-                          size = 1.5,
-                          alpha = 1,
-                          rotation = -.5,
-                          linetype = "solid",
-                          fill = "grey35",
-                          color = "black",
-                          x0y0 = NULL){
+                         n = 100,
+                         radius = 1,
+                         size = 1.5,
+                         alpha = 1,
+                         rotation = -.5,
+                         linetype = "solid",
+                         fill = "grey35",
+                         color = "black",
+                         x0y0 = NULL){
 
   if(!is.null(x0y0)){
     x0 = x0y0[,1]
@@ -66,16 +93,16 @@ stamp_circle <- function(x0 = 0,
   }
 
   stamp_polygon(
-           x0 = x0,
-           y0 = y0,
-           n = n,
-           radius = radius,
-           size = size,
-           fill = fill,
-           alpha = alpha,
-           linetype = linetype,
-           color = color
-           )
+    x0 = x0,
+    y0 = y0,
+    n = n,
+    radius = radius,
+    size = size,
+    fill = fill,
+    alpha = alpha,
+    linetype = linetype,
+    color = color
+  )
 
 }
 
