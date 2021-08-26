@@ -47,6 +47,7 @@ stamp_segment <- function(x = 0,
            size = size,
            alpha = alpha,
            color = color,
+           linetype = linetype,
 
            lineend = lineend,
            linejoin = linejoin,

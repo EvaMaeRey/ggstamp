@@ -187,6 +187,32 @@ Contribute or help document https://github.com/EvaMaeRey/ggstamp/blob/master/R/s
  <span class='fu'><a href='ggcanvas.html'>ggcanvas</a></span>() +
   <span class='fu'>stamp_circle</span>(<span class='kw'>x0y0</span> <span class='kw'>=</span> <span class='fu'><a href='pos_wrap.html'>pos_wrap</a></span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>5</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>height</span> <span class='kw'>=</span> <span class='fl'>1.5</span>),
                <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>.55</span>)</div><div class='img'><img src='stamp_circle-4.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='co'># venn</span>
+<span class='fu'><a href='ggcanvas.html'>ggcanvas</a></span>() +
+  <span class='fu'>stamp_circle</span>(
+  <span class='kw'>x0y0</span> <span class='kw'>=</span> <span class='fu'><a href='pos_spoke.html'>pos_spoke</a></span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>3</span>)[<span class='fl'>1</span>,],
+  <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>1.2</span>,
+   <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>.3</span>, <span class='kw'>fill</span> <span class='kw'>=</span> <span class='st'>"blue"</span>) +
+  <span class='fu'>stamp_circle</span>(
+  <span class='kw'>x0y0</span> <span class='kw'>=</span> <span class='fu'><a href='pos_spoke.html'>pos_spoke</a></span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>3</span>)[<span class='fl'>2</span>,],
+  <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>1.2</span>,
+   <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>.3</span>, <span class='kw'>fill</span> <span class='kw'>=</span> <span class='st'>"red"</span>) +
+  <span class='fu'>stamp_circle</span>(
+  <span class='kw'>x0y0</span> <span class='kw'>=</span> <span class='fu'><a href='pos_spoke.html'>pos_spoke</a></span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>3</span>)[<span class='fl'>3</span>,],
+  <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>1.2</span>,
+   <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>.3</span>,
+   <span class='kw'>fill</span> <span class='kw'>=</span> <span class='st'>"green"</span>) +
+  <span class='fu'><a href='stamp_text.html'>stamp_text</a></span>(<span class='kw'>xy</span> <span class='kw'>=</span> <span class='fu'><a href='pos_spoke.html'>pos_spoke</a></span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>3</span>),
+    <span class='kw'>label</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"A"</span>, <span class='st'>"B"</span>, <span class='st'>"C"</span>))  +
+  <span class='fu'><a href='stamp_text.html'>stamp_text</a></span>(<span class='kw'>xy</span> <span class='kw'>=</span> <span class='fu'><a href='pos_spoke.html'>pos_spoke</a></span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>3</span>,
+                  <span class='kw'>rotation</span> <span class='kw'>=</span> -<span class='fl'>.166</span>,
+                  <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>.65</span>),
+    <span class='kw'>label</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"A&amp;B"</span>, <span class='st'>"B&amp;C"</span>, <span class='st'>"A&amp;C"</span>),
+    <span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>4</span>) +
+    <span class='fu'><a href='stamp_text.html'>stamp_text</a></span>(<span class='kw'>label</span> <span class='kw'>=</span> <span class='st'>"A&amp;B&amp;C"</span>,
+    <span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>2</span>) +
+  <span class='fu'><a href='theme_void_fill.html'>theme_void_fill</a></span>()</div><div class='output co'>#&gt; <span class='warning'>Warning: Ignoring unknown parameters: nudge_x, nudge_y</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Ignoring unknown parameters: nudge_x, nudge_y</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Ignoring unknown parameters: nudge_x, nudge_y</span></div><div class='img'><img src='stamp_circle-5.png' alt='' width='700' height='433' /></div><div class='input'>
+
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
