@@ -1,14 +1,8 @@
-#' Stamp some text
+#' Stamp a tile (a rectangle)
 #'
 #' This function adds a text annotation layer
 #'
-#' @param size line width default is .5
-#' @param alpha 0 to 1 indicating transparency
-#' @param color named or hexcolor for outline of tile
-#' @param height full height of tile centered at y
-#' @param width full width of tile centered at x
-#' @param linetype "solid" "dashed" "dotted" linetype border
-#' @inheritParams stamp_label
+#' @inheritParams stamp_polygon
 #'
 #' @return
 #' @export
@@ -22,7 +16,7 @@
 #'  stamp_tile(color = "red", x = 10,
 #'             y = 90:100) +
 #'  stamp_tile(height = 10,
-#'             xy = pos_spoke(x0 = 20, n = 15,
+#'             xy = pos_polygon(x0 = 20, n = 15,
 #'             radius = 6))
 #'
 #' # on a canvas
@@ -36,7 +30,7 @@
 #'
 #' # using a positioner
 #' ggcanvas() +
-#'  stamp_tile(xy = pos_spoke())
+#'  stamp_tile(xy = pos_polygon())
 stamp_tile <- function(x = 0,
                        y = 0,
                        size = .5,

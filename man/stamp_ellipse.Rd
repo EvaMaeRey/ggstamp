@@ -2,14 +2,14 @@
 % Please edit documentation in R/stamp_ellipse.R
 \name{stamp_ellipse}
 \alias{stamp_ellipse}
-\title{Stamp some text}
+\title{Stamp an ellipse}
 \usage{
 stamp_ellipse(
   x0 = 0,
   y0 = 0,
   a = 1,
   b = 0.5,
-  angle = 0,
+  rotation = 0,
   size = 1.5,
   alpha = 1,
   linetype = "solid",
@@ -19,13 +19,27 @@ stamp_ellipse(
 )
 }
 \arguments{
-\item{x0}{defaults to 0}
+\item{x0}{numeric x center of shape, defaults to 0}
 
-\item{y0}{defaults to 0}
+\item{y0}{numeric y center of shape, defaults to 0}
 
-\item{size}{}
+\item{a}{width defining ellipse}
 
-\item{label}{defaults with a message about used}
+\item{b}{height defining ellipse}
+
+\item{rotation}{how much the shape should be rotated, defaults to -.5}
+
+\item{size}{numeric value indicating line width, defaults to 1.5}
+
+\item{alpha}{numeric between 0 and 1 indicating transparency, defaults to 1 fully opaque, zero is fully transparent}
+
+\item{linetype}{a string indicating linetype, "solid", "dashed", "dotted", defaults to "solid"}
+
+\item{fill}{a character string indicating fill color, defaults to "grey35", for other named colors check out https://evamaerey.github.io/ggplot2_grammar_guide/named_colors}
+
+\item{color}{a character string indicating color, defaults to "black", for other named colors check out https://evamaerey.github.io/ggplot2_grammar_guide/named_colors}
+
+\item{x0y0}{dataframe indicating center of shapes, where first column is vector for x values and second column is vector for y values, defaults to NULL}
 }
 \value{
 
@@ -39,7 +53,7 @@ library(ggplot2)
 ggplot(cars) +
  aes(speed, dist) +
  stamp_ellipse() +
- stamp_ellipse(color = "plum4", x0 = 2, y0 = 3, angle = pi/6)
+ stamp_ellipse(color = "plum4", x0 = 2, y0 = 3, rotation = pi/6)
 
 # several
 ggcanvas() +

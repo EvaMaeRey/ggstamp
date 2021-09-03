@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Title — pos_stack • ggstamp</title>
+<title>Create dataframe that finds positions for stacking — pos_stack • ggstamp</title>
 
 
 <!-- jquery -->
@@ -35,8 +35,8 @@
 
 
 
-<meta property="og:title" content="Title — pos_stack" />
-<meta property="og:description" content="Title" />
+<meta property="og:title" content="Create dataframe that finds positions for stacking — pos_stack" />
+<meta property="og:description" content="Create dataframe that finds positions for stacking" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -112,13 +112,13 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Title</h1>
+    <h1>Create dataframe that finds positions for stacking</h1>
     
     <div class="hidden name"><code>pos_stack.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Title</p>
+    <p>Create dataframe that finds positions for stacking</p>
     </div>
 
     <pre class="usage"><span class='fu'>pos_stack</span>(<span class='kw'>x0</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>y0</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>5</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>height</span> <span class='kw'>=</span> <span class='no'>width</span>)</pre>
@@ -127,8 +127,20 @@
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
+      <th>x0</th>
+      <td><p>numeric for x starting point for positioner</p></td>
+    </tr>
+    <tr>
+      <th>y0</th>
+      <td><p>numeric for y starting point for positioner</p></td>
+    </tr>
+    <tr>
+      <th>n</th>
+      <td><p>number of positions</p></td>
+    </tr>
+    <tr>
       <th>ncol</th>
-      <td></td>
+      <td><p>number of columns before wrap</p></td>
     </tr>
     </table>
 
@@ -141,7 +153,7 @@
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'><a href='ggcanvas.html'>ggcanvas</a></span>() +
  <span class='fu'><a href='stamp_point.html'>stamp_point</a></span>(<span class='kw'>xy</span> <span class='kw'>=</span> <span class='fu'>pos_stack</span>(), <span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"blue"</span>) +
- <span class='fu'><a href='stamp_text.html'>stamp_text</a></span>(<span class='kw'>xy</span> <span class='kw'>=</span> <span class='fu'>pos_stack</span>(), <span class='kw'>label</span> <span class='kw'>=</span> <span class='no'>letters</span>[<span class='fl'>1</span>:<span class='fl'>5</span>])</div><div class='output co'>#&gt; <span class='warning'>Warning: Ignoring unknown parameters: nudge_x, nudge_y</span></div><div class='img'><img src='pos_stack-1.png' alt='' width='700' height='433' /></div><div class='input'>
+ <span class='fu'><a href='stamp_text.html'>stamp_text</a></span>(<span class='kw'>xy</span> <span class='kw'>=</span> <span class='fu'>pos_stack</span>(), <span class='kw'>label</span> <span class='kw'>=</span> <span class='no'>letters</span>[<span class='fl'>1</span>:<span class='fl'>5</span>])</div><div class='img'><img src='pos_stack-1.png' alt='' width='700' height='433' /></div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

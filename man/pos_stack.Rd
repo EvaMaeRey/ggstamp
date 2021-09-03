@@ -2,18 +2,24 @@
 % Please edit documentation in R/pos_stack.R
 \name{pos_stack}
 \alias{pos_stack}
-\title{Title}
+\title{Create dataframe that finds positions for stacking}
 \usage{
 pos_stack(x0 = 0, y0 = 0, n = 5, ncol = 3, width = 1, height = width)
 }
 \arguments{
-\item{ncol}{}
+\item{x0}{numeric for x starting point for positioner}
+
+\item{y0}{numeric for y starting point for positioner}
+
+\item{n}{number of positions}
+
+\item{ncol}{number of columns before wrap}
 }
 \value{
 
 }
 \description{
-Title
+Create dataframe that finds positions for stacking
 }
 \examples{
 ggcanvas() +

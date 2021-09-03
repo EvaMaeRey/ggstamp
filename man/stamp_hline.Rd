@@ -2,7 +2,7 @@
 % Please edit documentation in R/stamp_hline.R
 \name{stamp_hline}
 \alias{stamp_hline}
-\title{Horizontal line, wraps geom_hline w defaut at y = 0}
+\title{Stamp a horizontal line, a wrapper for geom_hline}
 \usage{
 stamp_hline(
   yintercept = 0,
@@ -13,13 +13,21 @@ stamp_hline(
 )
 }
 \arguments{
-\item{size}{}
+\item{yintercept}{numeric indicating yintercept, default to 0}
+
+\item{alpha}{numeric between 0 and 1 indicating transparency, defaults to 1 fully opaque, zero is fully transparent}
+
+\item{color}{a character string indicating color, defaults to "black", for other named colors check out https://evamaerey.github.io/ggplot2_grammar_guide/named_colors}
+
+\item{linetype}{a string indicating linetype, "solid", "dashed", "dotted", defaults to "solid"}
+
+\item{size}{numeric value indicating line width, defaults to 1.5}
 }
 \value{
 
 }
 \description{
-Horizontal line, wraps geom_hline w defaut at y = 0
+Stamp a horizontal line, a wrapper for geom_hline
 }
 \examples{
 library(ggplot2)

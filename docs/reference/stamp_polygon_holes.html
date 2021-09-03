@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Stamp a polygon of n sides — stamp_polygon_holes • ggstamp</title>
+<title>Stamp inverse of several polygons of n sides — stamp_polygon_holes • ggstamp</title>
 
 
 <!-- jquery -->
@@ -35,7 +35,7 @@
 
 
 
-<meta property="og:title" content="Stamp a polygon of n sides — stamp_polygon_holes" />
+<meta property="og:title" content="Stamp inverse of several polygons of n sides — stamp_polygon_holes" />
 <meta property="og:description" content="This function adds a text annotation layer.
 Contribute or help document https://github.com/EvaMaeRey/ggstamp/blob/master/R/stamp_polygon.R" />
 <meta name="twitter:card" content="summary" />
@@ -113,7 +113,7 @@ Contribute or help document https://github.com/EvaMaeRey/ggstamp/blob/master/R/s
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Stamp a polygon of n sides</h1>
+    <h1>Stamp inverse of several polygons of n sides</h1>
     
     <div class="hidden name"><code>stamp_polygon_holes.Rd</code></div>
     </div>
@@ -126,7 +126,7 @@ Contribute or help document https://github.com/EvaMaeRey/ggstamp/blob/master/R/s
     <pre class="usage"><span class='fu'>stamp_polygon_holes</span>(
   <span class='kw'>x0</span> <span class='kw'>=</span> <span class='fl'>0</span>,
   <span class='kw'>y0</span> <span class='kw'>=</span> <span class='fl'>0</span>,
-  <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>6</span>,
+  <span class='kw'>n_vertices</span> <span class='kw'>=</span> <span class='fl'>6</span>,
   <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>1</span>,
   <span class='kw'>radius_outer</span> <span class='kw'>=</span> <span class='fl'>Inf</span>,
   <span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>0</span>,
@@ -143,15 +143,47 @@ Contribute or help document https://github.com/EvaMaeRey/ggstamp/blob/master/R/s
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x0</th>
-      <td><p>defaults to 0</p></td>
+      <td><p>numeric x center of shape, defaults to 0</p></td>
     </tr>
     <tr>
       <th>y0</th>
-      <td><p>defaults to 0</p></td>
+      <td><p>numeric y center of shape, defaults to 0</p></td>
+    </tr>
+    <tr>
+      <th>n_vertices</th>
+      <td><p>numeric number of vertices</p></td>
+    </tr>
+    <tr>
+      <th>radius</th>
+      <td><p>a numeric value, the distance between x0 and y0 and the vertices</p></td>
+    </tr>
+    <tr>
+      <th>size</th>
+      <td><p>numeric value indicating line width, defaults to 1.5</p></td>
+    </tr>
+    <tr>
+      <th>alpha</th>
+      <td><p>numeric between 0 and 1 indicating transparency, defaults to 1 fully opaque, zero is fully transparent</p></td>
+    </tr>
+    <tr>
+      <th>rotation</th>
+      <td><p>numeric indicating how much polygon should be turned from first vertex along positive horizontal</p></td>
+    </tr>
+    <tr>
+      <th>linetype</th>
+      <td><p>a string indicating linetype, "solid", "dashed", "dotted", defaults to "solid"</p></td>
+    </tr>
+    <tr>
+      <th>fill</th>
+      <td><p>a character string indicating fill color, defaults to "grey35", for other named colors check out https://evamaerey.github.io/ggplot2_grammar_guide/named_colors</p></td>
     </tr>
     <tr>
       <th>color</th>
-      <td></td>
+      <td><p>a character string indicating color, defaults to "black", for other named colors check out https://evamaerey.github.io/ggplot2_grammar_guide/named_colors</p></td>
+    </tr>
+    <tr>
+      <th>x0y0</th>
+      <td><p>dataframe indicating center of shapes, where first column is vector for x values and second column is vector for y values, defaults to NULL</p></td>
     </tr>
     </table>
 
@@ -165,10 +197,18 @@ Contribute or help document https://github.com/EvaMaeRey/ggstamp/blob/master/R/s
     <pre class="examples"><div class='input'><span class='co'># some more</span>
  <span class='fu'><a href='ggcanvas.html'>ggcanvas</a></span>() +
   <span class='fu'><a href='stamp_png.html'>stamp_png</a></span>(<span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>7</span>, <span class='kw'>x0</span> <span class='kw'>=</span> <span class='fl'>2.5</span>, <span class='kw'>y0</span> <span class='kw'>=</span> -<span class='fl'>2.5</span>) +
-  <span class='fu'>stamp_polygon_holes</span>(<span class='kw'>x0y0</span> <span class='kw'>=</span> <span class='fu'><a href='pos_honeycomb.html'>pos_honeycomb</a></span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>400</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>20</span>, <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>.3</span>,
-  <span class='kw'>x0</span> <span class='kw'>=</span> <span class='fl'>.03</span>, <span class='kw'>y0</span> <span class='kw'>=</span> -<span class='fl'>.03</span>), <span class='kw'>fill</span> <span class='kw'>=</span> <span class='st'>"grey35"</span>, <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>.14</span>) +
-  <span class='fu'>stamp_polygon_holes</span>(<span class='kw'>x0y0</span> <span class='kw'>=</span> <span class='fu'><a href='pos_honeycomb.html'>pos_honeycomb</a></span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>400</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>20</span>, <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>.3</span>),
-  <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>.14</span>, <span class='kw'>fill</span> <span class='kw'>=</span> <span class='st'>"goldenrod3"</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>6</span>,
+  <span class='fu'>stamp_polygon_holes</span>(
+     <span class='kw'>x0y0</span> <span class='kw'>=</span> <span class='fu'><a href='pos_honeycomb.html'>pos_honeycomb</a></span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>400</span>,
+                          <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>20</span>,
+                          <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>.3</span>,
+                          <span class='kw'>x0</span> <span class='kw'>=</span> <span class='fl'>.03</span>,
+                          <span class='kw'>y0</span> <span class='kw'>=</span> -<span class='fl'>.03</span>),
+                     <span class='kw'>fill</span> <span class='kw'>=</span> <span class='st'>"grey35"</span>,
+                     <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>.14</span>) +
+  <span class='fu'>stamp_polygon_holes</span>(<span class='kw'>x0y0</span> <span class='kw'>=</span> <span class='fu'><a href='pos_honeycomb.html'>pos_honeycomb</a></span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>400</span>,
+                                           <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>20</span>,
+                                           <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>.3</span>),
+  <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>.14</span>, <span class='kw'>fill</span> <span class='kw'>=</span> <span class='st'>"goldenrod3"</span>, <span class='kw'>n_vertices</span> <span class='kw'>=</span> <span class='fl'>6</span>,
                         <span class='kw'>radius_outer</span> <span class='kw'>=</span> <span class='fl'>Inf</span>)</div><div class='img'><img src='stamp_polygon_holes-1.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

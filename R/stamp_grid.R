@@ -1,4 +1,8 @@
-#' Title
+#' Stamp a grid for decoupling annotation from plotting
+#'
+#' @param color grid color, defaults to 'turquoise4'
+#' @param fill overlay color, defaults to 'linen'
+#' @param alpha numeric between 0 and 1, level of transparency for grid layer
 #'
 #' @return
 #' @export
@@ -10,7 +14,7 @@
 #'   aes(y = dist) +
 #'   geom_point() +
 #'   facet_wrap(~speed > 15) ->
-#'   p
+#'  p
 #'
 #' cowplot::ggdraw(p) +
 #'   stamp_grid() + # you can comment this guide out later

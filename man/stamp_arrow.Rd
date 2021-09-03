@@ -11,39 +11,50 @@ stamp_arrow(
   yend = 1,
   alpha = 1,
   color = "black",
+  linetype = "solid",
   size = 1.5,
   ends = "last",
   units = "npc",
   headlength = 0.03,
-  angle = 30,
-  type = "open",
+  headangle = 30,
+  headtype = "open",
   lineend = "butt",
   linejoin = "round",
   arrow.fill = T
 )
 }
 \arguments{
-\item{x}{defaults to 0}
+\item{x}{numeric x position, defaults to 0}
 
-\item{y}{defaults to 0}
+\item{y}{numeric y position, defaults to 0}
 
-\item{xend}{defaults to 1}
+\item{xend}{numeric x end position, defaults to 1}
 
-\item{yend}{defaults to 1}
+\item{yend}{numeric y end position, defaults to 1}
 
-\item{alpha}{numeric between 0 and 1 indicating transparency}
+\item{alpha}{numeric between 0 and 1 indicating transparency, defaults to 1 fully opaque, zero is fully transparent}
 
-\item{size}{numeric indicating line width}
+\item{color}{a character string indicating color, defaults to "black", for other named colors check out https://evamaerey.github.io/ggplot2_grammar_guide/named_colors}
 
-\item{ends}{One of "last", "first", or "both", indicating which ends of the line to draw arrow heads.}
+\item{linetype}{a string indicating linetype, "solid", "dashed", "dotted", defaults to "solid"}
 
-\item{units}{A character vector specifying the units for the corresponding numeric values.}
+\item{size}{numeric value indicating line width, defaults to 1.5}
 
-\item{headlength}{A unit specifying the length of the arrow head (from tip to base).}
+\item{ends}{a character string, one of "last", "first", or "both", indicating which ends of the line to draw arrow heads, defaults to last}
 
-\item{angle}{The angle of the arrow head in degrees (smaller numbers produce narrower, pointier arrows). Essentially describes the width of the arrow head.}
+\item{units}{A character vector specifying the units for head length, default is "npc" for native plot coordinates}
 
-\item{type}{One of "open" or "closed" indicating whether the arrow head should be a closed triangle.}
+\item{headlength}{A numeric value specifying the length of the arrow head (from tip to base), defaults to .03}
+
+\item{headangle}{A numeric value, the angle of the arrowhead in degrees (smaller numbers produce narrower, pointier arrows). Essentially describes the width of the arrow head.}
+
+\item{headtype}{One of "open" or "closed" indicating whether the arrow head should be a closed triangle.}
+
+\item{lineend}{Line end style (round, butt, square)}
+
+\item{linejoin}{Line join style (round, mitre, bevel)}
+
+\item{arrow.fill}{fill colour to use for the arrow head (if closed). NULL means use colour aesthetic.}
 }
 \value{
 
@@ -66,8 +77,8 @@ ggplot(cars) +
  ggcanvas() +
  stamp_arrow(color = "steelblue") +
  stamp_arrow(x = 1:5, y = 2, xend = 2:6,
- headlength = .04, type = "closed",
+ headlength = .04, headtype = "closed",
  color = "darkred") +
  stamp_arrow(x = .5, xend = 1.5,
- ends = "both", angle = 60)
+ ends = "both", headangle = 60)
 }

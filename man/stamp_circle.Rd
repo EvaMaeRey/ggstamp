@@ -2,16 +2,15 @@
 % Please edit documentation in R/stamp_circle.R
 \name{stamp_circle}
 \alias{stamp_circle}
-\title{Stamp a polygon of 100 sides}
+\title{Stamp a circle, equilateral polygon of 100 sides}
 \usage{
 stamp_circle(
   x0 = 0,
   y0 = 0,
-  n = 100,
+  n_vertices = 100,
   radius = 1,
   size = 1.5,
   alpha = 1,
-  rotation = -0.5,
   linetype = "solid",
   fill = "grey35",
   color = "black",
@@ -19,11 +18,25 @@ stamp_circle(
 )
 }
 \arguments{
-\item{x0}{defaults to 0}
+\item{x0}{numeric x center of shape, defaults to 0}
 
-\item{y0}{defaults to 0}
+\item{y0}{numeric y center of shape, defaults to 0}
 
-\item{color}{}
+\item{n_vertices}{numeric number of vertices}
+
+\item{radius}{a numeric value, the distance between x0 and y0 and the vertices}
+
+\item{size}{numeric value indicating line width, defaults to 1.5}
+
+\item{alpha}{numeric between 0 and 1 indicating transparency, defaults to 1 fully opaque, zero is fully transparent}
+
+\item{linetype}{a string indicating linetype, "solid", "dashed", "dotted", defaults to "solid"}
+
+\item{fill}{a character string indicating fill color, defaults to "grey35", for other named colors check out https://evamaerey.github.io/ggplot2_grammar_guide/named_colors}
+
+\item{color}{a character string indicating color, defaults to "black", for other named colors check out https://evamaerey.github.io/ggplot2_grammar_guide/named_colors}
+
+\item{x0y0}{dataframe indicating center of shapes, where first column is vector for x values and second column is vector for y values, defaults to NULL}
 }
 \value{
 
@@ -38,13 +51,14 @@ library(ggplot2)
 ggplot(cars) +
  aes(speed, dist) +
  geom_point() +
- stamp_circle(color = "darkred", radius = 12)
+ stamp_circle(color = "darkred",
+              radius = 12)
 
 # on a canvas
  ggcanvas() +
   stamp_circle(x0 = c(0, 2.5),
   fill = "magenta", color = "purple") +
-  stamp_label(xy = pos_spoke(x0 = 0, n = 3),
+  stamp_label(xy = pos_polygon(x0 = 0, n = 3),
               label = c("hi", "hello", "bye")) +
   stamp_point(color = "turquoise")
 
@@ -53,7 +67,7 @@ ggplot(cars) +
  stamp_circle(color = "turquoise4", radius = 3, fill = "turquoise") +
  stamp_circle(fill = "slateblue2", radius = 2) +
  stamp_circle(linetype = "dashed", alpha = .5, fill = "plum2") +
- stamp_circle(x0 = 1, y0 = 1.5, rotation = .25, size = 0,
+ stamp_circle(x0 = 1, y0 = 1.5, size = 0,
   fill = "goldenrod2") +
  stamp_circle(n = 50, radius = .2, size = 0) +
  stamp_spoke(angle = pi * 1:7/15, radius = 2)
@@ -66,21 +80,21 @@ ggplot(cars) +
 # venn
 ggcanvas() +
   stamp_circle(
-  x0y0 = pos_spoke(n = 3)[1,],
+  x0y0 = pos_polygon(n = 3)[1,],
   radius = 1.2,
    alpha = .3, fill = "blue") +
   stamp_circle(
-  x0y0 = pos_spoke(n = 3)[2,],
+  x0y0 = pos_polygon(n = 3)[2,],
   radius = 1.2,
    alpha = .3, fill = "red") +
   stamp_circle(
-  x0y0 = pos_spoke(n = 3)[3,],
+  x0y0 = pos_polygon(n = 3)[3,],
   radius = 1.2,
    alpha = .3,
    fill = "green") +
-  stamp_text(xy = pos_spoke(n = 3),
+  stamp_text(xy = pos_polygon(n = 3),
     label = c("A", "B", "C"))  +
-  stamp_text(xy = pos_spoke(n = 3,
+  stamp_text(xy = pos_polygon(n = 3,
                   rotation = -.166,
                   radius = .65),
     label = c("A&B", "B&C", "A&C"),

@@ -1,11 +1,12 @@
-#' Stamp some text
+#' Stamp an ellipse
 #'
 #' This function adds a text annotation layer
 #'
-#' @param x0 defaults to 0
-#' @param y0 defaults to 0
-#' @param label defaults with a message about used
-#' @param size
+#' @param a width defining ellipse
+#' @param b height defining ellipse
+#' @param rotation how much the shape should be rotated, defaults to -.5
+#'
+#' @inheritParams stamp_circle
 #'
 #' @return
 #' @export
@@ -16,7 +17,7 @@
 #' ggplot(cars) +
 #'  aes(speed, dist) +
 #'  stamp_ellipse() +
-#'  stamp_ellipse(color = "plum4", x0 = 2, y0 = 3, angle = pi/6)
+#'  stamp_ellipse(color = "plum4", x0 = 2, y0 = 3, rotation = pi/6)
 #'
 #' # several
 #' ggcanvas() +
@@ -26,7 +27,7 @@ stamp_ellipse <- function(x0 = 0,
                        y0 = 0,
                        a = 1,
                        b = .5,
-                       angle = 0,
+                       rotation = 0,
                        size = 1.5,
                        alpha = 1,
                        linetype = "solid",
@@ -42,10 +43,10 @@ stamp_ellipse <- function(x0 = 0,
   ggforce::geom_ellipse(data = data.frame(
          x0 = x0,
          y0 = y0,
-         a = a, b = b, angle = angle
+         a = a, b = b, angle = rotation
          ),
          aes(x = NULL, y = NULL, x0 = x0, y0 = y0,
-             a = a, b= b, angle = angle),
+             a = a, b= b, angle = rotation),
          fill = fill, size = size,
          alpha = alpha,
          color = color)

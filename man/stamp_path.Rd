@@ -2,7 +2,7 @@
 % Please edit documentation in R/stamp_path.R
 \name{stamp_path}
 \alias{stamp_path}
-\title{Stamp some text}
+\title{Stamp a path, connected points}
 \usage{
 stamp_path(
   x = 0:3,
@@ -13,31 +13,27 @@ stamp_path(
   size = 1.5,
   lineend = "butt",
   linejoin = "round",
-  arrow = arrow(length = 0),
+  arrow = ggplot2::arrow(length = 0),
   arrow.fill = NULL,
   xy = NULL
 )
 }
 \arguments{
-\item{x}{defaults to 0}
+\item{x}{numeric x position, defaults to 0}
 
-\item{y}{defaults to 0}
+\item{y}{numeric y position, defaults to 0}
 
-\item{alpha}{a numeric between 0 and 1 for transparency, zero is fully transparent, 1 fully opaque}
+\item{alpha}{numeric between 0 and 1 indicating transparency, defaults to 1 fully opaque, zero is fully transparent}
 
-\item{color}{line color}
+\item{color}{a character string indicating color, defaults to "black", for other named colors check out https://evamaerey.github.io/ggplot2_grammar_guide/named_colors}
 
-\item{linetype}{"solid", "dashed", "dotted"}
+\item{linetype}{a string indicating linetype, "solid", "dashed", "dotted", defaults to "solid"}
 
-\item{size}{numeric indicating line width, defaults to 1.5}
+\item{size}{numeric value indicating line width, defaults to 1.5}
 
-\item{lineend}{Line end style (round, butt, square).}
-
-\item{linejoin}{Line join style (round, mitre, bevel).}
+\item{lineend}{Line end style (round, butt, square)}
 
 \item{arrow}{specification for arrow heads, as created by arrow().}
-
-\item{arrow.fill}{fill colour to use for the arrow head (if closed). NULL means use colour aesthetic.}
 }
 \value{
 

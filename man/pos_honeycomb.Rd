@@ -14,7 +14,17 @@ pos_honeycomb(
 )
 }
 \arguments{
-\item{height}{}
+\item{x0}{numeric x start position}
+
+\item{y0}{numeric y start position}
+
+\item{n}{number of positions}
+
+\item{ncol}{number of columns before wrap, default is 3}
+
+\item{width}{numeric, width between positions}
+
+\item{height}{numeric, height between positions}
 }
 \value{
 

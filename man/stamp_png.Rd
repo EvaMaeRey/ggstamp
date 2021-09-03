@@ -2,7 +2,7 @@
 % Please edit documentation in R/stamp_png.R
 \name{stamp_png}
 \alias{stamp_png}
-\title{stamp_png}
+\title{Stamp a png image}
 \usage{
 stamp_png(
   x0 = 0,
@@ -17,13 +17,27 @@ stamp_png(
 )
 }
 \arguments{
-\item{ymax}{}
+\item{x0}{numeric x center of shape, defaults to 0}
+
+\item{y0}{numeric y center of shape, defaults to 0}
+
+\item{png}{a string with the path to an image, defaults to R image}
+
+\item{image}{a numeric array with png red green blue alpha information, defaults to png::readPNG(png)}
+
+\item{width}{the width that the image should fill, defaults to 1}
+
+\item{height}{the height that the image should fill, calculated to match aspect ratio based on width}
+
+\item{alpha}{numeric between 0 and 1 indicating transparency, defaults to 1 fully opaque, zero is fully transparent}
+
+\item{x0y0}{dataframe indicating center of shapes, where first column is vector for x values and second column is vector for y values, defaults to NULL}
 }
 \value{
 
 }
 \description{
-stamp_png
+Stamp a png image
 }
 \examples{
 # stamp in plotspace
@@ -31,15 +45,13 @@ library(ggplot2)
 ggplot(cars, aes(dist, speed)) +
   geom_point() +
   stamp_png(x0 = 5:11*10, y0 = 10,
-            height = 1, width = 10) +
-  scale_fill_identity()
+            height = 1, width = 10)
 
 # two stamps
 ggcanvas() +
   stamp_png() +
   stamp_png(x0 = 2:3, y0 = 6,
-            width = .95) +
-  scale_fill_identity()
+            width = .95)
 
 # png spokes
 ggcanvas() +

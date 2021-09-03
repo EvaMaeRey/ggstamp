@@ -1,15 +1,13 @@
-#' Stamp a point/points
+#' Stamp a point
 #'
 #' This function adds a point annotation layer
 #'
-#' @param x a scalar or vector numeric
-#' @param y a scalar or vector numeric
 #' @param size a scalar or vector numeric
-#' @param alpha a numeric between 0 and 1 for transparency
 #' @param shape a numeric or character string, "circle" is default but also try "star", "bullet", "diamond", "triangle"
-#' @param color a color as a character string or hex, named colors: https://evamaerey.github.io/ggplot2_grammar_guide/named_colors
 #' @param stroke a numeric - size of shape outline
-#' @param fill a fill color as a character string or hex, named colors: https://evamaerey.github.io/ggplot2_grammar_guide/named_colors
+#'
+#'
+#' @inheritParams stamp_segment
 #'
 #' @return
 #' @export

@@ -1,11 +1,11 @@
 #' Title
 #'
-#' @param x0
-#' @param y0
-#' @param n
-#' @param ncol
-#' @param width
-#' @param height
+#' @param x0 numeric x start position
+#' @param y0 numeric y start position
+#' @param n number of positions
+#' @param ncol number of columns before wrap, default is 3
+#' @param width numeric, width between positions
+#' @param height numeric, height between positions
 #'
 #' @return
 #' @export

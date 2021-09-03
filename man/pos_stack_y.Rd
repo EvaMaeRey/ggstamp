@@ -7,7 +7,11 @@
 pos_stack_y(y0 = 0, n = 5, ncol = 3, height = 1)
 }
 \arguments{
-\item{n}{}
+\item{y0}{numeric for y starting point for positioner}
+
+\item{n}{number of positions}
+
+\item{ncol}{number of columns before wrap}
 }
 \value{
 

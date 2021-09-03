@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Title — stamp_grid • ggstamp</title>
+<title>Stamp a grid for decoupling annotation from plotting — stamp_grid • ggstamp</title>
 
 
 <!-- jquery -->
@@ -35,8 +35,8 @@
 
 
 
-<meta property="og:title" content="Title — stamp_grid" />
-<meta property="og:description" content="Title" />
+<meta property="og:title" content="Stamp a grid for decoupling annotation from plotting — stamp_grid" />
+<meta property="og:description" content="Stamp a grid for decoupling annotation from plotting" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -112,17 +112,33 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Title</h1>
+    <h1>Stamp a grid for decoupling annotation from plotting</h1>
     
     <div class="hidden name"><code>stamp_grid.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Title</p>
+    <p>Stamp a grid for decoupling annotation from plotting</p>
     </div>
 
     <pre class="usage"><span class='fu'>stamp_grid</span>(<span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"turquoise4"</span>, <span class='kw'>fill</span> <span class='kw'>=</span> <span class='st'>"linen"</span>, <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>0.5</span>)</pre>
 
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>color</th>
+      <td><p>grid color, defaults to 'turquoise4'</p></td>
+    </tr>
+    <tr>
+      <th>fill</th>
+      <td><p>overlay color, defaults to 'linen'</p></td>
+    </tr>
+    <tr>
+      <th>alpha</th>
+      <td><p>numeric between 0 and 1, level of transparency for grid layer</p></td>
+    </tr>
+    </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
@@ -137,7 +153,7 @@
   <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span>(<span class='kw'>y</span> <span class='kw'>=</span> <span class='no'>dist</span>) +
   <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span>() +
   <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/facet_wrap.html'>facet_wrap</a></span>(~<span class='no'>speed</span> <span class='kw'>&gt;</span> <span class='fl'>15</span>) <span class='kw'>-&gt;</span>
-  <span class='no'>p</span>
+ <span class='no'>p</span>
 
 <span class='kw pkg'>cowplot</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/cowplot/man/ggdraw.html'>ggdraw</a></span>(<span class='no'>p</span>) +
   <span class='fu'>stamp_grid</span>() + <span class='co'># you can comment this guide out later</span>
@@ -147,12 +163,13 @@
                 <span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>.5</span>, <span class='kw'>linetype</span> <span class='kw'>=</span> <span class='st'>"dashed"</span>) +
   <span class='fu'><a href='stamp_text_ljust.html'>stamp_text_ljust</a></span>(<span class='kw'>label</span> <span class='kw'>=</span> <span class='st'>"Over here, fast cars!"</span> <span class='kw'>%&gt;%</span>
   <span class='kw pkg'>stringr</span><span class='kw ns'>::</span><span class='fu'><a href='https://stringr.tidyverse.org/reference/str_wrap.html'>str_wrap</a></span>(<span class='fl'>15</span>), <span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>.6</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>.2</span>, <span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>5</span>) +
-  <span class='fu'><a href='stamp_curve.html'>stamp_curve</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>.65</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>.27</span>, <span class='kw'>xend</span> <span class='kw'>=</span> <span class='fl'>.79</span>, <span class='kw'>yend</span> <span class='kw'>=</span> <span class='fl'>.5</span>, <span class='kw'>curvature</span> <span class='kw'>=</span> -<span class='fl'>.2</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: Ignoring unknown aesthetics: x, y</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Ignoring unknown parameters: nudge_x, nudge_y</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Ignoring unknown parameters: nudge_x, nudge_y</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Ignoring unknown parameters: nudge_x, nudge_y</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Ignoring unknown parameters: nudge_x, nudge_y</span></div><div class='img'><img src='stamp_grid-1.png' alt='' width='700' height='433' /></div><div class='input'>
+  <span class='fu'><a href='stamp_curve.html'>stamp_curve</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>.65</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>.27</span>, <span class='kw'>xend</span> <span class='kw'>=</span> <span class='fl'>.79</span>, <span class='kw'>yend</span> <span class='kw'>=</span> <span class='fl'>.5</span>, <span class='kw'>curvature</span> <span class='kw'>=</span> -<span class='fl'>.2</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: Ignoring unknown aesthetics: x, y</span></div><div class='img'><img src='stamp_grid-1.png' alt='' width='700' height='433' /></div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
+      <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
       <li><a href="#examples">Examples</a></li>
     </ul>

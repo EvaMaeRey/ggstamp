@@ -1,9 +1,14 @@
-#' Create a blank canvas
+#' Create a canvas with a backdrop
 #'
 #' Create a blank canvas centered at 0, 0 to use stamps on
 #'
 #' @param x
 #' @param y
+#' @param width
+#' @param alpha
+#' @param png
+#' @param image
+#' @param height
 #'
 #' @return
 #' @export
@@ -36,9 +41,9 @@ ggbackdrop <- function(x = 0, y = 0,
               y0 = y + .5 * height
               ) +
     ggplot2::coord_equal(expand = FALSE, clip = "off") +
-    ggplot2::theme(panel.grid = element_line(color = alpha("grey35", 1)),
-                   axis.text.x.top = element_text(),
-                   axis.text.y.right = element_text(),
+    ggplot2::theme(panel.grid = ggplot2::element_line(color = alpha("grey35", 1)),
+                   axis.text.x.top = ggplot2::element_text(),
+                   axis.text.y.right = ggplot2::element_text(),
       panel.background = ggplot2::element_rect(fill = NA),
       panel.ontop = TRUE) ->
 g
@@ -46,8 +51,8 @@ g
 if(width == 100){
 
   g +
-  scale_x_continuous(breaks = 0:5*20)+
-  scale_y_continuous(breaks = 0:5*20) ->
+  ggplot2::scale_x_continuous(breaks = 0:5*20)+
+  ggplot2::scale_y_continuous(breaks = 0:5*20) ->
 g
 
 }

@@ -1,13 +1,12 @@
 
-#' Title
+#' Create dataframe that finds positions for stacking
 #'
-#' @param x0
-#' @param y0
-#' @param n
-#' @param ncol
 #'
-#' @return
+#'
+#' @inheritParams pos_wrap
+#'
 #' @export
+#' @return
 #'
 #' @examples
 #' ggcanvas() +

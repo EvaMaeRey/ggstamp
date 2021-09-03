@@ -20,19 +20,15 @@ stamp_rect(
 )
 }
 \arguments{
-\item{x}{defaults to 0}
+\item{alpha}{numeric between 0 and 1 indicating transparency, defaults to 1 fully opaque, zero is fully transparent}
 
-\item{y}{defaults to 0}
+\item{color}{a character string indicating color, defaults to "black", for other named colors check out https://evamaerey.github.io/ggplot2_grammar_guide/named_colors}
 
-\item{alpha}{0 to 1 indicating transparency}
+\item{fill}{a character string indicating fill color, defaults to "grey35", for other named colors check out https://evamaerey.github.io/ggplot2_grammar_guide/named_colors}
 
-\item{color}{named or hexcolor for outline of rect}
+\item{linetype}{a string indicating linetype, "solid", "dashed", "dotted", defaults to "solid"}
 
-\item{fill}{background color of label, consider named colors https://evamaerey.github.io/ggplot2_grammar_guide/named_colors}
-
-\item{linetype}{"solid" "dashed" "dotted" linetype border}
-
-\item{size}{line width default is .5}
+\item{size}{numeric value indicating line width, defaults to 1.5}
 }
 \value{
 

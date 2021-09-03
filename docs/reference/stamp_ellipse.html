@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Stamp some text — stamp_ellipse • ggstamp</title>
+<title>Stamp an ellipse — stamp_ellipse • ggstamp</title>
 
 
 <!-- jquery -->
@@ -35,7 +35,7 @@
 
 
 
-<meta property="og:title" content="Stamp some text — stamp_ellipse" />
+<meta property="og:title" content="Stamp an ellipse — stamp_ellipse" />
 <meta property="og:description" content="This function adds a text annotation layer" />
 <meta name="twitter:card" content="summary" />
 
@@ -112,7 +112,7 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Stamp some text</h1>
+    <h1>Stamp an ellipse</h1>
     
     <div class="hidden name"><code>stamp_ellipse.Rd</code></div>
     </div>
@@ -126,7 +126,7 @@
   <span class='kw'>y0</span> <span class='kw'>=</span> <span class='fl'>0</span>,
   <span class='kw'>a</span> <span class='kw'>=</span> <span class='fl'>1</span>,
   <span class='kw'>b</span> <span class='kw'>=</span> <span class='fl'>0.5</span>,
-  <span class='kw'>angle</span> <span class='kw'>=</span> <span class='fl'>0</span>,
+  <span class='kw'>rotation</span> <span class='kw'>=</span> <span class='fl'>0</span>,
   <span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>1.5</span>,
   <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>1</span>,
   <span class='kw'>linetype</span> <span class='kw'>=</span> <span class='st'>"solid"</span>,
@@ -140,19 +140,47 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x0</th>
-      <td><p>defaults to 0</p></td>
+      <td><p>numeric x center of shape, defaults to 0</p></td>
     </tr>
     <tr>
       <th>y0</th>
-      <td><p>defaults to 0</p></td>
+      <td><p>numeric y center of shape, defaults to 0</p></td>
+    </tr>
+    <tr>
+      <th>a</th>
+      <td><p>width defining ellipse</p></td>
+    </tr>
+    <tr>
+      <th>b</th>
+      <td><p>height defining ellipse</p></td>
+    </tr>
+    <tr>
+      <th>rotation</th>
+      <td><p>how much the shape should be rotated, defaults to -.5</p></td>
     </tr>
     <tr>
       <th>size</th>
-      <td></td>
+      <td><p>numeric value indicating line width, defaults to 1.5</p></td>
     </tr>
     <tr>
-      <th>label</th>
-      <td><p>defaults with a message about used</p></td>
+      <th>alpha</th>
+      <td><p>numeric between 0 and 1 indicating transparency, defaults to 1 fully opaque, zero is fully transparent</p></td>
+    </tr>
+    <tr>
+      <th>linetype</th>
+      <td><p>a string indicating linetype, "solid", "dashed", "dotted", defaults to "solid"</p></td>
+    </tr>
+    <tr>
+      <th>fill</th>
+      <td><p>a character string indicating fill color, defaults to "grey35", for other named colors check out https://evamaerey.github.io/ggplot2_grammar_guide/named_colors</p></td>
+    </tr>
+    <tr>
+      <th>color</th>
+      <td><p>a character string indicating color, defaults to "black", for other named colors check out https://evamaerey.github.io/ggplot2_grammar_guide/named_colors</p></td>
+    </tr>
+    <tr>
+      <th>x0y0</th>
+      <td><p>dataframe indicating center of shapes, where first column is vector for x values and second column is vector for y values, defaults to NULL</p></td>
     </tr>
     </table>
 
@@ -168,7 +196,7 @@
 <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span>(<span class='no'>cars</span>) +
  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span>(<span class='no'>speed</span>, <span class='no'>dist</span>) +
  <span class='fu'>stamp_ellipse</span>() +
- <span class='fu'>stamp_ellipse</span>(<span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"plum4"</span>, <span class='kw'>x0</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>y0</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>angle</span> <span class='kw'>=</span> <span class='no'>pi</span>/<span class='fl'>6</span>)</div><div class='img'><img src='stamp_ellipse-1.png' alt='' width='700' height='433' /></div><div class='input'>
+ <span class='fu'>stamp_ellipse</span>(<span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"plum4"</span>, <span class='kw'>x0</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>y0</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>rotation</span> <span class='kw'>=</span> <span class='no'>pi</span>/<span class='fl'>6</span>)</div><div class='img'><img src='stamp_ellipse-1.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># several</span>
 <span class='fu'><a href='ggcanvas.html'>ggcanvas</a></span>() +
  <span class='fu'>stamp_ellipse</span>(<span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"green"</span>) +

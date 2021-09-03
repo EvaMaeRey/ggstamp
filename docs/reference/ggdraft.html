@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Create a blank canvas — ggdraft • ggstamp</title>
+<title>Create a drafting space of fixed width and height — ggdraft • ggstamp</title>
 
 
 <!-- jquery -->
@@ -35,8 +35,8 @@
 
 
 
-<meta property="og:title" content="Create a blank canvas — ggdraft" />
-<meta property="og:description" content="Create a blank canvas centered at 0, 0 to use stamps on" />
+<meta property="og:title" content="Create a drafting space of fixed width and height — ggdraft" />
+<meta property="og:description" content="Create a drafting space of fixed width and height" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -112,23 +112,35 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Create a blank canvas</h1>
+    <h1>Create a drafting space of fixed width and height</h1>
     
     <div class="hidden name"><code>ggdraft.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Create a blank canvas centered at 0, 0 to use stamps on</p>
+    <p>Create a drafting space of fixed width and height</p>
     </div>
 
-    <pre class="usage"><span class='fu'>ggdraft</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>100</span>, <span class='kw'>height</span> <span class='kw'>=</span> <span class='no'>width</span>/<span class='fl'>1.618</span>)</pre>
+    <pre class="usage"><span class='fu'>ggdraft</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>height</span> <span class='kw'>=</span> <span class='no'>width</span>/<span class='fl'>1.618</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
+      <th>x</th>
+      <td><p>numeric x origin of drafting space</p></td>
+    </tr>
+    <tr>
       <th>y</th>
-      <td></td>
+      <td><p>numeric y origin of drafting space</p></td>
+    </tr>
+    <tr>
+      <th>width</th>
+      <td><p>numeric width of drafting space, defaults to 1</p></td>
+    </tr>
+    <tr>
+      <th>height</th>
+      <td><p>numeric heigh of drafting space, defaults width/1.618</p></td>
     </tr>
     </table>
 
@@ -143,18 +155,18 @@
 <span class='fu'>ggdraft</span>() +
 <span class='fu'><a href='stamp_curve.html'>stamp_curve</a></span>(<span class='kw'>curvature</span> <span class='kw'>=</span> <span class='fl'>.13</span>,
             <span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>.09</span>,
-            <span class='kw'>yend</span> <span class='kw'>=</span> <span class='fl'>20</span>:<span class='fl'>60</span>,
-            <span class='kw'>xend</span> <span class='kw'>=</span> <span class='fl'>100</span>) +
-<span class='fu'><a href='stamp_polygon.html'>stamp_polygon</a></span>(<span class='kw'>x0</span> <span class='kw'>=</span> <span class='fl'>20</span>, <span class='kw'>y0</span> <span class='kw'>=</span> <span class='fl'>40</span>,
-              <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>20</span>, <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>.4</span>) +
-<span class='fu'><a href='stamp_text.html'>stamp_text</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>20</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>40</span>, <span class='kw'>label</span> <span class='kw'>=</span> <span class='st'>"{ggstamp}"</span>,
-           <span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>6</span>, <span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"grey97"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: Ignoring unknown parameters: nudge_x, nudge_y</span></div><div class='img'><img src='ggdraft-1.png' alt='' width='700' height='433' /></div><div class='input'>
+            <span class='kw'>yend</span> <span class='kw'>=</span> <span class='fl'>20</span>:<span class='fl'>60</span>/<span class='fl'>100</span>,
+            <span class='kw'>xend</span> <span class='kw'>=</span> <span class='fl'>1</span>) +
+<span class='fu'><a href='stamp_polygon.html'>stamp_polygon</a></span>(<span class='kw'>x0</span> <span class='kw'>=</span> <span class='fl'>.20</span>, <span class='kw'>y0</span> <span class='kw'>=</span> <span class='fl'>.40</span>,
+              <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>.20</span>, <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>.4</span>) +
+<span class='fu'><a href='stamp_text.html'>stamp_text</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>.20</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>.40</span>, <span class='kw'>label</span> <span class='kw'>=</span> <span class='st'>"{ggstamp}"</span>,
+           <span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>6</span>, <span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"grey97"</span>)</div><div class='img'><img src='ggdraft-1.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># remove drafting lines</span>
 (<span class='fu'>ggdraft</span>() +
-<span class='fu'><a href='stamp_polygon.html'>stamp_polygon</a></span>(<span class='kw'>x0</span> <span class='kw'>=</span> <span class='fl'>20</span>, <span class='kw'>y0</span> <span class='kw'>=</span> <span class='fl'>40</span>,
-              <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>20</span>, <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>.4</span>) +
-<span class='fu'><a href='stamp_polygon.html'>stamp_polygon</a></span>(<span class='kw'>x0</span> <span class='kw'>=</span> <span class='fl'>85</span>, <span class='kw'>y0</span> <span class='kw'>=</span> <span class='fl'>23</span>,
-              <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>22</span>,
+<span class='fu'><a href='stamp_polygon.html'>stamp_polygon</a></span>(<span class='kw'>x0</span> <span class='kw'>=</span> <span class='fl'>.20</span>, <span class='kw'>y0</span> <span class='kw'>=</span> <span class='fl'>.40</span>,
+              <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>.20</span>, <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>.4</span>) +
+<span class='fu'><a href='stamp_polygon.html'>stamp_polygon</a></span>(<span class='kw'>x0</span> <span class='kw'>=</span> <span class='fl'>.85</span>, <span class='kw'>y0</span> <span class='kw'>=</span> <span class='fl'>.23</span>,
+              <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>.22</span>,
               <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>5</span>, <span class='kw'>fill</span> <span class='kw'>=</span> <span class='st'>"seagreen2"</span>)
    ) +
 <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_void</a></span>()</div><div class='img'><img src='ggdraft-2.png' alt='' width='700' height='433' /></div></pre>

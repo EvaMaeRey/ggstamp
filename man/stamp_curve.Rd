@@ -15,40 +15,36 @@ stamp_curve(
   size = 1.5,
   lineend = "butt",
   curvature = 0.1,
-  angle = 90,
+  curveangle = 90,
   ncp = 5
 )
 }
 \arguments{
-\item{x}{defaults to 0}
+\item{x}{numeric x position, defaults to 0}
 
-\item{y}{defaults to 0}
+\item{y}{numeric y position, defaults to 0}
 
-\item{xend}{numeric defaults to 1}
+\item{xend}{numeric x end position, defaults to 1}
 
-\item{yend}{numeric defaults to 1}
+\item{yend}{numeric y end position, defaults to 1}
 
-\item{alpha}{a numeric between 0 and 1 for transparency, zero is fully transparent, 1 fully opaque}
+\item{alpha}{numeric between 0 and 1 indicating transparency, defaults to 1 fully opaque, zero is fully transparent}
 
-\item{color}{line color}
+\item{color}{a character string indicating color, defaults to "black", for other named colors check out https://evamaerey.github.io/ggplot2_grammar_guide/named_colors}
 
-\item{linetype}{"solid", "dashed", "dotted"}
+\item{linetype}{a string indicating linetype, "solid", "dashed", "dotted", defaults to "solid"}
 
-\item{size}{numeric indicating line width, defaults to 1.5}
+\item{size}{numeric value indicating line width, defaults to 1.5}
 
-\item{lineend}{Line end style (round, butt, square).}
+\item{lineend}{Line end style (round, butt, square)}
 
-\item{curvature}{A numeric value giving the amount of curvature. Negative values produce left-hand curves, positive values produce right-hand curves, and zero produces a straight line.}
+\item{curvature}{A numeric value giving the amount of curvature. Negative values produce left-hand curves, positive values produce right-hand curves, and zero produces a straight line, defaults to .1}
 
-\item{angle}{A numeric value between 0 and 180, giving an amount to skew the control points of the curve. Values less than 90 skew the curve towards the start point and values greater than 90 skew the curve towards the end point.}
+\item{curveangle}{A numeric value between 0 and 180, giving an amount to skew the control points of the curve. Values less than 90 skew the curve towards the start point and values greater than 90 skew the curve towards the end point.}
 
-\item{ncp}{The number of control points used to draw the curve. More control points creates a smoother curve.}
+\item{ncp}{The number of control points used to draw the curve. More control points creates a smoother curve, default is 5}
 
 \item{arrow}{specification for arrow heads, as created by arrow().}
-
-\item{arrow.fill}{fill colour to use for the arrow head (if closed). NULL means use colour aesthetic.}
-
-\item{linejoin}{Line join style (round, mitre, bevel).}
 }
 \value{
 

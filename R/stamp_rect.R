@@ -2,11 +2,7 @@
 #'
 #' This function adds a text annotation layer
 #'
-#' @param size line width default is .5
-#' @param alpha 0 to 1 indicating transparency
-#' @param color named or hexcolor for outline of rect
-#' @param linetype "solid" "dashed" "dotted" linetype border
-#' @inheritParams stamp_tile
+#' @inheritParams stamp_polygon
 #'
 #' @return
 #' @export

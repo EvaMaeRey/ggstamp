@@ -1,31 +1,14 @@
-#' Stamp some text
+#' Stamp a textbox
 #'
 #' This function adds a text annotation layer
 #'
-#' @param x defaults to 0
-#' @param y defaults to 0
-#' @param label defaults with a message about use
 #'
-#' @param xy a data frame where the first two columns contain x and y positional values
 #'
-#' @param alpha transparency of label
-#' @param color color of text, consider named colors https://evamaerey.github.io/ggplot2_grammar_guide/named_colors
-#' @param fill background color of label, consider named colors https://evamaerey.github.io/ggplot2_grammar_guide/named_colors
-#' @param lineheight spacing between lines if text is wrapped
-#' @param family font family
-#' @param hjust horizontal justification, between 0 and 1, defaults to .5
-#' @param size size of text
-#' @param vjust vertical justification, between 0 and 1, defaults to .5
 #'
-#' @param label.padding Amount of padding around label. Defaults to 0.5 lines.
-#' @param label.r Radius of rounded corners. Defaults to 0.15 lines.
-#' @param label.size Size of label border, in mm.
-#' @param parse If TRUE, the labels will be parsed into expressions and displayed as described in ?plotmath.
-#' @param nudge_x Horizontal adjustment to nudge labels by. Useful for offsetting text from points, particularly on discrete scales.
-#' @param nudge_y Vertical adjustment to nudge labels by. Useful for offsetting text from points, particularly on discrete scales.
+#' @param orientation defaults to upright
+#' @param width numeric for width of box in native plot coordinates, defaults to ?
 #'
-#' @param orientation
-#' @param width
+#' @inheritParams stamp_label
 #'
 #' @return
 #' @export
@@ -61,7 +44,7 @@ stamp_textbox <- function(x = 0,
                        size = 8,
                        vjust = .5,
                        orientation = "upright",
-                       width = unit(0.8, "npc"),
+                       width = ggplot2::unit(0.8, "npc"),
 
                        nudge_x = 0,
                        nudge_y = 0,

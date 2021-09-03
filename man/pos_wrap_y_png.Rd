@@ -15,7 +15,19 @@ pos_wrap_y_png(
 )
 }
 \arguments{
-\item{n}{}
+\item{y0}{numeric for y starting point for positioner}
+
+\item{n}{number of positions}
+
+\item{ncol}{number of columns before wrap}
+
+\item{png}{a string with the path to an image, defaults to R image}
+
+\item{image}{a numeric array with png red green blue alpha information, defaults to png::readPNG(png)}
+
+\item{width}{the width that the image should fill, defaults to 1}
+
+\item{height}{the height that the image should fill, calculated to match aspect ratio based on width}
 }
 \value{
 

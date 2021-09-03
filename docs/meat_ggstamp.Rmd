@@ -1,0 +1,195 @@
+---
+title: "A minimal flipbook"
+subtitle: "With flipbookr and xaringan"
+author: "You!"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: [default, hygge, ninjutsu]
+    nature:
+      ratio: 16:9
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r}
+library(readxl)
+library(tidyverse)
+library(png)
+library(ggplot2)
+library(flipbookr)
+knitr::opts_chunk$set(warning = F, message = F, comment = "", cache = T)
+```
+
+# read in data, transform
+
+```{r}
+if(!file.exists("meat.xlsx")){
+download.file("https://query.data.world/s/ctuW4jz_KsMBt9w56foWbbwrpQUKeG", "meat.xlsx")
+  }
+dta = read_xlsx("meat.xlsx") %>% gather(protein, pounds, Beef:`Commercial Fish & Shell-Fish`)
+
+```
+
+---
+
+# Images from the noun project
+
+```{r}
+img_cow=readPNG("noun_36108_cc.png")[100:600, 50:650, 1:4]
+# info reduction
+img_cow=img_cow[seq(1, dim(img_cow)[1], by = 5), 
+                          seq(1, dim(img_cow)[2], by = 5),1:4]
+pngCredit_cow="Meat by Yair Cohen from the Noun Project"
+
+plot(0:5, 0:5, type='n')
+rasterImage(img_cow, 0, 0, 3, 3)
+
+
+img_chicken=readPNG("noun_42413_cc.png")[0:600, 650:50, 1:4]
+# info reduction
+img_chicken=img_chicken[seq(1, dim(img_chicken)[1], by = 5), 
+                        seq(1, dim(img_chicken)[2], by = 5),
+                        1:4]
+pngCredit_chicken="Chicken by Yair Cohen from the Noun Project"
+```
+
+# Plotting
+
+```{r}
+dta %>% 
+  filter(Year %in% c(1970, 1985, 2000, 2015), 
+         protein == "Beef"|protein == "Total Chicken") %>% 
+  pivot_wider(names_from = protein, values_from = pounds) %>% 
+  janitor::clean_names() %>% 
+  mutate(beef_5_round = round(beef/5)) %>% 
+  mutate(chicken_5_round = round(total_chicken/5)) ->
+dta_every_15_yrs  
+```
+
+
+---
+
+`r chunk_reveal("cow")`
+
+```{r cow, include=F}
+dta_every_15_yrs
+
+library(ggstamp)
+ggcanvas() +
+  stamp_text(x = 0:3 * 5 + .2,
+             y = 1, 
+             size = 5,
+             label = dta_every_15_yrs$year) +
+  stamp_png(image = img_cow,
+            height = .95,
+            x0y0 = pos_wrap(n = 17, ncol = 4)) +
+  stamp_png(image = img_cow,
+            height = .95,
+            x0y0 = pos_wrap(n = 16, ncol = 4, x0 = 5)) +
+  stamp_png(image = img_cow,
+            height = .95,
+            x0y0 = pos_wrap(n = 14, ncol = 4, x0 = 10)) + 
+  stamp_png(image = img_cow,
+            height = .95,
+            x0y0 = pos_wrap(n = 11, ncol = 4, x0 = 15)
+            ) ->
+cow_consumption
+```
+
+
+
+---
+
+`r chunk_reveal("chicken")`
+
+```{r chicken, include=F}
+dta_every_15_yrs
+
+cow_consumption +
+  stamp_png(image = img_chicken,
+            height = .95,
+            x0y0 = pos_wrap(n = 8, ncol = 4, y0 = -5.5)) +
+  stamp_png(image = img_chicken,
+            height = .95,
+            x0y0 = pos_wrap(n = 10, ncol = 4,
+                              x0 = 5, y0 = -5.5)) +
+  stamp_png(image = img_chicken,
+            height = .95,
+            x0y0 = pos_wrap(n = 15, ncol = 4,
+                            x0 = 10, y0 = -5.5)) +
+  stamp_png(image = img_chicken,
+            height = .95,
+            x0y0 = pos_wrap(n = 18, ncol = 4, 
+                            x0 = 15, y0 = -5.5)) +
+  labs(title = "Annual Per Person Beef and Chicken Consumption in the US") + 
+  labs(subtitle = "Each animal represents 5 lbs. consumed (rounding)") +
+  labs(caption = "Data Source: National Chicken Council \nIcons:  Yair Cohen from the Noun Project \nData Vis: Evangeline Reynolds @EvaMaeRey") +
+  theme_void() +
+  theme(panel.background = element_rect(fill = "goldenrod3",
+                                        color = "goldenrod3")) +
+  theme(plot.background = element_rect(fill = "goldenrod3",
+                                       color = "goldenrod3")) 
+
+```
+
+
+---
+
+`r chunk_reveal("stamp_roller")`
+
+
+```{r stamp_roller, include = F}
+library(ggstamp)
+ggcanvas() +
+  stamp_text(x = 0:3 * 4.75 + .2,
+             y = 1, 
+             size = 5,
+             label = dta_every_15_yrs$year) +
+  stamp_png(image = img_cow,
+            height = .95,
+            x0y0 = pos_wrap_multi(
+              n = dta_every_15_yrs$beef_5_round,
+              ncol = 4, 
+              width_multi = 4.75)
+            ) +
+  stamp_png(image = img_chicken,
+            height = .95,
+            x0y0 = pos_wrap_multi(
+              n = dta_every_15_yrs$chicken_5_round,
+              ncol = 4, 
+              width_multi = 4.75, y0 = -5.5)
+            ) + 
+    labs(title = "Annual Per Person Beef and Chicken Consumption in the US") + 
+  labs(subtitle = "Each animal represents 5 lbs. consumed (rounding)") +
+  labs(caption = "Data Source: National Chicken Council \nIcons:  Yair Cohen from the Noun Project \nData Vis: Evangeline Reynolds @EvaMaeRey") +
+  theme_void_fill(fill = "goldenrod3")
+```
+
+
+
+```{css, eval = TRUE, echo = FALSE}
+.remark-code{line-height: 1.5; font-size: 80%}
+
+@media print {
+  .has-continuation {
+    display: block;
+  }
+}
+
+code.r.hljs.remark-code{
+  position: relative;
+  overflow-x: hidden;
+}
+
+
+code.r.hljs.remark-code:hover{
+  overflow-x:visible;
+  width: 500px;
+  border-style: solid;
+}
+```
+
+
+

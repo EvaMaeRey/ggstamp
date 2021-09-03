@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Stamp a point/points — stamp_point • ggstamp</title>
+<title>Stamp a point — stamp_point • ggstamp</title>
 
 
 <!-- jquery -->
@@ -35,7 +35,7 @@
 
 
 
-<meta property="og:title" content="Stamp a point/points — stamp_point" />
+<meta property="og:title" content="Stamp a point — stamp_point" />
 <meta property="og:description" content="This function adds a point annotation layer" />
 <meta name="twitter:card" content="summary" />
 
@@ -112,7 +112,7 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Stamp a point/points</h1>
+    <h1>Stamp a point</h1>
     
     <div class="hidden name"><code>stamp_point.Rd</code></div>
     </div>
@@ -138,11 +138,11 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p>a scalar or vector numeric</p></td>
+      <td><p>numeric x position, defaults to 0</p></td>
     </tr>
     <tr>
       <th>y</th>
-      <td><p>a scalar or vector numeric</p></td>
+      <td><p>numeric y position, defaults to 0</p></td>
     </tr>
     <tr>
       <th>size</th>
@@ -150,7 +150,7 @@
     </tr>
     <tr>
       <th>alpha</th>
-      <td><p>a numeric between 0 and 1 for transparency</p></td>
+      <td><p>numeric between 0 and 1 indicating transparency, defaults to 1 fully opaque, zero is fully transparent</p></td>
     </tr>
     <tr>
       <th>shape</th>
@@ -158,15 +158,11 @@
     </tr>
     <tr>
       <th>color</th>
-      <td><p>a color as a character string or hex, named colors: https://evamaerey.github.io/ggplot2_grammar_guide/named_colors</p></td>
+      <td><p>a character string indicating color, defaults to "black", for other named colors check out https://evamaerey.github.io/ggplot2_grammar_guide/named_colors</p></td>
     </tr>
     <tr>
       <th>stroke</th>
       <td><p>a numeric - size of shape outline</p></td>
-    </tr>
-    <tr>
-      <th>fill</th>
-      <td><p>a fill color as a character string or hex, named colors: https://evamaerey.github.io/ggplot2_grammar_guide/named_colors</p></td>
     </tr>
     </table>
 

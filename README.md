@@ -1,11 +1,11 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# ggstamp
+### {ggstamp} <a href="github.com/EvaMaeRey/ggstamp" target="_blank"><em>on github</em></a>
 
 > ‘In God we trust, all others must bring data.’ - W. Edwards Deming.
 
-> Annotation layers must also bring their own data…
+> Annotation layers must also ‘bring data’ … or do they?
 
 <img src="https://github.com/EvaMaeRey/ggstamp/blob/master/docs/flipbook.gif?raw=true" width="100%" />
 
@@ -19,8 +19,7 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 
 The goal of ggstamp is to provide convenience functions for creating
 annotation layers in the ggplot2 and grammar of graphics framework. It
-is experimental and maybe is not such a good idea; but let’s see where
-things lead.
+is experimental; let’s see where things lead.
 
 In some ways, Deming’s quote parallels the experience of analysts using
 ggplot2. Adding geom\_\* layers feels almost godly (geom\_point() = ‘let
@@ -57,16 +56,17 @@ Adding an annotation layer feels different. With annotation geoms/marks,
 you must *simultaneously* declare the mark/geom *and* data.
 
 In ggplot2, use of the annotate() function is most often prescribed.
-It’s not so easy for newcomers to use?
+It’s not so easy for newcomers to use.
 
 ‘ggstamp’ thinks about removing some of the thinking and focus that’s
 needed to create annotation layer.
 
 First, they use a stamp prefix and then name the geom that’s desired,
-i.e. stamp\_point(), stamp\_text() - good for auto-complete IDEs.
+i.e. stamp\_point(), stamp\_text() - good for auto-complete IDEs
+(RStudio).
 
 Also we include the arguments and descriptions so adjustments can more
-easily be made from IDE with function previews.
+easily be made from IDE with argument previews.
 
 Finally, the functions include default data! You will be able to check
 out what stamp\_\* functions do without any input (then you can adjust
@@ -94,7 +94,7 @@ tibble::tibble(x = rnorm(40000, sd = .7),
   coord_equal() + 
   stamp_polygon_inverse(radius = 2, radius_outer = Inf
                         ) + 
-  stamp_polygon(alpha = .2, n = 5, size = 1.5,
+  stamp_polygon(alpha = .2, n = 5, size = 1.75,
                 fill = "magenta", color = "grey15",
                 rotation = -.55) + 
   stamp_polygon(radius = .4, n = 3,

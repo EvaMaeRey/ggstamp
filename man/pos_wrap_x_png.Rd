@@ -14,7 +14,17 @@ pos_wrap_x_png(
 )
 }
 \arguments{
-\item{n}{}
+\item{x0}{numeric for x starting point for positioner}
+
+\item{n}{number of positions}
+
+\item{ncol}{number of columns before wrap}
+
+\item{png}{a string with the path to an image, defaults to R image}
+
+\item{image}{a numeric array with png red green blue alpha information, defaults to png::readPNG(png)}
+
+\item{width}{the width that the image should fill, defaults to 1}
 }
 \value{
 

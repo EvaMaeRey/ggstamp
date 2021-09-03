@@ -5,8 +5,8 @@
 \title{Stamp a spoke (segment defined by angle and length)}
 \usage{
 stamp_spoke(
-  x = 0,
-  y = 0,
+  x0 = 0,
+  y0 = 0,
   angle = pi/4,
   radius = 1,
   alpha = 1,
@@ -16,21 +16,17 @@ stamp_spoke(
 )
 }
 \arguments{
-\item{x}{defaults to 0}
-
-\item{y}{defaults to 0}
-
 \item{angle}{direction of spoke in degrees}
 
 \item{radius}{length of spoke}
 
-\item{alpha}{a numeric between 0 and 1 for transparency, zero is fully transparent, 1 fully opaque}
+\item{alpha}{numeric between 0 and 1 indicating transparency, defaults to 1 fully opaque, zero is fully transparent}
 
-\item{color}{line color}
+\item{color}{a character string indicating color, defaults to "black", for other named colors check out https://evamaerey.github.io/ggplot2_grammar_guide/named_colors}
 
-\item{linetype}{"solid", "dashed", "dotted"}
+\item{linetype}{a string indicating linetype, "solid", "dashed", "dotted", defaults to "solid"}
 
-\item{size}{numeric indicating line width, defaults to 1.5}
+\item{size}{numeric value indicating line width, defaults to 1.5}
 }
 \value{
 
@@ -51,7 +47,7 @@ ggplot(cars) +
  stamp_spoke(color = "green") +
  stamp_spoke(x = 2, y = 2, angle = pi * 1:8/4) +
  stamp_circle(x0 = 2, y0 = 2, radius = 1) +
- stamp_spoke(x = 1.5, y = 0,
+ stamp_spoke(x0 = 1.5, y0 = 0,
             angle = pi * 1:50/50,
             alpha = 1:50/50) +
  stamp_text(x = 2, y = 2, label = "Hi!") +

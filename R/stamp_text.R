@@ -3,7 +3,6 @@
 #' This function adds a text annotation layer
 #'
 #' @inheritParams stamp_label
-#' @Params angle angle of text
 #'
 #' @return
 #' @export
@@ -14,7 +13,7 @@
 #' ggplot(cars) +
 #'  aes(speed, dist) +
 #'  geom_point() +
-#'  stamp_text(label = "A 1920s study on speed v. stopping distance tells us there is a correlation between how fast a car is going and how long it takes to stop.",
+#'  stamp_text(label = "A 1920s study on speed v. stopping distance ...",
 #'             x = 3, y = 110,
 #'             size = 5,
 #'             text_wrap = TRUE,
@@ -31,7 +30,7 @@
 #'  ggcanvas() +
 #'   stamp_text() +
 #'   stamp_text(label = letters[1:4],
-#'   xy = pos_spoke(n = 4)) +
+#'   xy = pos_polygon(n = 4)) +
 #'   stamp_text(x = 2) +
 #'   scale_x_continuous(limits = c(-1,3)) +
 #'   stamp_text(y = 1:2, x = 2,
@@ -79,8 +78,8 @@ label <- stringr::str_wrap(label, width = char_width)
 
 
 annotate(geom = "text",
-         x = x,
-         y = y,
+         x = x + nudge_x,
+         y = y + nudge_y,
          label = label,
 
          alpha = alpha,
@@ -92,9 +91,7 @@ annotate(geom = "text",
          fontface = fontface,
          vjust = vjust,
          hjust = hjust,
-         parse = parse,
-         nudge_x = nudge_x,
-         nudge_y = nudge_y)
+         parse = parse)
 
 }
 

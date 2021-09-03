@@ -7,7 +7,7 @@
 stamp_heart(
   x0 = 0,
   y0 = 0,
-  n = 200,
+  n_vertices = 200,
   radius = 1,
   size = 1.5,
   alpha = 1,
@@ -19,11 +19,23 @@ stamp_heart(
 )
 }
 \arguments{
-\item{x0}{defaults to 0}
+\item{x0}{numeric x center of shape, defaults to 0}
 
-\item{y0}{defaults to 0}
+\item{y0}{numeric y center of shape, defaults to 0}
 
-\item{color}{}
+\item{size}{numeric value indicating line width, defaults to 1.5}
+
+\item{alpha}{numeric between 0 and 1 indicating transparency, defaults to 1 fully opaque, zero is fully transparent}
+
+\item{rotation}{how much the shape should be rotated, defaults to -.5}
+
+\item{linetype}{a string indicating linetype, "solid", "dashed", "dotted", defaults to "solid"}
+
+\item{fill}{a character string indicating fill color, defaults to "grey35", for other named colors check out https://evamaerey.github.io/ggplot2_grammar_guide/named_colors}
+
+\item{color}{a character string indicating color, defaults to "black", for other named colors check out https://evamaerey.github.io/ggplot2_grammar_guide/named_colors}
+
+\item{x0y0}{dataframe indicating center of shapes, where first column is vector for x values and second column is vector for y values, defaults to NULL}
 }
 \value{
 
@@ -48,8 +60,8 @@ ggplot(cars) +
  ggcanvas() +
   stamp_heart(n = 18, x0 = c(0, 2.5),
   fill = "magenta", color = "purple") +
-  stamp_label(x = pos_spoke_x(x0 = 0, n = 3),
-              y = pos_spoke_y(y0 = 0, n = 3),
+  stamp_label(x = pos_polygon_x(x0 = 0, n = 3),
+              y = pos_polygon_y(y0 = 0, n = 3),
               label = c("hi", "hello", "bye")) +
   stamp_point(color = "turquoise")
 

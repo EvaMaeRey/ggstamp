@@ -1,5 +1,5 @@
 
-pos_spoke_x <- function(x0 = 0,
+pos_polygon_x <- function(x0 = 0,
             n = 5,
             radius = 1,
             rotation = -.5){

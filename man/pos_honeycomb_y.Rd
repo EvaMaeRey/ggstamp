@@ -2,18 +2,24 @@
 % Please edit documentation in R/pos_honeycomb_y.R
 \name{pos_honeycomb_y}
 \alias{pos_honeycomb_y}
-\title{Title}
+\title{Create vector for y that, with x will, form a wrapping honeycomb pattern}
 \usage{
 pos_honeycomb_y(y0 = 0, n = 5, ncol = 3, height = 1.5)
 }
 \arguments{
-\item{height}{}
+\item{y0}{numeric y start position}
+
+\item{n}{number of positions}
+
+\item{ncol}{number of columns before wrap, default is 3}
+
+\item{height}{numeric, height between positions}
 }
 \value{
 
 }
 \description{
-Title
+Create vector for y that, with x will, form a wrapping honeycomb pattern
 }
 \examples{
 pos_honeycomb_y()

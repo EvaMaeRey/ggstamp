@@ -2,7 +2,7 @@
 % Please edit documentation in R/stamp_label.R
 \name{stamp_label}
 \alias{stamp_label}
-\title{Stamp some text}
+\title{Stamp a label, text with a background}
 \usage{
 stamp_label(
   x = 0,
@@ -15,7 +15,7 @@ stamp_label(
   fontface = "bold",
   hjust = 0.5,
   lineheight = 0.85,
-  size = 8,
+  size = 5,
   vjust = 0.5,
   nudge_x = 0,
   nudge_y = 0,
@@ -27,17 +27,13 @@ stamp_label(
 )
 }
 \arguments{
-\item{x}{defaults to 0}
-
-\item{y}{defaults to 0}
-
 \item{label}{defaults with a message about use}
 
-\item{alpha}{transparency of label}
+\item{alpha}{numeric between 0 and 1 indicating transparency, defaults to 1 fully opaque, zero is fully transparent}
 
-\item{color}{color of text, consider named colors https://evamaerey.github.io/ggplot2_grammar_guide/named_colors}
+\item{color}{a character string indicating color, defaults to "black", for other named colors check out https://evamaerey.github.io/ggplot2_grammar_guide/named_colors}
 
-\item{fill}{background color of label, consider named colors https://evamaerey.github.io/ggplot2_grammar_guide/named_colors}
+\item{fill}{a character string indicating fill color, defaults to "grey35", for other named colors check out https://evamaerey.github.io/ggplot2_grammar_guide/named_colors}
 
 \item{family}{font family}
 

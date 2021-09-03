@@ -2,7 +2,7 @@
 % Please edit documentation in R/stamp_point.R
 \name{stamp_point}
 \alias{stamp_point}
-\title{Stamp a point/points}
+\title{Stamp a point}
 \usage{
 stamp_point(
   x = 0,
@@ -17,21 +17,19 @@ stamp_point(
 )
 }
 \arguments{
-\item{x}{a scalar or vector numeric}
+\item{x}{numeric x position, defaults to 0}
 
-\item{y}{a scalar or vector numeric}
+\item{y}{numeric y position, defaults to 0}
 
 \item{size}{a scalar or vector numeric}
 
-\item{alpha}{a numeric between 0 and 1 for transparency}
+\item{alpha}{numeric between 0 and 1 indicating transparency, defaults to 1 fully opaque, zero is fully transparent}
 
 \item{shape}{a numeric or character string, "circle" is default but also try "star", "bullet", "diamond", "triangle"}
 
-\item{color}{a color as a character string or hex, named colors: https://evamaerey.github.io/ggplot2_grammar_guide/named_colors}
+\item{color}{a character string indicating color, defaults to "black", for other named colors check out https://evamaerey.github.io/ggplot2_grammar_guide/named_colors}
 
 \item{stroke}{a numeric - size of shape outline}
-
-\item{fill}{a fill color as a character string or hex, named colors: https://evamaerey.github.io/ggplot2_grammar_guide/named_colors}
 }
 \value{
 

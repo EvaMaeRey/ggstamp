@@ -2,11 +2,11 @@
 % Please edit documentation in R/stamp_text_ljust.R
 \name{stamp_text_ljust}
 \alias{stamp_text_ljust}
-\title{Stamp some text}
+\title{Stamp some text, left justified}
 \usage{
 stamp_text_ljust(
-  x = 0,
-  y = 0,
+  x = 0 + nudge_x,
+  y = 0 + nudge_y,
   label = "some\\ntext",
   text_wrap = FALSE,
   char_width = 40,
@@ -26,15 +26,11 @@ stamp_text_ljust(
 )
 }
 \arguments{
-\item{x}{defaults to 0}
-
-\item{y}{defaults to 0}
-
 \item{label}{defaults with a message about use}
 
-\item{alpha}{transparency of label}
+\item{alpha}{numeric between 0 and 1 indicating transparency, defaults to 1 fully opaque, zero is fully transparent}
 
-\item{color}{color of text, consider named colors https://evamaerey.github.io/ggplot2_grammar_guide/named_colors}
+\item{color}{a character string indicating color, defaults to "black", for other named colors check out https://evamaerey.github.io/ggplot2_grammar_guide/named_colors}
 
 \item{family}{font family}
 
@@ -66,7 +62,7 @@ library(ggplot2)
 ggplot(cars) +
  aes(speed, dist) +
  geom_point() +
- stamp_text_ljust(label = "A 1920s study on speed v. stopping distance tells us there is a correlation between how fast a car is going and how long it takes to stop.",
+ stamp_text_ljust(label = "A 1920s study on speed v. stopping distance ...",
             x = 3, y = 110,
             size = 5,
             text_wrap = TRUE,
@@ -83,7 +79,7 @@ ggplot(cars) +
  ggcanvas() +
   stamp_text_ljust() +
   stamp_text_ljust(label = letters[1:4],
-  xy = pos_spoke(n = 4)) +
+  xy = pos_polygon(n = 4)) +
   stamp_text_ljust(x = 2) +
   scale_x_continuous(limits = c(-1,3)) +
   stamp_text(y = 1:2, x = 2,

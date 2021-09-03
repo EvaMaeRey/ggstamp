@@ -1,10 +1,8 @@
-#' Horizontal line, wraps geom_hline w defaut at y = 0
+#' Stamp a horizontal line, a wrapper for geom_hline
 #'
-#' @param yintercept
-#' @param alpha
-#' @param color
-#' @param linetype
-#' @param size
+#' @param yintercept numeric indicating yintercept, default to 0
+#'
+#' @inheritParams stamp_segment
 #'
 #' @return
 #' @export

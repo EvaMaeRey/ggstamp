@@ -13,7 +13,15 @@ stamp_vline(
 )
 }
 \arguments{
-\item{size}{}
+\item{xintercept}{x position of vertical line}
+
+\item{alpha}{numeric between 0 and 1 indicating transparency, defaults to 1 fully opaque, zero is fully transparent}
+
+\item{color}{a character string indicating color, defaults to "black", for other named colors check out https://evamaerey.github.io/ggplot2_grammar_guide/named_colors}
+
+\item{linetype}{a string indicating linetype, "solid", "dashed", "dotted", defaults to "solid"}
+
+\item{size}{numeric value indicating line width, defaults to 1.5}
 }
 \value{
 

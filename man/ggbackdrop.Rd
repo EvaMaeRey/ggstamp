@@ -2,7 +2,7 @@
 % Please edit documentation in R/ggbackdrop.R
 \name{ggbackdrop}
 \alias{ggbackdrop}
-\title{Create a blank canvas}
+\title{Create a canvas with a backdrop}
 \usage{
 ggbackdrop(
   x = 0,
@@ -15,7 +15,7 @@ ggbackdrop(
 )
 }
 \arguments{
-\item{y}{}
+\item{height}{}
 }
 \value{
 

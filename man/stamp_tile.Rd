@@ -2,7 +2,7 @@
 % Please edit documentation in R/stamp_tile.R
 \name{stamp_tile}
 \alias{stamp_tile}
-\title{Stamp some text}
+\title{Stamp a tile (a rectangle)}
 \usage{
 stamp_tile(
   x = 0,
@@ -18,25 +18,15 @@ stamp_tile(
 )
 }
 \arguments{
-\item{x}{defaults to 0}
+\item{size}{numeric value indicating line width, defaults to 1.5}
 
-\item{y}{defaults to 0}
+\item{alpha}{numeric between 0 and 1 indicating transparency, defaults to 1 fully opaque, zero is fully transparent}
 
-\item{size}{line width default is .5}
+\item{color}{a character string indicating color, defaults to "black", for other named colors check out https://evamaerey.github.io/ggplot2_grammar_guide/named_colors}
 
-\item{alpha}{0 to 1 indicating transparency}
+\item{fill}{a character string indicating fill color, defaults to "grey35", for other named colors check out https://evamaerey.github.io/ggplot2_grammar_guide/named_colors}
 
-\item{color}{named or hexcolor for outline of tile}
-
-\item{fill}{background color of label, consider named colors https://evamaerey.github.io/ggplot2_grammar_guide/named_colors}
-
-\item{height}{full height of tile centered at y}
-
-\item{linetype}{"solid" "dashed" "dotted" linetype border}
-
-\item{width}{full width of tile centered at x}
-
-\item{xy}{a data frame where the first two columns contain x and y positional values}
+\item{linetype}{a string indicating linetype, "solid", "dashed", "dotted", defaults to "solid"}
 }
 \value{
 
@@ -53,7 +43,7 @@ ggplot(cars) +
  stamp_tile(color = "red", x = 10,
             y = 90:100) +
  stamp_tile(height = 10,
-            xy = pos_spoke(x0 = 20, n = 15,
+            xy = pos_polygon(x0 = 20, n = 15,
             radius = 6))
 
 # on a canvas
@@ -67,5 +57,5 @@ ggcanvas() +
 
 # using a positioner
 ggcanvas() +
- stamp_tile(xy = pos_spoke())
+ stamp_tile(xy = pos_polygon())
 }

@@ -1,10 +1,6 @@
-
-
-
 #' Title
 #'
-#' @param x0
-#' @param n
+#' @inheritParams pos_wrap_png
 #'
 #' @return
 #' @export

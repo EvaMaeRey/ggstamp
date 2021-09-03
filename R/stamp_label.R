@@ -1,16 +1,11 @@
-#' Stamp some text
+#' Stamp a label, text with a background
 #'
 #' This function adds a text annotation layer
 #'
-#' @param x defaults to 0
-#' @param y defaults to 0
 #' @param label defaults with a message about use
 #'
 #' @param xy a data frame where the first two columns contain x and y positional values
 #'
-#' @param alpha transparency of label
-#' @param color color of text, consider named colors https://evamaerey.github.io/ggplot2_grammar_guide/named_colors
-#' @param fill background color of label, consider named colors https://evamaerey.github.io/ggplot2_grammar_guide/named_colors
 #' @param lineheight spacing between lines if text is wrapped
 #' @param family font family
 #' @param fontface
@@ -24,6 +19,8 @@
 #' @param parse If TRUE, the labels will be parsed into expressions and displayed as described in ?plotmath.
 #' @param nudge_x Horizontal adjustment to nudge labels by. Useful for offsetting text from points, particularly on discrete scales.
 #' @param nudge_y Vertical adjustment to nudge labels by. Useful for offsetting text from points, particularly on discrete scales.
+#'
+#' @inheritParams stamp_circle
 #'
 #'
 #' @return
@@ -53,7 +50,7 @@ stamp_label <- function(x = 0,
                        fontface = "bold",
                        hjust = .5,
                        lineheight = .85,
-                       size = 8,
+                       size = 5,
                        vjust = .5,
 
                        nudge_x = 0,
@@ -70,8 +67,8 @@ stamp_label <- function(x = 0,
   }
 
 annotate(geom = "label",
-         x = x,
-         y = y,
+         x = x + nudge_x,
+         y = y + nudge_y,
          label = label,
 
          alpha = alpha,
@@ -87,8 +84,6 @@ annotate(geom = "label",
          label.padding = label.padding,
          label.r = label.r,
          label.size = label.size,
-         nudge_x = nudge_x,
-         nudge_y = nudge_y,
          parse = parse)
 
 }

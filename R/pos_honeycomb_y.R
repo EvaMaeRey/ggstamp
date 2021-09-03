@@ -1,10 +1,6 @@
-
-#' Title
+#' Create vector for y that, with x will, form a wrapping honeycomb pattern
 #'
-#' @param y0
-#' @param n
-#' @param ncol
-#' @param height
+#' @inheritParams pos_honeycomb
 #'
 #' @return
 #' @export

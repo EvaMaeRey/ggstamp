@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Stamp some text — stamp_path • ggstamp</title>
+<title>Stamp a path, connected points — stamp_path • ggstamp</title>
 
 
 <!-- jquery -->
@@ -35,7 +35,7 @@
 
 
 
-<meta property="og:title" content="Stamp some text — stamp_path" />
+<meta property="og:title" content="Stamp a path, connected points — stamp_path" />
 <meta property="og:description" content="This function adds a text annotation layer" />
 <meta name="twitter:card" content="summary" />
 
@@ -112,7 +112,7 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Stamp some text</h1>
+    <h1>Stamp a path, connected points</h1>
     
     <div class="hidden name"><code>stamp_path.Rd</code></div>
     </div>
@@ -130,7 +130,7 @@
   <span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>1.5</span>,
   <span class='kw'>lineend</span> <span class='kw'>=</span> <span class='st'>"butt"</span>,
   <span class='kw'>linejoin</span> <span class='kw'>=</span> <span class='st'>"round"</span>,
-  <span class='kw'>arrow</span> <span class='kw'>=</span> <span class='fu'>arrow</span>(<span class='kw'>length</span> <span class='kw'>=</span> <span class='fl'>0</span>),
+  <span class='kw'>arrow</span> <span class='kw'>=</span> <span class='kw pkg'>ggplot2</span><span class='kw ns'>::</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/reexports.html'>arrow</a></span>(<span class='kw'>length</span> <span class='kw'>=</span> <span class='fl'>0</span>),
   <span class='kw'>arrow.fill</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>xy</span> <span class='kw'>=</span> <span class='kw'>NULL</span>
 )</pre>
@@ -140,43 +140,35 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p>defaults to 0</p></td>
+      <td><p>numeric x position, defaults to 0</p></td>
     </tr>
     <tr>
       <th>y</th>
-      <td><p>defaults to 0</p></td>
+      <td><p>numeric y position, defaults to 0</p></td>
     </tr>
     <tr>
       <th>alpha</th>
-      <td><p>a numeric between 0 and 1 for transparency, zero is fully transparent, 1 fully opaque</p></td>
+      <td><p>numeric between 0 and 1 indicating transparency, defaults to 1 fully opaque, zero is fully transparent</p></td>
     </tr>
     <tr>
       <th>color</th>
-      <td><p>line color</p></td>
+      <td><p>a character string indicating color, defaults to "black", for other named colors check out https://evamaerey.github.io/ggplot2_grammar_guide/named_colors</p></td>
     </tr>
     <tr>
       <th>linetype</th>
-      <td><p>"solid", "dashed", "dotted"</p></td>
+      <td><p>a string indicating linetype, "solid", "dashed", "dotted", defaults to "solid"</p></td>
     </tr>
     <tr>
       <th>size</th>
-      <td><p>numeric indicating line width, defaults to 1.5</p></td>
+      <td><p>numeric value indicating line width, defaults to 1.5</p></td>
     </tr>
     <tr>
       <th>lineend</th>
-      <td><p>Line end style (round, butt, square).</p></td>
-    </tr>
-    <tr>
-      <th>linejoin</th>
-      <td><p>Line join style (round, mitre, bevel).</p></td>
+      <td><p>Line end style (round, butt, square)</p></td>
     </tr>
     <tr>
       <th>arrow</th>
       <td><p>specification for arrow heads, as created by arrow().</p></td>
-    </tr>
-    <tr>
-      <th>arrow.fill</th>
-      <td><p>fill colour to use for the arrow head (if closed). NULL means use colour aesthetic.</p></td>
     </tr>
     </table>
 

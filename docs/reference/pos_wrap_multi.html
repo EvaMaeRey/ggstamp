@@ -128,7 +128,7 @@
   <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>3</span>,
   <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>1</span>,
   <span class='kw'>spacing</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>width_multi</span> <span class='kw'>=</span> <span class='no'>ncol</span> + <span class='no'>spacing</span>,
+  <span class='kw'>width_multi</span> <span class='kw'>=</span> <span class='no'>ncol</span> * <span class='no'>width</span> + <span class='no'>spacing</span>,
   <span class='kw'>height</span> <span class='kw'>=</span> <span class='no'>width</span>
 )</pre>
 
@@ -136,8 +136,28 @@
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
+      <th>x0</th>
+      <td><p>numeric for x starting point for positioner</p></td>
+    </tr>
+    <tr>
+      <th>y0</th>
+      <td><p>numeric for y starting point for positioner</p></td>
+    </tr>
+    <tr>
+      <th>n</th>
+      <td><p>number of positions</p></td>
+    </tr>
+    <tr>
       <th>ncol</th>
-      <td></td>
+      <td><p>number of columns before wrap</p></td>
+    </tr>
+    <tr>
+      <th>spacing</th>
+      <td><p>width between wrapped groups, defaulst to 1</p></td>
+    </tr>
+    <tr>
+      <th>width_multi</th>
+      <td><p>spacing for groups, defaults to width + spacing</p></td>
     </tr>
     </table>
 

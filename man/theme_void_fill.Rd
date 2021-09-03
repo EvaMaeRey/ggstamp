@@ -4,10 +4,12 @@
 \alias{theme_void_fill}
 \title{Title}
 \usage{
-theme_void_fill(fill = "linen", color = fill)
+theme_void_fill(fill = "linen", color = fill, ...)
 }
 \arguments{
-\item{color}{}
+\item{fill}{string indicating background color, defaults to "linen"}
+
+\item{color}{string indicating seams color, defaults to fill color}
 }
 \value{
 

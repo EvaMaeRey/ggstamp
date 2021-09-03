@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Horizontal line, wraps geom_hline w defaut at y = 0 — stamp_hline • ggstamp</title>
+<title>Stamp a horizontal line, a wrapper for geom_hline — stamp_hline • ggstamp</title>
 
 
 <!-- jquery -->
@@ -35,8 +35,8 @@
 
 
 
-<meta property="og:title" content="Horizontal line, wraps geom_hline w defaut at y = 0 — stamp_hline" />
-<meta property="og:description" content="Horizontal line, wraps geom_hline w defaut at y = 0" />
+<meta property="og:title" content="Stamp a horizontal line, a wrapper for geom_hline — stamp_hline" />
+<meta property="og:description" content="Stamp a horizontal line, a wrapper for geom_hline" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -112,13 +112,13 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Horizontal line, wraps geom_hline w defaut at y = 0</h1>
+    <h1>Stamp a horizontal line, a wrapper for geom_hline</h1>
     
     <div class="hidden name"><code>stamp_hline.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Horizontal line, wraps geom_hline w defaut at y = 0</p>
+    <p>Stamp a horizontal line, a wrapper for geom_hline</p>
     </div>
 
     <pre class="usage"><span class='fu'>stamp_hline</span>(
@@ -133,8 +133,24 @@
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
+      <th>yintercept</th>
+      <td><p>numeric indicating yintercept, default to 0</p></td>
+    </tr>
+    <tr>
+      <th>alpha</th>
+      <td><p>numeric between 0 and 1 indicating transparency, defaults to 1 fully opaque, zero is fully transparent</p></td>
+    </tr>
+    <tr>
+      <th>color</th>
+      <td><p>a character string indicating color, defaults to "black", for other named colors check out https://evamaerey.github.io/ggplot2_grammar_guide/named_colors</p></td>
+    </tr>
+    <tr>
+      <th>linetype</th>
+      <td><p>a string indicating linetype, "solid", "dashed", "dotted", defaults to "solid"</p></td>
+    </tr>
+    <tr>
       <th>size</th>
-      <td></td>
+      <td><p>numeric value indicating line width, defaults to 1.5</p></td>
     </tr>
     </table>
 

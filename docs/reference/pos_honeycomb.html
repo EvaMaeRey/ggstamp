@@ -134,8 +134,28 @@
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
+      <th>x0</th>
+      <td><p>numeric x start position</p></td>
+    </tr>
+    <tr>
+      <th>y0</th>
+      <td><p>numeric y start position</p></td>
+    </tr>
+    <tr>
+      <th>n</th>
+      <td><p>number of positions</p></td>
+    </tr>
+    <tr>
+      <th>ncol</th>
+      <td><p>number of columns before wrap, default is 3</p></td>
+    </tr>
+    <tr>
+      <th>width</th>
+      <td><p>numeric, width between positions</p></td>
+    </tr>
+    <tr>
       <th>height</th>
-      <td></td>
+      <td><p>numeric, height between positions</p></td>
     </tr>
     </table>
 
@@ -159,7 +179,7 @@
  <span class='fu'><a href='stamp_label.html'>stamp_label</a></span>(<span class='kw'>label</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>15</span>, <span class='kw'>xy</span> <span class='kw'>=</span> <span class='fu'>pos_honeycomb</span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>15</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>4</span>)) +
  <span class='fu'><a href='stamp_polygon.html'>stamp_polygon</a></span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>4</span>,
                <span class='kw'>x0y0</span> <span class='kw'>=</span> <span class='fu'>pos_honeycomb</span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>15</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>4</span>)[<span class='fl'>15</span>,],
-               <span class='kw'>fill</span> <span class='kw'>=</span> <span class='st'>"magenta"</span>, <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>.4</span>, <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/MathFun.html'>sqrt</a></span>(<span class='fl'>.75</span>))</div><div class='output co'>#&gt; <span class='warning'>Warning: Ignoring unknown parameters: nudge_x, nudge_y</span></div><div class='img'><img src='pos_honeycomb-1.png' alt='' width='700' height='433' /></div><div class='input'>
+               <span class='kw'>fill</span> <span class='kw'>=</span> <span class='st'>"magenta"</span>, <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>.4</span>, <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/MathFun.html'>sqrt</a></span>(<span class='fl'>.75</span>))</div><div class='img'><img src='pos_honeycomb-1.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># get coords for single position</span>
 <span class='fu'>pos_honeycomb</span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>15</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>5</span>)[<span class='fl'>15</span>,]</div><div class='output co'>#&gt;          x0 y0
 #&gt; 15 6.928203 -3</div><div class='input'><span class='fu'>pos_honeycomb</span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>15</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>5</span>)[<span class='fl'>1</span>:<span class='fl'>4</span>,]</div><div class='output co'>#&gt;         x0 y0

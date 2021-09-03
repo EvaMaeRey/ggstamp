@@ -26,7 +26,7 @@ ggcanvas() +
               size = 35) +
   stamp_arrow(color = "plum4",
               headlength = .06,
-              type = "closed") +
+              headtype = "closed") +
   stamp_label(1.5, 2.5, label = "      \n\n\n\n\n",
               size = 15,
               fill = "lemonchiffon", ) +

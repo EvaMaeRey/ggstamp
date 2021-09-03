@@ -2,14 +2,8 @@
 
 #' Title
 #'
-#' @param x0
-#' @param y0
-#' @param n
-#' @param ncol
-#' @param png
-#' @param image
-#' @param width
-#' @param height
+#' @inheritParams pos_wrap
+#' @inheritParams stamp_png
 #'
 #' @return
 #' @export

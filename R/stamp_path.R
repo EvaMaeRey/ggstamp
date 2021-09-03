@@ -1,6 +1,7 @@
-#' Stamp some text
+#' Stamp a path, connected points
 #'
 #' This function adds a text annotation layer
+#'
 #'
 #' @inheritParams stamp_curve
 #'
@@ -26,7 +27,7 @@ stamp_path <- function(x = 0:3,
                         lineend = "butt",
                         linejoin = "round",
 
-                        arrow = arrow(length = 0),
+                        arrow = ggplot2::arrow(length = 0),
                         arrow.fill = NULL,
 
                        xy = NULL

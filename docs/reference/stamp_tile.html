@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Stamp some text — stamp_tile • ggstamp</title>
+<title>Stamp a tile (a rectangle) — stamp_tile • ggstamp</title>
 
 
 <!-- jquery -->
@@ -35,7 +35,7 @@
 
 
 
-<meta property="og:title" content="Stamp some text — stamp_tile" />
+<meta property="og:title" content="Stamp a tile (a rectangle) — stamp_tile" />
 <meta property="og:description" content="This function adds a text annotation layer" />
 <meta name="twitter:card" content="summary" />
 
@@ -112,7 +112,7 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Stamp some text</h1>
+    <h1>Stamp a tile (a rectangle)</h1>
     
     <div class="hidden name"><code>stamp_tile.Rd</code></div>
     </div>
@@ -138,44 +138,24 @@
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>x</th>
-      <td><p>defaults to 0</p></td>
-    </tr>
-    <tr>
-      <th>y</th>
-      <td><p>defaults to 0</p></td>
-    </tr>
-    <tr>
       <th>size</th>
-      <td><p>line width default is .5</p></td>
+      <td><p>numeric value indicating line width, defaults to 1.5</p></td>
     </tr>
     <tr>
       <th>alpha</th>
-      <td><p>0 to 1 indicating transparency</p></td>
+      <td><p>numeric between 0 and 1 indicating transparency, defaults to 1 fully opaque, zero is fully transparent</p></td>
     </tr>
     <tr>
       <th>color</th>
-      <td><p>named or hexcolor for outline of tile</p></td>
+      <td><p>a character string indicating color, defaults to "black", for other named colors check out https://evamaerey.github.io/ggplot2_grammar_guide/named_colors</p></td>
     </tr>
     <tr>
       <th>fill</th>
-      <td><p>background color of label, consider named colors https://evamaerey.github.io/ggplot2_grammar_guide/named_colors</p></td>
-    </tr>
-    <tr>
-      <th>height</th>
-      <td><p>full height of tile centered at y</p></td>
+      <td><p>a character string indicating fill color, defaults to "grey35", for other named colors check out https://evamaerey.github.io/ggplot2_grammar_guide/named_colors</p></td>
     </tr>
     <tr>
       <th>linetype</th>
-      <td><p>"solid" "dashed" "dotted" linetype border</p></td>
-    </tr>
-    <tr>
-      <th>width</th>
-      <td><p>full width of tile centered at x</p></td>
-    </tr>
-    <tr>
-      <th>xy</th>
-      <td><p>a data frame where the first two columns contain x and y positional values</p></td>
+      <td><p>a string indicating linetype, "solid", "dashed", "dotted", defaults to "solid"</p></td>
     </tr>
     </table>
 
@@ -194,7 +174,7 @@
  <span class='fu'>stamp_tile</span>(<span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"red"</span>, <span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>10</span>,
             <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>90</span>:<span class='fl'>100</span>) +
  <span class='fu'>stamp_tile</span>(<span class='kw'>height</span> <span class='kw'>=</span> <span class='fl'>10</span>,
-            <span class='kw'>xy</span> <span class='kw'>=</span> <span class='fu'><a href='pos_spoke.html'>pos_spoke</a></span>(<span class='kw'>x0</span> <span class='kw'>=</span> <span class='fl'>20</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>15</span>,
+            <span class='kw'>xy</span> <span class='kw'>=</span> <span class='fu'><a href='pos_polygon.html'>pos_polygon</a></span>(<span class='kw'>x0</span> <span class='kw'>=</span> <span class='fl'>20</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>15</span>,
             <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>6</span>))</div><div class='img'><img src='stamp_tile-1.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># on a canvas</span>
 <span class='fu'><a href='ggcanvas.html'>ggcanvas</a></span>() +
@@ -206,7 +186,7 @@
  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/coord_fixed.html'>coord_equal</a></span>()</div><div class='output co'>#&gt; <span class='message'>Coordinate system already present. Adding new coordinate system, which will replace the existing one.</span></div><div class='img'><img src='stamp_tile-2.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># using a positioner</span>
 <span class='fu'><a href='ggcanvas.html'>ggcanvas</a></span>() +
- <span class='fu'>stamp_tile</span>(<span class='kw'>xy</span> <span class='kw'>=</span> <span class='fu'><a href='pos_spoke.html'>pos_spoke</a></span>())</div><div class='img'><img src='stamp_tile-3.png' alt='' width='700' height='433' /></div></pre>
+ <span class='fu'>stamp_tile</span>(<span class='kw'>xy</span> <span class='kw'>=</span> <span class='fu'><a href='pos_polygon.html'>pos_polygon</a></span>())</div><div class='img'><img src='stamp_tile-3.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

@@ -122,8 +122,8 @@
     </div>
 
     <pre class="usage"><span class='fu'>stamp_spoke</span>(
-  <span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>0</span>,
-  <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>0</span>,
+  <span class='kw'>x0</span> <span class='kw'>=</span> <span class='fl'>0</span>,
+  <span class='kw'>y0</span> <span class='kw'>=</span> <span class='fl'>0</span>,
   <span class='kw'>angle</span> <span class='kw'>=</span> <span class='no'>pi</span>/<span class='fl'>4</span>,
   <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>1</span>,
   <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>1</span>,
@@ -136,14 +136,6 @@
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>x</th>
-      <td><p>defaults to 0</p></td>
-    </tr>
-    <tr>
-      <th>y</th>
-      <td><p>defaults to 0</p></td>
-    </tr>
-    <tr>
       <th>angle</th>
       <td><p>direction of spoke in degrees</p></td>
     </tr>
@@ -153,19 +145,19 @@
     </tr>
     <tr>
       <th>alpha</th>
-      <td><p>a numeric between 0 and 1 for transparency, zero is fully transparent, 1 fully opaque</p></td>
+      <td><p>numeric between 0 and 1 indicating transparency, defaults to 1 fully opaque, zero is fully transparent</p></td>
     </tr>
     <tr>
       <th>color</th>
-      <td><p>line color</p></td>
+      <td><p>a character string indicating color, defaults to "black", for other named colors check out https://evamaerey.github.io/ggplot2_grammar_guide/named_colors</p></td>
     </tr>
     <tr>
       <th>linetype</th>
-      <td><p>"solid", "dashed", "dotted"</p></td>
+      <td><p>a string indicating linetype, "solid", "dashed", "dotted", defaults to "solid"</p></td>
     </tr>
     <tr>
       <th>size</th>
-      <td><p>numeric indicating line width, defaults to 1.5</p></td>
+      <td><p>numeric value indicating line width, defaults to 1.5</p></td>
     </tr>
     </table>
 
@@ -187,12 +179,12 @@
  <span class='fu'>stamp_spoke</span>(<span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"green"</span>) +
  <span class='fu'>stamp_spoke</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>angle</span> <span class='kw'>=</span> <span class='no'>pi</span> * <span class='fl'>1</span>:<span class='fl'>8</span>/<span class='fl'>4</span>) +
  <span class='fu'><a href='stamp_circle.html'>stamp_circle</a></span>(<span class='kw'>x0</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>y0</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>1</span>) +
- <span class='fu'>stamp_spoke</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1.5</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>0</span>,
+ <span class='fu'>stamp_spoke</span>(<span class='kw'>x0</span> <span class='kw'>=</span> <span class='fl'>1.5</span>, <span class='kw'>y0</span> <span class='kw'>=</span> <span class='fl'>0</span>,
             <span class='kw'>angle</span> <span class='kw'>=</span> <span class='no'>pi</span> * <span class='fl'>1</span>:<span class='fl'>50</span>/<span class='fl'>50</span>,
             <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>50</span>/<span class='fl'>50</span>) +
  <span class='fu'><a href='stamp_text.html'>stamp_text</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>label</span> <span class='kw'>=</span> <span class='st'>"Hi!"</span>) +
  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/coord_fixed.html'>coord_equal</a></span>() +
- <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_void</a></span>()</div><div class='output co'>#&gt; <span class='warning'>Warning: Ignoring unknown parameters: nudge_x, nudge_y</span></div><div class='output co'>#&gt; <span class='message'>Coordinate system already present. Adding new coordinate system, which will replace the existing one.</span></div><div class='img'><img src='stamp_spoke-2.png' alt='' width='700' height='433' /></div></pre>
+ <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_void</a></span>()</div><div class='output co'>#&gt; <span class='message'>Coordinate system already present. Adding new coordinate system, which will replace the existing one.</span></div><div class='img'><img src='stamp_spoke-2.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

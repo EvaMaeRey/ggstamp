@@ -2,15 +2,22 @@
 % Please edit documentation in R/stamp_grid.R
 \name{stamp_grid}
 \alias{stamp_grid}
-\title{Title}
+\title{Stamp a grid for decoupling annotation from plotting}
 \usage{
 stamp_grid(color = "turquoise4", fill = "linen", alpha = 0.5)
+}
+\arguments{
+\item{color}{grid color, defaults to 'turquoise4'}
+
+\item{fill}{overlay color, defaults to 'linen'}
+
+\item{alpha}{numeric between 0 and 1, level of transparency for grid layer}
 }
 \value{
 
 }
 \description{
-Title
+Stamp a grid for decoupling annotation from plotting
 }
 \examples{
 library(ggplot2)
@@ -19,7 +26,7 @@ ggplot(cars) +
   aes(y = dist) +
   geom_point() +
   facet_wrap(~speed > 15) ->
-  p
+ p
 
 cowplot::ggdraw(p) +
   stamp_grid() + # you can comment this guide out later

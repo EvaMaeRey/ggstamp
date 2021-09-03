@@ -4,18 +4,22 @@
 #' Contribute or help document https://github.com/EvaMaeRey/ggstamp/blob/master/R/stamp_arrow.R
 
 #'
-#' @param x defaults to 0
-#' @param y defaults to 0
-#' @param xend defaults to 1
-#' @param yend defaults to 1
-#' @param size numeric indicating line width
-#' @param alpha numeric between 0 and 1 indicating transparency
-#' @param color
-#' @param ends One of "last", "first", or "both", indicating which ends of the line to draw arrow heads.
-#' @param headlength A unit specifying the length of the arrow head (from tip to base).
-#' @param units A character vector specifying the units for the corresponding numeric values.
-#' @param angle The angle of the arrow head in degrees (smaller numbers produce narrower, pointier arrows). Essentially describes the width of the arrow head.
-#' @param type One of "open" or "closed" indicating whether the arrow head should be a closed triangle.
+#' @param x numeric x position, defaults to 0
+#' @param y numeric y position, defaults to 0
+#' @param xend numeric x end position, defaults to 1
+#' @param yend numeric y end position, defaults to 1
+#' @param size numeric value indicating line width, defaults to 1.5
+#' @param alpha numeric between 0 and 1 indicating transparency, defaults to 1 fully opaque, zero is fully transparent
+#' @param color a character string indicating color, defaults to "black", for other named colors check out https://evamaerey.github.io/ggplot2_grammar_guide/named_colors
+#' @param linetype a string indicating linetype, "solid", "dashed", "dotted", defaults to "solid"
+#' @param ends a character string, one of "last", "first", or "both", indicating which ends of the line to draw arrow heads, defaults to last
+#' @param headlength A numeric value specifying the length of the arrow head (from tip to base), defaults to .03
+#' @param units A character vector specifying the units for head length, default is "npc" for native plot coordinates
+#' @param headangle A numeric value, the angle of the arrowhead in degrees (smaller numbers produce narrower, pointier arrows). Essentially describes the width of the arrow head.
+#' @param headtype One of "open" or "closed" indicating whether the arrow head should be a closed triangle.
+#' @param lineend Line end style (round, butt, square)
+#' @param linejoin Line join style (round, mitre, bevel)
+#' @param arrow.fill fill colour to use for the arrow head (if closed). NULL means use colour aesthetic.
 #'
 #' @return
 #' @export
@@ -34,10 +38,10 @@
 #'  ggcanvas() +
 #'  stamp_arrow(color = "steelblue") +
 #'  stamp_arrow(x = 1:5, y = 2, xend = 2:6,
-#'  headlength = .04, type = "closed",
+#'  headlength = .04, headtype = "closed",
 #'  color = "darkred") +
 #'  stamp_arrow(x = .5, xend = 1.5,
-#'  ends = "both", angle = 60)
+#'  ends = "both", headangle = 60)
 stamp_arrow <- function(x = 0,
                         y = 0,
                         xend = 1,
@@ -45,14 +49,15 @@ stamp_arrow <- function(x = 0,
 
                         alpha = 1,
                         color = "black",
+                        linetype = "solid",
                         size = 1.5,
 
                         # define arrow
                         ends = "last",
                         units = "npc",
                         headlength = .03,
-                        angle = 30,
-                        type = "open",
+                        headangle = 30,
+                        headtype = "open",
 
                         lineend = "butt",
                         linejoin = "round",
@@ -62,13 +67,14 @@ stamp_arrow <- function(x = 0,
   annotate(geom = "segment",
            x = x,
            y = y,
-           arrow = arrow(ends = ends, type = type, angle = angle,
-                         length = unit(x = headlength, units = "npc")),
+           arrow = ggplot2::arrow(ends = ends, type = headtype, angle = headangle,
+                         length = ggplot2::unit(x = headlength, units = units)),
            xend = xend,
            yend = yend,
            size = size,
            alpha = alpha,
-           color = color)
+           color = color,
+           linetype = linetype)
 
 }
 

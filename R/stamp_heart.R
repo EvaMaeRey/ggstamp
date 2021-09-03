@@ -3,16 +3,7 @@
 #' This function adds a text annotation layer.
 #' Contribute or help document https://github.com/EvaMaeRey/ggstamp/blob/master/R/stamp_polygon.R
 #'
-#' @param x0 defaults to 0
-#' @param y0 defaults to 0
-#' @param size
-#' @param n
-#' @param radius
-#' @param alpha
-#' @param rotation
-#' @param linetype
-#' @param fill
-#' @param color
+#' @inheritParams stamp_ellipse
 #'
 #' @return
 #' @export
@@ -33,8 +24,8 @@
 #'  ggcanvas() +
 #'   stamp_heart(n = 18, x0 = c(0, 2.5),
 #'   fill = "magenta", color = "purple") +
-#'   stamp_label(x = pos_spoke_x(x0 = 0, n = 3),
-#'               y = pos_spoke_y(y0 = 0, n = 3),
+#'   stamp_label(x = pos_polygon_x(x0 = 0, n = 3),
+#'               y = pos_polygon_y(y0 = 0, n = 3),
 #'               label = c("hi", "hello", "bye")) +
 #'   stamp_point(color = "turquoise")
 #'
@@ -57,7 +48,7 @@
 #'
 stamp_heart <- function(x0 = 0,
                           y0 = 0,
-                          n = 200,
+                          n_vertices = 200,
                           radius = 1,
                           size = 1.5,
                           alpha = 1,
@@ -75,15 +66,15 @@ stamp_heart <- function(x0 = 0,
   groups <- max(c(length(x0), length(y0)))
 
   tibble::tibble(x0, y0, group = 1:groups) %>%
-    tidyr::crossing(the_n = 2*pi*(1:n)/n) %>%
+    tidyr::crossing(the_n = 2*pi*(1:n_vertices)/n_vertices) %>%
   dplyr::mutate(
     y = y0 + radius * (
-      .95 * cos(the_n)
-      - .35 * cos(2 * the_n)
-      - .25 * cos(3 * the_n)
-      - .05 * cos(4 * the_n)
+      .95 * cos(.data$the_n)
+      - .35 * cos(2 * .data$the_n)
+      - .25 * cos(3 * .data$the_n)
+      - .05 * cos(4 * .data$the_n)
       ) - rotation * pi,
-    x = x0 + radius * (sin(the_n)^3) - rotation * pi) ->
+    x = x0 + radius * (sin(.data$the_n)^3) - rotation * pi) ->
   df
 
 

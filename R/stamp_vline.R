@@ -1,10 +1,8 @@
 #' Horizontal line, wraps geom_vline w defaut at y = 0
 #'
-#' @param yintercept
-#' @param alpha
-#' @param color
-#' @param linetype
-#' @param size
+#' @param xintercept x position of vertical line
+#'
+#' @inheritParams stamp_hline
 #'
 #' @return
 #' @export

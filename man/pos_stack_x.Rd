@@ -7,7 +7,11 @@
 pos_stack_x(x0 = 0, n = 5, ncol = 3, width = 1)
 }
 \arguments{
-\item{n}{}
+\item{x0}{numeric for x starting point for positioner}
+
+\item{n}{number of positions}
+
+\item{ncol}{number of columns before wrap}
 }
 \value{
 

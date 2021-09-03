@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>stamp_png — stamp_png • ggstamp</title>
+<title>Stamp a png image — stamp_png • ggstamp</title>
 
 
 <!-- jquery -->
@@ -35,8 +35,8 @@
 
 
 
-<meta property="og:title" content="stamp_png — stamp_png" />
-<meta property="og:description" content="stamp_png" />
+<meta property="og:title" content="Stamp a png image — stamp_png" />
+<meta property="og:description" content="Stamp a png image" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -112,13 +112,13 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>stamp_png</h1>
+    <h1>Stamp a png image</h1>
     
     <div class="hidden name"><code>stamp_png.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>stamp_png</p>
+    <p>Stamp a png image</p>
     </div>
 
     <pre class="usage"><span class='fu'>stamp_png</span>(
@@ -137,8 +137,36 @@
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>ymax</th>
-      <td></td>
+      <th>x0</th>
+      <td><p>numeric x center of shape, defaults to 0</p></td>
+    </tr>
+    <tr>
+      <th>y0</th>
+      <td><p>numeric y center of shape, defaults to 0</p></td>
+    </tr>
+    <tr>
+      <th>png</th>
+      <td><p>a string with the path to an image, defaults to R image</p></td>
+    </tr>
+    <tr>
+      <th>image</th>
+      <td><p>a numeric array with png red green blue alpha information, defaults to png::readPNG(png)</p></td>
+    </tr>
+    <tr>
+      <th>width</th>
+      <td><p>the width that the image should fill, defaults to 1</p></td>
+    </tr>
+    <tr>
+      <th>height</th>
+      <td><p>the height that the image should fill, calculated to match aspect ratio based on width</p></td>
+    </tr>
+    <tr>
+      <th>alpha</th>
+      <td><p>numeric between 0 and 1 indicating transparency, defaults to 1 fully opaque, zero is fully transparent</p></td>
+    </tr>
+    <tr>
+      <th>x0y0</th>
+      <td><p>dataframe indicating center of shapes, where first column is vector for x values and second column is vector for y values, defaults to NULL</p></td>
     </tr>
     </table>
 
@@ -154,16 +182,12 @@
 <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span>(<span class='no'>cars</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span>(<span class='no'>dist</span>, <span class='no'>speed</span>)) +
   <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span>() +
   <span class='fu'>stamp_png</span>(<span class='kw'>x0</span> <span class='kw'>=</span> <span class='fl'>5</span>:<span class='fl'>11</span>*<span class='fl'>10</span>, <span class='kw'>y0</span> <span class='kw'>=</span> <span class='fl'>10</span>,
-            <span class='kw'>height</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>10</span>) +
-  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_identity.html'>scale_fill_identity</a></span>()</div><div class='output co'>#&gt; <span class='message'>Scale for 'fill' is already present. Adding another scale for 'fill', which</span>
-#&gt; <span class='message'>will replace the existing scale.</span></div><div class='img'><img src='stamp_png-1.png' alt='' width='700' height='433' /></div><div class='input'>
+            <span class='kw'>height</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>10</span>)</div><div class='img'><img src='stamp_png-1.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># two stamps</span>
 <span class='fu'><a href='ggcanvas.html'>ggcanvas</a></span>() +
   <span class='fu'>stamp_png</span>() +
   <span class='fu'>stamp_png</span>(<span class='kw'>x0</span> <span class='kw'>=</span> <span class='fl'>2</span>:<span class='fl'>3</span>, <span class='kw'>y0</span> <span class='kw'>=</span> <span class='fl'>6</span>,
-            <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>.95</span>) +
-  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_identity.html'>scale_fill_identity</a></span>()</div><div class='output co'>#&gt; <span class='message'>Scale for 'fill' is already present. Adding another scale for 'fill', which</span>
-#&gt; <span class='message'>will replace the existing scale.</span></div><div class='output co'>#&gt; <span class='message'>Scale for 'fill' is already present. Adding another scale for 'fill', which</span>
+            <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>.95</span>)</div><div class='output co'>#&gt; <span class='message'>Scale for 'fill' is already present. Adding another scale for 'fill', which</span>
 #&gt; <span class='message'>will replace the existing scale.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Raster pixels are placed at uneven horizontal intervals and will be shifted. Consider using geom_tile() instead.</span></div><div class='img'><img src='stamp_png-2.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># png spokes</span>
 <span class='fu'><a href='ggcanvas.html'>ggcanvas</a></span>() +

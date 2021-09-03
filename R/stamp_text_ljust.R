@@ -1,9 +1,8 @@
-#' Stamp some text
+#' Stamp some text, left justified
 #'
 #' This function adds a text annotation layer
 #'
-#' @inheritParams stamp_label
-#' @Params angle angle of text
+#' @inheritParams stamp_text
 #'
 #' @return
 #' @export
@@ -14,7 +13,7 @@
 #' ggplot(cars) +
 #'  aes(speed, dist) +
 #'  geom_point() +
-#'  stamp_text_ljust(label = "A 1920s study on speed v. stopping distance tells us there is a correlation between how fast a car is going and how long it takes to stop.",
+#'  stamp_text_ljust(label = "A 1920s study on speed v. stopping distance ...",
 #'             x = 3, y = 110,
 #'             size = 5,
 #'             text_wrap = TRUE,
@@ -31,7 +30,7 @@
 #'  ggcanvas() +
 #'   stamp_text_ljust() +
 #'   stamp_text_ljust(label = letters[1:4],
-#'   xy = pos_spoke(n = 4)) +
+#'   xy = pos_polygon(n = 4)) +
 #'   stamp_text_ljust(x = 2) +
 #'   scale_x_continuous(limits = c(-1,3)) +
 #'   stamp_text(y = 1:2, x = 2,
@@ -43,8 +42,8 @@
 #'        element_rect(fill = "seagreen",
 #'        size = 0)) +
 #'   scale_y_continuous(limits = c(-1,3))
-stamp_text_ljust <- function(x = 0,
-                       y = 0,
+stamp_text_ljust <- function(x = 0 + nudge_x,
+                       y = 0 + nudge_y,
                        label = "some\ntext",
 
                        text_wrap = FALSE,
@@ -92,9 +91,7 @@ annotate(geom = "text",
          fontface = fontface,
          vjust = vjust,
          hjust = hjust,
-         parse = parse,
-         nudge_x = nudge_x,
-         nudge_y = nudge_y)
+         parse = parse)
 
 }
 

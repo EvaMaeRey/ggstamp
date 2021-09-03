@@ -1,9 +1,6 @@
 #' Title
 #'
-#' @param x0
-#' @param y0
-#' @param n
-#' @param ncol
+#' @inheritParams pos_wrap
 #'
 #' @return
 #' @export

@@ -1,10 +1,9 @@
-
-#' Title
+#' Data frame of positions for x and y
 #'
-#' @param x0
-#' @param y0
-#' @param n
-#' @param ncol
+#' @param x0 numeric for x starting point for positioner
+#' @param y0 numeric for y starting point for positioner
+#' @param n number of positions
+#' @param ncol number of columns before wrap
 #'
 #' @return
 #' @export

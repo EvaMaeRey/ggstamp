@@ -1,18 +1,9 @@
-#' Stamp a polygon of n sides
+#' Stamp inverse of several polygons of n sides
 #'
 #' This function adds a text annotation layer.
 #' Contribute or help document https://github.com/EvaMaeRey/ggstamp/blob/master/R/stamp_polygon.R
 #'
-#' @param x0 defaults to 0
-#' @param y0 defaults to 0
-#' @param size
-#' @param n
-#' @param radius
-#' @param alpha
-#' @param rotation
-#' @param linetype
-#' @param fill
-#' @param color
+#' @inheritParams stamp_polygon
 #'
 #' @return
 #' @export
@@ -21,14 +12,22 @@
 #' # some more
 #'  ggcanvas() +
 #'   stamp_png(width = 7, x0 = 2.5, y0 = -2.5) +
-#'   stamp_polygon_holes(x0y0 = pos_honeycomb(n = 400, ncol = 20, width = .3,
-#'   x0 = .03, y0 = -.03), fill = "grey35", radius = .14) +
-#'   stamp_polygon_holes(x0y0 = pos_honeycomb(n = 400, ncol = 20, width = .3),
-#'   radius = .14, fill = "goldenrod3", n = 6,
+#'   stamp_polygon_holes(
+#'      x0y0 = pos_honeycomb(n = 400,
+#'                           ncol = 20,
+#'                           width = .3,
+#'                           x0 = .03,
+#'                           y0 = -.03),
+#'                      fill = "grey35",
+#'                      radius = .14) +
+#'   stamp_polygon_holes(x0y0 = pos_honeycomb(n = 400,
+#'                                            ncol = 20,
+#'                                            width = .3),
+#'   radius = .14, fill = "goldenrod3", n_vertices = 6,
 #'                         radius_outer = Inf)
 stamp_polygon_holes <- function(x0 = 0,
                           y0 = 0,
-                          n = 6,
+                          n_vertices = 6,
                           radius = 1,
                           radius_outer = Inf,
                           size = 0,
@@ -47,13 +46,13 @@ stamp_polygon_holes <- function(x0 = 0,
   groups <- max(c(length(x0), length(y0)))
 
   tibble::tibble(x0, y0, group = 1:groups) %>%
-    tidyr::crossing(the_n = 0:(n+1)) %>%
+    tidyr::crossing(the_n = 0:(n_vertices+1)) %>%
   dplyr::mutate(
-    x = c(x0 + radius * cos(-2*pi*0:(n +1)/(n) - rotation * pi)),
-    y = c(y0 + radius * sin(-2*pi*0:(n +1)/(n) - rotation * pi))
+    x = c(x0 + radius * cos(-2*pi*0:(n_vertices +1)/(n_vertices) - rotation * pi)),
+    y = c(y0 + radius * sin(-2*pi*0:(n_vertices +1)/(n_vertices) - rotation * pi))
   ) %>%
-    dplyr::mutate(x = ifelse(the_n == (n+1), radius_outer, x)) %>%
-    dplyr::mutate(y = ifelse(the_n == (n+1), radius_outer, y)) ->
+    dplyr::mutate(x = ifelse(the_n == (n_vertices+1), radius_outer, .data$x)) %>%
+    dplyr::mutate(y = ifelse(the_n == (n_vertices+1), radius_outer, .data$y)) ->
   df_poly
 
   # tibble::tibble(x0, y0, group = 1:groups) %>%
@@ -68,13 +67,6 @@ stamp_polygon_holes <- function(x0 = 0,
   dplyr::bind_rows(outer, df_poly) ->
     df
 
-  # df %>%
-  #   mutate(id = 1:n()) %>%
-  #   ggplot() +
-  #   aes(x = x, y = y, label = id) +
-  #   geom_text(alpha = .5) +
-  #   coord_cartesian(clip ="off")
-
   annotate(geom = "polygon",
            x = df$x,
            y = df$y,
@@ -82,46 +74,10 @@ stamp_polygon_holes <- function(x0 = 0,
            fill = fill,
            alpha = alpha,
            linetype = linetype,
-           color = color#,
-           #group = df$group
+           color = color
            )
 
 }
 
-
-# cars %>%
-#   mutate(fvar = dist>75) %>%
-#   ggplot(aes(speed, dist)) +
-#   geom_point() +
-#   facet_wrap(facets = vars(fvar)) +
-#   annotate("point", x = 1, y= 2, color = "green", size = 8) +
-#   my_annotate("point", x = 1, y= 2)
-#
-#
-# my_annotate <- function (geom, x = NULL, y = NULL, xmin = NULL, xmax = NULL,
-#           ymin = NULL, ymax = NULL, xend = NULL, yend = NULL, ...,
-#           na.rm = FALSE)
-# {
-#   position <- compact(list(x = x, xmin = xmin, xmax = xmax,
-#                            xend = xend, y = y, ymin = ymin,
-#                            ymax = ymax, yend = yend, fvar = FALSE
-#                            ))
-#   aesthetics <- c(position, list(...))
-#   lengths <- vapply(aesthetics, length, integer(1))
-#   n <- unique(lengths)
-#   if (length(n) > 1L) {
-#     n <- setdiff(n, 1L)
-#   }
-#   if (length(n) > 1L) {
-#     bad <- lengths != 1L
-#     details <- paste(names(aesthetics)[bad], " (", lengths[bad],
-#                      ")", sep = "", collapse = ", ")
-#     abort(glue("Unequal parameter lengths: {details}"))
-#   }
-#   data <- new_data_frame(position, n = n)
-#   layer(geom = geom, params = list(na.rm = na.rm, ...), stat = StatIdentity,
-#         position = PositionIdentity, data = data, mapping = aes_all(names(data)),
-#         inherit.aes = FALSE, show.legend = FALSE)
-# }
 
 

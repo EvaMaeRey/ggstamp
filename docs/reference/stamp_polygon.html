@@ -126,7 +126,7 @@ Contribute or help document https://github.com/EvaMaeRey/ggstamp/blob/master/R/s
     <pre class="usage"><span class='fu'>stamp_polygon</span>(
   <span class='kw'>x0</span> <span class='kw'>=</span> <span class='fl'>0</span>,
   <span class='kw'>y0</span> <span class='kw'>=</span> <span class='fl'>0</span>,
-  <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>6</span>,
+  <span class='kw'>n_vertices</span> <span class='kw'>=</span> <span class='fl'>6</span>,
   <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>1</span>,
   <span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>1.5</span>,
   <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>1</span>,
@@ -142,15 +142,47 @@ Contribute or help document https://github.com/EvaMaeRey/ggstamp/blob/master/R/s
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x0</th>
-      <td><p>defaults to 0</p></td>
+      <td><p>numeric x center of shape, defaults to 0</p></td>
     </tr>
     <tr>
       <th>y0</th>
-      <td><p>defaults to 0</p></td>
+      <td><p>numeric y center of shape, defaults to 0</p></td>
+    </tr>
+    <tr>
+      <th>n_vertices</th>
+      <td><p>numeric number of vertices</p></td>
+    </tr>
+    <tr>
+      <th>radius</th>
+      <td><p>a numeric value, the distance between x0 and y0 and the vertices</p></td>
+    </tr>
+    <tr>
+      <th>size</th>
+      <td><p>numeric value indicating line width, defaults to 1.5</p></td>
+    </tr>
+    <tr>
+      <th>alpha</th>
+      <td><p>numeric between 0 and 1 indicating transparency, defaults to 1 fully opaque, zero is fully transparent</p></td>
+    </tr>
+    <tr>
+      <th>rotation</th>
+      <td><p>numeric indicating how much polygon should be turned from first vertex along positive horizontal</p></td>
+    </tr>
+    <tr>
+      <th>linetype</th>
+      <td><p>a string indicating linetype, "solid", "dashed", "dotted", defaults to "solid"</p></td>
+    </tr>
+    <tr>
+      <th>fill</th>
+      <td><p>a character string indicating fill color, defaults to "grey35", for other named colors check out https://evamaerey.github.io/ggplot2_grammar_guide/named_colors</p></td>
     </tr>
     <tr>
       <th>color</th>
-      <td></td>
+      <td><p>a character string indicating color, defaults to "black", for other named colors check out https://evamaerey.github.io/ggplot2_grammar_guide/named_colors</p></td>
+    </tr>
+    <tr>
+      <th>x0y0</th>
+      <td><p>dataframe indicating center of shapes, where first column is vector for x values and second column is vector for y values, defaults to NULL</p></td>
     </tr>
     </table>
 
@@ -169,27 +201,27 @@ Contribute or help document https://github.com/EvaMaeRey/ggstamp/blob/master/R/s
  <span class='fu'>stamp_polygon</span>(<span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"darkred"</span>, <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>5</span>)</div><div class='img'><img src='stamp_polygon-1.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># on a canvas</span>
  <span class='fu'><a href='ggcanvas.html'>ggcanvas</a></span>() +
-  <span class='fu'>stamp_polygon</span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>x0</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>, <span class='fl'>2.5</span>),
+  <span class='fu'>stamp_polygon</span>(<span class='kw'>n_vertices</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>x0</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>, <span class='fl'>2.5</span>),
   <span class='kw'>fill</span> <span class='kw'>=</span> <span class='st'>"magenta"</span>, <span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"purple"</span>) +
-  <span class='fu'><a href='stamp_label.html'>stamp_label</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='pos_spoke_x.html'>pos_spoke_x</a></span>(<span class='kw'>x0</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>3</span>),
-              <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='pos_spoke_y.html'>pos_spoke_y</a></span>(<span class='kw'>y0</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>3</span>),
+  <span class='fu'><a href='stamp_label.html'>stamp_label</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='pos_polygon_x.html'>pos_polygon_x</a></span>(<span class='kw'>x0</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>3</span>),
+              <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='pos_polygon_y.html'>pos_polygon_y</a></span>(<span class='kw'>y0</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>3</span>),
               <span class='kw'>label</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"hi"</span>, <span class='st'>"hello"</span>, <span class='st'>"bye"</span>)) +
-  <span class='fu'><a href='stamp_point.html'>stamp_point</a></span>(<span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"turquoise"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: Ignoring unknown parameters: nudge_x, nudge_y</span></div><div class='img'><img src='stamp_polygon-2.png' alt='' width='700' height='433' /></div><div class='input'>
+  <span class='fu'><a href='stamp_point.html'>stamp_point</a></span>(<span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"turquoise"</span>)</div><div class='img'><img src='stamp_polygon-2.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># lots of polygons</span>
  <span class='fu'><a href='ggcanvas.html'>ggcanvas</a></span>() +
- <span class='fu'>stamp_polygon</span>(<span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"turquoise4"</span>, <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>5</span>, <span class='kw'>fill</span> <span class='kw'>=</span> <span class='st'>"turquoise"</span>) +
- <span class='fu'>stamp_polygon</span>(<span class='kw'>fill</span> <span class='kw'>=</span> <span class='st'>"slateblue2"</span>, <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>7</span>) +
+ <span class='fu'>stamp_polygon</span>(<span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"turquoise4"</span>, <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>n_vertices</span> <span class='kw'>=</span> <span class='fl'>5</span>, <span class='kw'>fill</span> <span class='kw'>=</span> <span class='st'>"turquoise"</span>) +
+ <span class='fu'>stamp_polygon</span>(<span class='kw'>fill</span> <span class='kw'>=</span> <span class='st'>"slateblue2"</span>, <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>n_vertices</span> <span class='kw'>=</span> <span class='fl'>7</span>) +
  <span class='fu'>stamp_polygon</span>(<span class='kw'>linetype</span> <span class='kw'>=</span> <span class='st'>"dashed"</span>, <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>.5</span>, <span class='kw'>fill</span> <span class='kw'>=</span> <span class='st'>"plum2"</span>) +
- <span class='fu'>stamp_polygon</span>(<span class='kw'>x0</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>y0</span> <span class='kw'>=</span> <span class='fl'>1.5</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>rotation</span> <span class='kw'>=</span> <span class='fl'>.25</span>, <span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>0</span>,
+ <span class='fu'>stamp_polygon</span>(<span class='kw'>x0</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>y0</span> <span class='kw'>=</span> <span class='fl'>1.5</span>, <span class='kw'>n_vertices</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>rotation</span> <span class='kw'>=</span> <span class='fl'>.25</span>, <span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>0</span>,
   <span class='kw'>fill</span> <span class='kw'>=</span> <span class='st'>"goldenrod2"</span>) +
- <span class='fu'>stamp_polygon</span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>50</span>, <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>.2</span>, <span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>0</span>) +
+ <span class='fu'>stamp_polygon</span>(<span class='kw'>n_vertices</span> <span class='kw'>=</span> <span class='fl'>50</span>, <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>.2</span>, <span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>0</span>) +
  <span class='fu'><a href='stamp_spoke.html'>stamp_spoke</a></span>(<span class='kw'>angle</span> <span class='kw'>=</span> <span class='no'>pi</span> * <span class='fl'>1</span>:<span class='fl'>7</span>/<span class='fl'>15</span>, <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>2</span>)</div><div class='img'><img src='stamp_polygon-3.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># some more</span>
  <span class='fu'><a href='ggcanvas.html'>ggcanvas</a></span>() +
   <span class='fu'>stamp_polygon</span>(<span class='kw'>x0y0</span> <span class='kw'>=</span> <span class='fu'><a href='pos_wrap.html'>pos_wrap</a></span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>5</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>height</span> <span class='kw'>=</span> <span class='fl'>1.5</span>),
-                <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>.55</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>7</span>) +
+                <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>.55</span>, <span class='kw'>n_vertices</span> <span class='kw'>=</span> <span class='fl'>7</span>) +
   <span class='fu'><a href='stamp_text.html'>stamp_text</a></span>(<span class='kw'>xy</span> <span class='kw'>=</span> <span class='fu'><a href='pos_wrap.html'>pos_wrap</a></span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>5</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>3</span>,
-           <span class='kw'>height</span> <span class='kw'>=</span> <span class='fl'>1.5</span>), <span class='kw'>label</span> <span class='kw'>=</span> <span class='no'>LETTERS</span>[<span class='fl'>1</span>:<span class='fl'>5</span>])</div><div class='output co'>#&gt; <span class='warning'>Warning: Ignoring unknown parameters: nudge_x, nudge_y</span></div><div class='img'><img src='stamp_polygon-4.png' alt='' width='700' height='433' /></div><div class='input'>
+           <span class='kw'>height</span> <span class='kw'>=</span> <span class='fl'>1.5</span>), <span class='kw'>label</span> <span class='kw'>=</span> <span class='no'>LETTERS</span>[<span class='fl'>1</span>:<span class='fl'>5</span>])</div><div class='img'><img src='stamp_polygon-4.png' alt='' width='700' height='433' /></div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

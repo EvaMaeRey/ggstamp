@@ -1,0 +1,114 @@
+---
+title: "birdbaths"
+author: "Evangeline Reynolds"
+date: "9/1/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+```{r}
+library(tidyverse)
+library(ggstamp)
+bird_baths <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-08-31/bird_baths.csv')
+
+bird_baths %>% 
+  filter(survey_year == 
+           max(survey_year, na.rm = T)) %>% 
+  filter(bird_count != 0 &
+           !is.na(bird_count)) %>% 
+  distinct(bioregions, bird_type) %>% 
+  count(bioregions) ->
+unique_birds_bioregions_2015
+  
+ggcanvas() +
+  stamp_point(xy = pos_wrap_multi(
+    n = unique_birds_bioregions_2015$n, 
+    ncol = 5),
+              size = 1.8) + 
+  stamp_text_ljust(x = 0:9*6 -.4, text_wrap = T, char_width = 10,
+                   size = 2.8, vjust = 1,
+                   y = 4, 
+                   label = unique_birds_bioregions_2015$bioregions,
+                    ) + 
+  labs(title = "Birds abound in the bird baths of Australia!") +
+  labs(subtitle = "South Eastern Queensland had the greatest number of unique bird observed. The Victorian Volcanic Plain the least." %>% str_wrap(80)) + 
+  labs(caption = "Data source:  Viz: @EvaMaeRey with ggplot2 and ggstamp") + 
+  scale_x_continuous(expand = c(0,0)) +
+  theme_void_fill(base_family = "Times", fill = "lavenderblush2")
+```
+
+
+
+```{r}
+unique_birds_bioregions_2015 %>% 
+  filter(n == max(n) | n == min(n)) ->
+bioregion_2015_min_max  
+  
+magick::image_read("mark-timberlake-arGfpweGs_M-unsplash.jpeg") %>% 
+  magick::image_scale(geometry = 1000) %>% 
+  magick::image_write(format = "png") %>% 
+  ggbackdrop(png = .) + 
+  stamp_polygon(radius = .9, size = .5,
+              x0y0 = pos_wrap_multi(n = bioregion_2015_min_max$n, 
+                                  ncol = 7, 
+                                  spacing = 2, 
+                                  width = 2.25,
+                                  x0 = 63, 
+                                  y0 = 32),
+              fill = "midnightblue") + 
+  stamp_text_ljust(label = bioregion_2015_min_max$bioregions %>% str_wrap(15),
+             size = 4, x = c(62, 62 + 2 + 2.25*7), y = 37) +
+  stamp_png() + 
+  # theme_void() + 
+  stamp_text(x = 48, y = 42, 
+                   label = "89 unique bird types spotted at birdbaths in South Eastern Queensland" %>% str_wrap(25), size = 4, fontface = "italic") + 
+  stamp_text(x = 90, label = "41 in the Victorian Volcanic Plain" %>% str_wrap(15), y = 10, size = 4, fontface = "italic") +
+  stamp_curve(y = 10, yend = 30, x = 98, xend = 98, 
+              curvature = .5, curveangle = 20, size = 1) + 
+  stamp_text_ljust(x = 32, y = 50, 
+                   label = "Bird Baths of Australia, 2015", 
+                   color = "grey20") + 
+  stamp_curve(x = 60, xend = 70, y = 42, yend = 40, 
+              curvature = -.2, size = 1,) +
+  stamp_text_ljust(y = 1, x = 50, label = 
+               "Image credit: Mark Timberlake; Viz: @EvaMaeRey",
+             size = 2, color = "grey20") +
+  theme_void()
+```
+
+```{r}
+"noun_Bird_1648696.png" %>% 
+  magick::image_read() %>% 
+  magick::image_crop(geometry = "550x500+70+45") %>% 
+  magick::image_scale(geometry = 400) %>% 
+  magick::image_write(path = "my_bird.png", format = "png")
+
+magick::image_read("my_bird.png")
+
+png::readPNG("noun_Bird_1648696.png") %>% str()
+png::readPNG("my_bird.png") %>% str()
+ggcanvas() + 
+  stamp_png(png = "my_bird.png")
+```
+
+
+```{r}
+download.file("https://upload.wikimedia.org/wikipedia/commons/3/3b/Australia_states_blank.png",
+              destfile = "Australia_states_blank.png")
+
+magick::image_read("Australia_states_blank.png") %>% 
+  magick::image_scale(geometry = 1000) %>% 
+  magick::image_write("my_australia.png", format = "png")
+
+
+png::readPNG("my_australia.png") %>% str()
+
+ggcanvas() +
+  stamp_png(image = png::readPNG("my_australia.png"))
+```
+
+

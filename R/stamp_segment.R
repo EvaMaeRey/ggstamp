@@ -1,4 +1,4 @@
-#' Stamp some text
+#' Stamp a segment
 #'
 #' This function adds a text annotation layer
 #'
@@ -34,7 +34,7 @@ stamp_segment <- function(x = 0,
                         lineend = "butt",
                         linejoin = "round",
 
-                        arrow = arrow(length = 0),
+                        arrow = ggplo2::arrow(length = 0),
                         arrow.fill = NULL
                         ){
 
@@ -50,7 +50,7 @@ stamp_segment <- function(x = 0,
            linetype = linetype,
 
            lineend = lineend,
-           linejoin = linejoin,
+           linejoin = linejoin
            # arrow = arrow,
            # arrow.fill = arrow.fill
            )

@@ -7,7 +7,13 @@
 pos_wrap_snake(x0 = 0, y0 = 0, n = 5, ncol = 3, width = 1, height = width)
 }
 \arguments{
-\item{ncol}{}
+\item{x0}{numeric for x starting point for positioner}
+
+\item{y0}{numeric for y starting point for positioner}
+
+\item{n}{number of positions}
+
+\item{ncol}{number of columns before wrap}
 }
 \value{
 

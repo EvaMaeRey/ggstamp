@@ -2,12 +2,12 @@
 % Please edit documentation in R/stamp_polygon_inverse.R
 \name{stamp_polygon_inverse}
 \alias{stamp_polygon_inverse}
-\title{Stamp a polygon of n sides}
+\title{Stamp inverse of a polygon of n sides}
 \usage{
 stamp_polygon_inverse(
   x0 = 0,
   y0 = 0,
-  n = 6,
+  n_vertices = 6,
   radius = 1,
   radius_outer = radius * 2^0.5,
   size = 0,
@@ -20,11 +20,27 @@ stamp_polygon_inverse(
 )
 }
 \arguments{
-\item{x0}{defaults to 0}
+\item{x0}{numeric x center of shape, defaults to 0}
 
-\item{y0}{defaults to 0}
+\item{y0}{numeric y center of shape, defaults to 0}
 
-\item{color}{}
+\item{n_vertices}{numeric number of vertices}
+
+\item{radius}{a numeric value, the distance between x0 and y0 and the vertices}
+
+\item{size}{numeric value indicating line width, defaults to 1.5}
+
+\item{alpha}{numeric between 0 and 1 indicating transparency, defaults to 1 fully opaque, zero is fully transparent}
+
+\item{rotation}{numeric indicating how much polygon should be turned from first vertex along positive horizontal}
+
+\item{linetype}{a string indicating linetype, "solid", "dashed", "dotted", defaults to "solid"}
+
+\item{fill}{a character string indicating fill color, defaults to "grey35", for other named colors check out https://evamaerey.github.io/ggplot2_grammar_guide/named_colors}
+
+\item{color}{a character string indicating color, defaults to "black", for other named colors check out https://evamaerey.github.io/ggplot2_grammar_guide/named_colors}
+
+\item{x0y0}{dataframe indicating center of shapes, where first column is vector for x values and second column is vector for y values, defaults to NULL}
 }
 \value{
 
@@ -47,23 +63,23 @@ ggplot(cars) +
  ggcanvas() +
   stamp_polygon_inverse(n = 3, x0 = c(0,2.5),
   fill = "magenta", color = "purple") +
-  stamp_label(x = pos_spoke_x(x0 = 0, n = 3),
-              y = pos_spoke_y(y0 = 0, n = 3),
+  stamp_label(x = pos_polygon_x(x0 = 0, n = 3),
+              y = pos_polygon_y(y0 = 0, n = 3),
               label = c("hi", "hello", "bye")) +
   stamp_point(color = "turquoise")
 
 # lots of polygons
  ggcanvas() +
- stamp_polygon_inverse(radius = 3, n = 5,
+ stamp_polygon_inverse(radius = 3, n_vertices = 5,
                        fill = "turquoise") +
  stamp_polygon_inverse(fill = "slateblue2",
-                       radius = 1.5, n = 7) +
+                       radius = 1.5, n_vertices = 7) +
  stamp_polygon_inverse(linetype = "dashed",
                        alpha = .5, fill = "plum2") +
- stamp_polygon_inverse(x0 = 1, y0 = 1.5, n = 3,
+ stamp_polygon_inverse(x0 = 1, y0 = 1.5, n_vertices = 3,
                        rotation = .25, size = 0,
                        fill = "goldenrod2") +
- stamp_polygon_inverse(n = 50, radius = .2,
+ stamp_polygon_inverse(n_vertices = 50, radius = .2,
                        size = 0) +
  stamp_spoke(angle = pi * 1:7/15, radius = 2)
 

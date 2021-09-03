@@ -11,12 +11,22 @@ pos_wrap_multi(
   ncol = 3,
   width = 1,
   spacing = 1,
-  width_multi = ncol + spacing,
+  width_multi = ncol * width + spacing,
   height = width
 )
 }
 \arguments{
-\item{ncol}{}
+\item{x0}{numeric for x starting point for positioner}
+
+\item{y0}{numeric for y starting point for positioner}
+
+\item{n}{number of positions}
+
+\item{ncol}{number of columns before wrap}
+
+\item{spacing}{width between wrapped groups, defaulst to 1}
+
+\item{width_multi}{spacing for groups, defaults to width + spacing}
 }
 \value{
 

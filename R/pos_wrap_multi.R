@@ -1,10 +1,9 @@
 
 #' Title
 #'
-#' @param x0
-#' @param y0
-#' @param n
-#' @param ncol
+#' @inheritParams pos_wrap
+#' @param width_multi spacing for groups, defaults to width + spacing
+#' @param spacing width between wrapped groups, defaulst to 1
 #'
 #' @return
 #' @export
@@ -25,7 +24,7 @@ pos_wrap_multi <- function(x0 = 0,
                            ncol = 3,
                            width = 1,
                            spacing = 1,
-                           width_multi = ncol + spacing,
+                           width_multi = ncol*width + spacing,
                            height = width){
 
   df <- data.frame()
@@ -37,7 +36,9 @@ pos_wrap_multi <- function(x0 = 0,
                 pos_wrap(n = n[i],
                          ncol = ncol,
                          x0 = (width_multi)*(i-1) + x0,
-                         y0 = y0, width = width, height = height)
+                         y0 = y0,
+                         width = width,
+                         height = height)
       )
 
 
