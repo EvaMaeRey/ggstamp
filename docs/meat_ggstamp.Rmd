@@ -39,13 +39,15 @@ dta = read_xlsx("meat.xlsx") %>% gather(protein, pounds, Beef:`Commercial Fish &
 ```{r}
 img_cow=readPNG("noun_36108_cc.png")[100:600, 50:650, 1:4]
 # info reduction
-img_cow=img_cow[seq(1, dim(img_cow)[1], by = 5), 
-                          seq(1, dim(img_cow)[2], by = 5),1:4]
+img_cow=img_cow[seq(1, dim(img_cow)[1], by = 1), 
+                          seq(1, dim(img_cow)[2], by = 1),1:4]
 pngCredit_cow="Meat by Yair Cohen from the Noun Project"
 
 plot(0:5, 0:5, type='n')
 rasterImage(img_cow, 0, 0, 3, 3)
 
+ggcanvas() +
+  stamp_png(image = img_cow)
 
 img_chicken=readPNG("noun_42413_cc.png")[0:600, 650:50, 1:4]
 # info reduction
@@ -96,6 +98,8 @@ ggcanvas() +
             x0y0 = pos_wrap(n = 11, ncol = 4, x0 = 15)
             ) ->
 cow_consumption
+
+
 ```
 
 

@@ -6,9 +6,11 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, cache = T)
 
 ```
+
+## Data manipulation 
 
 ```{r}
 library(tidyverse)
@@ -23,7 +25,11 @@ bird_baths %>%
   distinct(bioregions, bird_type) %>% 
   count(bioregions) ->
 unique_birds_bioregions_2015
-  
+```
+
+## a plot where a point represents each unique bird
+
+```{r count_plot}
 ggcanvas() +
   stamp_point(xy = pos_wrap_multi(
     n = unique_birds_bioregions_2015$n, 
@@ -39,6 +45,8 @@ ggcanvas() +
   labs(caption = "Data source:  Viz: @EvaMaeRey with ggplot2 and ggstamp") + 
   scale_x_continuous(expand = c(0,0)) +
   theme_void_fill(base_family = "Times", fill = "lavenderblush2")
+
+
 ```
 
 
@@ -80,6 +88,9 @@ magick::image_read("mark-timberlake-arGfpweGs_M-unsplash.jpeg") %>%
   theme_void()
 ```
 
+
+
+
 ```{r}
 "noun_Bird_1648696.png" %>% 
   magick::image_read() %>% 
@@ -91,8 +102,68 @@ magick::image_read("my_bird.png")
 
 png::readPNG("noun_Bird_1648696.png") %>% str()
 png::readPNG("my_bird.png") %>% str()
+
+# approach is jagged
 ggcanvas() + 
-  stamp_png(png = "my_bird.png")
+  stamp_png(png = "my_bird.png", width = .5,
+            x0y0 = pos_wrap_png(n = 5))
+
+
+# prettier but ackward
+ggcanvas() + 
+  stamp_point(xy = pos_wrap_png(n = 5), 
+              alpha = 0) +
+  stamp_png2(png = "my_bird.png", width = .5,
+             x0y0 = pos_wrap_png(n = 5)[1,]) +   
+  stamp_png2(png = "my_bird.png", width = .5,
+             x0y0 = pos_wrap_png(n = 5)[2,])  +   
+  stamp_png2(png = "my_bird.png", width = .5,
+             x0y0 = pos_wrap_png(n = 5)[3,])  +   
+  stamp_png2(png = "my_bird.png", width = .5,
+             x0y0 = pos_wrap_png(n = 5)[4,])  +   
+  stamp_png2(png = "my_bird.png", width = .5,
+             x0y0 = pos_wrap_png(n = 5)[5,])
+  
+
+pos_wrap_multi() ->
+my_pos
+
+# api a little awkward but works
+reduce(
+  1:nrow(my_pos),
+  ~ .x + stamp_png2(png = "my_bird.png", width = .85,
+             x0y0 = my_pos[.y,]),
+  .init = ggcanvas()
+) + 
+  stamp_text_ljust(size = 3,
+             label = "Image credit: Winn Creative",
+             y = -2)
+
+
+pos_wrap_multi(
+    n = (unique_birds_bioregions_2015$n/5) %>% round(), 
+    ncol = 2) ->
+counting_bird_pos
+
+# applied 
+reduce(
+  1:nrow(counting_bird_pos),
+  ~ .x + stamp_png2(png = "my_bird.png", width = 1.1,
+             x0y0 = counting_bird_pos[.y,]),
+  .init = ggcanvas()
+) + 
+  stamp_text_ljust(x = 0:9*3 -.4, text_wrap = T, char_width = 10,
+                   size = 2.8, vjust = 1,
+                   y = 4, 
+                   label = unique_birds_bioregions_2015$bioregions,
+                    ) + 
+  labs(title = "Birds abound in the bird baths of Australia!") +
+  labs(subtitle = "South Eastern Queensland had the greatest number of unique bird observed. The Victorian Volcanic Plain the least." %>% str_wrap(80)) + 
+  labs(caption = "Data source:  Viz: @EvaMaeRey with ggplot2 and ggstamp") + 
+  scale_x_continuous(expand = c(0,0)) +
+  theme_void_fill(base_family = "Times", fill = "lavenderblush2")
+
+
 ```
 
 
@@ -107,8 +178,110 @@ magick::image_read("Australia_states_blank.png") %>%
 
 png::readPNG("my_australia.png") %>% str()
 
-ggcanvas() +
+ggdraft() +
   stamp_png(image = png::readPNG("my_australia.png"))
+
+
+unique_birds_bioregions_2015 %>% 
+  arrange(n) ->
+dat
+
+ggdraft(height = 1.2) +
+  stamp_point(xy = pos_polygon(n = 10, radius = .25, 
+                               x0 = .5, y0 = .5), 
+              size = sqrt(dat$n)*2,
+              color = "slateblue") + 
+  stamp_text(xy = pos_polygon(n = 10, radius = .25, 
+                              x0 = .5, y0 = .5), 
+             label = dat$n,
+             size = sqrt(dat$n)*1.3, 
+             color = "grey98"
+             )  + 
+  stamp_text(xy = pos_polygon(n = 10, 
+                              radius = c(.39, rep(.4, 8), .42), 
+                              x0 = .5, y0 = .5), 
+             label = dat$bioregions %>% 
+               str_wrap(8),
+             size = 3, 
+             color = "slateblue"
+             ) + 
+  stamp_text_ljust(x = 0, y = 1.15,
+                   label = "Australian Bird Baths Project:",
+                   size = 6, 
+                   color = "slateblue"
+                   ) + 
+  stamp_text_ljust(x = 0, y = 1.035,
+                   label = "Number of unique birds \nspotted in 2015\nby bioregion",
+                   size = 4, 
+                   color = "slateblue"
+                   ) + 
+  stamp_png2(png = "my_bird.png", 
+             x0 = .5, y0 = .5,
+             width = .3, color = "slateblue") +
+  stamp_png2(png = "my_australia.png", 
+             x0 = .79, y0 = .95,
+             width = .27, color = "slateblue") +
+  theme_void_fill(fill = "grey98") + 
+  stamp_text_ljust(x = .6, 
+             y = .01,
+             label = "Image credits: Winn Creative & Creative Commons",
+             size = 1.5,
+             color = "slateblue")
+```
+```{r}
+bird_baths <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-08-31/bird_baths.csv')
+
+bird_baths %>% 
+  filter(bird_count != 0) %>% 
+  filter(!is.na(urban_rural)) %>% 
+  distinct(urban_rural, survey_year, bird_type) %>% 
+  count(urban_rural, survey_year) %>% 
+  ggplot() + 
+  aes(x = urban_rural, y = n) + 
+  geom_col(fill = "steelblue") +
+  facet_wrap(facets = vars(survey_year)) +
+  # scale_x_continuous(breaks = 2014:2015) +
+  labs(y = NULL, x = NULL) + 
+  geom_text(aes(label = n), nudge_y = 5) ->
+the_plot
+
+cowplot::ggdraw(plot = the_plot) +
+  # stamp_grid() +
+  stamp_text(x = .863, 
+             label = "In 2015 in the urban setting, there are six fewer unique bird types spotted than in rural setting", 
+             text_wrap = T, 
+             char_width = 15, 
+             y = .5, size = 5,
+             color = "oldlace") + 
+    stamp_label(x = .52, 
+              label = "Increases are observed for both rural and urban from 2014 to 2015" %>% str_wrap(12),
+              color = "grey35",
+              fill = "oldlace",
+             y = .5, size = 5) +
+  stamp_arrow(x = .43, xend = .6, 
+              y = .64, yend = .64,
+              size = 4, 
+              headtype = "closed", 
+              color = "grey35"
+              ) + 
+  stamp_segment(x = .755, xend = .755, 
+                y = .865, .83,
+                color = "steelblue") + 
+  stamp_curve(x = .76, y = .85, 
+              xend = .85, yend = .67,
+              size = 1,
+              curvature = -.3,
+              color = "darkgrey") +
+  stamp_point(x = .2, y = .32,
+               size = 50,
+              color = "grey35"
+              ) +
+  stamp_text(x = .2, y = .32, text_wrap = T, char_width = 15,
+             label = "Bird bath project, Australia!",
+             angle = 10, color = "oldlace") + 
+  stamp_png2(png = "noun_Binoculars_22637.png",
+             width = .35, x0 = .38, y0 = .195,
+             color =  "grey35")
 ```
 
 

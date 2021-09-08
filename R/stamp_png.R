@@ -110,6 +110,7 @@ stamp_png <- function(x0 = 0,
   ggplot2::geom_raster(data = image_df,
               aes(x = .data$pixel_x, y = .data$pixel_y,
                   # alpha = pixel_alpha,
+                  # interpolate = TRUE,
                   fill = .data$pixel_fill)),
   ggplot2::scale_fill_identity()
   )
