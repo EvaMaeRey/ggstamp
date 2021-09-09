@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE, cache = T)
 
 ## Data manipulation 
 
-```{r}
+```{r wrangle}
 library(tidyverse)
 library(ggstamp)
 bird_baths <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-08-31/bird_baths.csv')
@@ -51,7 +51,7 @@ ggcanvas() +
 
 
 
-```{r}
+```{r backdrop}
 unique_birds_bioregions_2015 %>% 
   filter(n == max(n) | n == min(n)) ->
 bioregion_2015_min_max  
@@ -91,7 +91,7 @@ magick::image_read("mark-timberlake-arGfpweGs_M-unsplash.jpeg") %>%
 
 
 
-```{r}
+```{r roller}
 "noun_Bird_1648696.png" %>% 
   magick::image_read() %>% 
   magick::image_crop(geometry = "550x500+70+45") %>% 
@@ -123,8 +123,10 @@ ggcanvas() +
              x0y0 = pos_wrap_png(n = 5)[4,])  +   
   stamp_png2(png = "my_bird.png", width = .5,
              x0y0 = pos_wrap_png(n = 5)[5,])
-  
+```
 
+
+```{r reduce1}
 pos_wrap_multi() ->
 my_pos
 
@@ -139,7 +141,10 @@ reduce(
              label = "Image credit: Winn Creative",
              y = -2)
 
+```
 
+
+```{r reduce2}
 pos_wrap_multi(
     n = (unique_birds_bioregions_2015$n/5) %>% round(), 
     ncol = 2) ->
@@ -167,7 +172,7 @@ reduce(
 ```
 
 
-```{r}
+```{r infoprep}
 download.file("https://upload.wikimedia.org/wikipedia/commons/3/3b/Australia_states_blank.png",
               destfile = "Australia_states_blank.png")
 
@@ -185,7 +190,10 @@ ggdraft() +
 unique_birds_bioregions_2015 %>% 
   arrange(n) ->
 dat
+```
 
+
+```{r info}
 ggdraft(height = 1.2) +
   stamp_point(xy = pos_polygon(n = 10, radius = .25, 
                                x0 = .5, y0 = .5), 
@@ -228,7 +236,9 @@ ggdraft(height = 1.2) +
              size = 1.5,
              color = "slateblue")
 ```
-```{r}
+
+
+```{r facets}
 bird_baths <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-08-31/bird_baths.csv')
 
 bird_baths %>% 
