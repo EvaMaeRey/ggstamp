@@ -423,6 +423,7 @@ bird_baths %>%
 the_plot
 
 cowplot::ggdraw(plot = the_plot) +
+  stamp_grid() +
   stamp_text(x = .863, 
              label = "In 2015 in the urban setting, there are six fewer unique bird types spotted than in rural setting", 
              text_wrap = T, 

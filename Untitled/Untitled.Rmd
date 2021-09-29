@@ -1,0 +1,43 @@
+---
+title: "A minimal flipbook"
+subtitle: "With flipbookr and xaringan"
+author: "You!"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: [default, hygge, ninjutsu]
+    nature:
+      ratio: 16:9
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+```{r, include = F}
+# This is the recommended set up for flipbooks
+# you might think about setting cache to TRUE as you gain practice --- building flipbooks from scratch can be time consuming
+knitr::opts_chunk$set(fig.width = 6, message = FALSE, warning = FALSE, comment = "", cache = F)
+library(flipbookr)
+library(tidyverse)
+```
+
+```{r}
+library(ggstamp)
+magick::image_read("https://camo.githubusercontent.com/ad8fc3d17e33b12134cc263d898b9ec300ac6c2baf1ba2116073740c1b1f8416/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f6d61782f313833382f312a4d4d5a75596765435f596a584e433172344434736f672e706e67") %>% 
+  magick::image_scale(geometry = 300) %>% 
+  magick::image_write(path = "gg.png") %>% 
+  ggbackdrop(png = .) +
+  theme_void() +
+  stamp_rect(xmin = -Inf, xmax = Inf, ymin = Inf, ymax = -Inf, fill = "linen", alpha = .5) + 
+  stamp_text_ljust(y = 7.8,          x = 65, label = "data()",         angle = 11, size = 4) + 
+  stamp_text_ljust(y = 7.8 + 3.85,   x = 65, label = "aes()",          angle = 11, size = 4) + 
+  stamp_text_ljust(y = 7.8 + 3.85*2, x = 65, label = "geom_point()",   angle = 11, size = 4) + 
+  stamp_text_ljust(y = 7.8 + 3.85*3, x = 65, label = "geom_facets()",  angle = 11, size = 4) + 
+  stamp_text_ljust(y = 7.8 + 3.85*4, x = 65, label = "stat_point()",   angle = 11, size = 4) + 
+  stamp_text_ljust(y = 7.8 + 3.85*5, x = 65, label = "coord_polar()",  angle = 11, size = 4) + 
+  stamp_text_ljust(y = 7.8 + 3.85*6, x = 65, label = "theme() + annotate()", angle = 11, size = 4)
+  
+  
+```
+
