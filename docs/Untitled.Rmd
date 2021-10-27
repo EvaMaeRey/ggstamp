@@ -1,0 +1,26 @@
+---
+title: "Untitled"
+author: "Evangeline Reynolds"
+date: "10/21/2021"
+output: html_document
+---
+
+```{r}
+library(ggforce)
+library(ggplot2)
+ggplot(cars, aes(x = dist, y = speed)) + 
+  geom_point() + 
+  annotate("rect", 
+           xmin = 1:4, ymin = 1:4*10, 
+           xmax = 2:5, ymax = 2:5)
+
+library(ggforce)
+ggplot(cars, aes(x = dist, y = speed)) + 
+  geom_point() + 
+  annotate("rect", 
+           xmin = 1:4, ymin = 1:4*10, 
+           xmax = 2:5, ymax = 2:5) +
+  annotate("circle", x0 = 5, y0 = 5, r = 12,
+           color = "red")
+```
+
