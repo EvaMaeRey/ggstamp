@@ -6,7 +6,7 @@
 #' @export
 #'
 #' @examples
-#' pos_month()
+#' pos_month("1999-02")
 #' pos_month(month = "1999-02")
 #'
 #' # Using w plotspace
@@ -33,8 +33,8 @@ pos_month <- function(month = "2021-10",
 
   num_days <- lubridate::days_in_month(start_date)
 
-  x <- (day + 1:num_days) %% 7 + x0
-  y <- -((day + 1:num_days) %/% 7) + 1 + y0
+  x <- (day - 2 + 1:num_days) %% 7 + x0
+  y <- -((day -2 + 1:num_days) %/% 7) + y0
 
   data.frame(x, y)
 

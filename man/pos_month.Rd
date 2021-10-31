@@ -25,7 +25,7 @@ pos_month(
 Return positions for equilateral polygon vertices
 }
 \examples{
-pos_month()
+pos_month("1999-02")
 pos_month(month = "1999-02")
 
 # Using w plotspace
