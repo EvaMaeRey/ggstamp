@@ -4,7 +4,15 @@
 \alias{theme_void_fill}
 \title{Title}
 \usage{
-theme_void_fill(fill = "linen", color = fill, ...)
+theme_void_fill(
+  fill = "linen",
+  color = fill,
+  margin.top = 10,
+  margin.bottom = margin.top,
+  margin.left = margin.top,
+  margin.right = margin.top,
+  ...
+)
 }
 \arguments{
 \item{fill}{string indicating background color, defaults to "linen"}

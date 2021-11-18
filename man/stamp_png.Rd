@@ -13,7 +13,8 @@ stamp_png(
   height = width * dim(image)[1]/dim(image)[2],
   show.legend = F,
   alpha = 1,
-  x0y0 = NULL
+  x0y0 = NULL,
+  reduce = NULL
 )
 }
 \arguments{

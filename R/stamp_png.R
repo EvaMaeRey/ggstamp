@@ -42,9 +42,19 @@ stamp_png <- function(x0 = 0,
                         height = width*dim(image)[1]/dim(image)[2],
                         show.legend = F,
                         alpha = 1,
-                        x0y0 = NULL){
+                        x0y0 = NULL,
+                      reduce = NULL){
 
   # png = "docs/my_bird.png"
+
+  if(!is.null(reduce)){
+  png %>%
+  magick::image_read() %>%
+  magick::image_scale(geometry = 400) %>%
+  magick::image_write(path = "temp.png")
+
+  png = "temp.png"
+  }
 
   if(!is.null(x0y0)){
     x0 = x0y0[,1]

@@ -13,7 +13,7 @@
 #' @export
 #'
 #' @examples
-#' # stamp in plotspace
+#' # stamp in plot space
 #' library(ggplot2)
 #' ggplot(cars, aes(dist, speed)) +
 #'   geom_point() +
