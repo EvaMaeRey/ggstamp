@@ -87,9 +87,9 @@ tibble::tibble(x = rnorm(40000, sd = .7),
   ggplot() + 
   aes(x = x, y = y) +
   geom_hex(show.legend = F, color = alpha("white", 0)) + 
-  coord_equal() + 
-  stamp_polygon_inverse(radius = 2, radius_outer = Inf
-                        ) + 
+  coord_equal(xlim = c(-1.65,1.65), ylim = c(-2.3, 2.3)) + 
+  stamp_polygon_inverse(radius = 2, radius_outer = Inf, fill = "white"
+                        ) +
   stamp_polygon(alpha = .2, n = 5, size = 1.75,
                 fill = "magenta", color = "grey15",
                 rotation = -.55) + 
@@ -107,10 +107,11 @@ tibble::tibble(x = rnorm(40000, sd = .7),
                 color = "plum3") + 
   theme_void() +
   ggxmean::stamp_normal_dist(sd = .2, alpha = .8, height = 1.5) + 
-  stamp_point(xy = pos_wrap(n = 22, ncol = 6, width = .15, x0 = -.95, y0 = -.3), size = 1,
-              color = "seagreen2")
+  stamp_point(xy = pos_wrap(n = 22, ncol = 6, width = .15, x0 = -.95, y0 = -.3), size = 3,
+              color = "seagreen2") ->
+g; g
 
-
+ggsave("docs/hex_sticker_ggstamp.png")
 
 ```
 

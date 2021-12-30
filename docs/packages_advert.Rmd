@@ -1,0 +1,40 @@
+---
+title: "myverse"
+author: "Evangeline Reynolds"
+date: "11/17/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r cars}
+library(ggstamp)
+library(tidyverse)
+
+positions <- pos_honeycomb(n = 15, ncol = 3)
+
+ggcanvas() + 
+  stamp_polygon_holes(x0y0 = positions, 
+                      fill = "white", radius = .95) + 
+  # stamp_text(xy = positions,
+  #            size = 4,
+  #            label = c("flipbookr", "ggxmean", "ggsample", "ggstamp",
+  #                      "doublecrochet",
+  #                      "codeexplode", "exampleexploder", "ggmemory")) + 
+  stamp_polygon(x0y0 = positions,
+                alpha = .5, radius = .95)
+
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
