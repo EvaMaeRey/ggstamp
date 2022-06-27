@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-### {ggstamp} <a href="github.com/EvaMaeRey/ggstamp" target="_blank"><em>on github</em></a>
+### {ggstamp} [*on github*](github.com/EvaMaeRey/ggstamp)
 
 > ‘In God we trust, all others must bring data.’ - W. Edwards Deming.
 
@@ -9,7 +9,8 @@
 
 <img src="https://github.com/EvaMaeRey/ggstamp/blob/master/docs/flipbook.gif?raw=true" width="100%" />
 
-<a href="https://evamaerey.github.io/ggstamp/flipbook.html" target="_blank">Open flipbook in a new tab</a>
+[Open flipbook in a new
+tab](https://evamaerey.github.io/ggstamp/flipbook.html)
 
 <!-- badges: start -->
 
@@ -23,7 +24,7 @@ is experimental; let’s see where things lead.
 
 In some ways, Deming’s quote parallels the experience of analysts using
 ggplot2. Adding geom\_\* layers feels almost godly (geom\_point() = ‘let
-there be points’, geom\_boxplot() ‘let there be boxplots’!). But
+there be points’, geom\_boxplot() ‘let there be boxplots’\!). But
 *annotation layers* are subject to Deming’s burden of *‘bringing data’*.
 
 The geom\_\* calls feel lightweight and powerful because they refer to
@@ -32,16 +33,16 @@ definition of a data visualization
 
 A data visualization is …
 
-… is composed of geometric marks …
+… composed of geometric marks …
 
 … that take on variation in visual channels (aesthetics) …
 
 … that represent variables in a data set …
 
 In practice, the data is declared first and second the
-aesthetic-variable encodings. Finally, with this *groundwork laid* which
-geometric mark should take on these aesthetics – the code call to get
-the layer feels light and nimble!
+aesthetic-variable encodings. Finally, with this *groundwork laid* of
+prespecifying data and aesthetic-variable pairs, the code call to get
+the geometric layer feels light and nimble\!
 
 Because geom\_\* marks have the data already laid out, they don’t feel
 like you have to ‘bring data’.
@@ -68,7 +69,7 @@ i.e. stamp\_point(), stamp\_text() - good for auto-complete IDEs
 Also we include the arguments and descriptions so adjustments can more
 easily be made from IDE with argument previews.
 
-Finally, the functions include default data! You will be able to check
+Finally, the functions include default data\! You will be able to check
 out what stamp\_\* functions do without any input (then you can adjust
 away from the defaults later); in other words ggstamp functions are
 ‘pre-inked’ (they’ll automatically bring data). They’ll ‘just work’ –
@@ -119,5 +120,6 @@ g; g
 <img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
 
 ``` r
+
 ggsave("docs/hex_sticker_ggstamp.png")
 ```

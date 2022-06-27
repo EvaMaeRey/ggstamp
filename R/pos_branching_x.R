@@ -22,7 +22,7 @@ x_pos <- c(x_pos,  1:i*width - i*width/2 - .5 * width)
 
 }
 
-x_pos[1:n]
+x_pos[1:n]  + x0
 
 }
 
